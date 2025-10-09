@@ -1,182 +1,237 @@
-//package com.WMS_spiders_wholesale_system;
-//
-//import com.WMS_spiders_wholesale_system.entity.Customer;
-//import com.WMS_spiders_wholesale_system.exception.CustomerAlreadyExistsException;
-//import com.WMS_spiders_wholesale_system.exception.CustomerNotFoundException;
-//import com.WMS_spiders_wholesale_system.exception.InvalidCustomerDataException;
-//import com.WMS_spiders_wholesale_system.repository.CustomerRepository;
-//import com.WMS_spiders_wholesale_system.service.CustomerService;
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.extension.ExtendWith;
-//import org.mockito.*;
-//import org.mockito.junit.jupiter.MockitoExtension;
-//import org.springframework.data.domain.*;
-//
-//import java.util.*;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//import static org.mockito.Mockito.*;
-//
-//@ExtendWith(MockitoExtension.class)
-//class CustomerServiceTest {
-//
-//    @Mock
-//    private CustomerRepository customerRepository;
-//
-//    @InjectMocks
-//    private CustomerService customerService;
-//
-//    @Test
-//    void shouldAddCustomerSuccessfully() {
-//        // given
-//        Customer customer = new Customer("Jan", "Kowalski", "123456789", "jan@example.com", "ul. Testowa 1", "PL123");
-//        when(customerRepository.existsByEmail(customer.getEmail())).thenReturn(false);
-//        when(customerRepository.save(customer)).thenReturn(customer);
-//
-//        // when
-//        Customer saved = customerService.addCustomer(customer);
-//
-//        // then
-//        assertEquals("Jan", saved.getFirstName());
-//        verify(customerRepository).save(customer);
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionWhenCustomerAlreadyExists() {
-//        // given
-//        Customer customer = new Customer("Anna", "Nowak", "987654321", "anna@example.com", "ul. Przykładowa 2", "PL456");
-//        when(customerRepository.existsByEmail(customer.getEmail())).thenReturn(true);
-//
-//        // then
-//        assertThrows(CustomerAlreadyExistsException.class, () -> customerService.addCustomer(customer));
-//    }
-//
-//    @Test
-//    void shouldUpdateCustomerSuccessfully() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        Customer customer = new Customer("Piotr", "Zieliński", "111222333", "piotr@example.com", "ul. Zielona 3", "PL789");
-//        customer.setId(id);
-//        when(customerRepository.existsById(id)).thenReturn(true);
-//        when(customerRepository.save(customer)).thenReturn(customer);
-//
-//        // when
-//        Customer updated = customerService.updateCustomer(customer);
-//
-//        // then
-//        assertEquals(id, updated.getId());
-//        verify(customerRepository).save(customer);
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionWhenUpdatingNonexistentCustomer() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        Customer customer = new Customer();
-//        customer.setId(id);
-//        when(customerRepository.existsById(id)).thenReturn(false);
-//
-//        // then
-//        assertThrows(CustomerNotFoundException.class, () -> customerService.updateCustomer(customer));
-//    }
-//
-//    @Test
-//    void shouldDeleteCustomerSuccessfully() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        when(customerRepository.existsById(id)).thenReturn(true);
-//
-//        // when
-//        customerService.deleteCustomer(id);
-//
-//        // then
-//        verify(customerRepository).deleteById(id);
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionWhenDeletingNonexistentCustomer() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        when(customerRepository.existsById(id)).thenReturn(false);
-//
-//        // then
-//        assertThrows(CustomerNotFoundException.class, () -> customerService.deleteCustomer(id));
-//    }
-//
-//    @Test
-//    void shouldReturnCustomerById() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        Customer customer = new Customer();
-//        customer.setId(id);
-//        when(customerRepository.findById(id)).thenReturn(Optional.of(customer));
-//
-//        // when
-//        Customer result = customerService.getCustomerById(id);
-//
-//        // then
-//        assertEquals(id, result.getId());
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionWhenCustomerNotFoundById() {
-//        // given
-//        UUID id = UUID.randomUUID();
-//        when(customerRepository.findById(id)).thenReturn(Optional.empty());
-//
-//        // then
-//        assertThrows(CustomerNotFoundException.class, () -> customerService.getCustomerById(id));
-//    }
-//
-//    @Test
-//    void shouldReturnCustomersByLastName() {
-//        // given
-//        String lastName = "Kowalski";
-//        List<Customer> customers = List.of(new Customer(), new Customer());
-//        when(customerRepository.getCustomerByLastName(lastName)).thenReturn(customers);
-//
-//        // when
-//        List<Customer> result = customerService.getCustomerByLastName(lastName);
-//
-//        // then
-//        assertEquals(2, result.size());
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionWhenNoCustomerWithLastNameFound() {
-//        // given
-//        String lastName = "Nieistniejący";
-//        when(customerRepository.getCustomerByLastName(lastName)).thenReturn(Collections.emptyList());
-//
-//        // then
-//        assertThrows(CustomerNotFoundException.class, () -> customerService.getCustomerByLastName(lastName));
-//    }
-//
-//    @Test
-//    void shouldValidateCorrectCustomer() {
-//        // given
-//        Customer customer = new Customer("Adam", "Testowy", "123456789", "adam@example.com", "ul. Testowa", "PL000");
-//
-//        // then
-//        assertDoesNotThrow(() -> {
-//            // używamy refleksji, bo metoda jest prywatna
-//            var method = CustomerService.class.getDeclaredMethod("validateCustomer", Customer.class);
-//            method.setAccessible(true);
-//            method.invoke(customerService, customer);
-//        });
-//    }
-//
-//    @Test
-//    void shouldThrowExceptionForInvalidCustomer() {
-//        // given
-//        Customer customer = new Customer();
-//        customer.setFirstName(""); // invalid
-//
-//        // then
-//        assertThrows(InvalidCustomerDataException.class, () -> {
-//            var method = CustomerService.class.getDeclaredMethod("validateCustomer", Customer.class);
-//            method.setAccessible(true);
-//            method.invoke(customerService, customer);
-//        });
-//    }
-//}
+package com.WMS_spiders_wholesale_system;
+
+import com.WMS_spiders_wholesale_system.dto.CustomerDTO;
+import com.WMS_spiders_wholesale_system.entity.Customer;
+import com.WMS_spiders_wholesale_system.exception.CustomerAlreadyExistsException;
+import com.WMS_spiders_wholesale_system.exception.CustomerNotFoundException;
+import com.WMS_spiders_wholesale_system.exception.InvalidCustomerDataException;
+import com.WMS_spiders_wholesale_system.repository.CustomerRepository;
+import com.WMS_spiders_wholesale_system.service.CustomerService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+
+@ExtendWith(MockitoExtension.class)
+class CustomerServiceTest {
+
+    @Mock
+    private CustomerRepository customerRepository;
+
+    @InjectMocks
+    private CustomerService customerService;
+
+    private UUID customerId;
+    private Customer testCustomer;
+    private CustomerDTO customerDTO;
+
+    @BeforeEach
+    void setUp() {
+        customerId = UUID.randomUUID();
+
+        testCustomer = new Customer();
+        testCustomer.setId(customerId);
+        testCustomer.setFirstName("Jan");
+        testCustomer.setLastName("Kowalski");
+        testCustomer.setEmail("jan.kowalski@test.com");
+
+        customerDTO = new CustomerDTO();
+        customerDTO.setFirstName("Piotr");
+        customerDTO.setEmail("piotr.nowak@test.com");
+    }
+
+    @Test
+    void addCustomer_Success() {
+        // ARRANGE
+        when(customerRepository.existsByEmail(testCustomer.getEmail())).thenReturn(false);
+        when(customerRepository.save(any(Customer.class))).thenReturn(testCustomer);
+
+        // ACT
+        Customer result = customerService.addCustomer(testCustomer);
+
+        // ASSERT
+        assertNotNull(result);
+        assertEquals(testCustomer.getEmail(), result.getEmail());
+
+        verify(customerRepository, times(1)).existsByEmail(testCustomer.getEmail());
+        verify(customerRepository, times(1)).save(testCustomer);
+    }
+
+    @Test
+    void addCustomer_ThrowsCustomerAlreadyExistsException() {
+        // ARRANGE
+
+        when(customerRepository.existsByEmail(testCustomer.getEmail())).thenReturn(true);
+
+        // ACT & ASSERT
+        assertThrows(CustomerAlreadyExistsException.class, () -> customerService.addCustomer(testCustomer));
+
+        verify(customerRepository, times(0)).save(any(Customer.class));
+    }
+
+    @Test
+    void addCustomer_ThrowsInvalidCustomerDataException_NullFirstName() {
+        // ARRANGE
+        testCustomer.setFirstName(null);
+
+        // ACT & ASSERT
+        assertThrows(InvalidCustomerDataException.class, () -> customerService.addCustomer(testCustomer));
+    }
+
+    @Test
+    void updateCustomer_Success() throws CustomerNotFoundException {
+        // ARRANGE
+        when(customerRepository.findById(customerId)).thenReturn(Optional.of(testCustomer));
+        when(customerRepository.save(any(Customer.class))).thenReturn(testCustomer);
+
+        // ACT
+        Customer result = customerService.updateCustomer(customerId, customerDTO);
+
+        // ASSERT
+        assertNotNull(result);
+        assertEquals(customerDTO.getFirstName(), result.getFirstName());
+        assertEquals(customerDTO.getEmail(), result.getEmail());
+        assertEquals(testCustomer.getLastName(), result.getLastName());
+
+        verify(customerRepository, times(1)).findById(customerId);
+        verify(customerRepository, times(1)).save(testCustomer);
+    }
+
+    @Test
+    void updateCustomer_ThrowsCustomerNotFoundException() {
+        // ARRANGE
+        when(customerRepository.findById(customerId)).thenReturn(Optional.empty());
+
+        // ACT & ASSERT
+        assertThrows(CustomerNotFoundException.class, () -> customerService.updateCustomer(customerId, customerDTO));
+
+        verify(customerRepository, times(0)).save(any(Customer.class));
+    }
+
+    @Test
+    void deleteCustomer_Success() {
+        // ARRANGE
+        when(customerRepository.existsById(customerId)).thenReturn(true);
+
+        doNothing().when(customerRepository).deleteById(customerId);
+
+        // ACT
+        customerService.deleteCustomer(customerId);
+
+        // ASSERT
+        verify(customerRepository, times(1)).existsById(customerId);
+        verify(customerRepository, times(1)).deleteById(customerId);
+    }
+
+    @Test
+    void deleteCustomer_ThrowsCustomerNotFoundException() {
+        // ARRANGE
+        when(customerRepository.existsById(customerId)).thenReturn(false);
+
+        // ACT & ASSERT
+        assertThrows(CustomerNotFoundException.class, () -> customerService.deleteCustomer(customerId));
+
+        verify(customerRepository, times(0)).deleteById(customerId);
+    }
+
+
+    @Test
+    void getCustomerById_Success() {
+        // ARRANGE
+        when(customerRepository.findById(customerId)).thenReturn(Optional.of(testCustomer));
+
+        // ACT
+        Customer result = customerService.getCustomerById(customerId);
+
+        // ASSERT
+        assertNotNull(result);
+        assertEquals(customerId, result.getId());
+        verify(customerRepository, times(1)).findById(customerId);
+    }
+
+    @Test
+    void getCustomerById_ThrowsCustomerNotFoundException() {
+        // ARRANGE
+        when(customerRepository.findById(customerId)).thenReturn(Optional.empty());
+
+        // ACT & ASSERT
+        assertThrows(CustomerNotFoundException.class, () -> customerService.getCustomerById(customerId));
+    }
+
+    @Test
+    void getCustomerByLastName_Success() throws CustomerNotFoundException {
+        // ARRANGE
+        String lastName = "Nowak";
+        Customer customer1 = new Customer();
+        customer1.setLastName(lastName);
+        List<Customer> foundCustomers = List.of(customer1);
+
+        when(customerRepository.getCustomerByLastName(lastName)).thenReturn(foundCustomers);
+
+        // ACT
+        List<Customer> result = customerService.getCustomerByLastName(lastName);
+
+        // ASSERT
+        assertFalse(result.isEmpty());
+        assertEquals(1, result.size());
+        verify(customerRepository, times(1)).getCustomerByLastName(lastName);
+    }
+
+    @Test
+    void getCustomerByLastName_ThrowsCustomerNotFoundException() {
+        // ARRANGE
+        String lastName = "NieIstnieje";
+        // Mock zwraca pustą listę
+        when(customerRepository.getCustomerByLastName(lastName)).thenReturn(Collections.emptyList());
+
+        // ACT & ASSERT
+        CustomerNotFoundException thrown = assertThrows(
+                CustomerNotFoundException.class,
+                () -> customerService.getCustomerByLastName(lastName)
+        );
+
+        assertTrue(thrown.getMessage().contains("Customer with last name " + lastName + " not found"));
+        verify(customerRepository, times(1)).getCustomerByLastName(lastName);
+    }
+
+
+    @Test
+    void getAllCustomers_ReturnsPage() {
+        // ARRANGE
+        int page = 0;
+        int size = 10;
+        Sort sort = Sort.by("lastName").ascending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        List<Customer> customerList = List.of(testCustomer);
+        Page<Customer> customerPage = new PageImpl<>(customerList, pageable, 1);
+
+        when(customerRepository.findAll(any(Pageable.class))).thenReturn(customerPage);
+
+        // ACT
+        Page<Customer> result = customerService.getAllCustomers(page, size, sort);
+
+        // ASSERT
+        assertNotNull(result);
+        assertEquals(1, result.getTotalElements());
+        assertEquals(1, result.getTotalPages());
+
+        verify(customerRepository, times(1)).findAll(any(Pageable.class));
+    }
+}
