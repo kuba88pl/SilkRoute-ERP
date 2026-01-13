@@ -1,80 +1,269 @@
-2025-10-06 00:29:08 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m40s989ms).
-2025-10-06 01:05:14 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m6s145ms).
-2025-10-06 01:39:55 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m40s998ms).
-2025-10-06 02:21:58 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m2s527ms).
-2025-10-06 02:52:46 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m48s117ms).
-2025-10-06 03:38:21 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m34s908ms).
-2025-10-06 03:54:27 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m6s229ms).
-2025-10-06 04:08:35 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m8s480ms).
-2025-10-06 05:00:48 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m12s710ms).
-2025-10-06 05:09:15 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m26s693ms).
-2025-10-06 06:10:20 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m5s207ms).
-2025-10-06 06:26:26 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m5s600ms).
-2025-10-06 07:11:29 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m3s725ms).
-2025-10-06 07:48:53 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m23s731ms).
-2025-10-06 08:12:32 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m39s374ms).
-2025-10-06 09:13:14 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41s684ms).
-2025-10-06 10:14:24 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m40s67ms).
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.view.InternalResourceView - View [InternalResourceView], model {}
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.view.InternalResourceView - Forwarding to [index.html]
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "FORWARD" dispatch for GET "/index.html", parameters={}
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "FORWARD" dispatch, status 200
-2025-10-06 10:21:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-06 10:21:54 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m30s265ms).
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/HNAP1/", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource HNAP1.]
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Oct 06 10:21:58 CEST 2025, status=404, error=Not Found, trace=org.springframework.web (truncated)...]
-2025-10-06 10:21:58 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected '*/*' given [*/*]
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.view.InternalResourceView - View [InternalResourceView], model {}
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.view.InternalResourceView - Forwarding to [index.html]
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "FORWARD" dispatch for GET "/index.html", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/loginMsg.js", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.w.s.handler.DisconnectedClient - Looks like the client has gone away: org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe (For a full stack trace, set the log category 'org.apache.commons.logging.LogAdapter$Slf4jLocationAwareLog@ea262c1' to TRACE level.)
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "FORWARD" dispatch, status 200
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource loginMsg.js.]
-2025-10-06 10:21:58 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Oct 06 10:21:58 CEST 2025, status=404, error=Not Found, trace=org.springframework.web (truncated)...]
-2025-10-06 10:21:58 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/cgi/get.cgi?cmd=home_login", parameters={masked}
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource cgi/get.cgi.]
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error?cmd=home_login", parameters={masked}
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Oct 06 10:21:58 CEST 2025, status=404, error=Not Found, trace=org.springframework.web (truncated)...]
-2025-10-06 10:21:58 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
-2025-10-06 14:08:49 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s206ms).
-2025-10-06 14:45:35 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m46s42ms).
-2025-10-06 17:02:17 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m10s820ms).
-2025-10-06 17:34:41 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m54s34ms).
-2025-10-06 18:21:55 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m13s624ms).
-2025-10-06 18:40:53 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m28s23ms).
-2025-10-06 18:56:21 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m28s38ms).
-2025-10-06 19:05:22 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m31s499ms).
-2025-10-06 19:21:38 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m15s624ms).
-2025-10-06 20:14:15 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m35s310ms).
-2025-10-06 23:25:25 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-06 23:25:25 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
-2025-10-06 23:25:25 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-06 23:25:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-10-06 23:25:25 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-13 10:25:51 [restartedMain] INFO  c.W.CoolSpidersApplication - Starting CoolSpidersApplication using Java 24.0.1 with PID 89679 (/Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/WMS-spider-wholesale-system/target/classes started by kuba in /Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/WMS-spider-wholesale-system)
+2026-01-13 10:25:51 [restartedMain] INFO  c.W.CoolSpidersApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-13 10:25:51 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-13 10:25:51 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-13 10:25:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-13 10:25:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2026-01-13 10:25:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-13 10:25:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-13 10:25:52 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-13 10:25:52 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-13 10:25:52 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-13 10:25:52 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 546 ms
+2026-01-13 10:25:52 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-13 10:25:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-13 10:25:52 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b36ce74
+2026-01-13 10:25:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-13 10:25:53 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-13 10:25:53 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 10:25:53 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-13 10:25:54 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-13 10:25:54 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-13 10:25:54 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 18 mappings in 'requestMappingHandlerMapping'
+2026-01-13 10:25:54 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-01-13 10:25:54 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-13 10:25:54 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-13 10:25:54 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-13 10:25:54 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-01-13 10:25:54 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-13 10:25:54 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-13 10:25:54 [restartedMain] INFO  c.W.CoolSpidersApplication - Started CoolSpidersApplication in 2.805 seconds (process running for 3.257)
+2026-01-13 10:25:54 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-13 10:25:54 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-13 10:25:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 10:25:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-13 10:25:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-13 10:57:08 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.1 with PID 90256 (/Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/WMS-spider-wholesale-system/target/classes started by kuba in /Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/WMS-spider-wholesale-system)
+2026-01-13 10:57:08 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-13 10:57:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-13 10:57:08 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-13 10:57:08 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-13 10:57:08 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 3 JPA repository interfaces.
+2026-01-13 10:57:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-13 10:57:09 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-13 10:57:09 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-13 10:57:09 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-13 10:57:09 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-13 10:57:09 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 757 ms
+2026-01-13 10:57:09 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-13 10:57:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-13 10:57:09 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13aedfce
+2026-01-13 10:57:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-13 10:57:10 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-13 10:57:10 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 10:57:10 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-13 10:57:10 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-13 10:57:10 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-13 10:57:10 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 18 mappings in 'requestMappingHandlerMapping'
+2026-01-13 10:57:10 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-01-13 10:57:10 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-13 10:57:10 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-13 10:57:10 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-13 10:57:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-01-13 10:57:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-13 10:57:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-13 10:57:11 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 2.98 seconds (process running for 3.418)
+2026-01-13 10:58:39 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-13 10:58:39 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-13 10:58:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 10:58:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-13 10:58:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-13 11:00:14 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.1 with PID 90357 (/Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/SilkRoute-ERP/target/classes started by kuba in /Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/SilkRoute-ERP)
+2026-01-13 11:00:14 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-13 11:00:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-13 11:00:14 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-13 11:00:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-13 11:00:14 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 140 ms. Found 3 JPA repository interfaces.
+2026-01-13 11:00:15 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-13 11:00:15 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-13 11:00:15 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-13 11:00:15 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-13 11:00:15 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-13 11:00:15 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 799 ms
+2026-01-13 11:00:15 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-13 11:00:15 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-13 11:00:15 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4eab18e9
+2026-01-13 11:00:15 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-13 11:00:16 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-13 11:00:16 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 11:00:16 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderController': Lookup method resolution failed
+2026-01-13 11:00:16 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 11:00:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-13 11:00:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-13 11:00:16 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-13 11:00:16 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-13 11:00:16 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.SilkRouteERPApplication.main(SilkRouteERPApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.silkroute_erp.sales.controller.OrderController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6caa3240]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476)
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/silkroute_erp/sales/exception/OrderNotFoundException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3035)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2331)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.silkroute_erp.sales.exception.OrderNotFoundException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:543)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 30 common frames omitted
+2026-01-13 11:00:32 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.1 with PID 90398 (/Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/SilkRoute-ERP/target/classes started by kuba in /Users/kuba/Library/Mobile Documents/com~apple~CloudDocs/Documents/Dokumenty – MacBook Air (Kuba)/repo/SilkRoute-ERP)
+2026-01-13 11:00:32 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-13 11:00:32 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-13 11:00:32 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-13 11:00:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-13 11:00:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 3 JPA repository interfaces.
+2026-01-13 11:00:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-13 11:00:33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-13 11:00:33 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-13 11:00:33 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-13 11:00:33 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-13 11:00:33 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 763 ms
+2026-01-13 11:00:33 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-13 11:00:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-13 11:00:33 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4eab18e9
+2026-01-13 11:00:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-13 11:00:34 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-13 11:00:34 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 11:00:34 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-13 11:00:35 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-13 11:00:35 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-13 11:00:35 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 18 mappings in 'requestMappingHandlerMapping'
+2026-01-13 11:00:35 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-01-13 11:00:35 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-13 11:00:35 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-13 11:00:35 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-13 11:00:35 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-01-13 11:00:35 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-13 11:00:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-13 11:00:35 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 2.903 seconds (process running for 3.699)
+2026-01-13 11:00:39 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-13 11:00:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c7ce97f
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@507dc520
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-01-13 11:00:39 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/index.html", parameters={}
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-13 11:00:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:39 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers?page=0&size=10&sortBy=lastName", parameters={masked}
+2026-01-13 11:00:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-13 11:00:40 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name limit ?,?
+2026-01-13 11:00:40 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-13 11:00:40 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-13 11:00:40 [http-nio-8080-exec-2] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-01-13 11:00:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-13 11:00:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders?size=1000&sortBy=typeName", parameters={masked}
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.type_name limit ?,?
+2026-01-13 11:00:43 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-13 11:00:43 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [1000]
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-13 11:00:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders?size=1000", parameters={masked}
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders(int, int, String, String)
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone,o1_0.date,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 left join customers c1_0 on c1_0.id=o1_0.customer_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id order by o1_0.date desc
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0a29df47-6372-403c-a55f-6be46a64d83c]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d27e6c78-870f-4005-bac7-983c664569a8]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [26b59160-730e-4c8f-9dc4-f70d5548d1cb]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1be47209-644e-4c77-ad21-ebaaac7a0b1a]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6e0ab419-40be-4ba0-9476-8f93adc93515]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e824a860-23eb-423d-ac8c-956329b1590d]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7d2670e4-f537-4b73-81e2-649301cb2c48]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:44 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c77e1e3d-ca26-4927-98bf-847756cddfe2]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.OrderDTO instances]
+2026-01-13 11:00:44 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders?size=1000&sortBy=typeName", parameters={masked}
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.type_name limit ?,?
+2026-01-13 11:00:44 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-13 11:00:44 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [1000]
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-13 11:00:44 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders?size=1000", parameters={masked}
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders(int, int, String, String)
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone,o1_0.date,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 left join customers c1_0 on c1_0.id=o1_0.customer_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id order by o1_0.date desc
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0a29df47-6372-403c-a55f-6be46a64d83c]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d27e6c78-870f-4005-bac7-983c664569a8]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [26b59160-730e-4c8f-9dc4-f70d5548d1cb]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1be47209-644e-4c77-ad21-ebaaac7a0b1a]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6e0ab419-40be-4ba0-9476-8f93adc93515]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e824a860-23eb-423d-ac8c-956329b1590d]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7d2670e4-f537-4b73-81e2-649301cb2c48]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id where s1_0.id=?
+2026-01-13 11:00:48 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c77e1e3d-ca26-4927-98bf-847756cddfe2]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.OrderDTO instances]
+2026-01-13 11:00:48 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers?page=0&size=10&sortBy=lastName", parameters={masked}
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name limit ?,?
+2026-01-13 11:00:49 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-13 11:00:49 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-13 11:00:49 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-13 11:00:51 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-13 11:00:51 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-13 11:00:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-13 11:00:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-13 11:00:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

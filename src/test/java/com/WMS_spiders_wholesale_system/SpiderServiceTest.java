@@ -1,10 +1,10 @@
 //package com.WMS_spiders_wholesale_system;
 //
-//import com.WMS_spiders_wholesale_system.entity.Spider;
-//import com.WMS_spiders_wholesale_system.exception.InvalidSpiderDataException;
-//import com.WMS_spiders_wholesale_system.exception.SpiderNotFoundException;
-//import com.WMS_spiders_wholesale_system.repository.SpiderRepository;
-//import com.WMS_spiders_wholesale_system.service.SpiderService;
+//import com.entity.sales.Spider;
+//import com.exception.sales.InvalidSpiderDataException;
+//import com.exception.sales.SpiderNotFoundException;
+//import com.repository.sales.SpiderRepository;
+//import com.service.sales.SpiderService;
 //import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
 //import org.mockito.*;

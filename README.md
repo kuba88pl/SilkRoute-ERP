@@ -1,62 +1,42 @@
-# Spiders Wholesale System 
-Order management application written in Spring Boot. Application allows to add customers, products (spiders - in this case), create and manage orders. Data is strored in mySQL database.
-## Contents
+# SilkRoute ERP 🕷️📦
 
-- [Functionality](#functionality)
-- [Requirements](#requirements)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Licence](#licence)
-- [Contact](#contact)
+**SilkRoute ERP** is a professional Enterprise Resource Planning system designed for the niche industry of exotic arachnid breeding and wholesale distribution. The system manages the entire lifecycle of specimens—from large-scale inventory logistics to granular biological data tracking.
 
-## Functionality
+## 🚀 Key Modules
 
-- **Add Customer:** Add a new customer, with a name, last name, unique ID and contact infromations like an addrress,
- parcel locker, telephone number and email .
-- **Remove Customer:** Remove customers by their ID.
-- **Add Spider:** Add a new spider, with species, type names, quantity, size and price.
-- **Remove Spider:** Remove spiders by their ID.
-- **Add Order:** Add a new order, with unique ID, customer and spiders loaded from a mySQL database.
-- **Display List:** Show all customers, spiders and orders in the list with pagination.
-- **Data Persistence:** Automatically saves and loads the customers, spiders and orders list from a mySQL database.
+### 1. Sales & Inventory Module
+* **Wholesale Management**: Specialized for handling large quantities of specimens (e.g., L1, L2 slings).
+* **Inventory Valuation**: Real-time stock tracking and pricing management.
+* **Order Processing**: Automated workflow for wholesale transactions.
 
-## Requirements
+### 2. Breeding Intelligence Module
+* **Breeding Reports**: Comprehensive logs for individual specimens (e.g., "Renia", "H. dictator").
+* **Event Analysis**: Historical tracking of matings, molts, and feeding patterns.
+* **Environmental Optimization**: Monitoring of thermal gradients (29°C - 31°C) and humidity to maximize cocoon success rates.
 
-- Java Development Kit (JDK) 8 or later.
+## 🛠️ Tech Stack
 
-## Getting Started
+* **Language**: **Java 24** (Utilizing the latest JVM features)
+* **Framework**: **Spring Boot 3.x**
+* **Data Access**: Spring Data JPA / Hibernate
+* **Database**: **MySQL 8.x**
+* **Architecture**: Modular Monolith (Clean separation of Sales and Breeding domains)
 
-1.  Clone the repository:
-```bash
-git clone [[https://github.com/YourUsername/user-manager-cli.git] (https://github.com/kuba88pl/WMS-spider-wholesale-system.git)
-```
-2. Crewate EMPTY database. For example:
+---
 
-```bash
-CREATE database wms_spiders_wholesale_system;
-```
+## 💾 Database Configuration
 
-The application connects to a MySQL database. The connection parameters are defined in the src/main/resources/application.properties file. You may need to adjust these values to fit your local environment or a different server.
-```bash
-spring.datasource.url=jdbc:mysql://database_url
-spring.datasource.username=database_user
-spring.datasource.password=database_password
-```
-3. Navigate to the project directory.
-```bash
-cd WMS-spider-wholesale-system
-```
-4. Build the project:
-Use Maven to build the project and create a runnable .jar dile.
-```bash
-mvn clean package
-```
-5. Run the application
-```bash
-java -jar target/spiders-wholesale-system-0.0.1-SNAPSHOT.jar
-```
-After this steps application is running. Open your internet browswer and type url: 
-```bash
-http://localhost:8080/index.html
-```
+To connect the application to your local MySQL instance, update your `src/main/resources/application.properties` as follows:
 
+```properties
+# MySQL Connection Settings
+spring.datasource.url=jdbc:mysql://localhost:3306/silkroute_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=your_mysql_user
+spring.datasource.password=your_mysql_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA / Hibernate Properties
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.format_sql=true

@@ -9,10 +9,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.coolspiders</groupId>
-    <artifactId>CoolSpiders</artifactId>
+    <artifactId>silkroute-erp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>CoolSpiders</name>
-    <description>CoolSpiders</description>
+    <name>SilkRoute ERP</name>
+    <description>Enterprise Resource Planning system for arachnid breeding and wholesale management.
+        Includes modules for inventory tracking, breeding history logging, and environmental
+        parameter optimization for large-scale exotic animal trade.</description>
     <url/>
     <licenses>
         <license/>

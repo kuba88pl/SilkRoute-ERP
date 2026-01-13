@@ -1,12 +1,12 @@
 package com.WMS_spiders_wholesale_system;
 
-import com.WMS_spiders_wholesale_system.dto.CustomerDTO;
-import com.WMS_spiders_wholesale_system.entity.Customer;
-import com.WMS_spiders_wholesale_system.exception.CustomerAlreadyExistsException;
-import com.WMS_spiders_wholesale_system.exception.CustomerNotFoundException;
-import com.WMS_spiders_wholesale_system.exception.InvalidCustomerDataException;
-import com.WMS_spiders_wholesale_system.repository.CustomerRepository;
-import com.WMS_spiders_wholesale_system.service.CustomerService;
+import com.silkroute_erp.sales.dto.CustomerDTO;
+import com.silkroute_erp.sales.entity.Customer;
+import com.silkroute_erp.sales.exception.CustomerAlreadyExistsException;
+import com.silkroute_erp.sales.exception.CustomerNotFoundException;
+import com.silkroute_erp.sales.exception.InvalidCustomerDataException;
+import com.silkroute_erp.sales.repository.CustomerRepository;
+import com.silkroute_erp.sales.service.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
