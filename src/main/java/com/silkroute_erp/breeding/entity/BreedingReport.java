@@ -18,7 +18,7 @@ import java.util.UUID;
 public class BreedingReport {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(nullable = false)
@@ -30,7 +30,6 @@ public class BreedingReport {
     private LocalDate matingDate;
     private LocalDate eggsackDate;
 
-    @Column(precision = 3, scale = 1)
     private Double averageTemperature;
 
     @Enumerated(EnumType.STRING)

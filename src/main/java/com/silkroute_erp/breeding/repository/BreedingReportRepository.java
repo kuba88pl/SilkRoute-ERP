@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Repository
 public interface BreedingReportRepository extends JpaRepository<BreedingReport, UUID> {
-    List<BreedingReport> findBySpeciesIgnoreCase(String speciesName);
+    List<BreedingReport> findBySpeciesNameIgnoreCase(String speciesName);
 
     List<BreedingReport> findByStatus(BreedingStatus status);
 
