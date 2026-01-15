@@ -1,0 +1,69 @@
+/* ============================================
+   GLOBAL
+============================================ */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* ============================================
+   GLASS CARD
+============================================ */
+.glass-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+/* ============================================
+   NAVBAR BUTTONS
+============================================ */
+.nav-btn {
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.nav-btn-active {
+    background-color: #0f172a;
+    color: white;
+}
+
+/* ============================================
+   TABLES
+============================================ */
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    white-space: nowrap;
+}
+
+/* ============================================
+   MODALS
+============================================ */
+.modal-open {
+    overflow: hidden;
+}
+
+/* ============================================
+   ANIMATIONS (opcjonalne, lekkie)
+============================================ */
+.fade-in {
+    animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to   { opacity: 1; transform: scale(1); }
+}

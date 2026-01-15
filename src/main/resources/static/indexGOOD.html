@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SilkRoute ERP - Modern Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; @apply bg-slate-50 text-slate-900; }
+        .glass-card { @apply bg-white border border-slate-200 rounded-xl shadow-sm p-6 transition-all duration-300; }
+
+        /* Klasy statusów dla wierszy zamówień */
+        .status-border-NEW { border-left: 5px solid #10b981; }
+        .status-border-PAID { border-left: 5px solid #f59e0b; }
+        .status-border-SHIPPED { border-left: 5px solid #3b82f6; }
+        .status-border-CANCELLED { border-left: 5px solid #ef4444; }
+
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; padding: 0; }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+<nav class="max-w-7xl mx-auto flex items-center justify-between mb-10 bg-white p-4 rounded-xl border border-slate-200 shadow-sm no-print">
+    <div class="flex items-center gap-2 text-xl font-extrabold tracking-tighter">
+        <i class="bi bi-hexagon-fill text-emerald-500"></i>
+        SILKROUTE <span class="text-slate-400 font-normal">ERP</span>
+    </div>
+    <div class="flex gap-6 font-semibold text-slate-500">
+        <button onclick="showSection('orders')" class="hover:text-slate-900 transition-colors">Zamówienia</button>
+        <button onclick="showSection('spiders')" class="hover:text-slate-900 transition-colors">Pająki</button>
+        <button onclick="showSection('customers')" class="hover:text-slate-900 transition-colors">Klienci</button>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 no-print">
+        <h1 id="sectionTitle" class="text-3xl font-extrabold tracking-tight text-slate-900">Zamówienia</h1>
+        <div id="sectionActions">
+        </div>
+    </div>
+
+    <div id="orders-section" class="content-section">
+        <div class="glass-card mb-6 no-print">
+            <div class="max-w-xs">
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-2 tracking-wider">Filtruj status</label>
+                <select id="orderStatusFilter" onchange="loadOrders()" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-emerald-500">
+                    <option value="">Wszystkie</option>
+                    <option value="NEW">Nowe</option>
+                    <option value="PAID">Opłacone</option>
+                    <option value="SHIPPED">Wysłane</option>
+                    <option value="CANCELLED">Anulowane</option>
+                </select>
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full border-separate border-spacing-y-3">
+                <thead>
+                <tr class="text-left text-xs font-bold uppercase text-slate-400 tracking-widest">
+                    <th class="px-6 py-2">ID</th>
+                    <th class="px-6 py-2">Klient</th>
+                    <th class="px-6 py-2">Data</th>
+                    <th class="px-6 py-2">Suma</th>
+                    <th class="px-6 py-2 text-center">Status</th>
+                    <th class="px-6 py-2 text-right">Akcje</th>
+                </tr>
+                </thead>
+                <tbody id="ordersTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="spiders-section" class="content-section hidden">
+        <div class="glass-card mb-6 flex flex-wrap gap-4 no-print">
+            <input type="text" id="spiderSearch" oninput="filterSpiders()" placeholder="Szukaj gatunku..." class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm flex-1 outline-none">
+            <select id="spiderTypeFilter" onchange="filterSpiders()" class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm w-48 outline-none"></select>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full border-separate border-spacing-y-2">
+                <thead>
+                <tr class="text-left text-xs font-bold uppercase text-slate-400 tracking-widest">
+                    <th class="px-4 py-2">Gatunek</th>
+                    <th class="px-4 py-2">Rodzaj</th>
+                    <th class="px-4 py-2 text-center">Ilość</th>
+                    <th class="px-4 py-2 text-right">Cena</th>
+                    <th class="px-4 py-2 text-right">Akcje</th>
+                </tr>
+                </thead>
+                <tbody id="spidersTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="customers-section" class="content-section hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full border-separate border-spacing-y-2">
+                <thead>
+                <tr class="text-left text-xs font-bold uppercase text-slate-400 tracking-widest">
+                    <th class="px-4 py-2">Imię i Nazwisko</th>
+                    <th class="px-4 py-2">Kontakt</th>
+                    <th class="px-4 py-2">Adres</th>
+                    <th class="px-4 py-2 text-right">Akcje</th>
+                </tr>
+                </thead>
+                <tbody id="customersTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<div id="mainModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm no-print">
+    <div class="bg-white w-full max-w-4xl p-8 rounded-2xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 text-2xl"><i class="bi bi-x-lg"></i></button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script>
+    const API_URL = 'http://localhost:8080/api';
+    let allSpiders = [];
+
+    // --- NAWIGACJA ---
+    function showSection(id) {
+        document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
+        document.getElementById(id + '-section').classList.remove('hidden');
+
+        const titles = { 'orders': 'Zamówienia', 'spiders': 'Inwentarz Pająków', 'customers': 'Baza Klientów' };
+        document.getElementById('sectionTitle').innerText = titles[id];
+
+        if(id === 'orders') loadOrders();
+        if(id === 'spiders') loadSpiders();
+        if(id === 'customers') loadCustomers();
+        updateActions(id);
+    }
+
+    function updateActions(id) {
+        const container = document.getElementById('sectionActions');
+        if(id === 'orders') {
+            container.innerHTML = `<button onclick="alert('Funkcja dodawania w przygotowaniu')" class="bg-slate-900 text-white px-5 py-2.5 rounded-lg font-bold hover:bg-slate-800 shadow-lg flex items-center gap-2"><i class="bi bi-plus-lg"></i> Nowe Zamówienie</button>`;
+        } else {
+            container.innerHTML = '';
+        }
+    }
+
+    // --- LOGIKA ZAMÓWIEŃ (ODCZYT Z BAZY) ---
+    async function loadOrders() {
+        const status = document.getElementById('orderStatusFilter').value;
+        const url = status ? `${API_URL}/orders/status/${status}` : `${API_URL}/orders`;
+        try {
+            const res = await fetch(url);
+            const orders = await res.json();
+            const tbody = document.getElementById('ordersTableBody');
+            tbody.innerHTML = '';
+
+            orders.sort((a,b) => b.id - a.id).forEach(order => {
+                const tr = document.createElement('tr');
+                tr.className = `bg-white shadow-sm transition-all hover:shadow-md status-border-${order.status}`;
+                tr.innerHTML = `
+                        <td class="px-6 py-4 font-bold text-slate-400">#${order.id}</td>
+                        <td class="px-6 py-4 font-semibold text-slate-900">${order.customer ? order.customer.firstName + ' ' + order.customer.lastName : 'Brak'}</td>
+                        <td class="px-6 py-4 text-slate-500 text-sm">${new Date(order.orderDate).toLocaleDateString()}</td>
+                        <td class="px-6 py-4 font-extrabold">${order.totalAmount.toFixed(2)} PLN</td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase border bg-slate-50">${order.status}</span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <button onclick="viewOrderDetails(${order.id})" class="text-slate-400 hover:text-emerald-600 p-2"><i class="bi bi-eye-fill"></i></button>
+                        </td>
+                    `;
+                tbody.appendChild(tr);
+            });
+        } catch (e) { console.error("Błąd API Orders:", e); }
+    }
+
+    // --- LOGIKA PAJĄKÓW (ODCZYT Z BAZY) ---
+    async function loadSpiders() {
+        try {
+            const res = await fetch(`${API_URL}/spiders`);
+            allSpiders = await res.json();
+
+            // Filtry
+            const types = [...new Set(allSpiders.map(s => s.type))];
+            const typeFilter = document.getElementById('spiderTypeFilter');
+            typeFilter.innerHTML = '<option value="">Wszystkie rodzaje</option>' + types.map(t => `<option value="${t}">${t}</option>`).join('');
+
+            renderSpiders(allSpiders);
+        } catch (e) { console.error("Błąd API Spiders:", e); }
+    }
+
+    function renderSpiders(data) {
+        const tbody = document.getElementById('spidersTableBody');
+        tbody.innerHTML = data.map(s => `
+                <tr class="bg-white shadow-sm border-l-4 border-slate-200">
+                    <td class="px-4 py-3 font-bold text-slate-800">${s.species}</td>
+                    <td class="px-4 py-3 text-slate-500 text-sm">${s.type}</td>
+                    <td class="px-4 py-3 text-center font-semibold">${s.quantity}</td>
+                    <td class="px-4 py-3 text-right font-extrabold text-emerald-600">${s.price.toFixed(2)} PLN</td>
+                    <td class="px-4 py-3 text-right">
+                        <button class="text-slate-300 hover:text-slate-600"><i class="bi bi-pencil-square"></i></button>
+                    </td>
+                </tr>
+            `).join('');
+    }
+
+    function filterSpiders() {
+        const term = document.getElementById('spiderSearch').value.toLowerCase();
+        const type = document.getElementById('spiderTypeFilter').value;
+        const filtered = allSpiders.filter(s =>
+            s.species.toLowerCase().includes(term) && (type === '' || s.type === type)
+        );
+        renderSpiders(filtered);
+    }
+
+    // --- LOGIKA KLIENTÓW ---
+    async function loadCustomers() {
+        try {
+            const res = await fetch(`${API_URL}/customers?size=1000`);
+            const data = await res.json();
+            const tbody = document.getElementById('customersTableBody');
+            tbody.innerHTML = data.content.map(c => `
+                    <tr class="bg-white shadow-sm">
+                        <td class="px-4 py-3 font-bold">${c.firstName} ${c.lastName}</td>
+                        <td class="px-4 py-3 text-sm text-slate-500">${c.email}<br>${c.phoneNumber}</td>
+                        <td class="px-4 py-3 text-xs text-slate-400">${c.address}</td>
+                        <td class="px-4 py-3 text-right">
+                            <button class="text-slate-300 hover:text-slate-600"><i class="bi bi-person-lines-fill"></i></button>
+                        </td>
+                    </tr>
+                `).join('');
+        } catch (e) { console.error("Błąd API Customers:", e); }
+    }
+
+    // --- MODAL & SZCZEGÓŁY ---
+    async function viewOrderDetails(id) {
+        const res = await fetch(`${API_URL}/orders/${id}`);
+        const order = await res.json();
+
+        document.getElementById('modalContent').innerHTML = `
+                <h2 class="text-2xl font-extrabold mb-4">Szczegóły zamówienia #${order.id}</h2>
+                <div class="grid grid-cols-2 gap-8 mb-6 border-b pb-6">
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase">Klient</p>
+                        <p class="font-bold text-lg">${order.customer.firstName} ${order.customer.lastName}</p>
+                        <p class="text-slate-500">${order.customer.email}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs font-bold text-slate-400 uppercase">Data zamówienia</p>
+                        <p class="font-bold">${new Date(order.orderDate).toLocaleString()}</p>
+                    </div>
+                </div>
+                <table class="w-full mb-6">
+                    <thead class="border-b">
+                        <tr class="text-left text-xs text-slate-400 uppercase"><th class="py-2">Produkt</th><th class="py-2 text-center">Ilość</th><th class="py-2 text-right">Cena</th></tr>
+                    </thead>
+                    <tbody>
+                        ${order.items.map(item => `
+                            <tr class="border-b border-slate-50">
+                                <td class="py-3 font-semibold">${item.spider.species}</td>
+                                <td class="py-3 text-center">${item.quantity}</td>
+                                <td class="py-3 text-right">${item.priceAtOrder.toFixed(2)} PLN</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                <div class="flex justify-between items-center bg-slate-900 text-white p-6 rounded-xl">
+                    <span class="font-bold text-slate-400 uppercase tracking-widest text-xs">Suma całkowita</span>
+                    <span class="text-3xl font-black">${order.totalAmount.toFixed(2)} PLN</span>
+                </div>
+                <button onclick="window.print()" class="mt-6 w-full border border-slate-200 py-3 rounded-xl font-bold hover:bg-slate-50 transition-colors">
+                    <i class="bi bi-printer me-2"></i> Drukuj potwierdzenie
+                </button>
+            `;
+        document.getElementById('mainModal').classList.remove('hidden');
+    }
+
+    function closeModal() { document.getElementById('mainModal').classList.add('hidden'); }
+
+    // Start aplikacji
+    window.onload = () => showSection('orders');
+</script>
+</body>
+</html>
