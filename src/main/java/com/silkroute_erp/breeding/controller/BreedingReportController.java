@@ -15,6 +15,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("api/v1/breeding")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class BreedingReportController {
 
