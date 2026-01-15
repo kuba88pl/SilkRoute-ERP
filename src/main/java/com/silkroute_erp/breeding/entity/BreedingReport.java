@@ -29,6 +29,7 @@ public class BreedingReport {
 
     private LocalDate matingDate;
     private LocalDate eggsackDate;
+    private LocalDate eggsackPullDate;
 
     private Double averageTemperature;
 
@@ -38,5 +39,12 @@ public class BreedingReport {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "report_id")
     private List<BreedingEntry> entries = new ArrayList<>();
+
+    public Long getDaysWithMother() {
+        if (eggsackDate !=null && eggsackPullDate !=null) {
+            return java.time.temporal.ChronoUnit.DAYS.between(eggsackDate, eggsackPullDate);
+        }
+        return null;
+    }
 
 }
