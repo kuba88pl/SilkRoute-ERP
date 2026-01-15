@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>SilkRoute ERP - Sale Management</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ikony -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="p-6 md:p-12">
+
+<!-- MAIN WRAPPER -->
+<div class="max-w-6xl mx-auto">
+
+    <!-- HEADER -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
+        <div>
+            <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
+                SilkRoute <span class="text-emerald-600 italic">Sale</span>
+            </h1>
+            <p class="text-slate-500 font-medium mt-2">
+                Profesjonalny system obsługi sprzedaży
+            </p>
+        </div>
+
+        <button onclick="location.reload()"
+                class="bg-white border border-slate-200 hover:bg-slate-50 px-8 py-3 rounded-2xl font-bold text-slate-700 transition flex items-center gap-3 shadow-sm active:scale-95">
+            <i class="bi bi-arrow-clockwise text-emerald-600 text-xl"></i>
+            ODŚWIEŻ SYSTEM
+        </button>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav class="glass-card rounded-[2rem] p-4 mb-12 flex gap-4 justify-center">
+        <button onclick="showSection('customers-section')" id="nav-customers"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Klienci
+        </button>
+
+        <button onclick="showSection('spiders-section')" id="nav-spiders"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Pająki
+        </button>
+
+        <button onclick="showSection('orders-section')" id="nav-orders"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Zamówienia
+        </button>
+    </nav>
+
+    <!-- ========================= -->
+    <!--      SEKCJA KLIENCI       -->
+    <!-- ========================= -->
+    <section id="customers-section" class="mb-16">
+        <!-- Wypełnia customers.js -->
+    </section>
+
+    <!-- ========================= -->
+    <!--       SEKCJA PAJĄKI       -->
+    <!-- ========================= -->
+    <section id="spiders-section" class="mb-16 hidden">
+        <!-- Wypełnia spiders.js -->
+    </section>
+
+    <!-- ========================= -->
+    <!--     SEKCJA ZAMÓWIENIA     -->
+    <!-- ========================= -->
+    <section id="orders-section" class="mb-16 hidden">
+        <!-- Wypełnia orders.js -->
+    </section>
+
+</div>
+
+<!-- ========================= -->
+<!--         MODALE            -->
+<!-- ========================= -->
+
+<!-- Modal Klienta -->
+<div id="customerModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <!-- Wypełnia modals.js -->
+</div>
+
+<!-- Modal Pająka -->
+<div id="spiderModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <!-- Wypełnia modals.js -->
+</div>
+
+<!-- Modal Zamówienia -->
+<div id="orderModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <!-- Wypełnia modals.js -->
+</div>
+
+<!-- Modal Szczegółów Zamówienia -->
+<div id="orderDetailsModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <!-- Wypełnia modals.js -->
+</div>
+
+<!-- ========================= -->
+<!--        SKRYPTY JS         -->
+<!-- ========================= -->
+
+<script type="module" src="js/api.js"></script>
+<script type="module" src="js/state.js"></script>
+<script type="module" src="js/modals.js"></script>
+<script type="module" src="js/customers.js"></script>
+<script type="module" src="js/spiders.js"></script>
+<script type="module" src="js/orders.js"></script>
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>
