@@ -180,6 +180,10 @@ function renderOrderRows() {
     });
 }
 
+/* ============================================================
+   PAGINACJA
+============================================================ */
+
 function renderOrderPagination() {
     const container = document.getElementById("orders-pagination");
     if (!container) return;
@@ -242,6 +246,13 @@ async function showOrderDetails(id) {
             <p>${order.customer.telephone}</p>
             <p>${order.customer.address}</p>
             <p>${order.customer.parcelLocker || "—"}</p>
+
+            <hr class="my-6">
+
+            <h4 class="text-xl font-black mb-2">Wysyłka</h4>
+            <p><strong>Odbiór osobisty:</strong> ${order.selfCollection ? "Tak" : "Nie"}</p>
+            <p><strong>Kurier:</strong> ${order.courierCompany || "—"}</p>
+            <p><strong>Numer przesyłki:</strong> ${order.shipmentNumber || "—"}</p>
 
             <hr class="my-6">
 
@@ -381,14 +392,14 @@ function renderOrderForm(order = null) {
                         <h4 class="text-xl font-black mb-4">Wysyłka</h4>
 
                         <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" id="order-pickup"
+                            <input type="checkbox" id="order-self-collection"
                                    class="w-5 h-5 rounded border-slate-300">
                             <span class="text-slate-700 font-bold">Odbiór osobisty</span>
                         </label>
 
                         <div id="order-courier-section" class="space-y-2">
                             <label class="text-xs font-black text-slate-400 uppercase ml-1">Kurier</label>
-                            <select id="order-courier"
+                            <select id="order-courier-company"
                                     class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
                                 <option value="">— wybierz kuriera —</option>
                                 <option value="DPD">DPD</option>
@@ -401,7 +412,7 @@ function renderOrderForm(order = null) {
 
                         <div id="order-tracking-section" class="space-y-2">
                             <label class="text-xs font-black text-slate-400 uppercase ml-1">Numer przesyłki</label>
-                            <input id="order-tracking-number"
+                            <input id="order-shipment-number"
                                    type="text"
                                    placeholder="np. 1234567890"
                                    class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
@@ -532,6 +543,11 @@ function renderOrderCustomerDetails() {
         </div>
     `;
 }
+
+/* ============================================================
+   PAJĄKI W FORMULARZU
+============================================================ */
+
 let availableSpidersCache = [];
 let availableSpidersFilter = "";
 
@@ -663,6 +679,10 @@ function attachSpiderSelectionEvents() {
     });
 }
 
+/* ============================================================
+   KOSZYK
+============================================================ */
+
 function updateSpiderRowInTable(spider) {
     const qtyCell = document.querySelector(`[data-spider-qty="${spider.id}"]`);
     const addBtn = document.querySelector(`[data-add-spider="${spider.id}"]`);
@@ -679,6 +699,7 @@ function updateSpiderRowInTable(spider) {
             "px-4 py-2 rounded-xl font-bold bg-slate-200 text-slate-400 cursor-not-allowed";
     }
 }
+
 function renderOrderCart() {
     const cart = state.orderedSpiders;
     const container = document.getElementById("order-cart");
@@ -794,16 +815,21 @@ function updateFinalPriceField() {
         input.value = calculateOrderTotal().toFixed(2);
     }
 }
+
+/* ============================================================
+   FORMULARZ — LOGIKA
+============================================================ */
+
 function attachOrderFormEvents() {
     const form = document.getElementById("order-form");
     if (!form) return;
 
-    const pickupCheckbox = document.getElementById("order-pickup");
+    const selfCollectionCheckbox = document.getElementById("order-self-collection");
     const courierSection = document.getElementById("order-courier-section");
     const trackingSection = document.getElementById("order-tracking-section");
 
     function updateShippingVisibility() {
-        if (pickupCheckbox.checked) {
+        if (selfCollectionCheckbox.checked) {
             courierSection.style.display = "none";
             trackingSection.style.display = "none";
         } else {
@@ -812,7 +838,7 @@ function attachOrderFormEvents() {
         }
     }
 
-    pickupCheckbox.onchange = updateShippingVisibility;
+    selfCollectionCheckbox.onchange = updateShippingVisibility;
     updateShippingVisibility();
 
     document.getElementById("order-final-price-edit").onclick = () => {
@@ -851,17 +877,17 @@ function attachOrderFormEvents() {
             document.getElementById("order-final-price").value
         );
 
-        const pickup = pickupCheckbox.checked;
-        const courier = document.getElementById("order-courier").value;
-        const tracking = document.getElementById("order-tracking-number").value;
+        const selfCollection = selfCollectionCheckbox.checked;
+        const courierCompany = document.getElementById("order-courier-company").value;
+        const shipmentNumber = document.getElementById("order-shipment-number").value;
         const status = document.getElementById("order-status").value;
 
-        if (!pickup && status === "SHIPPED") {
-            if (!courier) {
+        if (!selfCollection && status === "SHIPPED") {
+            if (!courierCompany) {
                 alert("Wybierz kuriera");
                 return;
             }
-            if (!tracking.trim()) {
+            if (!shipmentNumber.trim()) {
                 alert("Podaj numer przesyłki");
                 return;
             }
@@ -871,9 +897,9 @@ function attachOrderFormEvents() {
             id: id || null,
             customerId: customer.id,
             price: finalPrice,
-            pickup: pickup,
-            courier: pickup ? null : courier,
-            trackingNumber: pickup ? null : tracking,
+            selfCollection: selfCollection,
+            courierCompany: selfCollection ? null : courierCompany,
+            shipmentNumber: selfCollection ? null : shipmentNumber,
             status: status,
             orderedSpiders: items.map((os) => ({
                 spiderId: os.spider.id,
@@ -897,6 +923,11 @@ function attachOrderFormEvents() {
         }
     };
 }
+
+/* ============================================================
+   EDYCJA ZAMÓWIENIA
+============================================================ */
+
 async function editOrder(id) {
     try {
         const order = await getOrder(id);
@@ -913,6 +944,9 @@ async function editOrder(id) {
 
         openOrderModal(renderOrderForm(order));
 
+        // pozwól DOM-owi się wyrenderować
+        await new Promise((r) => setTimeout(r, 0));
+
         renderOrderCustomers();
         renderOrderCustomerDetails();
         renderOrderCart();
@@ -924,18 +958,18 @@ async function editOrder(id) {
             order.price.toFixed(2);
         document.getElementById("order-status").value = order.status;
 
-        const pickupCheckbox = document.getElementById("order-pickup");
-        const courierInput = document.getElementById("order-courier");
-        const trackingInput = document.getElementById("order-tracking-number");
+        const selfCollectionCheckbox = document.getElementById("order-self-collection");
+        const courierInput = document.getElementById("order-courier-company");
+        const trackingInput = document.getElementById("order-shipment-number");
         const courierSection = document.getElementById("order-courier-section");
         const trackingSection = document.getElementById("order-tracking-section");
 
-        pickupCheckbox.checked = order.pickup === true;
-        courierInput.value = order.courier || "";
-        trackingInput.value = order.trackingNumber || "";
+        selfCollectionCheckbox.checked = order.selfCollection === true;
+        courierInput.value = order.courierCompany || "";
+        trackingInput.value = order.shipmentNumber || "";
 
         function updateShippingVisibility() {
-            if (pickupCheckbox.checked) {
+            if (selfCollectionCheckbox.checked) {
                 courierSection.style.display = "none";
                 trackingSection.style.display = "none";
             } else {
@@ -944,7 +978,7 @@ async function editOrder(id) {
             }
         }
 
-        pickupCheckbox.onchange = updateShippingVisibility;
+        selfCollectionCheckbox.onchange = updateShippingVisibility;
         updateShippingVisibility();
 
         attachOrderFormEvents();
@@ -953,6 +987,10 @@ async function editOrder(id) {
         alert("Nie udało się wczytać zamówienia");
     }
 }
+
+/* ============================================================
+   ANULOWANIE ZAMÓWIENIA
+============================================================ */
 
 async function cancelOrderAction(id) {
     if (!confirm("Czy na pewno chcesz anulować to zamówienie?")) return;
@@ -964,6 +1002,11 @@ async function cancelOrderAction(id) {
         alert("Nie udało się anulować zamówienia");
     }
 }
+
+/* ============================================================
+   EVENTY GŁÓWNE
+============================================================ */
+
 function attachOrderEvents() {
     const addBtn = document.getElementById("addOrderBtn");
     if (addBtn) {
@@ -972,10 +1015,16 @@ function attachOrderEvents() {
 
             openOrderModal(renderOrderForm());
 
+            // pozwól DOM-owi się wyrenderować
+            await new Promise((r) => setTimeout(r, 0));
+
             await loadOrderCustomers();
             await loadOrderSpiders();
 
+            renderOrderCustomers();
+            renderOrderCustomerDetails();
             renderOrderCart();
+
             attachOrderFormEvents();
         };
     }
@@ -998,3 +1047,4 @@ function attachOrderEvents() {
 /* ============================================================
    KONIEC PLIKU
 ============================================================ */
+
