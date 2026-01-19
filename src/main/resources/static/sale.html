@@ -4,25 +4,17 @@
     <meta charset="UTF-8">
     <title>SilkRoute ERP - Sale Management</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ikony -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-    <!-- Style -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="p-6 md:p-12">
 
-<!-- MAIN WRAPPER -->
-<div class="max-w-6xl mx-auto">
+<!-- 🔥 USUNIĘTO max-w-6xl — TERAZ PEŁNA SZEROKOŚĆ -->
+<div class="w-full max-w-none mx-auto">
 
-    <!-- HEADER -->
     <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
         <div>
             <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
@@ -40,7 +32,6 @@
         </button>
     </header>
 
-    <!-- NAVBAR -->
     <nav class="glass-card rounded-[2rem] p-4 mb-12 flex gap-4 justify-center">
         <button onclick="showSection('customers-section')" id="nav-customers"
                 class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
@@ -58,57 +49,43 @@
         </button>
     </nav>
 
-    <!-- ========================= -->
-    <!--      SEKCJA KLIENCI       -->
-    <!-- ========================= -->
-    <section id="customers-section" class="mb-16">
-        <!-- Wypełnia customers.js -->
-    </section>
-
-    <!-- ========================= -->
-    <!--       SEKCJA PAJĄKI       -->
-    <!-- ========================= -->
-    <section id="spiders-section" class="mb-16 hidden">
-        <!-- Wypełnia spiders.js -->
-    </section>
-
-    <!-- ========================= -->
-    <!--     SEKCJA ZAMÓWIENIA     -->
-    <!-- ========================= -->
-    <section id="orders-section" class="mb-16 hidden">
-        <!-- Wypełnia orders.js -->
-    </section>
+    <!-- 🔥 SEKCJE MOGĄ BYĆ SZEROKIE -->
+    <section id="customers-section" class="mb-16"></section>
+    <section id="spiders-section" class="mb-16 hidden"></section>
+    <section id="orders-section" class="mb-16 hidden"></section>
 
 </div>
 
-<!-- ========================= -->
-<!--         MODALE            -->
-<!-- ========================= -->
-
-<!-- Modal Klienta -->
-<div id="customerModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <!-- Wypełnia modals.js -->
+<!-- MODALE -->
+<div id="customerModal" class="hidden fixed inset-0 z-50">
+    <div class="modal-backdrop absolute inset-0 bg-slate-900/40 backdrop-blur-md"></div>
+    <div class="modal-content absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+        <div class="modal-inner pointer-events-auto"></div>
+    </div>
 </div>
 
-<!-- Modal Pająka -->
-<div id="spiderModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <!-- Wypełnia modals.js -->
+<div id="spiderModal" class="hidden fixed inset-0 z-50">
+    <div class="modal-backdrop absolute inset-0 bg-slate-900/40 backdrop-blur-md"></div>
+    <div class="modal-content absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+        <div class="modal-inner pointer-events-auto"></div>
+    </div>
 </div>
 
-<!-- Modal Zamówienia -->
-<div id="orderModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <!-- Wypełnia modals.js -->
+<div id="orderModal" class="hidden fixed inset-0 z-50">
+    <div class="modal-backdrop absolute inset-0 bg-slate-900/40 backdrop-blur-md"></div>
+    <div class="modal-content absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+        <div class="modal-inner pointer-events-auto"></div>
+    </div>
 </div>
 
-<!-- Modal Szczegółów Zamówienia -->
-<div id="orderDetailsModal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
-    <!-- Wypełnia modals.js -->
+<div id="orderDetailsModal" class="hidden fixed inset-0 z-50">
+    <div class="modal-backdrop absolute inset-0 bg-slate-900/40 backdrop-blur-md"></div>
+    <div class="modal-content absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+        <div class="modal-inner pointer-events-auto"></div>
+    </div>
 </div>
 
-<!-- ========================= -->
-<!--        SKRYPTY JS         -->
-<!-- ========================= -->
-
+<!-- SKRYPTY -->
 <script type="module" src="js/api.js"></script>
 <script type="module" src="js/state.js"></script>
 <script type="module" src="js/modals.js"></script>

@@ -17,7 +17,6 @@ async function request(path, options = {}) {
         throw new Error(`API error: ${res.status}`);
     }
 
-    // 204 No Content
     if (res.status === 204) return null;
 
     return res.json();
@@ -38,6 +37,19 @@ export function createCustomer(payload) {
     });
 }
 
+export function updateCustomer(id, payload) {
+    return request(`/customers/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(payload)
+    });
+}
+
+export function deleteCustomer(id) {
+    return request(`/customers/${id}`, {
+        method: "DELETE"
+    });
+}
+
 /* ============================================================
    SPIDERS
 ============================================================ */
@@ -50,6 +62,19 @@ export function createSpider(payload) {
     return request("/spiders", {
         method: "POST",
         body: JSON.stringify(payload)
+    });
+}
+
+export function updateSpider(id, payload) {
+    return request(`/spiders/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(payload)
+    });
+}
+
+export function deleteSpider(id) {
+    return request(`/spiders/${id}`, {
+        method: "DELETE"
     });
 }
 
