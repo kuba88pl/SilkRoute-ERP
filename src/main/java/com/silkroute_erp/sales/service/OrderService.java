@@ -34,6 +34,7 @@ public class OrderService {
 
     @Transactional
     public Order createOrder(OrderDTO orderDTO) {
+
         Customer customer = customerService.getCustomerById(orderDTO.getCustomerId());
         if (customer == null) {
             throw new CustomerNotFoundException("Customer with id " + orderDTO.getCustomerId() + " not found.");
@@ -42,17 +43,25 @@ public class OrderService {
         Order newOrder = new Order();
         newOrder.setCustomer(customer);
         newOrder.setDate(LocalDate.now());
-        newOrder.setStatus(OrderStatus.NEW);
-        newOrder.setShipmentNumber(orderDTO.getShipmentNumber());
-        if (orderDTO.getSelfCollection() != null && orderDTO.getSelfCollection()) {
-            newOrder.setSelfCollection(true);
-            newOrder.setCourierCompany(CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase()));
-            newOrder.setShipmentNumber("Brak danych");
+
+        // 🔥 Ustawiamy status z frontendu
+        if (orderDTO.getStatus() != null) {
+            newOrder.setStatus(OrderStatus.valueOf(orderDTO.getStatus().toUpperCase()));
         } else {
-            newOrder.setCourierCompany(CourierCompany.DPD);
-            newOrder.setSelfCollection(false);
+            newOrder.setStatus(OrderStatus.NEW);
         }
 
+        // 🔥 Ustawiamy kuriera z frontendu
+        if (orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isEmpty()) {
+            newOrder.setCourierCompany(CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase()));
+        } else {
+            newOrder.setCourierCompany(null);
+        }
+
+        // 🔥 Ustawiamy numer przesyłki z frontendu
+        newOrder.setShipmentNumber(orderDTO.getShipmentNumber());
+
+        // 🔥 Pająki
         List<OrderedSpider> orderedSpiders = orderDTO.getOrderedSpiders().stream()
                 .map(itemDTO -> {
                     Spider spider = spiderRepository.findById(itemDTO.getSpiderId())
@@ -64,6 +73,7 @@ public class OrderService {
                     return orderedSpider;
                 }).collect(Collectors.toList());
 
+        // 🔥 Aktualizacja stocków
         orderedSpiders.forEach(orderedSpider -> {
             Spider spider = orderedSpider.getSpider();
             int orderedQuantity = orderedSpider.getQuantity();
@@ -78,7 +88,7 @@ public class OrderService {
 
         newOrder.setOrderedSpiders(orderedSpiders);
 
-        // Dodano obsługę ceny z frontendu
+        // 🔥 Cena z frontendu lub automatyczna
         if (orderDTO.getPrice() != null) {
             newOrder.setPrice(orderDTO.getPrice());
         } else {
@@ -88,72 +98,96 @@ public class OrderService {
             newOrder.setPrice(totalPrice);
         }
 
-        Order savedOrder = orderRepository.save(newOrder);
-        return savedOrder;
+        return orderRepository.save(newOrder);
     }
+
 
     @Transactional
     public Order updateOrder(UUID id, OrderDTO orderDTO) {
+
         Order existingOrder = orderRepository.findById(id)
                 .orElseThrow(() -> new OrderNotFoundException("Order with id " + id + " not found."));
 
+    /* ============================================================
+       STATUS
+    ============================================================ */
         if (orderDTO.getStatus() != null) {
-            OrderStatus newStatus = OrderStatus.valueOf(orderDTO.getStatus());
-            if (existingOrder.getStatus() != OrderStatus.CANCELLED && newStatus == OrderStatus.CANCELLED) {
+            OrderStatus newStatus = OrderStatus.valueOf(orderDTO.getStatus().toUpperCase());
+
+            // Jeśli zmiana na CANCELLED → zwrot stocków
+            if (existingOrder.getStatus() != OrderStatus.CANCELLED &&
+                    newStatus == OrderStatus.CANCELLED) {
+
                 existingOrder.getOrderedSpiders().forEach(orderedSpider -> {
                     Spider spider = spiderRepository.findById(orderedSpider.getSpider().getId())
-                            .orElseThrow(() -> new SpiderNotFoundException("Spider with id " + orderedSpider.getSpider().getId() + " not found."));
+                            .orElseThrow(() -> new SpiderNotFoundException(
+                                    "Spider with id " + orderedSpider.getSpider().getId() + " not found."
+                            ));
+
                     spider.setQuantity(spider.getQuantity() + orderedSpider.getQuantity());
                     spiderRepository.save(spider);
                 });
             }
+
             existingOrder.setStatus(newStatus);
         }
 
-        if (orderDTO.getCustomerId() != null && !orderDTO.getCustomerId().equals(existingOrder.getCustomer().getId())) {
+    /* ============================================================
+       KLIENT
+    ============================================================ */
+        if (orderDTO.getCustomerId() != null &&
+                !orderDTO.getCustomerId().equals(existingOrder.getCustomer().getId())) {
+
             Customer customer = customerService.getCustomerById(orderDTO.getCustomerId());
             if (customer == null) {
                 throw new CustomerNotFoundException("Customer with id " + orderDTO.getCustomerId() + " not found.");
             }
+
             existingOrder.setCustomer(customer);
         }
 
-        if (orderDTO.getStatus() != null) {
-            existingOrder.setStatus(OrderStatus.valueOf(orderDTO.getStatus()));
-        }
-
-        if(orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isBlank()) {
-            try{
-                existingOrder.setCourierCompany(CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase()));
-                existingOrder.setSelfCollection(false);
+    /* ============================================================
+       KURIER
+    ============================================================ */
+        if (orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isBlank()) {
+            try {
+                existingOrder.setCourierCompany(
+                        CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase())
+                );
             } catch (IllegalArgumentException e) {
                 throw new RuntimeException("Invalid courierCompany: " + orderDTO.getCourierCompany());
             }
         } else {
             existingOrder.setCourierCompany(null);
-            existingOrder.setSelfCollection(true);
         }
 
+    /* ============================================================
+       NUMER PRZESYŁKI
+    ============================================================ */
         if (orderDTO.getShipmentNumber() != null) {
             existingOrder.setShipmentNumber(orderDTO.getShipmentNumber());
         }
 
-        if (orderDTO.getSelfCollection() != null) {
-            existingOrder.setSelfCollection(orderDTO.getSelfCollection());
-        }
-
+    /* ============================================================
+       PAJĄKI
+    ============================================================ */
         if (orderDTO.getOrderedSpiders() != null) {
+
+            // Usuwamy stare pozycje
             existingOrder.getOrderedSpiders().clear();
 
             List<OrderedSpider> updatedSpiders = orderDTO.getOrderedSpiders().stream()
                     .map(itemDTO -> {
                         Spider spider = spiderRepository.findById(itemDTO.getSpiderId())
-                                .orElseThrow(() -> new SpiderNotFoundException("Spider with id " + itemDTO.getSpiderId() + " not found."));
+                                .orElseThrow(() -> new SpiderNotFoundException(
+                                        "Spider with id " + itemDTO.getSpiderId() + " not found."
+                                ));
 
                         OrderedSpider orderedSpider = new OrderedSpider();
                         orderedSpider.setSpider(spider);
                         orderedSpider.setQuantity(itemDTO.getQuantity());
                         orderedSpider.setOrder(existingOrder);
+
                         return orderedSpider;
                     })
                     .collect(Collectors.toList());
@@ -161,7 +195,9 @@ public class OrderService {
             existingOrder.getOrderedSpiders().addAll(updatedSpiders);
         }
 
-        // Dodano obsługę ceny z frontendu
+    /* ============================================================
+       CENA
+    ============================================================ */
         if (orderDTO.getPrice() != null) {
             existingOrder.setPrice(orderDTO.getPrice());
         } else {
@@ -173,6 +209,7 @@ public class OrderService {
 
         return orderRepository.save(existingOrder);
     }
+
 
     public void deleteOrder(UUID id) {
         if (!orderRepository.existsById(id)) {

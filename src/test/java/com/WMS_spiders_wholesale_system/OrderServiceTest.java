@@ -75,7 +75,6 @@ class OrderServiceTest {
         orderDTO.setCustomerId(customerId);
         orderDTO.setShipmentNumber("SN123");
         orderDTO.setCourierCompany("DPD");
-        orderDTO.setSelfCollection(false);
 
         OrderedSpider orderedSpider1 = new OrderedSpider();
         orderedSpider1.setSpider(spider1);
@@ -233,7 +232,6 @@ class OrderServiceTest {
     void updateOrder_Success_SetsSelfCollection() {
         // ARRANGE
         OrderDTO updateDTO = new OrderDTO();
-        updateDTO.setSelfCollection(true);
         updateDTO.setCourierCompany(""); // Puste, co ustawia selfCollection na true
 
         when(orderRepository.findById(orderId)).thenReturn(Optional.of(existingOrder));

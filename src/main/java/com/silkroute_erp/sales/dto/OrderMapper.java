@@ -26,7 +26,7 @@ public class OrderMapper {
             orderDTO.setCourierCompany(null);
         }
 
-        orderDTO.setSelfCollection(order.getSelfCollection());
+//        orderDTO.setSelfCollection(order.getSelfCollection());
         orderDTO.setShipmentNumber(order.getShipmentNumber());
 
         if (order.getCustomer() != null) {

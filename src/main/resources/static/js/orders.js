@@ -250,7 +250,6 @@ async function showOrderDetails(id) {
             <hr class="my-6">
 
             <h4 class="text-xl font-black mb-2">Wysyłka</h4>
-            <p><strong>Odbiór osobisty:</strong> ${order.selfCollection ? "Tak" : "Nie"}</p>
             <p><strong>Kurier:</strong> ${order.courierCompany || "—"}</p>
             <p><strong>Numer przesyłki:</strong> ${order.shipmentNumber || "—"}</p>
 
@@ -390,12 +389,6 @@ function renderOrderForm(order = null) {
                     <div class="mt-12 space-y-6">
 
                         <h4 class="text-xl font-black mb-4">Wysyłka</h4>
-
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" id="order-self-collection"
-                                   class="w-5 h-5 rounded border-slate-300">
-                            <span class="text-slate-700 font-bold">Odbiór osobisty</span>
-                        </label>
 
                         <div id="order-courier-section" class="space-y-2">
                             <label class="text-xs font-black text-slate-400 uppercase ml-1">Kurier</label>
@@ -824,23 +817,6 @@ function attachOrderFormEvents() {
     const form = document.getElementById("order-form");
     if (!form) return;
 
-    const selfCollectionCheckbox = document.getElementById("order-self-collection");
-    const courierSection = document.getElementById("order-courier-section");
-    const trackingSection = document.getElementById("order-tracking-section");
-
-    function updateShippingVisibility() {
-        if (selfCollectionCheckbox.checked) {
-            courierSection.style.display = "none";
-            trackingSection.style.display = "none";
-        } else {
-            courierSection.style.display = "block";
-            trackingSection.style.display = "block";
-        }
-    }
-
-    selfCollectionCheckbox.onchange = updateShippingVisibility;
-    updateShippingVisibility();
-
     document.getElementById("order-final-price-edit").onclick = () => {
         const input = document.getElementById("order-final-price");
 
@@ -877,12 +853,11 @@ function attachOrderFormEvents() {
             document.getElementById("order-final-price").value
         );
 
-        const selfCollection = selfCollectionCheckbox.checked;
         const courierCompany = document.getElementById("order-courier-company").value;
         const shipmentNumber = document.getElementById("order-shipment-number").value;
         const status = document.getElementById("order-status").value;
 
-        if (!selfCollection && status === "SHIPPED") {
+        if (status === "SHIPPED") {
             if (!courierCompany) {
                 alert("Wybierz kuriera");
                 return;
@@ -897,9 +872,8 @@ function attachOrderFormEvents() {
             id: id || null,
             customerId: customer.id,
             price: finalPrice,
-            selfCollection: selfCollection,
-            courierCompany: selfCollection ? null : courierCompany,
-            shipmentNumber: selfCollection ? null : shipmentNumber,
+            courierCompany: courierCompany || null,
+            shipmentNumber: shipmentNumber || null,
             status: status,
             orderedSpiders: items.map((os) => ({
                 spiderId: os.spider.id,
@@ -944,8 +918,9 @@ async function editOrder(id) {
 
         openOrderModal(renderOrderForm(order));
 
-        // pozwól DOM-owi się wyrenderować
         await new Promise((r) => setTimeout(r, 0));
+
+        attachOrderFormEvents();
 
         renderOrderCustomers();
         renderOrderCustomerDetails();
@@ -958,30 +933,11 @@ async function editOrder(id) {
             order.price.toFixed(2);
         document.getElementById("order-status").value = order.status;
 
-        const selfCollectionCheckbox = document.getElementById("order-self-collection");
-        const courierInput = document.getElementById("order-courier-company");
-        const trackingInput = document.getElementById("order-shipment-number");
-        const courierSection = document.getElementById("order-courier-section");
-        const trackingSection = document.getElementById("order-tracking-section");
+        document.getElementById("order-courier-company").value =
+            order.courierCompany || "";
+        document.getElementById("order-shipment-number").value =
+            order.shipmentNumber || "";
 
-        selfCollectionCheckbox.checked = order.selfCollection === true;
-        courierInput.value = order.courierCompany || "";
-        trackingInput.value = order.shipmentNumber || "";
-
-        function updateShippingVisibility() {
-            if (selfCollectionCheckbox.checked) {
-                courierSection.style.display = "none";
-                trackingSection.style.display = "none";
-            } else {
-                courierSection.style.display = "block";
-                trackingSection.style.display = "block";
-            }
-        }
-
-        selfCollectionCheckbox.onchange = updateShippingVisibility;
-        updateShippingVisibility();
-
-        attachOrderFormEvents();
     } catch (e) {
         console.error("Błąd edycji zamówienia:", e);
         alert("Nie udało się wczytać zamówienia");
@@ -1015,8 +971,9 @@ function attachOrderEvents() {
 
             openOrderModal(renderOrderForm());
 
-            // pozwól DOM-owi się wyrenderować
             await new Promise((r) => setTimeout(r, 0));
+
+            attachOrderFormEvents();
 
             await loadOrderCustomers();
             await loadOrderSpiders();
@@ -1024,8 +981,6 @@ function attachOrderEvents() {
             renderOrderCustomers();
             renderOrderCustomerDetails();
             renderOrderCart();
-
-            attachOrderFormEvents();
         };
     }
 
@@ -1047,4 +1002,3 @@ function attachOrderEvents() {
 /* ============================================================
    KONIEC PLIKU
 ============================================================ */
-

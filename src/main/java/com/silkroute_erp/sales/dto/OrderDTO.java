@@ -4,22 +4,21 @@ import java.util.List;
 import java.util.UUID;
 
 public class OrderDTO {
+
     private UUID id;
     private String date;
     private Double price;
-    private String status;
-    private String shipmentNumber;
-    private String courierCompany;
-    private Boolean selfCollection;
 
-
+    private String status;           // np. "NEW", "SHIPPED"
+    private String shipmentNumber;   // numer przesyłki
+    private String courierCompany;   // np. "DPD", "GLS"
 
     private UUID customerId;
     private CustomerDTO customer;
+
     private List<OrderedSpiderDTO> orderedSpiders;
 
-    public OrderDTO() {
-    }
+    public OrderDTO() {}
 
     public UUID getId() {
         return id;
@@ -61,7 +60,7 @@ public class OrderDTO {
         this.shipmentNumber = shipmentNumber;
     }
 
-    public String  getCourierCompany() {
+    public String getCourierCompany() {
         return courierCompany;
     }
 
@@ -69,13 +68,6 @@ public class OrderDTO {
         this.courierCompany = courierCompany;
     }
 
-    public Boolean getSelfCollection() {
-        return selfCollection;
-    }
-
-    public void setSelfCollection(Boolean selfCollection) {
-        this.selfCollection = selfCollection;
-    }
     public UUID getCustomerId() {
         return customerId;
     }
