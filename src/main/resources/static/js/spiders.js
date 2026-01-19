@@ -123,9 +123,9 @@ function renderSpiderForm() {
                         <select id="spider-gender" required
                                 class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
                             <option value="">— wybierz —</option>
-                            <option value="FEMALE">Samica</option>
-                            <option value="MALE">Samiec</option>
-                            <option value="NS">Nieznana</option>
+                            <option value="FEMALE">SAMICA</option>
+                            <option value="MALE">SAMIEC</option>
+                            <option value="NS">NS</option>
                         </select>
                     </div>
 

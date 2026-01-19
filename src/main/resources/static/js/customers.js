@@ -66,10 +66,10 @@ function renderCustomersTable() {
             (c) => `
         <tr>
             <td class="py-3">${c.firstName} ${c.lastName}</td>
-            <td class="py-3">${c.email}</td>
-            <td class="py-3">${c.telephone}</td>
-            <td class="py-3">${c.address}</td>
-            <td class="py-3">${c.parcelLocker || "—"}</td>
+            <td class="py-3">${c.email || "brak"}</td>
+            <td class="py-3">${c.telephone || "brak"}</td>
+            <td class="py-3">${c.address || "brak"}</td>
+            <td class="py-3">${c.parcelLocker || "brak"}</td>
         </tr>
     `
         )
@@ -117,20 +117,20 @@ function renderCustomerForm() {
                 </div>
 
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Email</label>
-                    <input id="customer-email" type="email" required
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Email (opcjonalnie)</label>
+                    <input id="customer-email" type="email"
                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
                 </div>
 
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Telefon</label>
-                    <input id="customer-telephone" type="text" required
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Telefon (opcjonalnie)</label>
+                    <input id="customer-telephone" type="text"
                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
                 </div>
 
                 <div>
-                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Adres</label>
-                    <textarea id="customer-address" required
+                    <label class="text-xs font-black text-slate-400 uppercase ml-1">Adres (opcjonalnie)</label>
+                    <textarea id="customer-address"
                               class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none rounded-xl focus:ring-2 focus:ring-emerald-400"></textarea>
                 </div>
 
@@ -175,14 +175,14 @@ function attachCustomerFormEvents() {
         const payload = {
             firstName: document.getElementById("customer-firstName").value.trim(),
             lastName: document.getElementById("customer-lastName").value.trim(),
-            email: document.getElementById("customer-email").value.trim(),
-            telephone: document.getElementById("customer-telephone").value.trim(),
-            address: document.getElementById("customer-address").value.trim(),
+            email: document.getElementById("customer-email").value.trim() || null,
+            telephone: document.getElementById("customer-telephone").value.trim() || null,
+            address: document.getElementById("customer-address").value.trim() || null,
             parcelLocker: document.getElementById("customer-parcelLocker").value.trim() || null
         };
 
-        if (!payload.firstName || !payload.lastName || !payload.email || !payload.telephone || !payload.address) {
-            alert("Uzupełnij wszystkie wymagane pola");
+        if (!payload.firstName || !payload.lastName) {
+            alert("Imię i nazwisko są wymagane");
             return;
         }
 
