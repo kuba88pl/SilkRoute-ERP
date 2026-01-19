@@ -1,62 +1,57 @@
 // /static/js/breeding/breedingApi.js
 
-const BASE_SPIDERS = '/api/breeding/spiders';
-const BASE_ENTRIES = '/api/breeding/entries';
+const BASE_URL = "/api/breeding";
 
-async function handle(res, msg) {
-    if (!res.ok) throw new Error(msg || 'Request failed');
-    if (res.status === 204) return null;
-    return res.json();
-}
-
-export async function fetchSpiders() {
-    return handle(await fetch(BASE_SPIDERS), 'Nie udało się pobrać samic');
-}
+/* ============================================================
+   SPIDER (SAMICA)
+============================================================ */
 
 export async function fetchSpider(id) {
-    return handle(await fetch(`${BASE_SPIDERS}/${id}`), 'Nie udało się pobrać samicy');
+    const res = await fetch(`${BASE_URL}/spiders/${id}`);
+    return await res.json();
+}
+
+export async function fetchBreedingSpiders() {
+    const res = await fetch(`${BASE_URL}/spiders`);
+    return await res.json();
 }
 
 export async function createSpider(payload) {
-    return handle(await fetch(BASE_SPIDERS, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-    }), 'Nie udało się utworzyć samicy');
+    const res = await fetch(`${BASE_URL}/spiders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+    return await res.json();
 }
 
-export async function updateSpider(id, payload) {
-    return handle(await fetch(`${BASE_SPIDERS}/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-    }), 'Nie udało się zaktualizować samicy');
-}
-
-export async function deleteSpider(id) {
-    await handle(await fetch(`${BASE_SPIDERS}/${id}`, { method: 'DELETE' }), 'Nie udało się usunąć samicy');
-}
+/* ============================================================
+   ENTRIES (WPISY)
+============================================================ */
 
 export async function fetchEntriesForSpider(spiderId) {
-    return handle(await fetch(`${BASE_ENTRIES}/spider/${spiderId}`), 'Nie udało się pobrać rozmnożeń');
+    const res = await fetch(`${BASE_URL}/entries/spider/${spiderId}`);
+    return await res.json();
 }
 
 export async function createEntry(spiderId, payload) {
-    return handle(await fetch(`${BASE_ENTRIES}/spider/${spiderId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-    }), 'Nie udało się utworzyć rozmnożenia');
+    const res = await fetch(`${BASE_URL}/entries/spider/${spiderId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+    return await res.json();
 }
 
-export async function updateEntry(id, payload) {
-    return handle(await fetch(`${BASE_ENTRIES}/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-    }), 'Nie udało się zaktualizować rozmnożenia');
-}
+/* ============================================================
+   UPDATE ENTRY (KOKON ZŁOŻONY)
+============================================================ */
 
-export async function deleteEntry(id) {
-    await handle(await fetch(`${BASE_ENTRIES}/${id}`, { method: 'DELETE' }), 'Nie udało się usunąć rozmnożenia');
+export async function updateEntry(entryId, payload) {
+    const res = await fetch(`${BASE_URL}/entries/${entryId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+    return await res.json();
 }

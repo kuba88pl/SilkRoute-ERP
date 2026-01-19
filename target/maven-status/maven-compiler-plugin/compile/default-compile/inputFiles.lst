@@ -8,14 +8,6 @@ F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\beta
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\beta\repository\BreedingSpiderRepository.java
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\beta\service\BreedingEntryService.java
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\beta\service\BreedingSpiderService.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\controller\BreedingReportController.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\entity\BreedingEntry.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\entity\BreedingReport.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\entity\BreedingStatus.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\entity\EntryType.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\repository\BreedingReportRepository.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\repository\BreedingSpider.java
-F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\breeding\service\BreedingReportService.java
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\config\WebConfig.java
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\sales\controller\CustomerController.java
 F:\Java\SilkRouteERP\SilkRoute-ERP\src\main\java\com\silkroute_erp\sales\controller\OrderController.java

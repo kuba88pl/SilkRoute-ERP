@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.WMS_spiders_wholesale_system.OrderServiceTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 0.188 s <<< FAILURE! -- in com.WMS_spiders_wholesale_system.OrderServiceTest
-com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_CalculatesPrice -- Time elapsed: 0.126 s <<< ERROR!
+Tests run: 13, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 0.220 s <<< FAILURE! -- in com.WMS_spiders_wholesale_system.OrderServiceTest
+com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_CalculatesPrice -- Time elapsed: 0.145 s <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "com.silkroute_erp.sales.dto.OrderDTO.getOrderedSpiders()" is null
 	at com.silkroute_erp.sales.service.OrderService.createOrder(OrderService.java:65)
 	at com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_CalculatesPrice(OrderServiceTest.java:102)
@@ -10,7 +10,7 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because 
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_ThrowsRuntimeException_NotEnoughStock -- Time elapsed: 0.009 s <<< ERROR!
+com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_ThrowsRuntimeException_NotEnoughStock -- Time elapsed: 0.013 s <<< ERROR!
 org.mockito.exceptions.misusing.UnnecessaryStubbingException: 
 
 Unnecessary stubbings detected.
@@ -41,7 +41,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke "java.util.List.stream(
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
 	... 6 more
 
-com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_UsesProvidedPrice -- Time elapsed: 0.004 s <<< ERROR!
+com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_UsesProvidedPrice -- Time elapsed: 0.003 s <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "com.silkroute_erp.sales.dto.OrderDTO.getOrderedSpiders()" is null
 	at com.silkroute_erp.sales.service.OrderService.createOrder(OrderService.java:65)
 	at com.WMS_spiders_wholesale_system.OrderServiceTest.createOrder_Success_UsesProvidedPrice(OrderServiceTest.java:133)
