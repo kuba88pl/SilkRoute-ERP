@@ -1,18 +1,14 @@
-package com.silkroute_erp.sales.dto;
-
-import com.silkroute_erp.sales.entity.SpiderGender;
+package com.silkroute_erp.breeding.beta.dto;
 
 import java.util.UUID;
 
-public class SpiderDTO {
+public class BreedingSpiderDTO {
     private UUID id;
     private String typeName;
     private String speciesName;
-    private int quantity;
     private String size;
-    private double price;
-    private SpiderGender gender;
     private boolean isCites;
+    private String citesDocumentNumber;
 
     public UUID getId() {
         return id;
@@ -44,28 +40,12 @@ public class SpiderDTO {
         this.speciesName = speciesName;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getSize() {
         return size;
     }
 
     public void setSize(String size) {
         this.size = size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public boolean isCites() {
@@ -76,11 +56,11 @@ public class SpiderDTO {
         isCites = cites;
     }
 
-    public SpiderGender getGender() {
-        return gender;
+    public String getCitesDocumentNumber() {
+        return citesDocumentNumber;
     }
 
-    public void setGender(SpiderGender gender) {
-        this.gender = gender;
+    public void setCitesDocumentNumber(String citesDocumentNumber) {
+        this.citesDocumentNumber = citesDocumentNumber;
     }
 }
