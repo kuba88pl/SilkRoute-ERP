@@ -1,140 +1,87 @@
-import { api } from "./api.js";
+// js/orders.js
+
 import {
     state,
     setOrders,
     setSelectedCustomer,
     setOrderedSpiders,
-    updateFilters,
-    updatePagination,
+    updateOrderFilters,
+    updateOrderPagination,
     resetOrderState
 } from "./state.js";
 
 import {
+    getOrders,
+    getOrder,
+    getCustomers,
+    getSpiders,
+    createOrder,
+    updateOrder,
+    cancelOrder
+} from "./api.js";
+
+import {
     openOrderModal,
-    openOrderDetailsModal,
-    renderOrderDetailsModal
+    openOrderDetailsModal
 } from "./modals.js";
 
 /* ============================================================
-   ŁADOWANIE ZAMÓWIEŃ
+   SEKCJA ZAMÓWIEŃ
 ============================================================ */
 
-export async function loadOrders(page = 0) {
-    updatePagination("orders", { page });
-
-    try {
-        const data = await api.getOrders();
-        setOrders(data.content);
-        renderOrdersSection();
-    } catch (e) {
-        console.error("Błąd ładowania zamówień:", e);
-    }
-}
-
-/* ============================================================
-   RENDEROWANIE SEKCJI ZAMÓWIEŃ
-============================================================ */
-
-function renderOrdersSection() {
+export async function loadOrdersSection() {
     const section = document.getElementById("orders-section");
+    if (!section) return;
 
     section.innerHTML = `
-        <div class="glass-card rounded-[3rem] p-10 mb-10 flex justify-between items-center">
-            <h2 class="text-3xl font-[800] text-slate-900 tracking-tight">Zamówienia</h2>
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h2 class="text-3xl font-black tracking-tight text-slate-900">Zamówienia</h2>
+                <p class="text-slate-500 mt-1">Zarządzaj zamówieniami, wysyłką i statusem.</p>
+            </div>
 
             <button id="addOrderBtn"
-                class="px-6 py-3 rounded-2xl font-bold bg-slate-900 text-white hover:bg-emerald-600 transition shadow-xl active:scale-95">
-                Dodaj zamówienie
+                class="px-6 py-3 rounded-2xl font-bold bg-emerald-600 text-white hover:bg-emerald-700 shadow-xl active:scale-95">
+                Nowe zamówienie
             </button>
         </div>
 
         ${renderOrderFilters()}
 
-        <div class="glass-card rounded-[3rem] p-8 overflow-x-auto">
-            <table class="w-full text-left table-fixed whitespace-nowrap border-collapse min-w-[900px]">
-                <thead>
-                    <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-4 w-32">Data</th>
-                        <th class="py-4 w-32">Cena</th>
-                        <th class="py-4 w-32">Status</th>
-                        <th class="py-4 w-48">Klient</th>
-                        <th class="py-4 text-center w-48">Akcje</th>
-                    </tr>
-                </thead>
+        <div class="glass-card rounded-[3rem] p-6">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left table-fixed whitespace-nowrap border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
+                            <th class="py-3 w-32">Data</th>
+                            <th class="py-3 w-32">Cena</th>
+                            <th class="py-3 w-32">Status</th>
+                            <th class="py-3 w-48">Klient</th>
+                            <th class="py-3 w-48 text-center">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table" class="divide-y divide-slate-100"></tbody>
+                </table>
+            </div>
 
-                <tbody id="orders-table" class="divide-y divide-slate-100"></tbody>
-            </table>
+            <div id="orders-pagination" class="flex justify-center mt-6"></div>
         </div>
-
-        <div id="orders-pagination" class="flex justify-center mt-8"></div>
     `;
 
+    await loadOrders();
     renderOrderRows();
     renderOrderPagination();
     attachOrderEvents();
 }
 
-let availableSpidersCache = [];
-let availableSpidersFilter = "";
+/* ============================================================
+   ŁADOWANIE
+============================================================ */
 
-function renderFilteredSpiders() {
-    const spiders = availableSpidersCache.filter(sp =>
-        sp.speciesName.toLowerCase().includes(availableSpidersFilter.toLowerCase())
-    );
-
-    const html = `
-        <div class="glass-card rounded-[2rem] p-4">
-            <table class="w-full text-left table-fixed whitespace-nowrap">
-                <thead>
-                    <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-3 w-32">Rodzaj</th>
-                        <th class="py-3 w-40">Gatunek</th>
-                        <th class="py-3 w-24">Płeć</th>
-                        <th class="py-3 w-24">Rozmiar</th>
-                        <th class="py-3 w-24">Ilość</th>
-                        <th class="py-3 w-32">Cena</th>
-                        <th class="py-3 text-center w-32">Akcja</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${spiders.map(sp => `
-                        <tr class="hover:bg-slate-100">
-                            <td class="py-3">${sp.typeName}</td>
-                            <td class="py-3">${sp.speciesName}</td>
-                            <td class="py-3">${sp.gender}</td>
-                            <td class="py-3">${sp.size}</td>
-                            <td class="py-3">${sp.quantity}</td>
-                            <td class="py-3">${sp.price.toFixed(2)} PLN</td>
-
-                            <td class="py-3 text-center">
-                                <div class="flex items-center gap-2 justify-center">
-                                    <input type="number"
-                                           min="1"
-                                           max="${sp.quantity}"
-                                           value="1"
-                                           form="none"
-                                           data-qty-input="${sp.id}"
-                                           class="w-16 bg-slate-50 border border-slate-300 rounded-xl p-2 text-center outline-none focus:ring-2 focus:ring-emerald-400">
-
-                                    <button type="button"
-                                            data-add-spider="${sp.id}"
-                                            class="px-4 py-2 rounded-xl bg-emerald-100 text-emerald-700 font-bold hover:bg-emerald-200">
-                                        Dodaj
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    `).join("")}
-                </tbody>
-            </table>
-        </div>
-    `;
-
-    document.getElementById("order-spiders").innerHTML = html;
-
-    attachSpiderSelectionEvents(spiders);
+async function loadOrders() {
+    const data = await getOrders();
+    setOrders(data.content || data);
 }
-
 
 /* ============================================================
    FILTRY
@@ -156,44 +103,49 @@ function renderOrderFilters() {
             <h3 class="text-xs font-black text-slate-500 uppercase tracking-wider mb-6">Filtruj według statusu</h3>
 
             <div class="flex flex-wrap gap-3">
-                ${statuses.map(([value, label]) => `
+                ${statuses
+        .map(
+            ([value, label]) => `
                     <button data-status="${value}"
                         class="px-5 py-2 rounded-xl font-bold ${
-        state.filters.orders.status === value
-            ? "bg-slate-900 text-white"
-            : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-    }">
+                state.filters.orders.status === value
+                    ? "bg-slate-900 text-white"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }">
                         ${label}
                     </button>
-                `).join("")}
+                `
+        )
+        .join("")}
             </div>
         </div>
     `;
 }
 
 function attachOrderFilterEvents() {
-    document.querySelectorAll("[data-status]").forEach(btn => {
+    document.querySelectorAll("[data-status]").forEach((btn) => {
         btn.onclick = () => {
-            updateFilters("orders", { status: btn.dataset.status });
-            renderOrdersSection();
+            updateOrderFilters({ status: btn.dataset.status });
+            updateOrderPagination({ page: 0 });
+            loadOrdersSection();
         };
     });
 }
 
 /* ============================================================
-   RENDEROWANIE WIERSZY
+   TABELA ZAMÓWIEŃ
 ============================================================ */
 
 function getFilteredOrders() {
     const f = state.filters.orders;
-
     if (f.status === "all") return state.orders;
-
-    return state.orders.filter(o => o.status === f.status);
+    return state.orders.filter((o) => o.status === f.status);
 }
 
 function renderOrderRows() {
     const table = document.getElementById("orders-table");
+    if (!table) return;
+
     table.innerHTML = "";
 
     const orders = getFilteredOrders();
@@ -202,7 +154,7 @@ function renderOrderRows() {
     const start = page * size;
     const end = start + size;
 
-    orders.slice(start, end).forEach(o => {
+    orders.slice(start, end).forEach((o) => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
@@ -228,12 +180,10 @@ function renderOrderRows() {
     });
 }
 
-/* ============================================================
-   PAGINACJA
-============================================================ */
-
 function renderOrderPagination() {
     const container = document.getElementById("orders-pagination");
+    if (!container) return;
+
     container.innerHTML = "";
 
     const orders = getFilteredOrders();
@@ -250,10 +200,11 @@ function renderOrderPagination() {
             (active ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200") +
             (disabled ? " opacity-40 cursor-not-allowed" : "");
 
-        if (!disabled) btn.onclick = () => {
-            updatePagination("orders", { page: p });
-            renderOrdersSection();
-        };
+        if (!disabled)
+            btn.onclick = () => {
+                updateOrderPagination({ page: p });
+                loadOrdersSection();
+            };
 
         return btn;
     };
@@ -266,15 +217,17 @@ function renderOrderPagination() {
 
     container.appendChild(createBtn(page + 1, "»", page === totalPages - 1));
 }
+
 /* ============================================================
    SZCZEGÓŁY ZAMÓWIENIA
 ============================================================ */
 
 async function showOrderDetails(id) {
-    try {
-        const order = await api.getOrder(id);
+    const order = await getOrder(id);
 
-        const html = `
+    const html = `
+        <div class="bg-white p-10 rounded-[3rem] max-w-5xl w-full shadow-2xl border border-slate-100 fade-in max-h-[90vh] overflow-y-auto">
+
             <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">Szczegóły zamówienia</h3>
 
             <p><strong>Data:</strong> ${order.date}</p>
@@ -307,7 +260,9 @@ async function showOrderDetails(id) {
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100">
-                    ${order.orderedSpiders.map(os => `
+                    ${order.orderedSpiders
+        .map(
+            (os) => `
                         <tr>
                             <td class="py-3">${os.spider.typeName}</td>
                             <td class="py-3">${os.spider.speciesName}</td>
@@ -317,7 +272,9 @@ async function showOrderDetails(id) {
                             <td class="py-3">${os.spider.price.toFixed(2)} PLN</td>
                             <td class="py-3">${(os.quantity * os.spider.price).toFixed(2)} PLN</td>
                         </tr>
-                    `).join("")}
+                    `
+        )
+        .join("")}
                 </tbody>
             </table>
 
@@ -328,18 +285,17 @@ async function showOrderDetails(id) {
             </div>
 
             <div class="flex justify-end gap-4 mt-10">
-                <button onclick="window.closeOrderDetailsModal()"
-                    class="px-6 py-3 rounded-2xl font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
+                <button type="button"
+                        data-close-modal="orderDetailsModal"
+                        class="px-6 py-3 rounded-2xl font-bold bg-slate-100 text-slate-500 hover:bg-slate-200">
                     Zamknij
                 </button>
             </div>
-        `;
 
-        openOrderDetailsModal(renderOrderDetailsModal(html));
+        </div>
+    `;
 
-    } catch (e) {
-        alert("Błąd wyświetlania szczegółów zamówienia");
-    }
+    openOrderDetailsModal(html);
 }
 
 /* ============================================================
@@ -348,164 +304,316 @@ async function showOrderDetails(id) {
 
 function renderOrderForm(order = null) {
     return `
-        <div class="bg-white p-10 rounded-[3rem] max-w-5xl w-full shadow-2xl border border-slate-100 fade-in
-                    max-h-[90vh] overflow-y-auto">
+        <div class="bg-white p-10 rounded-[3rem] max-w-5xl w-full shadow-2xl border border-slate-100 fade-in max-h-[90vh] overflow-y-auto">
 
             <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
                 ${order ? "Edytuj zamówienie" : "Nowe zamówienie"}
             </h3>
 
             <form id="order-form">
+
                 <input type="hidden" id="order-id" value="${order?.id || ""}">
 
                 <div class="space-y-12">
 
-                    <!-- WYBÓR KLIENTA -->
+                    <!-- KLIENCI -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-   <div>
-    <h4 class="text-xl font-black mb-4">Wybierz klienta</h4>
 
-    <div class="max-h-[350px] overflow-y-auto pr-2">
-        <div id="order-customers"></div>
-    </div>
-</div>
-
-
-    <div>
-        <h4 class="text-xl font-black mb-4">Szczegóły klienta</h4>
-        <div id="order-customer-details" class="glass-card rounded-[2rem] p-6 text-slate-700">
-            Wybierz klienta z listy po lewej.
-        </div>
-    </div>
-</div>
-
-
-                    <!-- WYBÓR PAJĄKÓW -->
-                    <div>
-  <h4 class="text-xl font-black mb-4">Pająki dostępne</h4>
-
-<!-- FILTR -->
-<div class="mb-4">
-    <input id="order-spiders-filter"
-           type="text"
-           placeholder="Filtruj po nazwie gatunku..."
-           class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
-</div>
-
-<div class="max-h-[400px] overflow-y-auto pr-2">
-    <div id="order-spiders"></div>
-</div>
-
-
-<div>
-    <h4 class="text-xl font-black mb-4">Pająki w zamówieniu</h4>
-    <div class="relative z-10 max-h-[400px] overflow-y-auto pr-2">
-        <div id="order-cart"></div>
-    </div>
-</div>
-
-
-                    <!-- DANE ZAMÓWIENIA -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div>
-                            <label class="text-xs font-black text-slate-400 uppercase ml-1">Status</label>
-                            <select id="order-status"
-                                    class="w-full bg-slate-50 border border-slate-200 p-4 rounded-2xl outline-none">
-                                <option value="NEW">NOWE</option>
-                                <option value="PENDING">OCZEKUJĄCE</option>
-                                <option value="IN_PROGRESS">W TRAKCIE</option>
-                                <option value="SHIPPED">WYSŁANE</option>
-                                <option value="COMPLETED">ZAKOŃCZONE</option>
-                                <option value="CANCELLED">ANULOWANE</option>
-                            </select>
+                            <h4 class="text-xl font-black mb-4">Wybierz klienta</h4>
+                            <div class="max-h-[350px] overflow-y-auto pr-2">
+                                <div id="order-customers"></div>
+                            </div>
                         </div>
 
                         <div>
-                            <label class="text-xs font-black text-slate-400 uppercase ml-1">Firma kurierska</label>
-                            <select id="order-courierCompany"
-                                    class="w-full bg-slate-50 border border-slate-200 p-4 rounded-2xl outline-none">
+                            <h4 class="text-xl font-black mb-4">Szczegóły klienta</h4>
+                            <div id="order-customer-details"
+                                 class="glass-card rounded-[2rem] p-6 text-slate-700">
+                                Wybierz klienta z listy po lewej.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- PAJĄKI -->
+                    <div class="space-y-6">
+
+                        <h4 class="text-xl font-black mb-4">Pająki</h4>
+
+                        <input id="order-spiders-filter"
+                               type="text"
+                               placeholder="Filtruj po gatunku..."
+                               class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
+
+                        <div class="max-h-[400px] overflow-y-auto pr-2">
+                            <div id="order-spiders"></div>
+                        </div>
+
+                        <h4 class="text-xl font-black mt-10 mb-4">Koszyk</h4>
+                        <div id="order-cart"></div>
+
+                    </div>
+
+                    <!-- CENA -->
+                    <div class="mt-12">
+                        <label class="text-xs font-black text-slate-400 uppercase ml-1">Cena końcowa (PLN)</label>
+
+                        <div class="flex items-center gap-3">
+                            <input id="order-final-price"
+                                   type="number"
+                                   step="0.01"
+                                   value="0"
+                                   readonly
+                                   class="flex-1 bg-slate-50 border border-slate-200 p-4 rounded-2xl outline-none text-slate-700">
+
+                            <button type="button"
+                                    id="order-final-price-edit"
+                                    class="px-4 py-2 rounded-xl bg-slate-200 text-slate-700 font-bold hover:bg-slate-300">
+                                Edytuj
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- WYSYŁKA -->
+                    <div class="mt-12 space-y-6">
+
+                        <h4 class="text-xl font-black mb-4">Wysyłka</h4>
+
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="order-pickup"
+                                   class="w-5 h-5 rounded border-slate-300">
+                            <span class="text-slate-700 font-bold">Odbiór osobisty</span>
+                        </label>
+
+                        <div id="order-courier-section" class="space-y-2">
+                            <label class="text-xs font-black text-slate-400 uppercase ml-1">Kurier</label>
+                            <select id="order-courier"
+                                    class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
+                                <option value="">— wybierz kuriera —</option>
                                 <option value="DPD">DPD</option>
-                                <option value="INPOST">INPOST</option>
-                                <option value="POCZTEX">POCZTEX</option>
+                                <option value="INPOST">InPost</option>
+                                <option value="POCZTEX">Pocztex</option>
                                 <option value="UPS">UPS</option>
                                 <option value="GLS">GLS</option>
                             </select>
                         </div>
 
-                        <div>
+                        <div id="order-tracking-section" class="space-y-2">
                             <label class="text-xs font-black text-slate-400 uppercase ml-1">Numer przesyłki</label>
-                            <input id="order-shipmentNumber"
-                                   class="w-full bg-slate-50 border border-slate-200 p-4 rounded-2xl outline-none">
+                            <input id="order-tracking-number"
+                                   type="text"
+                                   placeholder="np. 1234567890"
+                                   class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
                         </div>
 
-                        <div class="flex items-center gap-3 mt-6">
-                            <input id="order-selfCollection" type="checkbox"
-                                   class="w-5 h-5 rounded border-slate-300 text-emerald-600">
-                            <label class="font-semibold">Odbiór osobisty</label>
+                        <div class="space-y-2">
+                            <label class="text-xs font-black text-slate-400 uppercase ml-1">Status zamówienia</label>
+                            <select id="order-status"
+                                    class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl outline-none focus:ring-2 focus:ring-emerald-400">
+                                <option value="NEW">Nowe</option>
+                                <option value="PENDING">Oczekujące</option>
+                                <option value="IN_PROGRESS">W trakcie</option>
+                                <option value="SHIPPED">Wysłane</option>
+                                <option value="COMPLETED">Zakończone</option>
+                                <option value="CANCELLED">Anulowane</option>
+                            </select>
                         </div>
+
                     </div>
 
                     <!-- PRZYCISKI -->
-                    <div class="flex gap-4 pt-4 pb-4">
+                    <div class="flex justify-end gap-4 mt-12">
+
+                        <button type="button"
+                                data-close-modal="orderModal"
+                                class="px-6 py-3 rounded-2xl font-bold bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
+                            Anuluj
+                        </button>
+
                         <button type="submit"
-                                class="flex-1 bg-emerald-600 text-white p-5 rounded-2xl font-black hover:bg-emerald-500 transition">
+                                class="px-6 py-3 rounded-2xl font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-xl active:scale-95">
                             Zapisz zamówienie
                         </button>
 
-                        <button type="button" onclick="window.closeOrderModal()"
-                                class="flex-1 bg-slate-100 text-slate-500 p-5 rounded-2xl font-bold hover:bg-slate-200 transition">
-                            Anuluj
-                        </button>
                     </div>
 
                 </div>
+
             </form>
         </div>
     `;
 }
 
 /* ============================================================
-   INICJALIZACJA FORMULARZA ZAMÓWIENIA
-============================================================ */
-
-async function initOrderForm() {
-    resetOrderState();
-
-    await loadOrderCustomers();
-    await loadOrderSpiders();
-
-    attachOrderFormEvents();
-}
-
-/* ============================================================
-   WYBÓR KLIENTA
+   KLIENCI W FORMULARZU
 ============================================================ */
 
 async function loadOrderCustomers() {
-    const data = await api.getAllCustomers();
+    const data = await getCustomers();
+    state.customers = data.content || data;
+    renderOrderCustomers();
+    renderOrderCustomerDetails();
+}
 
-    const html = `
+function renderOrderCustomers() {
+    const container = document.getElementById("order-customers");
+    if (!container) return;
+
+    const customers = state.customers;
+
+    container.innerHTML = customers
+        .map(
+            (c) => `
+        <button type="button"
+                data-customer-id="${c.id}"
+                class="w-full text-left mb-2 px-4 py-3 rounded-2xl border ${
+                state.selectedCustomer && state.selectedCustomer.id === c.id
+                    ? "border-slate-900 bg-slate-900 text-white"
+                    : "border-slate-200 hover:border-slate-400 bg-white"
+            }">
+            <div class="font-bold">${c.firstName} ${c.lastName}</div>
+            <div class="text-xs text-slate-500">${c.email}</div>
+        </button>
+    `
+        )
+        .join("");
+
+    document.querySelectorAll("[data-customer-id]").forEach((btn) => {
+        btn.onclick = () => {
+            const id = btn.dataset.customerId;
+            const customer = customers.find((c) => String(c.id) === String(id));
+            setSelectedCustomer(customer);
+            renderOrderCustomers();
+            renderOrderCustomerDetails();
+        };
+    });
+}
+
+function renderOrderCustomerDetails() {
+    const container = document.getElementById("order-customer-details");
+    if (!container) return;
+
+    const c = state.selectedCustomer;
+
+    if (!c) {
+        container.innerHTML = `
+            <p class="text-slate-500">Wybierz klienta z listy po lewej.</p>
+        `;
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="space-y-2 text-sm">
+            <div>
+                <div class="text-xs font-black text-slate-400 uppercase">Imię i nazwisko</div>
+                <div class="font-bold text-slate-800">${c.firstName} ${c.lastName}</div>
+            </div>
+
+            <div>
+                <div class="text-xs font-black text-slate-400 uppercase">Email</div>
+                <div>${c.email}</div>
+            </div>
+
+            <div>
+                <div class="text-xs font-black text-slate-400 uppercase">Telefon</div>
+                <div>${c.telephone}</div>
+            </div>
+
+            <div>
+                <div class="text-xs font-black text-slate-400 uppercase">Adres</div>
+                <div>${c.address}</div>
+            </div>
+
+            <div>
+                <div class="text-xs font-black text-slate-400 uppercase">Paczkomat</div>
+                <div>${c.parcelLocker || "—"}</div>
+            </div>
+        </div>
+    `;
+}
+let availableSpidersCache = [];
+let availableSpidersFilter = "";
+
+async function loadOrderSpiders() {
+    const data = await getSpiders();
+    availableSpidersCache = (data.content || data).map((sp) => ({ ...sp }));
+
+    renderFilteredSpiders();
+    attachSpiderFilterEvent();
+}
+
+function attachSpiderFilterEvent() {
+    const input = document.getElementById("order-spiders-filter");
+    if (!input) return;
+
+    input.oninput = () => {
+        availableSpidersFilter = input.value.toLowerCase();
+        renderFilteredSpiders();
+    };
+}
+
+function getFilteredSpiders() {
+    return availableSpidersCache.filter((sp) =>
+        sp.speciesName.toLowerCase().includes(availableSpidersFilter)
+    );
+}
+
+function renderFilteredSpiders() {
+    const spiders = getFilteredSpiders();
+    const container = document.getElementById("order-spiders");
+    if (!container) return;
+
+    container.innerHTML = `
         <div class="glass-card rounded-[2rem] p-4">
             <table class="w-full text-left table-fixed whitespace-nowrap">
                 <thead>
                     <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-3 w-32">Imię</th>
-                        <th class="py-3 w-40">Nazwisko</th>
-                        <th class="py-3 text-center w-32">Akcja</th>
+                        <th class="py-3 w-32">Rodzaj</th>
+                        <th class="py-3 w-40">Gatunek</th>
+                        <th class="py-3 w-24">Płeć</th>
+                        <th class="py-3 w-24">Rozmiar</th>
+                        <th class="py-3 w-24">Stan</th>
+                        <th class="py-3 w-32">Cena</th>
+                        <th class="py-3 text-center w-40">Akcja</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    ${data.content
+                    ${spiders
         .map(
-            (c) => `
-                        <tr class="hover:bg-slate-100">
-                            <td class="py-3">${c.firstName}</td>
-                            <td class="py-3">${c.lastName}</td>
+            (sp) => `
+                        <tr class="hover:bg-slate-100" data-spider-row="${sp.id}">
+                            <td class="py-3">${sp.typeName}</td>
+                            <td class="py-3">${sp.speciesName}</td>
+                            <td class="py-3">${sp.gender}</td>
+                            <td class="py-3">${sp.size}</td>
+                            <td class="py-3" data-spider-qty="${sp.id}">${sp.quantity}</td>
+                            <td class="py-3">${sp.price.toFixed(2)} PLN</td>
+
                             <td class="py-3 text-center">
-                               <button type="button" data-select-customer="${c.id}"
-                                    class="px-4 py-2 rounded-xl bg-emerald-100 text-emerald-700 font-bold hover:bg-emerald-200">
-                                    Wybierz
-                                </button>
+                                <div class="flex items-center gap-2 justify-center">
+
+                                    <input type="number"
+                                           min="1"
+                                           max="${sp.quantity}"
+                                           value="1"
+                                           form="none"
+                                           data-qty-input="${sp.id}"
+                                           class="w-16 bg-slate-50 border border-slate-300 rounded-xl p-2 text-center outline-none focus:ring-2 focus:ring-emerald-400">
+
+                                    <button type="button"
+                                            data-add-spider="${sp.id}"
+                                            class="px-4 py-2 rounded-xl font-bold ${
+                sp.quantity > 0
+                    ? "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+            }"
+                                            ${sp.quantity === 0 ? "disabled" : ""}>
+                                        Dodaj
+                                    </button>
+
+                                </div>
                             </td>
                         </tr>
                     `
@@ -516,40 +624,77 @@ async function loadOrderCustomers() {
         </div>
     `;
 
-    document.getElementById("order-customers").innerHTML = html;
-
-    attachCustomerSelectionEvents(data.content);
+    attachSpiderSelectionEvents();
 }
 
-function attachCustomerSelectionEvents(customers) {
-    document.querySelectorAll("[data-select-customer]").forEach((btn) => {
+function attachSpiderSelectionEvents() {
+    document.querySelectorAll("[data-add-spider]").forEach((btn) => {
         btn.onclick = () => {
-            const id = btn.dataset.selectCustomer;
-            const customer = customers.find((c) => c.id === id);
+            const id = btn.dataset.addSpider;
+            const spider = availableSpidersCache.find((s) => String(s.id) === String(id));
+            if (!spider) return;
 
-            setSelectedCustomer(customer);
+            const qtyInput = document.querySelector(`[data-qty-input="${id}"]`);
+            const qty = parseInt(qtyInput.value) || 1;
 
-            document.getElementById("order-customer-details").innerHTML = `
-                <p><strong>Imię:</strong> ${customer.firstName}</p>
-                <p><strong>Nazwisko:</strong> ${customer.lastName}</p>
-                <p><strong>Email:</strong> ${customer.email}</p>
-                <p><strong>Telefon:</strong> ${customer.telephone}</p>
-                <p><strong>Adres:</strong> ${customer.address}</p>
-                <p><strong>Paczkomat:</strong> ${customer.parcelLocker || "—"}</p>
-            `;
+            if (qty > spider.quantity) {
+                alert("Brak wystarczającej ilości w magazynie");
+                return;
+            }
+
+            const existing = state.orderedSpiders.find(
+                (os) => String(os.spider.id) === String(id)
+            );
+
+            if (existing) {
+                existing.quantity += qty;
+            } else {
+                state.orderedSpiders.push({
+                    spider: { ...spider },
+                    quantity: qty
+                });
+            }
+
+            spider.quantity -= qty;
+
+            updateSpiderRowInTable(spider);
+            renderOrderCart();
         };
     });
 }
 
-/* ============================================================
-   WYBÓR PAJĄKÓW
-============================================================ */
+function updateSpiderRowInTable(spider) {
+    const qtyCell = document.querySelector(`[data-spider-qty="${spider.id}"]`);
+    const addBtn = document.querySelector(`[data-add-spider="${spider.id}"]`);
+    const qtyInput = document.querySelector(`[data-qty-input="${spider.id}"]`);
 
+    if (!qtyCell || !addBtn || !qtyInput) return;
 
-async function loadOrderSpiders() {
-    const data = await api.getSpiders();
+    qtyCell.textContent = spider.quantity;
+    qtyInput.max = spider.quantity;
 
-    const html = `
+    if (spider.quantity === 0) {
+        addBtn.disabled = true;
+        addBtn.className =
+            "px-4 py-2 rounded-xl font-bold bg-slate-200 text-slate-400 cursor-not-allowed";
+    }
+}
+function renderOrderCart() {
+    const cart = state.orderedSpiders;
+    const container = document.getElementById("order-cart");
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="glass-card rounded-[2rem] p-6 text-slate-500 text-sm">
+                Koszyk jest pusty. Dodaj pająki z listy powyżej.
+            </div>
+        `;
+        updateFinalPriceField();
+        return;
+    }
+
+    container.innerHTML = `
         <div class="glass-card rounded-[2rem] p-4">
             <table class="w-full text-left table-fixed whitespace-nowrap">
                 <thead>
@@ -560,140 +705,29 @@ async function loadOrderSpiders() {
                         <th class="py-3 w-24">Rozmiar</th>
                         <th class="py-3 w-24">Ilość</th>
                         <th class="py-3 w-32">Cena</th>
-                        <th class="py-3 text-center w-32">Akcja</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${data.content
-        .map(
-            (sp) => `
-                        <tr class="hover:bg-slate-100">
-                            <td class="py-3">${sp.typeName}</td>
-                            <td class="py-3">${sp.speciesName}</td>
-                            <td class="py-3">${sp.gender}</td>
-                            <td class="py-3">${sp.size}</td>
-                            <td class="py-3">${sp.quantity}</td>
-                            <td class="py-3">${sp.price.toFixed(2)} PLN</td>
-
-                            <td class="py-3 text-center">
-              <div class="flex items-center gap-2 justify-center">
-    <input type="number"
-           min="1"
-           max="${sp.quantity}"
-           value="1"
-           data-qty-input="${sp.id}"
-           class="w-16 bg-slate-50 border border-slate-300 rounded-xl p-2 text-center outline-none focus:ring-2 focus:ring-emerald-400">
-
-    <button type="button"
-            data-add-spider="${sp.id}"
-            class="px-4 py-2 rounded-xl bg-emerald-100 text-emerald-700 font-bold hover:bg-emerald-200">
-        Dodaj
-    </button>
-</div>
-
-
-                            </td>
-                        </tr>
-                    `
-        )
-        .join("")}
-                </tbody>
-            </table>
-        </div>
-    `;
-
-    document.getElementById("order-spiders").innerHTML = html;
-
-    attachSpiderSelectionEvents(data.content);
-}
-
-function attachSpiderSelectionEvents(spiders) {
-    document.querySelectorAll("[data-add-spider]").forEach((btn) => {
-        btn.onclick = () => {
-            const id = btn.dataset.addSpider;
-            const spider = spiders.find((s) => s.id === id);
-
-            const qtyInput = document.querySelector(`[data-qty-input="${id}"]`);
-            const qty = parseInt(qtyInput.value) || 1;
-
-            if (qty > spider.quantity) {
-                alert("Brak wystarczającej ilości w magazynie");
-                return;
-            }
-
-            const existing = state.orderedSpiders.find((os) => os.spider.id === id);
-
-            if (existing) {
-                existing.quantity += qty;
-            } else {
-                state.orderedSpiders.push({
-                    spider,
-                    quantity: qty
-                });
-            }
-
-            // Zmniejszamy stan magazynowy
-            spider.quantity -= qty;
-
-            setOrderedSpiders(state.orderedSpiders);
-            renderOrderCart();
-            renderFilteredSpiders(); // odświeżamy tabelę magazynu
-        };
-    });
-}
-
-
-/* ============================================================
-   KOSZYK (orderedSpiders)
-============================================================ */
-
-function renderOrderCart() {
-    const cart = state.orderedSpiders;
-
-    if (!cart.length) {
-        document.getElementById("order-cart").innerHTML = `
-            <div class="glass-card rounded-[2rem] p-6 text-slate-500">
-                Brak pająków w zamówieniu.
-            </div>
-        `;
-        return;
-    }
-
-    const html = `
-        <div class="glass-card rounded-[2rem] p-4">
-            <table class="w-full text-left table-fixed whitespace-nowrap min-w-[600px]">
-                <thead>
-                    <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-3 w-32">Rodzaj</th>
-                        <th class="py-3 w-40">Gatunek</th>
-                        <th class="py-3 w-24">Ilość</th>
-                        <th class="py-3 w-32">Cena</th>
                         <th class="py-3 w-32">Suma</th>
-                        <th class="py-3 text-center w-32">Akcja</th>
+                        <th class="py-3 text-center w-24">Usuń</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     ${cart
         .map(
             (os) => `
-                        <tr>
+                        <tr class="hover:bg-slate-100">
                             <td class="py-3">${os.spider.typeName}</td>
                             <td class="py-3">${os.spider.speciesName}</td>
-                            <td class="py-3">
-    <input type="number"
-           min="1"
-           value="${os.quantity}"
-           data-qty="${os.spider.id}"
-           class="w-20 bg-slate-50 border border-slate-300 rounded-xl p-2 text-center outline-none focus:ring-2 focus:ring-emerald-400">
-</td>
-
+                            <td class="py-3">${os.spider.gender}</td>
+                            <td class="py-3">${os.spider.size}</td>
+                            <td class="py-3">${os.quantity}</td>
                             <td class="py-3">${os.spider.price.toFixed(2)} PLN</td>
                             <td class="py-3">${(os.quantity * os.spider.price).toFixed(2)} PLN</td>
 
                             <td class="py-3 text-center">
-                                <button type="button" data-remove-spider="${os.spider.id}"
-                                    class="px-4 py-2 rounded-xl bg-red-100 text-red-700 font-bold hover:bg-red-200">
-                                    Usuń
+                                <button type="button"
+                                        data-remove-spider="${os.spider.id}"
+                                        class="px-3 py-1 rounded-xl bg-red-100 text-red-700 font-bold hover:bg-red-200">
+                                    X
                                 </button>
                             </td>
                         </tr>
@@ -702,18 +736,19 @@ function renderOrderCart() {
         .join("")}
                 </tbody>
             </table>
+        </div>
 
-            <div class="flex justify-end mt-6">
-                <h4 class="text-xl font-black">
-                    Suma: <span class="text-emerald-600">${calculateOrderTotal().toFixed(2)}</span> PLN
-                </h4>
-            </div>
+        <div class="flex justify-end mt-6">
+            <h4 class="text-xl font-black">
+                Suma: <span class="text-emerald-600">${calculateOrderTotal().toFixed(
+        2
+    )}</span> PLN
+            </h4>
         </div>
     `;
 
-    document.getElementById("order-cart").innerHTML = html;
-
     attachRemoveSpiderEvents();
+    updateFinalPriceField();
 }
 
 function attachRemoveSpiderEvents() {
@@ -721,43 +756,28 @@ function attachRemoveSpiderEvents() {
         btn.onclick = () => {
             const id = btn.dataset.removeSpider;
 
-            const removed = state.orderedSpiders.find(os => os.spider.id === id);
+            const removed = state.orderedSpiders.find(
+                (os) => String(os.spider.id) === String(id)
+            );
+            if (!removed) return;
 
-            const spider = availableSpidersCache.find(s => s.id === id);
-            if (spider) spider.quantity += removed.quantity;
+            const spider = availableSpidersCache.find(
+                (s) => String(s.id) === String(id)
+            );
+            if (spider) {
+                spider.quantity += removed.quantity;
+                updateSpiderRowInTable(spider);
+            }
 
-            const updated = state.orderedSpiders.filter((os) => os.spider.id !== id);
+            const updated = state.orderedSpiders.filter(
+                (os) => String(os.spider.id) !== String(id)
+            );
 
             setOrderedSpiders(updated);
             renderOrderCart();
-            renderFilteredSpiders();
         };
     });
 }
-
-
-function attachQuantityChangeEvents() {
-    document.querySelectorAll("[data-qty]").forEach(input => {
-        input.oninput = () => {
-            const id = input.dataset.qty;
-            const qty = parseInt(input.value);
-
-            if (qty < 1 || isNaN(qty)) return;
-
-            const item = state.orderedSpiders.find(os => os.spider.id === id);
-            if (item) {
-                item.quantity = qty;
-                setOrderedSpiders(state.orderedSpiders);
-                renderOrderCart();
-            }
-        };
-    });
-}
-
-
-/* ============================================================
-   SUMOWANIE
-============================================================ */
 
 function calculateOrderTotal() {
     return state.orderedSpiders.reduce(
@@ -765,140 +785,216 @@ function calculateOrderTotal() {
         0
     );
 }
-/* ============================================================
-   ZAPIS ZAMÓWIENIA
-============================================================ */
 
+function updateFinalPriceField() {
+    const input = document.getElementById("order-final-price");
+    if (!input) return;
+
+    if (input.readOnly) {
+        input.value = calculateOrderTotal().toFixed(2);
+    }
+}
 function attachOrderFormEvents() {
     const form = document.getElementById("order-form");
+    if (!form) return;
+
+    const pickupCheckbox = document.getElementById("order-pickup");
+    const courierSection = document.getElementById("order-courier-section");
+    const trackingSection = document.getElementById("order-tracking-section");
+
+    function updateShippingVisibility() {
+        if (pickupCheckbox.checked) {
+            courierSection.style.display = "none";
+            trackingSection.style.display = "none";
+        } else {
+            courierSection.style.display = "block";
+            trackingSection.style.display = "block";
+        }
+    }
+
+    pickupCheckbox.onchange = updateShippingVisibility;
+    updateShippingVisibility();
+
+    document.getElementById("order-final-price-edit").onclick = () => {
+        const input = document.getElementById("order-final-price");
+
+        if (input.readOnly) {
+            input.readOnly = false;
+            input.classList.remove("bg-slate-50");
+            input.classList.add("bg-white", "border-emerald-400");
+        } else {
+            input.readOnly = true;
+            input.classList.add("bg-slate-50");
+            input.classList.remove("bg-white", "border-emerald-400");
+            input.value = calculateOrderTotal().toFixed(2);
+        }
+    };
 
     form.onsubmit = async (e) => {
         e.preventDefault();
 
-        if (!state.selectedCustomer) {
+        const id = document.getElementById("order-id").value;
+        const customer = state.selectedCustomer;
+        const items = state.orderedSpiders;
+
+        if (!customer) {
             alert("Wybierz klienta");
             return;
         }
 
-        if (!state.orderedSpiders.length) {
-            alert("Dodaj pająki do zamówienia");
+        if (items.length === 0) {
+            alert("Dodaj przynajmniej jednego pająka");
             return;
         }
 
-        const order = {
-            customerId: state.selectedCustomer.id,
-            orderedSpiders: state.orderedSpiders.map((os) => ({
+        const finalPrice = parseFloat(
+            document.getElementById("order-final-price").value
+        );
+
+        const pickup = pickupCheckbox.checked;
+        const courier = document.getElementById("order-courier").value;
+        const tracking = document.getElementById("order-tracking-number").value;
+        const status = document.getElementById("order-status").value;
+
+        if (!pickup && status === "SHIPPED") {
+            if (!courier) {
+                alert("Wybierz kuriera");
+                return;
+            }
+            if (!tracking.trim()) {
+                alert("Podaj numer przesyłki");
+                return;
+            }
+        }
+
+        const payload = {
+            id: id || null,
+            customerId: customer.id,
+            price: finalPrice,
+            pickup: pickup,
+            courier: pickup ? null : courier,
+            trackingNumber: pickup ? null : tracking,
+            status: status,
+            orderedSpiders: items.map((os) => ({
                 spiderId: os.spider.id,
                 quantity: os.quantity
-            })),
-            status: document.getElementById("order-status").value,
-            courierCompany: document.getElementById("order-courierCompany").value,
-            shipmentNumber: document.getElementById("order-shipmentNumber").value,
-            selfCollection: document.getElementById("order-selfCollection").checked,
-            price: calculateOrderTotal()
+            }))
         };
-
-        const id = document.getElementById("order-id").value;
 
         try {
             if (id) {
-                await api.updateOrder(id, order);
+                await updateOrder(id, payload);
             } else {
-                await api.saveOrder(order);
+                await createOrder(payload);
             }
 
-            window.closeOrderModal();
-            loadOrders(state.pagination.orders.page);
-
+            document.querySelector("[data-close-modal='orderModal']").click();
+            resetOrderState();
+            loadOrdersSection();
         } catch (e) {
-            alert("Błąd zapisu zamówienia");
+            console.error("Błąd zapisu zamówienia:", e);
+            alert("Nie udało się zapisać zamówienia");
         }
     };
 }
-
-/* ============================================================
-   EDYCJA ZAMÓWIENIA
-============================================================ */
-
 async function editOrder(id) {
     try {
-        const order = await api.getOrder(id);
+        const order = await getOrder(id);
+
+        resetOrderState();
+
+        setSelectedCustomer(order.customer);
+        setOrderedSpiders(
+            order.orderedSpiders.map((os) => ({
+                spider: os.spider,
+                quantity: os.quantity
+            }))
+        );
 
         openOrderModal(renderOrderForm(order));
-        await initOrderForm();
 
-        // Ustaw dane zamówienia
-        document.getElementById("order-status").value = order.status;
-        document.getElementById("order-courierCompany").value = order.courierCompany || "DPD";
-        document.getElementById("order-shipmentNumber").value = order.shipmentNumber || "";
-        document.getElementById("order-selfCollection").checked = order.selfCollection;
-
-        // Ustaw klienta
-        setSelectedCustomer(order.customer);
-
-        document.getElementById("order-customer-details").innerHTML = `
-            <p><strong>Imię:</strong> ${order.customer.firstName}</p>
-            <p><strong>Nazwisko:</strong> ${order.customer.lastName}</p>
-            <p><strong>Email:</strong> ${order.customer.email}</p>
-            <p><strong>Telefon:</strong> ${order.customer.telephone}</p>
-            <p><strong>Adres:</strong> ${order.customer.address}</p>
-            <p><strong>Paczkomat:</strong> ${order.customer.parcelLocker || "—"}</p>
-        `;
-
-        // Ustaw pająki
-        const spiders = order.orderedSpiders.map((os) => ({
-            spider: os.spider,
-            quantity: os.quantity
-        }));
-
-        setOrderedSpiders(spiders);
+        renderOrderCustomers();
+        renderOrderCustomerDetails();
         renderOrderCart();
 
+        await loadOrderSpiders();
+        await loadOrderCustomers();
+
+        document.getElementById("order-final-price").value =
+            order.price.toFixed(2);
+        document.getElementById("order-status").value = order.status;
+
+        const pickupCheckbox = document.getElementById("order-pickup");
+        const courierInput = document.getElementById("order-courier");
+        const trackingInput = document.getElementById("order-tracking-number");
+        const courierSection = document.getElementById("order-courier-section");
+        const trackingSection = document.getElementById("order-tracking-section");
+
+        pickupCheckbox.checked = order.pickup === true;
+        courierInput.value = order.courier || "";
+        trackingInput.value = order.trackingNumber || "";
+
+        function updateShippingVisibility() {
+            if (pickupCheckbox.checked) {
+                courierSection.style.display = "none";
+                trackingSection.style.display = "none";
+            } else {
+                courierSection.style.display = "block";
+                trackingSection.style.display = "block";
+            }
+        }
+
+        pickupCheckbox.onchange = updateShippingVisibility;
+        updateShippingVisibility();
+
+        attachOrderFormEvents();
     } catch (e) {
-        alert("Błąd ładowania zamówienia");
+        console.error("Błąd edycji zamówienia:", e);
+        alert("Nie udało się wczytać zamówienia");
     }
 }
 
-/* ============================================================
-   ANULOWANIE ZAMÓWIENIA
-============================================================ */
-
-async function cancelOrder(id) {
-    if (!confirm("Czy na pewno anulować zamówienie?")) return;
+async function cancelOrderAction(id) {
+    if (!confirm("Czy na pewno chcesz anulować to zamówienie?")) return;
 
     try {
-        const order = await api.getOrder(id);
-        order.status = "CANCELLED";
-
-        await api.updateOrder(id, order);
-
-        loadOrders(state.pagination.orders.page);
+        await cancelOrder(id);
+        loadOrdersSection();
     } catch (e) {
-        alert("Błąd anulowania zamówienia");
+        alert("Nie udało się anulować zamówienia");
     }
 }
-
-/* ============================================================
-   EVENTY KOŃCOWE
-============================================================ */
-
 function attachOrderEvents() {
-    attachOrderFilterEvents();
+    const addBtn = document.getElementById("addOrderBtn");
+    if (addBtn) {
+        addBtn.onclick = async () => {
+            resetOrderState();
 
-    document.getElementById("addOrderBtn").onclick = () => {
-        openOrderModal(renderOrderForm());
-        initOrderForm();
-    };
+            openOrderModal(renderOrderForm());
 
-    document.querySelectorAll("[data-details]").forEach(btn => {
+            await loadOrderCustomers();
+            await loadOrderSpiders();
+
+            renderOrderCart();
+            attachOrderFormEvents();
+        };
+    }
+
+    document.querySelectorAll("[data-details]").forEach((btn) => {
         btn.onclick = () => showOrderDetails(btn.dataset.details);
     });
 
-    document.querySelectorAll("[data-edit]").forEach(btn => {
+    document.querySelectorAll("[data-edit]").forEach((btn) => {
         btn.onclick = () => editOrder(btn.dataset.edit);
     });
 
-    document.querySelectorAll("[data-cancel]").forEach(btn => {
-        btn.onclick = () => cancelOrder(btn.dataset.cancel);
+    document.querySelectorAll("[data-cancel]").forEach((btn) => {
+        btn.onclick = () => cancelOrderAction(btn.dataset.cancel);
     });
+
+    attachOrderFilterEvents();
 }
+
+/* ============================================================
+   KONIEC PLIKU
+============================================================ */

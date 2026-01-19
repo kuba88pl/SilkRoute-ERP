@@ -1,57 +1,49 @@
-import { loadCustomers } from "./customers.js";
-import { loadSpiders } from "./spiders.js";
-import { loadOrders } from "./orders.js";
+// js/main.js
+
+import { bindModalCloseButtons } from "./modals.js";
+import { loadCustomersSection } from "./customers.js";
+import { loadSpidersSection } from "./spiders.js";
+import { loadOrdersSection } from "./orders.js";
 
 /* ============================================================
-   NAWIGACJA MIĘDZY SEKCJAMI
+   PRZEŁĄCZANIE SEKCJI
 ============================================================ */
 
-export function showSection(id) {
-    const sections = [
-        "customers-section",
-        "spiders-section",
-        "orders-section"
-    ];
+function showSection(id) {
+    document.querySelectorAll("section").forEach((s) => s.classList.add("hidden"));
+    const section = document.getElementById(id);
+    if (section) section.classList.remove("hidden");
+}
 
-    const navButtons = [
-        "nav-customers",
-        "nav-spiders",
-        "nav-orders"
-    ];
+function attachNavigation() {
+    const nav = {
+        customers: "customers-section",
+        spiders: "spiders-section",
+        orders: "orders-section"
+    };
 
-    // Ukryj wszystkie sekcje
-    sections.forEach(sec => {
-        document.getElementById(sec).classList.add("hidden");
+    Object.entries(nav).forEach(([btnId, sectionId]) => {
+        const btn = document.getElementById(`nav-${btnId}`);
+        if (!btn) return;
+
+        btn.onclick = () => {
+            showSection(sectionId);
+
+            if (sectionId === "customers-section") loadCustomersSection();
+            if (sectionId === "spiders-section") loadSpidersSection();
+            if (sectionId === "orders-section") loadOrdersSection();
+        };
     });
-
-    // Usuń aktywne klasy z przycisków
-    navButtons.forEach(btn => {
-        document.getElementById(btn).classList.remove("nav-btn-active");
-    });
-
-    // Pokaż wybraną sekcję
-    document.getElementById(id).classList.remove("hidden");
-
-    // Ustaw aktywny przycisk
-    const navId = "nav-" + id.replace("-section", "");
-    document.getElementById(navId).classList.add("nav-btn-active");
-
-    // Załaduj dane sekcji
-    if (id === "customers-section") loadCustomers();
-    if (id === "spiders-section") loadSpiders();
-    if (id === "orders-section") loadOrders();
 }
 
 /* ============================================================
-   START APLIKACJI
+   INICJALIZACJA APLIKACJI
 ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
+    bindModalCloseButtons();     // aktywacja systemu zamykania modali
+    attachNavigation();          // aktywacja menu
+
     showSection("customers-section");
+    loadCustomersSection();
 });
-
-/* ============================================================
-   GLOBALNE FUNKCJE DLA HTML
-============================================================ */
-
-window.showSection = showSection;

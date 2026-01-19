@@ -1,99 +1,86 @@
-/* ============================================================
-   API CONFIG
-============================================================ */
-
-export const API_URL = "http://localhost:8080/api";
+// js/api.js
 
 /* ============================================================
-   HELPER: universal fetch wrapper
+   PODSTAWOWA FUNKCJA REQUEST
 ============================================================ */
 
-async function request(url, options = {}) {
-    const res = await fetch(url, {
+const BASE_URL = "/api";
+
+async function request(path, options = {}) {
+    const res = await fetch(BASE_URL + path, {
         headers: { "Content-Type": "application/json" },
         ...options
     });
 
     if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`API error: ${res.status} - ${text}`);
+        console.error("API error:", res.status, res.statusText);
+        throw new Error(`API error: ${res.status}`);
     }
 
-    return res.status !== 204 ? res.json() : null;
+    // 204 No Content
+    if (res.status === 204) return null;
+
+    return res.json();
 }
 
 /* ============================================================
    CUSTOMERS
 ============================================================ */
 
-export const api = {
-    // ---------- CUSTOMERS ----------
-    getCustomers: (page = 0, size = 20) =>
-        request(`${API_URL}/customers?page=${page}&size=${size}&sortBy=lastName`),
+export function getCustomers() {
+    return request("/customers");
+}
 
-    getAllCustomers: () =>
-        request(`${API_URL}/customers?size=1000`),
+export function createCustomer(payload) {
+    return request("/customers", {
+        method: "POST",
+        body: JSON.stringify(payload)
+    });
+}
 
-    saveCustomer: (customer) =>
-        request(`${API_URL}/customers`, {
-            method: "POST",
-            body: JSON.stringify(customer)
-        }),
+/* ============================================================
+   SPIDERS
+============================================================ */
 
-    updateCustomer: (id, customer) =>
-        request(`${API_URL}/customers/${id}`, {
-            method: "PUT",
-            body: JSON.stringify(customer)
-        }),
+export function getSpiders() {
+    return request("/spiders");
+}
 
-    deleteCustomer: (id) =>
-        request(`${API_URL}/customers/${id}`, {
-            method: "DELETE"
-        }),
+export function createSpider(payload) {
+    return request("/spiders", {
+        method: "POST",
+        body: JSON.stringify(payload)
+    });
+}
 
-    // ---------- SPIDERS ----------
-    getSpiders: () =>
-        request(`${API_URL}/spiders?size=1000&sortBy=typeName`),
+/* ============================================================
+   ORDERS
+============================================================ */
 
-    saveSpider: (spider) =>
-        request(`${API_URL}/spiders`, {
-            method: "POST",
-            body: JSON.stringify(spider)
-        }),
+export function getOrders() {
+    return request("/orders");
+}
 
-    updateSpider: (id, spider) =>
-        request(`${API_URL}/spiders/${id}`, {
-            method: "PUT",
-            body: JSON.stringify(spider)
-        }),
+export function getOrder(id) {
+    return request(`/orders/${id}`);
+}
 
-    deleteSpider: (id) =>
-        request(`${API_URL}/spiders/${id}`, {
-            method: "DELETE"
-        }),
+export function createOrder(payload) {
+    return request("/orders", {
+        method: "POST",
+        body: JSON.stringify(payload)
+    });
+}
 
-    // ---------- ORDERS ----------
-    getOrders: () =>
-        request(`${API_URL}/orders?size=1000`),
+export function updateOrder(id, payload) {
+    return request(`/orders/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(payload)
+    });
+}
 
-    getOrder: (id) =>
-        request(`${API_URL}/orders/${id}`),
-
-    saveOrder: (order) =>
-        request(`${API_URL}/orders`, {
-            method: "POST",
-            body: JSON.stringify(order)
-        }),
-
-    updateOrder: (id, order) =>
-        request(`${API_URL}/orders/${id}`, {
-            method: "PUT",
-            body: JSON.stringify(order)
-        }),
-
-    cancelOrder: (id, order) =>
-        request(`${API_URL}/orders/${id}`, {
-            method: "PUT",
-            body: JSON.stringify(order)
-        })
-};
+export function cancelOrder(id) {
+    return request(`/orders/${id}/cancel`, {
+        method: "POST"
+    });
+}
