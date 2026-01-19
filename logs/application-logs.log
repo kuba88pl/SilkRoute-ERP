@@ -2841,3 +2841,1187 @@
 2026-01-19 12:09:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-01-19 12:09:55 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:09:55 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
 2026-01-19 12:09:55 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:16:47 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:16:47 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:16:47 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:16:47 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:16:47 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:16:48 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:16:48 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:16:48 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:16:49 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:16:49 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:16:49 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:16:50 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:16:50 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:16:50 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:16:51 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:16:51 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:16:51 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:03 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:03 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:03 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:03 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:03 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:03 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:04 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:04 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:04 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:04 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:04 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:04 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:04 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:04 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:04 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:04 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:10 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "FEMALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:10 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:17:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:17:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:49 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:49 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:49 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:49 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:49 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:49 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:49 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:49 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:49 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:49 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:50 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:50 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:50 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:50 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:50 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:50 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:54 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:54 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:54 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:55 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:55 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:55 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.web.method.HandlerMethod - Could not resolve parameter [0] in public org.springframework.http.ResponseEntity<com.silkroute_erp.sales.dto.SpiderDTO> com.silkroute_erp.sales.controller.SpiderController.addSpider(com.silkroute_erp.sales.dto.SpiderDTO): JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]
+2026-01-19 12:17:55 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.silkroute_erp.sales.entity.SpiderGender` from String "MALE": not one of the values accepted for Enum class: [SAMICA, NS, SAMIEC]]
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 400 BAD_REQUEST
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:17:55 CET 2026, status=400, error=Bad Request, trace=org.springframework.ht (truncated)...]
+2026-01-19 12:17:55 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 400
+2026-01-19 12:20:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:20:42 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:20:42 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:42 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:20:43 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:20:43 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:20:43 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:20:44 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:20:44 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:20:44 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@4cc334ad]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - insert into spiders (gender,is_cites,order_id,price,quantity,size,species_name,type_name,id) values (?,?,?,?,?,?,?,?,?)
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TINYINT) <- [SAMICA]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [true]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [null]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:DOUBLE) <- [240.0]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [40]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [5DC]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [Formosa]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [Poecilotheria]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (9:VARCHAR) <- [f850305a-3dc7-4f9e-8a48-eb01d564d660]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@52d49b7e]
+2026-01-19 12:20:57 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:20:57 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:20:57 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:20:57 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/spiders/37fff2c8-852a-4338-83dc-406701746455", parameters={}
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#updateSpider(UUID, SpiderDTO)
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@728f8530]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select count(*) from spiders s1_0 where s1_0.id=?
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [37fff2c8-852a-4338-83dc-406701746455]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 left join orders o1_0 on o1_0.id=s1_0.order_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id where s1_0.id=?
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [37fff2c8-852a-4338-83dc-406701746455]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - update spiders set gender=?,is_cites=?,order_id=?,price=?,quantity=?,size=?,species_name=?,type_name=? where id=?
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TINYINT) <- [SAMIEC]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [true]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [null]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:DOUBLE) <- [123.0]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [0]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [3DC]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [Formosa]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [Poecilotheria]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (9:VARCHAR) <- [37fff2c8-852a-4338-83dc-406701746455]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@5dabe25]
+2026-01-19 12:21:07 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:21:07 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:21:07 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:21:07 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:21:12 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:21:12 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:21:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders(int, int, String, String)
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone,o1_0.date,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 left join customers c1_0 on c1_0.id=o1_0.customer_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id order by o1_0.date desc
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 0 containing UNKNOWN instances]
+2026-01-19 12:21:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:21:28 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:21:28 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:21:28 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:23:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:23:17 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:23:17 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:23:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:23:19 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:23:19 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:23:19 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/customers", parameters={}
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#addCustomer(CustomerDTO)
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.CustomerDTO@5a38030a]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] INFO  c.s.s.controller.CustomerController - Received customer DTO: com.silkroute_erp.sales.dto.CustomerDTO@5a38030a
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id from customers c1_0 where c1_0.email=? limit ?
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [jakub.kulawik@gmail.com]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [1]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] INFO  c.s.sales.service.CustomerService - Created new customer with ID: null
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into customers (address,email,first_name,last_name,parcel_locker,telephone,id) values (?,?,?,?,?,?,?)
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ul. Wrocławska 57/3, 41-902 Bytom]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [jakub.kulawik@gmail.com]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Jakub]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [Kulawik]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [BYT09A]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [885066665]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [6e440784-1af2-4d3a-9f37-66c6ae9c4bb0]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.CustomerDTO@9247db]
+2026-01-19 12:23:31 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:23:31 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:23:31 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:23:31 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/customers/6e440784-1af2-4d3a-9f37-66c6ae9c4bb0", parameters={}
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#updateCustomer(UUID, CustomerDTO)
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.CustomerDTO@705fbcf7]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6e440784-1af2-4d3a-9f37-66c6ae9c4bb0]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - update customers set address=?,email=?,first_name=?,last_name=?,parcel_locker=?,telephone=? where id=?
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ul. Wrocławska 57/3, 41-902 Bytom]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [jakub.kulawik@gmail.com]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Buniek]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [Kulawik]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [BYT09A]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [885066665]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [6e440784-1af2-4d3a-9f37-66c6ae9c4bb0]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.CustomerDTO@763d05b4]
+2026-01-19 12:23:42 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:23:42 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:23:42 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:23:42 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:25:04 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:25:04 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:25:04 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:25:04 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:27:05 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:27:05 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:27:05 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:27:05 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:28:33 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:28:33 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:28:33 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:28:33 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:09 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:31:09 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:31:09 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:31:09 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:10 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:31:10 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:31:10 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:31:10 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:31:12 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:31:12 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:31:12 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:31:12 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:32:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:32:36 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:32:36 [http-nio-8080-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:32:36 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:33:03 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:33:03 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:33:03 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@7b77904d]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - insert into spiders (gender,is_cites,order_id,price,quantity,size,species_name,type_name,id) values (?,?,?,?,?,?,?,?,?)
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TINYINT) <- [SAMICA]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [false]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [null]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:DOUBLE) <- [240.0]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [3]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [2]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [sp. machalla]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [Pamphobeteus]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (9:VARCHAR) <- [b8d36852-2163-4b45-99c2-0c10f090b677]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@34c21629]
+2026-01-19 12:33:38 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:33:38 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:33:38 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:33:38 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:33:47 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:33:47 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:33:47 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:36:23 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:36:23 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:36:23 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders(int, int, String, String)
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone,o1_0.date,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 left join customers c1_0 on c1_0.id=o1_0.customer_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id order by o1_0.date desc
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 0 containing UNKNOWN instances]
+2026-01-19 12:36:27 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:36:28 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:36:28 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:36:28 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:36:28 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:36:28 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:36:28 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:36:32 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:36:32 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:36:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:37:21 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:37:21 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:37:21 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:37:21 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:37:22 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:37:22 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:37:22 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:37:33 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:37:33 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:37:33 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:37:36 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:37:36 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:37:36 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:22 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-19 12:38:22 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource js/spiders.js.]
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Mon Jan 19 12:38:22 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-19 12:38:22 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-19 12:38:29 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:38:29 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:38:29 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:38:29 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:38:29 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:38:31 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:38:31 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:38:31 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@52771aac]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - insert into spiders (gender,is_cites,order_id,price,quantity,size,species_name,type_name,id) values (?,?,?,?,?,?,?,?,?)
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TINYINT) <- [SAMICA]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [true]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [null]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:DOUBLE) <- [120.0]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [1]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [3DC]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [Albopilosus]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [Tliltocatl]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (9:VARCHAR) <- [b498e803-04ae-4fea-b3ad-f079ce2f1f07]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@6e49d20c]
+2026-01-19 12:38:49 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:38:49 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:38:49 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:38:49 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:39:34 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:39:34 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:39:34 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:44:36 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:44:36 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:44:36 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:45:32 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:45:32 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:45:32 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:45:32 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:45:34 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:45:34 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:45:34 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:49:39 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:49:39 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:39 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:49:40 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:49:40 [http-nio-8080-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:49:40 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:49:41 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:49:41 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:49:41 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - POST "/api/spiders", parameters={}
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#addSpider(SpiderDTO)
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@6301d0f1]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into spiders (gender,is_cites,order_id,price,quantity,size,species_name,type_name,id) values (?,?,?,?,?,?,?,?,?)
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TINYINT) <- [SAMICA]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [true]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [null]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:DOUBLE) <- [350.0]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [1]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [5DC]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [hamorii]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [Brachypelma]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (9:VARCHAR) <- [7afe0eac-960f-47e0-b9c8-c6f66e8d1941]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@5c1956]
+2026-01-19 12:50:07 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:50:07 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:50:07 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:50:07 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:50:13 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:50:13 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:50:13 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders(int, int, String, String)
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone,o1_0.date,os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 left join customers c1_0 on c1_0.id=o1_0.customer_id left join ordered_spiders os1_0 on o1_0.id=os1_0.order_id order by o1_0.date desc
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 0 containing UNKNOWN instances]
+2026-01-19 12:50:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders(int, int, String)
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.order_id,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name limit ?,?
+2026-01-19 12:50:19 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:50:19 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.SpiderDTO instances]
+2026-01-19 12:50:19 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:50:21 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:50:21 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:50:21 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:00 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:54:00 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:54:00 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:54:00 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:54:02 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:54:02 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:54:02 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-19 12:54:43 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:54:43 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:54:43 [http-nio-8080-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:54:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:54:45 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:54:45 [http-nio-8080-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:54:45 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers(int, int, String)
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.id limit ?,?
+2026-01-19 12:54:47 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [0]
+2026-01-19 12:54:47 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:INTEGER) <- [10]
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [Page 1 of 1 containing com.silkroute_erp.sales.dto.CustomerDTO instances]
+2026-01-19 12:54:47 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
