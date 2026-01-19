@@ -1,0 +1,5 @@
+# Created at 2026-01-19T22:03:43.209
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Java\SilkRouteERP\SilkRoute-ERP\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>SilkRoute ERP - Breeding Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+    .glass-card { background: white; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+    .glass-card:hover { border-color: #cbd5e1; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+    .fade-in { animation: fadeIn 0.25s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+  </style>
+</head>
+<body class="p-6 md:p-12">
+<div class="max-w-6xl mx-auto">
+  <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
+    <div>
+      <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
+        SilkRoute <span class="text-emerald-600 italic">Breeding</span>
+      </h1>
+      <p class="text-slate-500 font-medium mt-2">Moduł zarządzania samicami rozrodowymi i rozmnożeniami</p>
+    </div>
+    <button id="breeding-refresh-btn"
+            class="bg-white border border-slate-200 hover:bg-slate-50 px-8 py-3 rounded-2xl font-bold text-slate-700 transition flex items-center gap-3 shadow-sm active:scale-95">
+      <i class="bi bi-arrow-clockwise text-emerald-600 text-xl"></i> ODŚWIEŻ
+    </button>
+  </header>
+
+  <section class="glass-card p-10 rounded-[2.5rem] mb-16 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
+    <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Nowa samica rozrodowa</h2>
+    <div class="flex flex-col md:flex-row gap-5">
+      <input type="text" id="breeding-new-species"
+             placeholder="Gatunek (np. Monocentropus balfouri)"
+             class="flex-1 bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 outline-none transition text-xl font-semibold">
+      <input type="text" id="breeding-new-type"
+             placeholder="Typ (np. Samica adult)"
+             class="flex-1 bg-slate-50 border border-slate-200 p-5 rounded-2xl focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 outline-none transition text-xl font-semibold">
+      <button id="breeding-create-spider-btn"
+              class="bg-slate-900 text-white px-12 py-5 rounded-2xl font-black hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200">
+        REJESTRUJ
+      </button>
+    </div>
+  </section>
+
+  <div id="breeding-root" class="fade-in"></div>
+</div>
+
+<!-- Modal dla rozmnożenia -->
+<div id="breeding-entry-modal"
+     class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+  <div class="bg-white p-10 rounded-[3rem] max-w-3xl w-full shadow-2xl border border-slate-100"
+       id="breeding-entry-modal-content">
+  </div>
+</div>
+
+<script type="module">
+  import { initBreedingModule } from '/js/breeding/breedingModule.js';
+
+  const root = document.getElementById('breeding-root');
+  const refreshBtn = document.getElementById('breeding-refresh-btn');
+  const createBtn = document.getElementById('breeding-create-spider-btn');
+
+  initBreedingModule(root);
+
+  refreshBtn.addEventListener('click', () => initBreedingModule(root));
+
+  createBtn.addEventListener('click', () => {
+    const species = document.getElementById('breeding-new-species').value.trim();
+    const typeName = document.getElementById('breeding-new-type').value.trim();
+    if (!species) return;
+    window.dispatchEvent(new CustomEvent('breeding:createSpider', {
+      detail: { speciesName: species, typeName }
+    }));
+    document.getElementById('breeding-new-species').value = '';
+    document.getElementById('breeding-new-type').value = '';
+  });
+</script>
+</body>
+</html>
