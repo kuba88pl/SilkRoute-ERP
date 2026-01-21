@@ -73,11 +73,14 @@ export async function updateEntry(id, payload) {
     return res.json();
 }
 
-export async function deleteEntry(id) {
-    const res = await fetch(`/api/breeding/entries/${id}`, {
+export async function deleteEntry(entryId) {
+    const res = await fetch(`/api/breeding/entries/${entryId}`, {
         method: "DELETE"
     });
-    if (!res.ok) throw new Error("Failed to delete entry");
+
+    if (!res.ok) {
+        throw new Error("Failed to delete entry");
+    }
 }
 
 /* ============================================================
@@ -116,9 +119,11 @@ export async function updateEggSack(id, payload) {
     return res.json();
 }
 
-export async function deleteEggSack(id) {
-    const res = await fetch(`/api/breeding/eggsack/${id}`, {
+export async function deleteEggSack(entryId) {
+    const res = await fetch(`/api/breeding/entries/egg-sack/${entryId}`, {
         method: "DELETE"
     });
     if (!res.ok) throw new Error("Failed to delete egg sack");
 }
+
+

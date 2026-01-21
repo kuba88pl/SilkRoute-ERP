@@ -36,7 +36,6 @@ public class BreedingEntryService {
         entry.setCreatedAt(LocalDate.now());
         entry.setUpdatedAt(LocalDate.now());
 
-        // Ustawiamy behaviorNotes (Uwagi)
         if (entry.getBehaviorNotes() == null) {
             entry.setBehaviorNotes("");
         }
@@ -81,6 +80,7 @@ public class BreedingEntryService {
     }
 
     public void delete(UUID id) {
+        // CascadeType.ALL + orphanRemoval = true usuwa również EggSack
         entryRepo.deleteById(id);
     }
 }

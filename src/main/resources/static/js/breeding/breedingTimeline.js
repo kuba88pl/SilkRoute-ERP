@@ -2,7 +2,13 @@
 
 export function renderTimeline(entries, mode = "vertical") {
     return `
-        <div class="flex justify-end mb-6">
+        <div class="flex justify-between mb-6">
+            <div class="flex gap-3">
+                <button id="filter-all" class="btn-secondary">Wszystkie</button>
+                <button id="filter-pairings" class="btn-secondary">Dopuszczenia</button>
+                <button id="filter-egg" class="btn-secondary">Kokony</button>
+            </div>
+
             <button id="toggle-timeline" class="btn-secondary">
                 <i class="bi bi-shuffle"></i> Zmień widok
             </button>
@@ -26,9 +32,13 @@ function verticalTimeline(entries) {
 
             ${entries.map(e => {
         const color = statusColor(e);
+        const icon = statusIcon(e);
+
         return `
-                    <div class="relative">
-                        <div class="absolute -left-[14px] top-1 w-6 h-6 ${color.dotBg} rounded-full border-4 border-white"></div>
+                    <div class="relative timeline-entry cursor-pointer" data-open-entry="${e.id}">
+                        <div class="absolute -left-[14px] top-1 w-6 h-6 ${color.dotBg} rounded-full border-4 border-white flex items-center justify-center text-white text-xs">
+                            ${icon}
+                        </div>
 
                         <div class="glass-card p-6 rounded-2xl border ${color.border} ${color.bg}">
                             <p class="text-xl font-bold ${color.title}">
@@ -36,21 +46,32 @@ function verticalTimeline(entries) {
                             </p>
 
                             <p class="text-slate-500 mt-1 text-sm">
-                                ${entrySubtitle(e)}
+                                ${entrySubtitleSafe(e)}
                             </p>
 
-                            ${renderEggSackDetails(e)}
+                            ${e.eggSack ? renderEggSackDetails(e) : renderPairingDetails(e)}
 
                             <div class="mt-4 flex items-center justify-between">
+
                                 <span class="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest ${color.badgeBg} ${color.badgeText}">
                                     ${entryStatusLabel(e)}
                                 </span>
 
-                                ${e.eggSack ? `
-                                    <button class="btn-secondary" data-edit-egg-sack="${e.id}">
-                                        Edytuj kokon
+                                <div class="flex gap-2 no-propagation">
+                                    ${e.eggSack ? `
+                                        <button class="btn-secondary" data-edit-egg-sack="${e.id}">
+                                            <i class="bi bi-basket"></i>
+                                        </button>
+                                    ` : `
+                                        <button class="btn-secondary" data-edit-pairing="${e.id}">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                    `}
+
+                                    <button class="btn-secondary text-red-600" data-delete-entry="${e.id}">
+                                        <i class="bi bi-trash"></i>
                                     </button>
-                                ` : ""}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -72,9 +93,13 @@ function horizontalTimeline(entries) {
 
                 ${entries.map(e => {
         const color = statusColor(e);
+        const icon = statusIcon(e);
+
         return `
-                        <div class="flex flex-col items-center">
-                            <div class="w-6 h-6 ${color.dotBg} rounded-full mb-4"></div>
+                        <div class="flex flex-col items-center timeline-entry cursor-pointer" data-open-entry="${e.id}">
+                            <div class="w-10 h-10 ${color.dotBg} rounded-full mb-4 flex items-center justify-center text-white text-xl">
+                                ${icon}
+                            </div>
 
                             <div class="glass-card p-6 rounded-2xl border ${color.border} ${color.bg} w-64">
                                 <p class="text-lg font-bold ${color.title}">
@@ -82,21 +107,29 @@ function horizontalTimeline(entries) {
                                 </p>
 
                                 <p class="text-slate-500 mt-1 text-sm">
-                                    ${entrySubtitle(e)}
+                                    ${entrySubtitleSafe(e)}
                                 </p>
 
-                                ${renderEggSackDetails(e)}
+                                ${e.eggSack ? renderEggSackDetails(e) : renderPairingDetails(e)}
 
-                                <div class="mt-4 flex flex-col gap-2">
+                                <div class="mt-4 flex flex-col gap-2 no-propagation">
                                     <span class="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-widest ${color.badgeBg} ${color.badgeText}">
                                         ${entryStatusLabel(e)}
                                     </span>
 
                                     ${e.eggSack ? `
                                         <button class="btn-secondary" data-edit-egg-sack="${e.id}">
-                                            Edytuj kokon
+                                            <i class="bi bi-basket"></i> Edytuj
                                         </button>
-                                    ` : ""}
+                                    ` : `
+                                        <button class="btn-secondary" data-edit-pairing="${e.id}">
+                                            <i class="bi bi-pencil"></i> Edytuj
+                                        </button>
+                                    `}
+
+                                    <button class="btn-secondary text-red-600" data-delete-entry="${e.id}">
+                                        <i class="bi bi-trash"></i> Usuń
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -109,21 +142,28 @@ function horizontalTimeline(entries) {
 }
 
 /* ============================================================
-   DANE DO WYŚWIETLANIA
+   Tytuł wpisu — DATA + WYDARZENIE
 ============================================================ */
 
 function entryTitle(e) {
-    if (e.eggSack) {
-        if (!e.eggSack.dateOfEggSackPull) {
-            return `Kokon złożony: ${e.eggSack.dateOfEggSack ?? "-"}`;
-        }
-        return `Kokon odebrany: ${e.eggSack.dateOfEggSackPull ?? "-"}`;
-    }
+    const date = e.eggSack
+        ? (e.eggSack.dateOfEggSackPull ?? e.eggSack.dateOfEggSack ?? "-")
+        : (e.pairingDate1 ?? "-");
 
-    return `Dopuszczenie: ${e.pairingDate1 ?? "-"}`;
+    const text = e.eggSack
+        ? (e.eggSack.eggSackDescription ?? "")
+        : (e.pairingNotes ?? "");
+
+    return text && text.trim() !== ""
+        ? `${date} — ${text}`
+        : date;
 }
 
-function entrySubtitle(e) {
+/* ============================================================
+   Podtytuł
+============================================================ */
+
+function entrySubtitleSafe(e) {
     if (e.eggSack) {
         return `Sugerowany odbiór: ${e.eggSack.suggestedDateOfEggSackPull ?? "-"}`;
     }
@@ -131,9 +171,26 @@ function entrySubtitle(e) {
     return `Temp: ${e.pairingTemperature ?? "-"}°C • Wilg: ${e.pairingHumidity ?? "-"}%`;
 }
 
-function renderEggSackDetails(e) {
-    if (!e.eggSack) return "";
+/* ============================================================
+   Szczegóły dopuszczenia
+============================================================ */
 
+function renderPairingDetails(e) {
+    return `
+        <div class="mt-3 text-sm text-slate-600">
+            <p><b>Temperatura:</b> ${e.pairingTemperature ?? "-"}</p>
+            <p><b>Wilgotność:</b> ${e.pairingHumidity ?? "-"}</p>
+            <p><b>Wydarzenie:</b> ${e.pairingNotes ?? "-"}</p>
+            <p><b>Uwagi:</b> ${e.behaviorNotes ?? "-"}</p>
+        </div>
+    `;
+}
+
+/* ============================================================
+   Szczegóły kokonu
+============================================================ */
+
+function renderEggSackDetails(e) {
     const s = e.eggSack;
 
     return `
@@ -152,19 +209,33 @@ function renderEggSackDetails(e) {
     `;
 }
 
+/* ============================================================
+   Status wpisu
+============================================================ */
+
 function entryStatusLabel(e) {
-    if (!e.eggSack) return "PAIRING";
+    if (!e.eggSack) return "WPIS HODOWLANY";
 
-    if (!e.eggSack.dateOfEggSackPull) return "EGG SACK (LAID)";
+    if (!e.eggSack.dateOfEggSackPull) return "KOKON (ZŁOŻONY)";
 
-    if (e.eggSack.status === "SUCCESSFUL") return "SUCCESSFUL";
-    if (e.eggSack.status === "FAILED") return "FAILED";
+    if (e.eggSack.status === "HEALTHY") return "KOKON UDANY";
 
-    return "EGG SACK";
+    return "KOKON NIEUDANY";
 }
 
 /* ============================================================
-   KOLORY
+   Ikony
+============================================================ */
+
+function statusIcon(e) {
+    if (!e.eggSack) return "❤️";
+    if (!e.eggSack.dateOfEggSackPull) return "🥚";
+    if (e.eggSack.status === "HEALTHY") return "🟢";
+    return "🔴";
+}
+
+/* ============================================================
+   Kolory
 ============================================================ */
 
 function statusColor(e) {
@@ -192,7 +263,7 @@ function statusColor(e) {
         };
     }
 
-    if (s.status === "SUCCESSFUL") {
+    if (s.status === "HEALTHY") {
         return {
             dotBg: "bg-emerald-500",
             border: "border-emerald-200",
@@ -203,23 +274,12 @@ function statusColor(e) {
         };
     }
 
-    if (s.status === "FAILED") {
-        return {
-            dotBg: "bg-red-500",
-            border: "border-red-200",
-            title: "text-red-800",
-            badgeBg: "bg-red-100",
-            badgeText: "text-red-800",
-            bg: "bg-red-50"
-        };
-    }
-
     return {
-        dotBg: "bg-slate-400",
-        border: "border-slate-200",
-        title: "text-slate-700",
-        badgeBg: "bg-slate-100",
-        badgeText: "text-slate-700",
-        bg: "bg-white"
+        dotBg: "bg-red-500",
+        border: "border-red-200",
+        title: "text-red-800",
+        badgeBg: "bg-red-100",
+        badgeText: "text-red-800",
+        bg: "bg-red-50"
     };
 }

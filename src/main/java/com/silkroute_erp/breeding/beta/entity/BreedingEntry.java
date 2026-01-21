@@ -48,7 +48,7 @@ public class BreedingEntry {
        KOKON
     ============================ */
 
-    @OneToOne(mappedBy = "entry", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "entry", cascade = CascadeType.ALL, orphanRemoval = true)
     private EggSack eggSack;
 
     @Column(name = "sac_date")

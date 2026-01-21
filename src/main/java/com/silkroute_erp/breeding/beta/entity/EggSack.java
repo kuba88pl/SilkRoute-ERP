@@ -43,7 +43,7 @@ public class EggSack {
     private Integer numberOfDeadSpiders;
     @Column(name ="eggsack_description", columnDefinition = "TEXT")
     private String eggSackDescription;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "entry_id")
     @JsonIgnore
     private BreedingEntry entry;
