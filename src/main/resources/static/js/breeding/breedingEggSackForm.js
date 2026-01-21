@@ -1,12 +1,15 @@
 // /static/js/breeding/breedingEggSackForm.js
 
-import { updateEntry } from "./breedingApi.js";
+import { createEggSack } from "./breedingApi.js";
 
-export function openEggSackModal(entry, onSaved) {
+/**
+ * Otwiera modal dodawania kokonu
+ */
+export function openEggSackModal(entryId, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
     const box = document.getElementById("breeding-full-modal-content");
 
-    box.innerHTML = template(entry);
+    box.innerHTML = template();
     modal.classList.remove("hidden");
 
     const sacInput = document.getElementById("sacDate");
@@ -17,7 +20,7 @@ export function openEggSackModal(entry, onSaved) {
     pullInput.addEventListener("input", () => userEditedPullDate = true);
 
     sacInput.addEventListener("input", () => {
-        if (!userEditedPullDate) {
+        if (!userEditedPullDate && sacInput.value) {
             pullInput.value = addDays(sacInput.value, 30);
         }
     });
@@ -28,44 +31,61 @@ export function openEggSackModal(entry, onSaved) {
 
     document.getElementById("save-egg-sack").onclick = async () => {
         const payload = collectPayload();
-        await updateEntry(entry.id, payload);
+
+        await createEggSack(entryId, payload);
+
         modal.classList.add("hidden");
         if (onSaved) onSaved();
     };
 }
 
-function template(e) {
+/* ============================================================
+   TEMPLATE
+============================================================ */
+
+function template() {
     return `
-      <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">Kokon / Wynik rozmnożenia</h3>
+      <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
+        Kokon / Wynik rozmnożenia
+      </h3>
 
       <div class="space-y-10 max-h-[70vh] overflow-y-auto pr-2">
 
+        <!-- KOKON -->
         <section>
-          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Kokon</p>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Kokon
+          </p>
 
           <div class="grid md:grid-cols-2 gap-4">
-            <input type="date" id="sacDate" class="input" value="${e.sacDate ?? ""}" />
-            <input type="date" id="recommendedPullDate" class="input" value="${e.recommendedPullDate ?? ""}" />
+            <input type="date" id="sacDate" class="input" placeholder="Data złożenia" />
+            <input type="date" id="recommendedPullDate" class="input" placeholder="Sugerowana data wyciągnięcia" />
           </div>
         </section>
 
+        <!-- WYNIK KOKONU -->
         <section>
-          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Wynik kokonu</p>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Wynik kokonu
+          </p>
 
           <div class="grid md:grid-cols-3 gap-4">
-            <input type="number" id="totalEggsOrNymphs" class="input" value="${e.totalEggsOrNymphs ?? ""}" placeholder="Łącznie jaj / nimf" />
-            <input type="number" id="deadCount" class="input" value="${e.deadCount ?? ""}" placeholder="Martwe" />
-            <input type="number" id="liveL1Count" class="input" value="${e.liveL1Count ?? ""}" placeholder="Żywe L1" />
+            <input type="number" id="totalEggsOrNymphs" class="input" placeholder="Łącznie jaj / nimf" />
+            <input type="number" id="deadCount" class="input" placeholder="Martwe" />
+            <input type="number" id="liveL1Count" class="input" placeholder="Żywe L1" />
           </div>
 
           <select id="cocoonStatus" class="input mt-4">
-            ${statusOptions(e.cocoonStatus)}
+            ${statusOptions()}
           </select>
         </section>
 
+        <!-- NOTATKI -->
         <section>
-          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Zachowanie / uwagi</p>
-          <textarea id="notes" class="input h-28">${e.notes ?? ""}</textarea>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Uwagi
+          </p>
+          <textarea id="notes" class="input h-28" placeholder="Opis, uwagi, zachowanie"></textarea>
         </section>
 
       </div>
@@ -77,33 +97,43 @@ function template(e) {
     `;
 }
 
-function statusOptions(current) {
-    const statuses = ["HEALTHY", "DRIED_OUT", "ROTTEN", "INFERTILE", "EATEN"];
-    return statuses.map(s => `<option value="${s}" ${current === s ? "selected" : ""}>${s}</option>`).join("");
+/* ============================================================
+   STATUSY
+============================================================ */
+
+function statusOptions() {
+    const statuses = ["LAID", "DEVELOPING", "PULLED", "FAILED", "SUCCESSFUL"];
+    return statuses
+        .map(s => `<option value="${s}">${s}</option>`)
+        .join("");
 }
+
+/* ============================================================
+   PAYLOAD
+============================================================ */
 
 function collectPayload() {
-    const sacDate = valueOrNull("#sacDate");
-    const total = numberOrNull("#totalEggsOrNymphs");
-    const dead = numberOrNull("#deadCount");
-    const live = numberOrNull("#liveL1Count");
-
-    let status = null;
-
-    if (sacDate && (total || dead || live)) status = "RESULT";
-    else if (sacDate) status = "EGG_SACK";
-
     return {
-        sacDate,
-        recommendedPullDate: valueOrNull("#recommendedPullDate"),
-        totalEggsOrNymphs: total,
-        deadCount: dead,
-        liveL1Count: live,
-        cocoonStatus: valueOrNull("#cocoonStatus"),
-        notes: valueOrNull("#notes"),
-        status
+        dateOfEggSack: valueOrNull("#sacDate"),
+        suggestedDateOfEggSackPull: valueOrNull("#recommendedPullDate"),
+        dateOfEggSackPull: null,
+
+        numberOfEggs: numberOrNull("#totalEggsOrNymphs"),
+        numberOfBadEggs: numberOrNull("#deadCount"),
+        numberOfNymphs: numberOrNull("#liveL1Count"),
+
+        numberOfDeadNymphs: null,
+        numberOfSpiders: null,
+        numberOfDeadSpiders: null,
+
+        eggSackDescription: valueOrNull("#notes"),
+        status: valueOrNull("#cocoonStatus")
     };
 }
+
+/* ============================================================
+   HELPERS
+============================================================ */
 
 function valueOrNull(sel) {
     const v = document.querySelector(sel).value;

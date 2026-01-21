@@ -1,5 +1,6 @@
 package com.silkroute_erp.breeding.beta.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,6 +45,7 @@ public class EggSack {
     private String eggSackDescription;
     @OneToOne
     @JoinColumn(name = "entry_id")
+    @JsonIgnore
     private BreedingEntry entry;
     @Enumerated(EnumType.STRING)
     private EggSackStatus status;

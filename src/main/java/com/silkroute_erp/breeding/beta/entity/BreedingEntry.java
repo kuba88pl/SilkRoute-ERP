@@ -1,5 +1,6 @@
 package com.silkroute_erp.breeding.beta.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -16,6 +17,7 @@ public class BreedingEntry {
     /* Powiązanie z samicą rozrodową */
     @ManyToOne
     @JoinColumn(name = "breeding_spider_id", nullable = false)
+    @JsonIgnore
     private BreedingSpider breedingSpider;
 
     /* ============================
@@ -46,6 +48,8 @@ public class BreedingEntry {
     /* ============================
        KOKON
     ============================ */
+    @OneToOne(mappedBy = "entry", cascade = CascadeType.ALL)
+    private EggSack eggSack;
 
     @Column(name = "sac_date")
     private LocalDate sacDate;
@@ -231,6 +235,14 @@ public class BreedingEntry {
 
     public void setSacDate(LocalDate sacDate) {
         this.sacDate = sacDate;
+    }
+
+    public EggSack getEggSack() {
+        return eggSack;
+    }
+
+    public void setEggSack(EggSack eggSack) {
+        this.eggSack = eggSack;
     }
 
     public LocalDate getRecommendedPullDate() {

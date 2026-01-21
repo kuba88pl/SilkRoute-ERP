@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "breeding_spider")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class BreedingSpider {
 
     @Id
