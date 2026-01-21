@@ -98,8 +98,13 @@ export async function createEggSack(entryId, payload) {
 
 export async function fetchEggSackByEntry(entryId) {
     const res = await fetch(`/api/breeding/entries/${entryId}/eggsack`);
+
     if (!res.ok) return null;
-    return await res.json();
+
+    const text = await res.text();
+    if (!text) return null;
+
+    return JSON.parse(text);
 }
 
 export async function updateEggSack(eggSackId, payload) {

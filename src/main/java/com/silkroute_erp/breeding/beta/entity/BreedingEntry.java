@@ -102,6 +102,7 @@ public class BreedingEntry {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
+
     /* ============================
        ENUM STATUSU KOKONU
     ============================ */

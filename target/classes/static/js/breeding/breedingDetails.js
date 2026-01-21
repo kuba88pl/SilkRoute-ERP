@@ -4,7 +4,9 @@ import {
     fetchSpider,
     fetchEntriesForSpider,
     deleteEntry,
-    fetchEggSackByEntry
+    fetchEggSackByEntry,
+    createEntry,
+    createEggSack
 } from "./breedingApi.js";
 
 import { renderPairingForm } from "./breedingPairingForm.js";
@@ -38,9 +40,16 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                     </p>
                 </div>
 
-                <button id="addPairingBtn" class="btn-primary">
-                    <i class="bi bi-plus-lg"></i> Dodaj dopuszczenie
-                </button>
+                <div class="flex gap-3">
+                    <button id="addPairingBtn" class="btn-primary">
+                        <i class="bi bi-plus-lg"></i> Dodaj wpis
+                    </button>
+
+                    <button id="addEggSackBtn"
+                        class="px-4 py-2 rounded-lg font-semibold text-white bg-green-600 hover:bg-green-700 transition">
+                        <i class="bi bi-egg-fill"></i> Dodaj kokon
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -63,16 +72,32 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
         renderPairingForm(root, spiderId, () => renderBreedingDetails(root, spiderId, onBack));
     };
 
+    document.getElementById("addEggSackBtn").onclick = async () => {
+        // 1. Tworzymy NOWY wpis w timeline
+        const newEntry = await createEntry(spiderId, {
+            pairingNotes: "Kokon",
+            notes: null
+        });
+
+        // 2. Otwieramy modal kokonu
+        openEggSackModal(newEntry.id, () => renderBreedingDetails(root, spiderId, onBack));
+    };
+
     document.querySelectorAll("[data-entry-id]").forEach(el => {
         el.addEventListener("click", async (ev) => {
             if (ev.target.closest(".delete-entry-btn")) return;
-            if (ev.target.closest(".add-eggsack-btn")) return;
 
             const entryId = el.dataset.entryId;
             const entry = entries.find(e => e.id === entryId);
 
-            const eggSack = await fetchEggSackByEntry(entryId);
-            entry.eggSack = eggSack;
+            let eggSack = null;
+            try {
+                eggSack = await fetchEggSackByEntry(entryId);
+            } catch (e) {
+                eggSack = null;
+            }
+
+            entry.eggSack = eggSack || null;
 
             openEntryModal(entry);
         });
@@ -90,14 +115,6 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
             renderBreedingDetails(root, spiderId, onBack);
         });
     });
-
-    document.querySelectorAll(".add-eggsack-btn").forEach(btn => {
-        btn.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            const entryId = btn.dataset.entryId;
-            openEggSackModal(entryId, () => renderBreedingDetails(root, spiderId, onBack));
-        });
-    });
 }
 
 function renderEntryRow(e) {
@@ -110,22 +127,11 @@ function renderEntryRow(e) {
             <div>
                 <p class="font-semibold">${date ?? "-"}</p>
                 <p class="text-slate-500 text-sm">
-                    ${e.pairingNotes ?? "Brak notatek z dopuszczenia"}
+                    ${e.pairingNotes ?? "Brak notatek"}
                 </p>
             </div>
 
             <div class="flex items-center gap-4 text-right text-sm text-slate-500">
-
-                <span>
-                    ${e.pairingTemperature ? `${e.pairingTemperature}°C` : ""}
-                    ${e.pairingHumidity ? ` • ${e.pairingHumidity}%` : ""}
-                </span>
-
-                <button class="add-eggsack-btn text-amber-600 hover:text-amber-800"
-                        data-entry-id="${e.id}">
-                    <i class="bi bi-egg-fill"></i>
-                </button>
-
                 <button class="delete-entry-btn text-red-500 hover:text-red-700"
                         data-entry-id="${e.id}">
                     <i class="bi bi-trash"></i>
@@ -143,11 +149,8 @@ function openEntryModal(e) {
         <h2 class="text-2xl font-[800] mb-4">Szczegóły wpisu</h2>
 
         <div class="space-y-3 text-sm">
-            <p><b>Data dopuszczenia:</b> ${e.pairingDate1 ?? "-"}</p>
-            <p><b>Temperatura:</b> ${e.pairingTemperature ?? "-"}°C</p>
-            <p><b>Wilgotność:</b> ${e.pairingHumidity ?? "-"}%</p>
-
-            <p><b>Notatki z dopuszczenia:</b><br>${e.pairingNotes ?? "Brak"}</p>
+            <p><b>Data:</b> ${e.pairingDate1 ?? e.createdAt ?? "-"}</p>
+            <p><b>Wydarzenie:</b><br>${e.pairingNotes ?? "Brak"}</p>
             <p><b>Notatki ogólne:</b><br>${e.notes ?? "Brak"}</p>
         </div>
     `;
