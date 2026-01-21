@@ -3,18 +3,27 @@
 const BASE_URL = "/api/breeding";
 
 /* ============================================================
-   SPIDER (SAMICA)
+   GETTERS
 ============================================================ */
+
+export async function fetchSpiders() {
+    const res = await fetch(`${BASE_URL}/spiders`);
+    return await res.json();
+}
 
 export async function fetchSpider(id) {
     const res = await fetch(`${BASE_URL}/spiders/${id}`);
     return await res.json();
 }
 
-export async function fetchBreedingSpiders() {
-    const res = await fetch(`${BASE_URL}/spiders`);
+export async function fetchEntriesForSpider(spiderId) {
+    const res = await fetch(`${BASE_URL}/entries/spider/${spiderId}`);
     return await res.json();
 }
+
+/* ============================================================
+   CREATE
+============================================================ */
 
 export async function createSpider(payload) {
     const res = await fetch(`${BASE_URL}/spiders`, {
@@ -22,15 +31,6 @@ export async function createSpider(payload) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    return await res.json();
-}
-
-/* ============================================================
-   ENTRIES (WPISY)
-============================================================ */
-
-export async function fetchEntriesForSpider(spiderId) {
-    const res = await fetch(`${BASE_URL}/entries/spider/${spiderId}`);
     return await res.json();
 }
 
@@ -44,7 +44,7 @@ export async function createEntry(spiderId, payload) {
 }
 
 /* ============================================================
-   UPDATE ENTRY (KOKON ZŁOŻONY)
+   UPDATE
 ============================================================ */
 
 export async function updateEntry(entryId, payload) {
@@ -54,4 +54,20 @@ export async function updateEntry(entryId, payload) {
         body: JSON.stringify(payload)
     });
     return await res.json();
+}
+
+/* ============================================================
+   DELETE
+============================================================ */
+
+export async function deleteSpider(spiderId) {
+    await fetch(`${BASE_URL}/spiders/${spiderId}`, {
+        method: "DELETE"
+    });
+}
+
+export async function deleteEntry(entryId) {
+    await fetch(`${BASE_URL}/entries/${entryId}`, {
+        method: "DELETE"
+    });
 }

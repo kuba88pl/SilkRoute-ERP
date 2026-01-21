@@ -1,4 +1,14 @@
 /* ============================================================
+   GLOBAL PAGE STYLE
+============================================================ */
+
+body {
+    background: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* ============================================================
    INPUTS
 ============================================================ */
 
@@ -32,11 +42,12 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .btn-primary:hover {
     background: #059669;
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -48,11 +59,31 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .btn-secondary:hover {
     background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   TABS
+============================================================ */
+
+.tab-active {
+    border-bottom: 4px solid #059669;
+    color: #059669;
+    font-weight: 900;
+}
+
+.tab-inactive {
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.tab-inactive:hover {
+    color: #334155;
 }
 
 /* ============================================================
@@ -63,6 +94,27 @@
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 1.75rem;
+    padding: 2rem;
+    transition: box-shadow 0.2s;
+}
+
+.glass-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ============================================================
+   LIST CARDS (SAMICE)
+============================================================ */
+
+.breeding-list-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.breeding-list-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 
 /* ============================================================
@@ -99,10 +151,64 @@
    TYPOGRAPHY
 ============================================================ */
 
-h3 {
+h1, h2, h3 {
     font-weight: 800;
+    color: #0f172a;
 }
 
 section p {
     margin-bottom: 0.25rem;
+}
+
+/* ============================================================
+   TIMELINE COLORS
+============================================================ */
+
+.timeline-dot-pairing {
+    background: #0ea5e9;
+}
+
+.timeline-dot-egg {
+    background: #fbbf24;
+}
+
+.timeline-dot-result {
+    background: #10b981;
+}
+
+.timeline-dot-failed {
+    background: #ef4444;
+}
+
+/* ============================================================
+   BADGES
+============================================================ */
+
+.badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-green {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-yellow {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.badge-blue {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-red {
+    background: #fee2e2;
+    color: #991b1b;
 }

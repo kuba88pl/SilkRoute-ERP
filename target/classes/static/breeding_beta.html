@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>SilkRoute ERP - Breeding Management</title>
+  <meta charset="UTF-8" />
+  <title>Rozmnożenia • SilkRoute ERP</title>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <!-- SilkRoute ERP Breeding Styles -->
   <link rel="stylesheet" href="/css/breedingStyle.css">
-
-  <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
-    .glass-card { background: white; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: all 0.3s ease; }
-    .glass-card:hover { border-color: #cbd5e1; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
-  </style>
 </head>
 
-<body class="p-6 md:p-12">
+<body class="bg-slate-100 min-h-screen">
 
-<div class="max-w-6xl mx-auto">
+<!-- PAGE WRAPPER -->
+<div class="max-w-7xl mx-auto p-10">
 
-  <!-- HEADER -->
-  <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
-    <div>
-      <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
-        SilkRoute <span class="text-emerald-600 italic">Breeding</span>
-      </h1>
-      <p class="text-slate-500 font-medium mt-2">Profesjonalny system ewidencji hodowlanej</p>
-    </div>
+  <!-- PAGE TITLE -->
+  <h1 class="text-5xl font-[800] text-slate-900 tracking-tight mb-10">
+    Moduł rozmnożeń
+  </h1>
 
-    <div class="flex gap-4">
-      <!-- NOWE ROZMNOŻENIE -->
-      <button id="newBreedingBtn"
-              class="bg-slate-900 text-white px-8 py-3 rounded-2xl font-black hover:bg-emerald-600 transition-all shadow-xl shadow-slate-200 flex items-center gap-3 active:scale-95">
-        <i class="bi bi-plus-lg text-xl"></i> NOWE ROZMNOŻENIE
-      </button>
+  <!-- TABS -->
+  <div class="flex gap-10 border-b border-slate-300 mb-10 text-lg">
 
-      <!-- ODŚWIEŻ -->
-      <button onclick="location.reload()"
-              class="bg-white border border-slate-200 hover:bg-slate-50 px-8 py-3 rounded-2xl font-bold text-slate-700 transition flex items-center gap-3 shadow-sm active:scale-95">
-        <i class="bi bi-arrow-clockwise text-emerald-600 text-xl"></i> ODŚWIEŻ SYSTEM
-      </button>
-    </div>
-  </header>
+    <button id="tab-list" class="pb-4 tab-active">
+      <i class="bi bi-list-ul mr-2"></i> Samice
+    </button>
+
+    <button id="tab-dashboard" class="pb-4 tab-inactive">
+      <i class="bi bi-bar-chart mr-2"></i> Dashboard
+    </button>
+
+    <button id="tab-settings" class="pb-4 tab-inactive">
+      <i class="bi bi-gear mr-2"></i> Ustawienia
+    </button>
+
+  </div>
 
   <!-- ROOT -->
-  <section class="glass-card p-10 rounded-[2.5rem] mb-16 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
-
-    <h2 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">
-      Moduł Rozmnożeń
-    </h2>
-
-    <div id="breeding-root" class="pt-4"></div>
-  </section>
+  <div id="breeding-root"></div>
 
 </div>
 
-<!-- GLOBALNY MODAL -->
+<!-- FULLSCREEN MODAL -->
 <div id="breeding-full-modal"
-     class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center p-4 z-50">
+     class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
   <div id="breeding-full-modal-content"
-       class="bg-white p-10 rounded-[3rem] max-w-3xl w-full shadow-2xl border border-slate-100">
-  </div>
+       class="bg-white p-10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"></div>
 </div>
 
+<!-- JS -->
 <script type="module">
-  import { initBreedingModule, openFullBreedingModal } from "/js/breeding/breedingModule.js";
+  import { renderBreedingList } from "/js/breeding/breedingList.js";
+  import { renderBreedingDashboard } from "/js/breeding/breedingDashboard.js";
 
   const root = document.getElementById("breeding-root");
-  initBreedingModule(root);
 
-  // podpinamy przycisk NOWE ROZMNOŻENIE
-  document.getElementById("newBreedingBtn").addEventListener("click", () => {
-    openFullBreedingModal();
-  });
+  // start od listy samic
+  renderBreedingList(root);
+
+  // TABS
+  const tabList = document.getElementById("tab-list");
+  const tabDashboard = document.getElementById("tab-dashboard");
+  const tabSettings = document.getElementById("tab-settings");
+
+  function activateTab(active, ...inactive) {
+    active.classList.remove("tab-inactive");
+    active.classList.add("tab-active");
+
+    inactive.forEach(btn => {
+      btn.classList.remove("tab-active");
+      btn.classList.add("tab-inactive");
+    });
+  }
+
+  tabList.onclick = () => {
+    activateTab(tabList, tabDashboard, tabSettings);
+    renderBreedingList(root);
+  };
+
+  tabDashboard.onclick = () => {
+    activateTab(tabDashboard, tabList, tabSettings);
+    renderBreedingDashboard(root);
+  };
+
+  tabSettings.onclick = () => {
+    activateTab(tabSettings, tabList, tabDashboard);
+    root.innerHTML = `
+      <div class="glass-card p-10 rounded-3xl border border-slate-200">
+        <h2 class="text-3xl font-[800] text-slate-900 mb-6">Ustawienia modułu</h2>
+        <p class="text-slate-500">Brak ustawień w tej wersji.</p>
+      </div>
+    `;
+  };
 </script>
 
 </body>
