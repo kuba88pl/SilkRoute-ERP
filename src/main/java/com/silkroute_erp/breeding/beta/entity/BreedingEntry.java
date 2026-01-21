@@ -3,7 +3,6 @@ package com.silkroute_erp.breeding.beta.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -48,6 +47,7 @@ public class BreedingEntry {
     /* ============================
        KOKON
     ============================ */
+
     @OneToOne(mappedBy = "entry", cascade = CascadeType.ALL)
     private EggSack eggSack;
 
@@ -75,15 +75,11 @@ public class BreedingEntry {
     private CocoonStatus cocoonStatus;
 
     /* ============================
-       NOTATKI BEHAWIORALNE
+       NOTATKI BEHAWIORALNE (TERAZ JEDNO POLE)
     ============================ */
 
-    @ElementCollection
-    @CollectionTable(
-            name = "breeding_entry_behavior_notes",
-            joinColumns = @JoinColumn(name = "entry_id")
-    )
-    private List<BehaviorNote> behaviorNotes;
+    @Column(name = "behavior_notes", columnDefinition = "TEXT")
+    private String behaviorNotes;
 
     /* ============================
        NOTATKI OGÓLNE
@@ -102,7 +98,6 @@ public class BreedingEntry {
     @Column(name = "updated_at")
     private LocalDate updatedAt;
 
-
     /* ============================
        ENUM STATUSU KOKONU
     ============================ */
@@ -113,43 +108,6 @@ public class BreedingEntry {
         ROTTEN,
         INFERTILE,
         EATEN
-    }
-
-    /* ============================
-       NOTATKA BEHAWIORALNA
-    ============================ */
-
-    @Embeddable
-    public static class BehaviorNote {
-
-        @Column(name = "note_date")
-        private LocalDate date;
-
-        @Column(name = "content", columnDefinition = "TEXT")
-        private String content;
-
-        public BehaviorNote() {}
-
-        public BehaviorNote(LocalDate date, String content) {
-            this.date = date;
-            this.content = content;
-        }
-
-        public LocalDate getDate() {
-            return date;
-        }
-
-        public void setDate(LocalDate date) {
-            this.date = date;
-        }
-
-        public String getContent() {
-            return content;
-        }
-
-        public void setContent(String content) {
-            this.content = content;
-        }
     }
 
     /* ============================
@@ -286,11 +244,11 @@ public class BreedingEntry {
         this.cocoonStatus = cocoonStatus;
     }
 
-    public List<BehaviorNote> getBehaviorNotes() {
+    public String getBehaviorNotes() {
         return behaviorNotes;
     }
 
-    public void setBehaviorNotes(List<BehaviorNote> behaviorNotes) {
+    public void setBehaviorNotes(String behaviorNotes) {
         this.behaviorNotes = behaviorNotes;
     }
 

@@ -3,32 +3,27 @@
 import { createEggSack, updateEggSack } from "./breedingApi.js";
 
 /* ============================================================
-   OPEN: ADD EGG SACK (CREATION)
+   MODAL: DODANIE KOKONU (ZŁOŻENIE)
 ============================================================ */
 
-export function openEggSackModal(entryId, onSaved) {
+export function openEggSackCreateModal(entryId, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
     const box = document.getElementById("breeding-full-modal-content");
 
-    box.innerHTML = templateAdd();
-
+    box.innerHTML = createTemplate();
     modal.classList.remove("hidden");
 
-    const sacDateInput = document.getElementById("sacDate");
-    const recommendedPullInput = document.getElementById("recommendedPullDate");
+    const sacInput = document.getElementById("sacDate");
+    const pullInput = document.getElementById("recommendedPullDate");
 
-    sacDateInput.addEventListener("change", () => {
-        const v = sacDateInput.value;
-        if (!v) return;
+    let userEditedPullDate = false;
 
-        const d = new Date(v);
-        d.setDate(d.getDate() + 30);
+    pullInput.addEventListener("input", () => userEditedPullDate = true);
 
-        const year = d.getFullYear();
-        const month = String(d.getMonth() + 1).padStart(2, "0");
-        const day = String(d.getDate()).padStart(2, "0");
-
-        recommendedPullInput.value = `${year}-${month}-${day}`;
+    sacInput.addEventListener("input", () => {
+        if (!userEditedPullDate && sacInput.value) {
+            pullInput.value = addDays(sacInput.value, 30);
+        }
     });
 
     document.getElementById("cancel-egg-sack").onclick = () => {
@@ -36,7 +31,7 @@ export function openEggSackModal(entryId, onSaved) {
     };
 
     document.getElementById("save-egg-sack").onclick = async () => {
-        const payload = collectAddPayload();
+        const payload = collectCreatePayload();
 
         await createEggSack(entryId, payload);
 
@@ -46,23 +41,22 @@ export function openEggSackModal(entryId, onSaved) {
 }
 
 /* ============================================================
-   OPEN: RECEIVE EGG SACK (RESULT)
+   MODAL: ODBIÓR KOKONU (WYNIK)
 ============================================================ */
 
-export function openReceiveEggSackModal(eggSack, onSaved) {
+export function openEggSackPullModal(eggSack, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
     const box = document.getElementById("breeding-full-modal-content");
 
-    box.innerHTML = templateReceive(eggSack);
-
+    box.innerHTML = pullTemplate(eggSack);
     modal.classList.remove("hidden");
 
-    document.getElementById("cancel-receive-egg-sack").onclick = () => {
+    document.getElementById("cancel-egg-sack-pull").onclick = () => {
         modal.classList.add("hidden");
     };
 
-    document.getElementById("save-receive-egg-sack").onclick = async () => {
-        const payload = collectReceivePayload();
+    document.getElementById("save-egg-sack-pull").onclick = async () => {
+        const payload = collectPullPayload();
 
         await updateEggSack(eggSack.id, payload);
 
@@ -72,103 +66,127 @@ export function openReceiveEggSackModal(eggSack, onSaved) {
 }
 
 /* ============================================================
-   TEMPLATE: ADD EGG SACK
+   TEMPLATE — CREATE
 ============================================================ */
 
-function templateAdd() {
+function createTemplate() {
     return `
       <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
-        Dodaj kokon
+        Kokon – złożenie
       </h3>
 
       <div class="space-y-10 max-h-[70vh] overflow-y-auto pr-2">
 
-        <!-- KOKON -->
         <section>
           <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
             Dane kokonu
           </p>
 
           <div class="grid md:grid-cols-2 gap-4">
-            <input type="date" id="sacDate" class="input" placeholder="Data złożenia" />
+            <input type="date" id="sacDate" class="input" placeholder="Data złożenia kokonu" />
             <input type="date" id="recommendedPullDate" class="input" placeholder="Sugerowana data odbioru" />
           </div>
+        </section>
 
-          <textarea id="notes" class="input h-28 mt-4" placeholder="Uwagi"></textarea>
+        <section>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Uwagi
+          </p>
+          <textarea id="notes" class="input h-28" placeholder="Notatki o kokonie"></textarea>
         </section>
 
       </div>
 
       <div class="flex gap-4 pt-8">
         <button id="cancel-egg-sack" class="btn-secondary">Anuluj</button>
-        <button id="save-egg-sack" class="btn-green">Zapisz</button>
+        <button id="save-egg-sack" class="btn-primary">Zapisz</button>
       </div>
     `;
 }
 
 /* ============================================================
-   TEMPLATE: RECEIVE EGG SACK
+   TEMPLATE — PULL
 ============================================================ */
 
-function templateReceive(eggSack) {
+function pullTemplate(eggSack) {
+    const today = new Date().toISOString().split("T")[0];
+
     return `
       <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
-        Odbierz kokon
+        Odbiór kokonu
       </h3>
 
       <div class="space-y-10 max-h-[70vh] overflow-y-auto pr-2">
 
-        <!-- ODBIÓR -->
         <section>
           <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
-            Dane odbioru
+            Data odbioru
           </p>
 
-          <input type="date" id="dateOfEggSackPull" class="input" placeholder="Data odebrania"
-                 value="${eggSack.dateOfEggSackPull ?? ""}" />
+          <input type="date" id="pullDate" class="input"
+                 value="${eggSack.dateOfEggSackPull ?? today}" />
+        </section>
 
-          <div class="grid md:grid-cols-3 gap-4 mt-4">
-            <input type="number" id="numberOfEggs" class="input" placeholder="Jaja"
+        <section>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Wynik kokonu
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <input type="number" id="goodEggs" class="input" placeholder="Jaja dobre"
                    value="${eggSack.numberOfEggs ?? ""}" />
-            <input type="number" id="numberOfBadEggs" class="input" placeholder="Złe jaja"
+            <input type="number" id="badEggs" class="input" placeholder="Jaja zepsute"
                    value="${eggSack.numberOfBadEggs ?? ""}" />
-            <input type="number" id="numberOfNymphs" class="input" placeholder="Nimfy"
+            <input type="number" id="nymphsLive" class="input" placeholder="Nimfy żywe"
                    value="${eggSack.numberOfNymphs ?? ""}" />
           </div>
 
           <div class="grid md:grid-cols-3 gap-4 mt-4">
-            <input type="number" id="numberOfDeadNymphs" class="input" placeholder="Martwe nimfy"
+            <input type="number" id="nymphsDead" class="input" placeholder="Nimfy martwe"
                    value="${eggSack.numberOfDeadNymphs ?? ""}" />
-            <input type="number" id="numberOfSpiders" class="input" placeholder="Pająki"
+            <input type="number" id="spidersLive" class="input" placeholder="Pająki żywe"
                    value="${eggSack.numberOfSpiders ?? ""}" />
-            <input type="number" id="numberOfDeadSpiders" class="input" placeholder="Martwe pająki"
+            <input type="number" id="spidersDead" class="input" placeholder="Pająki martwe"
                    value="${eggSack.numberOfDeadSpiders ?? ""}" />
           </div>
 
-          <select id="status" class="input mt-4">
-            <option value="SUCCESSFUL" ${eggSack.status === "SUCCESSFUL" ? "selected" : ""}>SUCCESSFUL</option>
-            <option value="FAILED" ${eggSack.status === "FAILED" ? "selected" : ""}>FAILED</option>
+          <select id="cocoonStatus" class="input mt-4">
+            ${statusOptions(eggSack.status)}
           </select>
+        </section>
 
-          <textarea id="eggSackDescription" class="input h-28 mt-4" placeholder="Uwagi">${
-        eggSack.eggSackDescription ?? ""
-    }</textarea>
+        <section>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Uwagi
+          </p>
+          <textarea id="notes" class="input h-28" placeholder="Notatki">${eggSack.eggSackDescription ?? ""}</textarea>
         </section>
 
       </div>
 
       <div class="flex gap-4 pt-8">
-        <button id="cancel-receive-egg-sack" class="btn-secondary">Anuluj</button>
-        <button id="save-receive-egg-sack" class="btn-red">Zapisz</button>
+        <button id="cancel-egg-sack-pull" class="btn-secondary">Anuluj</button>
+        <button id="save-egg-sack-pull" class="btn-primary">Zapisz</button>
       </div>
     `;
+}
+
+/* ============================================================
+   STATUSY
+============================================================ */
+
+function statusOptions(current) {
+    const statuses = ["LAID", "DEVELOPING", "PULLED", "FAILED", "SUCCESSFUL"];
+    return statuses
+        .map(s => `<option value="${s}" ${current === s ? "selected" : ""}>${s}</option>`)
+        .join("");
 }
 
 /* ============================================================
    PAYLOADS
 ============================================================ */
 
-function collectAddPayload() {
+function collectCreatePayload() {
     return {
         dateOfEggSack: valueOrNull("#sacDate"),
         suggestedDateOfEggSackPull: valueOrNull("#recommendedPullDate"),
@@ -182,23 +200,23 @@ function collectAddPayload() {
         numberOfDeadSpiders: null,
 
         eggSackDescription: valueOrNull("#notes"),
-        status: "DEVELOPING"
+        status: "LAID"
     };
 }
 
-function collectReceivePayload() {
+function collectPullPayload() {
     return {
-        dateOfEggSackPull: valueOrNull("#dateOfEggSackPull"),
+        dateOfEggSackPull: valueOrNull("#pullDate"),
 
-        numberOfEggs: numberOrNull("#numberOfEggs"),
-        numberOfBadEggs: numberOrNull("#numberOfBadEggs"),
-        numberOfNymphs: numberOrNull("#numberOfNymphs"),
-        numberOfDeadNymphs: numberOrNull("#numberOfDeadNymphs"),
-        numberOfSpiders: numberOrNull("#numberOfSpiders"),
-        numberOfDeadSpiders: numberOrNull("#numberOfDeadSpiders"),
+        numberOfEggs: numberOrNull("#goodEggs"),
+        numberOfBadEggs: numberOrNull("#badEggs"),
+        numberOfNymphs: numberOrNull("#nymphsLive"),
+        numberOfDeadNymphs: numberOrNull("#nymphsDead"),
+        numberOfSpiders: numberOrNull("#spidersLive"),
+        numberOfDeadSpiders: numberOrNull("#spidersDead"),
 
-        eggSackDescription: valueOrNull("#eggSackDescription"),
-        status: valueOrNull("#status")
+        eggSackDescription: valueOrNull("#notes"),
+        status: valueOrNull("#cocoonStatus")
     };
 }
 
@@ -218,4 +236,11 @@ function numberOrNull(sel) {
     if (!el) return null;
     const v = el.value;
     return v === "" ? null : Number(v);
+}
+
+function addDays(dateStr, days) {
+    if (!dateStr) return null;
+    const d = new Date(dateStr);
+    d.setDate(d.getDate() + days);
+    return d.toISOString().split("T")[0];
 }

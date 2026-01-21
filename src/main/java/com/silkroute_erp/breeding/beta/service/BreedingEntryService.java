@@ -36,6 +36,11 @@ public class BreedingEntryService {
         entry.setCreatedAt(LocalDate.now());
         entry.setUpdatedAt(LocalDate.now());
 
+        // Ustawiamy behaviorNotes (Uwagi)
+        if (entry.getBehaviorNotes() == null) {
+            entry.setBehaviorNotes("");
+        }
+
         spider.setBreedingCount(spider.getBreedingCount() + 1);
 
         return entryRepo.save(entry);
@@ -45,25 +50,31 @@ public class BreedingEntryService {
         BreedingEntry existing = entryRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Entry not found"));
 
-        existing.setPairingDate1(updated.getPairingDate1());
-        existing.setPairingDate2(updated.getPairingDate2());
-        existing.setPairingDate3(updated.getPairingDate3());
-        existing.setPairingDate4(updated.getPairingDate4());
+        // Kopulacje
+        if (updated.getPairingDate1() != null) existing.setPairingDate1(updated.getPairingDate1());
+        if (updated.getPairingDate2() != null) existing.setPairingDate2(updated.getPairingDate2());
+        if (updated.getPairingDate3() != null) existing.setPairingDate3(updated.getPairingDate3());
+        if (updated.getPairingDate4() != null) existing.setPairingDate4(updated.getPairingDate4());
 
-        existing.setPairingTemperature(updated.getPairingTemperature());
-        existing.setPairingHumidity(updated.getPairingHumidity());
-        existing.setPairingNotes(updated.getPairingNotes());
+        if (updated.getPairingTemperature() != null) existing.setPairingTemperature(updated.getPairingTemperature());
+        if (updated.getPairingHumidity() != null) existing.setPairingHumidity(updated.getPairingHumidity());
+        if (updated.getPairingNotes() != null) existing.setPairingNotes(updated.getPairingNotes());
 
-        existing.setSacDate(updated.getSacDate());
-        existing.setRecommendedPullDate(updated.getRecommendedPullDate());
+        // Kokon
+        if (updated.getSacDate() != null) existing.setSacDate(updated.getSacDate());
+        if (updated.getRecommendedPullDate() != null) existing.setRecommendedPullDate(updated.getRecommendedPullDate());
 
-        existing.setTotalEggsOrNymphs(updated.getTotalEggsOrNymphs());
-        existing.setDeadCount(updated.getDeadCount());
-        existing.setLiveL1Count(updated.getLiveL1Count());
-        existing.setCocoonStatus(updated.getCocoonStatus());
+        if (updated.getTotalEggsOrNymphs() != null) existing.setTotalEggsOrNymphs(updated.getTotalEggsOrNymphs());
+        if (updated.getDeadCount() != null) existing.setDeadCount(updated.getDeadCount());
+        if (updated.getLiveL1Count() != null) existing.setLiveL1Count(updated.getLiveL1Count());
+        if (updated.getCocoonStatus() != null) existing.setCocoonStatus(updated.getCocoonStatus());
 
-        existing.setBehaviorNotes(updated.getBehaviorNotes());
-        existing.setNotes(updated.getNotes());
+        // Uwagi behawioralne
+        if (updated.getBehaviorNotes() != null) existing.setBehaviorNotes(updated.getBehaviorNotes());
+
+        // Notatki ogólne
+        if (updated.getNotes() != null) existing.setNotes(updated.getNotes());
+
         existing.setUpdatedAt(LocalDate.now());
 
         return entryRepo.save(existing);

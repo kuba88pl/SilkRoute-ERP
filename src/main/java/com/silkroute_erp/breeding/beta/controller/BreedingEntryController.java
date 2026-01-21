@@ -35,4 +35,3 @@ public class BreedingEntryController {
         entryService.delete(id);
     }
 }
-
