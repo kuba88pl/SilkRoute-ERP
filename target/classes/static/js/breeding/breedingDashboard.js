@@ -2,119 +2,100 @@
 
 import { fetchSpiders, fetchEntriesForSpider } from "./breedingApi.js";
 
-/**
- * Renderuje globalny dashboard rozmnożeń
- */
+/* ============================================================
+   MAIN RENDER
+============================================================ */
+
 export async function renderBreedingDashboard(root) {
     const spiders = await fetchSpiders();
 
-    // Pobieramy wszystkie wpisy rozmnożeń
-    const allEntries = [];
+    // Load entries for each spider
+    const spidersWithStats = [];
     for (const s of spiders) {
         const entries = await fetchEntriesForSpider(s.id);
-        allEntries.push(...entries.map(e => ({ ...e, spider: s })));
+
+        const pairings = entries.filter(e => e.entryType === "PAIRING").length;
+        const eggCreated = entries.filter(e => e.entryType === "EGG_SACK_CREATED").length;
+        const eggReceived = entries.filter(e => e.entryType === "EGG_SACK_RECEIVED");
+
+        const totalL1 = eggReceived.reduce((sum, e) => {
+            const es = e.eggSack;
+            return sum + (es?.numberOfSpiders ?? 0);
+        }, 0);
+
+        spidersWithStats.push({
+            ...s,
+            pairings,
+            eggCreated,
+            eggReceivedCount: eggReceived.length,
+            totalL1
+        });
     }
 
-    const stats = computeStats(spiders, allEntries);
+    // Global stats
+    const totalFemales = spiders.length;
+    const totalPairings = spidersWithStats.reduce((a, s) => a + s.pairings, 0);
+    const totalEggSacks = spidersWithStats.reduce((a, s) => a + s.eggCreated, 0);
+    const totalSuccessful = spidersWithStats.reduce((a, s) => a + s.eggReceivedCount, 0);
+    const totalL1 = spidersWithStats.reduce((a, s) => a + s.totalL1, 0);
+
+    // Sort by productivity (L1 first, then egg sacks)
+    const topFemales = [...spidersWithStats].sort((a, b) => {
+        if (b.totalL1 !== a.totalL1) return b.totalL1 - a.totalL1;
+        return b.eggCreated - a.eggCreated;
+    });
 
     root.innerHTML = `
-        <div class="glass-card p-10 rounded-3xl border border-slate-200 mb-10">
-            <h2 class="text-4xl font-[800] text-slate-900 tracking-tight mb-6">
-                Dashboard rozmnożeń
-            </h2>
-
-            ${renderGlobalStats(stats)}
+        <div class="glass-card mb-8">
+            <h2 class="text-3xl font-[800] mb-2">Dashboard rozmnożeń</h2>
+            <p class="text-slate-500">Podsumowanie wszystkich rozmnożeń w systemie.</p>
         </div>
 
-        <h3 class="text-2xl font-[800] text-slate-900 tracking-tight mt-12 mb-6">
-            Najbardziej produktywne samice
-        </h3>
+        <!-- GLOBAL STATS -->
+        <div class="grid md:grid-cols-5 gap-6 mb-10">
+            ${statCard("SAMICE", totalFemales)}
+            ${statCard("DOPUSZCZENIA", totalPairings)}
+            ${statCard("KOKONY", totalEggSacks)}
+            ${statCard("UDANE ROZMNOŻENIA", totalSuccessful)}
+            ${statCard("ŁĄCZNIE L1", totalL1)}
+        </div>
 
-        ${renderTopFemales(stats.topFemales)}
-    `;
-}
+        <!-- TOP FEMALES -->
+        <div class="glass-card">
+            <h3 class="text-2xl font-[800] mb-6">Najbardziej produktywne samice</h3>
 
-/* ============================================================================
-   STATYSTYKI GLOBALNE
-============================================================================ */
-
-function computeStats(spiders, entries) {
-    const totalSpiders = spiders.length;
-    const totalPairings = entries.length;
-    const totalEggSacks = entries.filter(e => e.sacDate).length;
-    const totalResults = entries.filter(e => e.status === "RESULT").length;
-    const totalL1 = entries.reduce((sum, e) => sum + (e.liveL1Count ?? 0), 0);
-
-    // Grupowanie po samicy
-    const bySpider = {};
-    for (const e of entries) {
-        const id = e.spider.id;
-        if (!bySpider[id]) bySpider[id] = { spider: e.spider, l1: 0, sacs: 0 };
-        if (e.sacDate) bySpider[id].sacs++;
-        if (e.liveL1Count) bySpider[id].l1 += e.liveL1Count;
-    }
-
-    const topFemales = Object.values(bySpider)
-        .sort((a, b) => b.l1 - a.l1)
-        .slice(0, 5);
-
-    return {
-        totalSpiders,
-        totalPairings,
-        totalEggSacks,
-        totalResults,
-        totalL1,
-        topFemales
-    };
-}
-
-function renderGlobalStats(s) {
-    return `
-        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
-
-            ${stat("Samice", s.totalSpiders)}
-            ${stat("Dopuszczenia", s.totalPairings)}
-            ${stat("Kokony", s.totalEggSacks)}
-            ${stat("Udane rozmnożenia", s.totalResults)}
-            ${stat("Łącznie L1", s.totalL1)}
-
+            <div class="space-y-4">
+                ${topFemales.map(f => topFemaleCard(f)).join("")}
+            </div>
         </div>
     `;
 }
 
-function stat(label, value) {
+/* ============================================================
+   STAT CARD
+============================================================ */
+
+function statCard(label, value) {
     return `
-        <div class="glass-card p-6 rounded-2xl border border-slate-200 text-center">
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">${label}</p>
-            <p class="text-3xl font-[800] text-slate-900 mt-2">${value}</p>
+        <div class="glass-card text-center py-6">
+            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">${label}</p>
+            <p class="text-3xl font-[800]">${value}</p>
         </div>
     `;
 }
 
-/* ============================================================================
-   TOP SAMICE
-============================================================================ */
+/* ============================================================
+   TOP FEMALE CARD
+============================================================ */
 
-function renderTopFemales(list) {
-    if (list.length === 0) {
-        return `<p class="text-slate-500 italic">Brak danych.</p>`;
-    }
-
+function topFemaleCard(f) {
     return `
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            ${list.map(f => `
-                <div class="glass-card p-6 rounded-2xl border border-slate-200">
-                    <p class="text-xl font-bold text-slate-900">
-                        ${f.spider.typeName} ${f.spider.speciesName}
-                    </p>
-                    <p class="text-slate-500 mt-1">${f.spider.origin ?? "pochodzenie nieznane"}</p>
+        <div class="glass-card p-4">
+            <h4 class="text-xl font-[800] mb-1">${f.typeName} ${f.speciesName}</h4>
+            <p class="text-slate-500 text-sm mb-3">${f.origin ?? "pochodzenie nieznane"}</p>
 
-                    <div class="mt-4">
-                        <p class="text-sm">Kokony: <b>${f.sacs}</b></p>
-                        <p class="text-sm">L1: <b>${f.l1}</b></p>
-                    </div>
-                </div>
-            `).join("")}
+            <p class="text-sm"><b>Kokony:</b> ${f.eggCreated}</p>
+            <p class="text-sm"><b>L1:</b> ${f.totalL1}</p>
         </div>
     `;
 }

@@ -36,7 +36,7 @@ export async function deleteSpider(spiderId) {
 }
 
 /* ============================================================
-   ENTRIES
+   ENTRIES (TIMELINE EVENTS)
 ============================================================ */
 
 export async function fetchEntriesForSpider(spiderId) {

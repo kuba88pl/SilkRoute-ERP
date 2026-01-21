@@ -1,28 +1,34 @@
 // /static/js/breeding/breedingEggSackForm.js
 
-import { createEggSack } from "./breedingApi.js";
+import { createEggSack, updateEggSack } from "./breedingApi.js";
 
-/**
- * Otwiera modal dodawania kokonu
- */
+/* ============================================================
+   OPEN: ADD EGG SACK (CREATION)
+============================================================ */
+
 export function openEggSackModal(entryId, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
     const box = document.getElementById("breeding-full-modal-content");
 
-    box.innerHTML = template();
+    box.innerHTML = templateAdd();
+
     modal.classList.remove("hidden");
 
-    const sacInput = document.getElementById("sacDate");
-    const pullInput = document.getElementById("recommendedPullDate");
+    const sacDateInput = document.getElementById("sacDate");
+    const recommendedPullInput = document.getElementById("recommendedPullDate");
 
-    let userEditedPullDate = false;
+    sacDateInput.addEventListener("change", () => {
+        const v = sacDateInput.value;
+        if (!v) return;
 
-    pullInput.addEventListener("input", () => userEditedPullDate = true);
+        const d = new Date(v);
+        d.setDate(d.getDate() + 30);
 
-    sacInput.addEventListener("input", () => {
-        if (!userEditedPullDate && sacInput.value) {
-            pullInput.value = addDays(sacInput.value, 30);
-        }
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+
+        recommendedPullInput.value = `${year}-${month}-${day}`;
     });
 
     document.getElementById("cancel-egg-sack").onclick = () => {
@@ -30,7 +36,7 @@ export function openEggSackModal(entryId, onSaved) {
     };
 
     document.getElementById("save-egg-sack").onclick = async () => {
-        const payload = collectPayload();
+        const payload = collectAddPayload();
 
         await createEggSack(entryId, payload);
 
@@ -40,13 +46,39 @@ export function openEggSackModal(entryId, onSaved) {
 }
 
 /* ============================================================
-   TEMPLATE
+   OPEN: RECEIVE EGG SACK (RESULT)
 ============================================================ */
 
-function template() {
+export function openReceiveEggSackModal(eggSack, onSaved) {
+    const modal = document.getElementById("breeding-full-modal");
+    const box = document.getElementById("breeding-full-modal-content");
+
+    box.innerHTML = templateReceive(eggSack);
+
+    modal.classList.remove("hidden");
+
+    document.getElementById("cancel-receive-egg-sack").onclick = () => {
+        modal.classList.add("hidden");
+    };
+
+    document.getElementById("save-receive-egg-sack").onclick = async () => {
+        const payload = collectReceivePayload();
+
+        await updateEggSack(eggSack.id, payload);
+
+        modal.classList.add("hidden");
+        if (onSaved) onSaved();
+    };
+}
+
+/* ============================================================
+   TEMPLATE: ADD EGG SACK
+============================================================ */
+
+function templateAdd() {
     return `
       <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
-        Kokon / Wynik rozmnożenia
+        Dodaj kokon
       </h3>
 
       <div class="space-y-10 max-h-[70vh] overflow-y-auto pr-2">
@@ -54,80 +86,119 @@ function template() {
         <!-- KOKON -->
         <section>
           <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
-            Kokon
+            Dane kokonu
           </p>
 
           <div class="grid md:grid-cols-2 gap-4">
             <input type="date" id="sacDate" class="input" placeholder="Data złożenia" />
-            <input type="date" id="recommendedPullDate" class="input" placeholder="Sugerowana data wyciągnięcia" />
-          </div>
-        </section>
-
-        <!-- WYNIK KOKONU -->
-        <section>
-          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
-            Wynik kokonu
-          </p>
-
-          <div class="grid md:grid-cols-3 gap-4">
-            <input type="number" id="totalEggsOrNymphs" class="input" placeholder="Łącznie jaj / nimf" />
-            <input type="number" id="deadCount" class="input" placeholder="Martwe" />
-            <input type="number" id="liveL1Count" class="input" placeholder="Żywe L1" />
+            <input type="date" id="recommendedPullDate" class="input" placeholder="Sugerowana data odbioru" />
           </div>
 
-          <select id="cocoonStatus" class="input mt-4">
-            ${statusOptions()}
-          </select>
-        </section>
-
-        <!-- NOTATKI -->
-        <section>
-          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
-            Uwagi
-          </p>
-          <textarea id="notes" class="input h-28" placeholder="Opis, uwagi, zachowanie"></textarea>
+          <textarea id="notes" class="input h-28 mt-4" placeholder="Uwagi"></textarea>
         </section>
 
       </div>
 
       <div class="flex gap-4 pt-8">
         <button id="cancel-egg-sack" class="btn-secondary">Anuluj</button>
-        <button id="save-egg-sack" class="btn-primary">Zapisz</button>
+        <button id="save-egg-sack" class="btn-green">Zapisz</button>
       </div>
     `;
 }
 
 /* ============================================================
-   STATUSY
+   TEMPLATE: RECEIVE EGG SACK
 ============================================================ */
 
-function statusOptions() {
-    const statuses = ["LAID", "DEVELOPING", "PULLED", "FAILED", "SUCCESSFUL"];
-    return statuses
-        .map(s => `<option value="${s}">${s}</option>`)
-        .join("");
+function templateReceive(eggSack) {
+    return `
+      <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">
+        Odbierz kokon
+      </h3>
+
+      <div class="space-y-10 max-h-[70vh] overflow-y-auto pr-2">
+
+        <!-- ODBIÓR -->
+        <section>
+          <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">
+            Dane odbioru
+          </p>
+
+          <input type="date" id="dateOfEggSackPull" class="input" placeholder="Data odebrania"
+                 value="${eggSack.dateOfEggSackPull ?? ""}" />
+
+          <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <input type="number" id="numberOfEggs" class="input" placeholder="Jaja"
+                   value="${eggSack.numberOfEggs ?? ""}" />
+            <input type="number" id="numberOfBadEggs" class="input" placeholder="Złe jaja"
+                   value="${eggSack.numberOfBadEggs ?? ""}" />
+            <input type="number" id="numberOfNymphs" class="input" placeholder="Nimfy"
+                   value="${eggSack.numberOfNymphs ?? ""}" />
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <input type="number" id="numberOfDeadNymphs" class="input" placeholder="Martwe nimfy"
+                   value="${eggSack.numberOfDeadNymphs ?? ""}" />
+            <input type="number" id="numberOfSpiders" class="input" placeholder="Pająki"
+                   value="${eggSack.numberOfSpiders ?? ""}" />
+            <input type="number" id="numberOfDeadSpiders" class="input" placeholder="Martwe pająki"
+                   value="${eggSack.numberOfDeadSpiders ?? ""}" />
+          </div>
+
+          <select id="status" class="input mt-4">
+            <option value="SUCCESSFUL" ${eggSack.status === "SUCCESSFUL" ? "selected" : ""}>SUCCESSFUL</option>
+            <option value="FAILED" ${eggSack.status === "FAILED" ? "selected" : ""}>FAILED</option>
+          </select>
+
+          <textarea id="eggSackDescription" class="input h-28 mt-4" placeholder="Uwagi">${
+        eggSack.eggSackDescription ?? ""
+    }</textarea>
+        </section>
+
+      </div>
+
+      <div class="flex gap-4 pt-8">
+        <button id="cancel-receive-egg-sack" class="btn-secondary">Anuluj</button>
+        <button id="save-receive-egg-sack" class="btn-red">Zapisz</button>
+      </div>
+    `;
 }
 
 /* ============================================================
-   PAYLOAD
+   PAYLOADS
 ============================================================ */
 
-function collectPayload() {
+function collectAddPayload() {
     return {
         dateOfEggSack: valueOrNull("#sacDate"),
         suggestedDateOfEggSackPull: valueOrNull("#recommendedPullDate"),
         dateOfEggSackPull: null,
 
-        numberOfEggs: numberOrNull("#totalEggsOrNymphs"),
-        numberOfBadEggs: numberOrNull("#deadCount"),
-        numberOfNymphs: numberOrNull("#liveL1Count"),
-
+        numberOfEggs: null,
+        numberOfBadEggs: null,
+        numberOfNymphs: null,
         numberOfDeadNymphs: null,
         numberOfSpiders: null,
         numberOfDeadSpiders: null,
 
         eggSackDescription: valueOrNull("#notes"),
-        status: valueOrNull("#cocoonStatus")
+        status: "DEVELOPING"
+    };
+}
+
+function collectReceivePayload() {
+    return {
+        dateOfEggSackPull: valueOrNull("#dateOfEggSackPull"),
+
+        numberOfEggs: numberOrNull("#numberOfEggs"),
+        numberOfBadEggs: numberOrNull("#numberOfBadEggs"),
+        numberOfNymphs: numberOrNull("#numberOfNymphs"),
+        numberOfDeadNymphs: numberOrNull("#numberOfDeadNymphs"),
+        numberOfSpiders: numberOrNull("#numberOfSpiders"),
+        numberOfDeadSpiders: numberOrNull("#numberOfDeadSpiders"),
+
+        eggSackDescription: valueOrNull("#eggSackDescription"),
+        status: valueOrNull("#status")
     };
 }
 
@@ -136,18 +207,15 @@ function collectPayload() {
 ============================================================ */
 
 function valueOrNull(sel) {
-    const v = document.querySelector(sel).value;
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const v = el.value;
     return v === "" ? null : v;
 }
 
 function numberOrNull(sel) {
-    const v = document.querySelector(sel).value;
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const v = el.value;
     return v === "" ? null : Number(v);
-}
-
-function addDays(dateStr, days) {
-    if (!dateStr) return null;
-    const d = new Date(dateStr);
-    d.setDate(d.getDate() + days);
-    return d.toISOString().split("T")[0];
 }

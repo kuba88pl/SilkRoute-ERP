@@ -1,158 +1,47 @@
 // /static/js/breeding/breedingList.js
 
-import { fetchSpiders, deleteSpider } from "./breedingApi.js";
+import { fetchSpiders } from "./breedingApi.js";
 import { renderBreedingDetails } from "./breedingDetails.js";
-import { renderSpiderForm } from "./breedingSpiderForm.js";
 
 export async function renderBreedingList(root) {
     const spiders = await fetchSpiders();
-    const viewMode = localStorage.getItem("breedingViewMode") || "cards";
 
     root.innerHTML = `
-        <div class="flex justify-between items-center mb-8">
-            <div class="flex items-center gap-4">
-                <h2 class="text-3xl font-[800] text-slate-900 tracking-tight">
-                    Lista samic
-                </h2>
-
-                <div class="flex items-center gap-2 text-slate-500 text-sm">
-                    <button id="viewCards" class="${viewMode === "cards" ? "btn-secondary" : "btn-secondary opacity-60"}">
-                        <i class="bi bi-grid"></i>
-                    </button>
-                    <button id="viewList" class="${viewMode === "list" ? "btn-secondary" : "btn-secondary opacity-60"}">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
-            </div>
-
-            <button id="add-spider-btn" class="btn-primary">
-                <i class="bi bi-plus-lg"></i> Dodaj samicę
-            </button>
+        <div class="glass-card mb-8">
+            <h2 class="text-3xl font-[800] mb-2">Samice</h2>
+            <p class="text-slate-500">Lista wszystkich samic w systemie.</p>
         </div>
 
-        <div id="spiders-container"></div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${spiders.map(s => spiderCard(s)).join("")}
+        </div>
     `;
 
-    const container = document.getElementById("spiders-container");
-    renderSpiders(container, spiders, viewMode, root);
-
-    document.getElementById("viewCards").onclick = () => {
-        localStorage.setItem("breedingViewMode", "cards");
-        renderSpiders(container, spiders, "cards", root);
-    };
-
-    document.getElementById("viewList").onclick = () => {
-        localStorage.setItem("breedingViewMode", "list");
-        renderSpiders(container, spiders, "list", root);
-    };
-
-    document.getElementById("add-spider-btn").onclick = () => {
-        renderSpiderForm(root, () => renderBreedingList(root));
-    };
-}
-
-function renderSpiders(container, spiders, mode, root) {
-    if (mode === "cards") {
-        container.innerHTML = `
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                ${spiders.map(s => spiderCard(s)).join("")}
-            </div>
-        `;
-    } else {
-        container.innerHTML = `
-            <table class="w-full text-sm">
-                <thead>
-                    <tr class="text-left text-slate-500 border-b">
-                        <th class="py-2">Samica</th>
-                        <th class="py-2">Pochodzenie</th>
-                        <th class="py-2">Rozmiar</th>
-                        <th class="py-2">CITES</th>
-                        <th class="py-2">Rozmnożenia</th>
-                        <th class="py-2 text-right">Akcje</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${spiders.map(s => spiderRow(s)).join("")}
-                </tbody>
-            </table>
-        `;
-    }
-
-    // Kliknięcie → szczegóły
-    container.querySelectorAll("[data-spider-id]").forEach(el => {
-        el.onclick = () => {
-            const id = el.getAttribute("data-spider-id");
-            renderBreedingDetails(root, id, () => renderBreedingList(root));
-        };
-    });
-
-    // Usuwanie samicy
-    container.querySelectorAll(".delete-spider-btn").forEach(btn => {
-        btn.onclick = async (ev) => {
-            ev.stopPropagation();
-
-            const id = btn.dataset.spiderId;
-
-            if (!confirm("Czy na pewno chcesz usunąć tę samicę?")) return;
-
-            await deleteSpider(id);
-            renderBreedingList(root);
+    document.querySelectorAll("[data-spider-id]").forEach(card => {
+        card.onclick = () => {
+            const spiderId = card.dataset.spiderId;
+            renderBreedingDetails(root, spiderId, () => renderBreedingList(root));
         };
     });
 }
 
-function spiderCard(s) {
+function spiderCard(spider) {
     return `
-        <div data-spider-id="${s.id}"
-             class="glass-card breeding-list-card border border-slate-200 relative">
+        <div data-spider-id="${spider.id}"
+             class="glass-card breeding-list-card cursor-pointer">
 
-            <button class="delete-spider-btn absolute top-4 right-4 text-red-500 hover:text-red-700"
-                    data-spider-id="${s.id}">
-                <i class="bi bi-trash"></i>
-            </button>
+            <h3 class="text-xl font-[800] mb-1">
+                ${spider.typeName} ${spider.speciesName}
+            </h3>
 
-            <p class="text-xl font-bold text-slate-900">
-                ${s.typeName} ${s.speciesName}
+            <p class="text-slate-500 text-sm mb-4">
+                ${spider.origin ?? "pochodzenie nieznane"}
             </p>
 
-            <p class="text-slate-500 mt-1 text-sm">
-                ${s.origin ?? "pochodzenie nieznane"}
+            <p class="text-slate-500 text-sm">
+                Rozmiar: <b>${spider.size ?? "-"}</b> • 
+                CITES: <b>${spider.cites ? "TAK" : "NIE"}</b>
             </p>
-
-            <div class="mt-4 grid grid-cols-3 gap-4 text-sm">
-                <div>
-                    <p class="text-[10px] font-black text-slate-400 uppercase">Rozmiar</p>
-                    <p>${s.size ?? "-"}</p>
-                </div>
-                <div>
-                    <p class="text-[10px] font-black text-slate-400 uppercase">CITES</p>
-                    <p>${s.cites ? "Tak" : "Nie"}</p>
-                </div>
-                <div>
-                    <p class="text-[10px] font-black text-slate-400 uppercase">Rozmnożenia</p>
-                    <p>${s.breedingCount ?? 0}</p>
-                </div>
-            </div>
         </div>
-    `;
-}
-
-function spiderRow(s) {
-    return `
-        <tr data-spider-id="${s.id}" class="border-b hover:bg-slate-50 cursor-pointer">
-
-            <td class="py-2 font-semibold">${s.typeName} ${s.speciesName}</td>
-            <td class="py-2 text-slate-500">${s.origin ?? "pochodzenie nieznane"}</td>
-            <td class="py-2">${s.size ?? "-"}</td>
-            <td class="py-2">${s.cites ? "Tak" : "Nie"}</td>
-            <td class="py-2">${s.breedingCount ?? 0}</td>
-
-            <td class="py-2 text-right">
-                <button class="delete-spider-btn text-red-500 hover:text-red-700"
-                        data-spider-id="${s.id}">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </td>
-        </tr>
     `;
 }

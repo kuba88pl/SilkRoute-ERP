@@ -5,22 +5,22 @@ import {
     fetchEntriesForSpider,
     deleteEntry,
     fetchEggSackByEntry,
-    createEntry,
-    createEggSack
+    createEntry
 } from "./breedingApi.js";
 
 import { renderPairingForm } from "./breedingPairingForm.js";
-import { openEggSackModal } from "./breedingEggSackForm.js";
+import { openEggSackModal, openReceiveEggSackModal } from "./breedingEggSackForm.js";
+
+/* ============================================================
+   MAIN RENDER
+============================================================ */
 
 export async function renderBreedingDetails(root, spiderId, onBack) {
     const spider = await fetchSpider(spiderId);
     let entries = await fetchEntriesForSpider(spiderId);
 
-    entries = entries.sort((a, b) => {
-        const da = new Date(a.pairingDate1 ?? a.createdAt);
-        const db = new Date(b.pairingDate1 ?? b.createdAt);
-        return db - da;
-    });
+    // Sort newest → oldest
+    entries = entries.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     root.innerHTML = `
         <div class="glass-card mb-8">
@@ -45,9 +45,8 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                         <i class="bi bi-plus-lg"></i> Dodaj wpis
                     </button>
 
-                    <button id="addEggSackBtn"
-                        class="px-4 py-2 rounded-lg font-semibold text-white bg-green-600 hover:bg-green-700 transition">
-                        <i class="bi bi-egg-fill"></i> Dodaj kokon
+                    <button id="addEggSackBtn" class="btn-green">
+                        🥚 Dodaj kokon
                     </button>
                 </div>
             </div>
@@ -73,13 +72,13 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
     };
 
     document.getElementById("addEggSackBtn").onclick = async () => {
-        // 1. Tworzymy NOWY wpis w timeline
         const newEntry = await createEntry(spiderId, {
+            entryType: "EGG_SACK_CREATED",
             pairingNotes: "Kokon",
-            notes: null
+            notes: null,
+            behaviorNotes: null
         });
 
-        // 2. Otwieramy modal kokonu
         openEggSackModal(newEntry.id, () => renderBreedingDetails(root, spiderId, onBack));
     };
 
@@ -99,7 +98,7 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
 
             entry.eggSack = eggSack || null;
 
-            openEntryModal(entry);
+            openEntryModal(entry, spiderId, onBack);
         });
     });
 
@@ -117,31 +116,58 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
     });
 }
 
+/* ============================================================
+   ENTRY ROW
+============================================================ */
+
 function renderEntryRow(e) {
-    const date = e.pairingDate1 ?? e.createdAt;
+    const date = e.createdAt?.split("T")[0] ?? "-";
+
+    let icon = "🔗";
+    let cls = "timeline-entry timeline-entry-pairing";
+
+    if (e.entryType === "EGG_SACK_CREATED") {
+        icon = "🥚";
+        cls = "timeline-entry timeline-entry-egg-created";
+    }
+
+    if (e.entryType === "EGG_SACK_RECEIVED") {
+        icon = "🐣";
+        cls = "timeline-entry timeline-entry-egg-received";
+    }
 
     return `
-        <div data-entry-id="${e.id}"
-             class="flex justify-between items-center border-b border-slate-200 pb-3 last:border-b-0 cursor-pointer hover:bg-slate-50 rounded-xl px-2">
+        <div data-entry-id="${e.id}" class="${cls}">
+            <div class="flex items-center gap-4">
+                <div class="timeline-icon ${
+        e.entryType === "EGG_SACK_CREATED"
+            ? "timeline-icon-egg-created"
+            : e.entryType === "EGG_SACK_RECEIVED"
+                ? "timeline-icon-egg-received"
+                : "timeline-icon-pairing"
+    }">
+                    ${icon}
+                </div>
 
-            <div>
-                <p class="font-semibold">${date ?? "-"}</p>
-                <p class="text-slate-500 text-sm">
-                    ${e.pairingNotes ?? "Brak notatek"}
-                </p>
+                <div>
+                    <p class="font-semibold">${date}</p>
+                    <p class="text-slate-600 text-sm">${e.pairingNotes ?? "-"}</p>
+                </div>
             </div>
 
-            <div class="flex items-center gap-4 text-right text-sm text-slate-500">
-                <button class="delete-entry-btn text-red-500 hover:text-red-700"
-                        data-entry-id="${e.id}">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </div>
+            <button class="delete-entry-btn text-red-500 hover:text-red-700"
+                    data-entry-id="${e.id}">
+                <i class="bi bi-trash"></i>
+            </button>
         </div>
     `;
 }
 
-function openEntryModal(e) {
+/* ============================================================
+   ENTRY MODAL
+============================================================ */
+
+function openEntryModal(e, spiderId, onBack) {
     const modal = document.getElementById("breeding-full-modal");
     const content = document.getElementById("breeding-full-modal-content");
 
@@ -149,39 +175,20 @@ function openEntryModal(e) {
         <h2 class="text-2xl font-[800] mb-4">Szczegóły wpisu</h2>
 
         <div class="space-y-3 text-sm">
-            <p><b>Data:</b> ${e.pairingDate1 ?? e.createdAt ?? "-"}</p>
+            <p><b>Data:</b> ${e.createdAt?.split("T")[0] ?? "-"}</p>
             <p><b>Wydarzenie:</b><br>${e.pairingNotes ?? "Brak"}</p>
+            <p><b>Zachowanie:</b><br>${e.behaviorNotes ?? "Brak"}</p>
             <p><b>Notatki ogólne:</b><br>${e.notes ?? "Brak"}</p>
         </div>
     `;
 
     if (e.eggSack) {
-        html += `
-            <div class="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
-                <h3 class="text-xl font-bold mb-2">Kokon</h3>
-
-                <p><b>Data złożenia:</b> ${e.eggSack.dateOfEggSack ?? "-"}</p>
-                <p><b>Sugerowana data wyciągnięcia:</b> ${e.eggSack.suggestedDateOfEggSackPull ?? "-"}</p>
-                <p><b>Data wyciągnięcia:</b> ${e.eggSack.dateOfEggSackPull ?? "-"}</p>
-
-                <p class="mt-2"><b>Jaja:</b> ${e.eggSack.numberOfEggs ?? "-"}</p>
-                <p><b>Złe jaja:</b> ${e.eggSack.numberOfBadEggs ?? "-"}</p>
-
-                <p class="mt-2"><b>Nimfy:</b> ${e.eggSack.numberOfNymphs ?? "-"}</p>
-                <p><b>Martwe nimfy:</b> ${e.eggSack.numberOfDeadNymphs ?? "-"}</p>
-
-                <p class="mt-2"><b>Pająki:</b> ${e.eggSack.numberOfSpiders ?? "-"}</p>
-                <p><b>Martwe pająki:</b> ${e.eggSack.numberOfDeadSpiders ?? "-"}</p>
-
-                <p class="mt-2"><b>Status:</b> ${e.eggSack.status}</p>
-
-                <p class="mt-2"><b>Opis:</b><br>${e.eggSack.eggSackDescription ?? "Brak"}</p>
-            </div>
-        `;
+        html += renderEggSackSection(e);
     }
 
     html += `
-        <div class="mt-8 flex justify-end">
+        <div class="mt-8 flex justify-end gap-4">
+            ${renderReceiveButton(e)}
             <button id="closeEntryModal" class="btn-secondary">Zamknij</button>
         </div>
     `;
@@ -191,7 +198,67 @@ function openEntryModal(e) {
 
     document.getElementById("closeEntryModal").onclick = () => modal.classList.add("hidden");
 
+    const receiveBtn = document.getElementById("receiveEggSackBtn");
+    if (receiveBtn) {
+        receiveBtn.onclick = () => {
+            openReceiveEggSackModal(e.eggSack, () => {
+                modal.classList.add("hidden");
+                renderBreedingDetails(document.getElementById("app"), spiderId, onBack);
+            });
+        };
+    }
+
     modal.onclick = e2 => {
         if (e2.target === modal) modal.classList.add("hidden");
     };
 }
+/* ============================================================
+   EGG SACK SECTION
+============================================================ */
+
+function renderEggSackSection(e) {
+    const es = e.eggSack;
+
+    return `
+        <div class="mt-6 p-4 bg-white rounded-xl border border-slate-200">
+            <h3 class="text-xl font-bold mb-2">Kokon</h3>
+
+            <p><b>Data złożenia:</b> ${es.dateOfEggSack ?? "-"}</p>
+            <p><b>Sugerowana data odbioru:</b> ${es.suggestedDateOfEggSackPull ?? "-"}</p>
+
+            ${es.dateOfEggSackPull ? `
+                <p class="mt-4"><b>Data odebrania:</b> ${es.dateOfEggSackPull}</p>
+                <p><b>Jaja:</b> ${es.numberOfEggs ?? "-"}</p>
+                <p><b>Złe jaja:</b> ${es.numberOfBadEggs ?? "-"}</p>
+                <p><b>Nimfy:</b> ${es.numberOfNymphs ?? "-"}</p>
+                <p><b>Martwe nimfy:</b> ${es.numberOfDeadNymphs ?? "-"}</p>
+                <p><b>Pająki:</b> ${es.numberOfSpiders ?? "-"}</p>
+                <p><b>Martwe pająki:</b> ${es.numberOfDeadSpiders ?? "-"}</p>
+                <p><b>Status:</b> ${es.status}</p>
+            ` : `
+                <p class="mt-4 text-slate-500 italic">Kokon jeszcze nie został odebrany.</p>
+            `}
+
+            <p class="mt-4"><b>Uwagi:</b><br>${es.eggSackDescription ?? "Brak"}</p>
+        </div>
+    `;
+}
+
+/* ============================================================
+   RECEIVE BUTTON
+============================================================ */
+
+function renderReceiveButton(e) {
+    if (!e.eggSack) return "";
+    if (e.eggSack.dateOfEggSackPull) return "";
+
+    return `
+        <button id="receiveEggSackBtn" class="btn-red">
+            🐣 Odbierz kokon
+        </button>
+    `;
+}
+
+/* ============================================================
+   END OF FILE
+============================================================ */
