@@ -1,5 +1,3 @@
-// /static/js/breeding/breedingList.js
-
 import { fetchSpiders, deleteSpider } from "./breedingApi.js";
 import { renderBreedingDetails } from "./breedingDetails.js";
 import { renderSpiderForm } from "./breedingSpiderForm.js";
@@ -36,14 +34,17 @@ export async function renderBreedingList(root) {
     const container = document.getElementById("spiders-container");
     renderSpiders(container, spiders, viewMode, root);
 
-    document.getElementById("viewCards").onclick = () => {
+    // 🔥 POPRAWIONE — zawsze pobieramy świeże dane
+    document.getElementById("viewCards").onclick = async () => {
         localStorage.setItem("breedingViewMode", "cards");
-        renderSpiders(container, spiders, "cards", root);
+        const fresh = await fetchSpiders();
+        renderSpiders(container, fresh, "cards", root);
     };
 
-    document.getElementById("viewList").onclick = () => {
+    document.getElementById("viewList").onclick = async () => {
         localStorage.setItem("breedingViewMode", "list");
-        renderSpiders(container, spiders, "list", root);
+        const fresh = await fetchSpiders();
+        renderSpiders(container, fresh, "list", root);
     };
 
     document.getElementById("add-spider-btn").onclick = () => {
@@ -67,7 +68,7 @@ function renderSpiders(container, spiders, mode, root) {
                         <th class="py-2">Pochodzenie</th>
                         <th class="py-2">Rozmiar</th>
                         <th class="py-2">CITES</th>
-                        <th class="py-2">Rozmnożenia</th>
+                        <th class="py-2">Wpisy</th>
                         <th class="py-2 text-right">Akcje</th>
                     </tr>
                 </thead>
@@ -129,7 +130,7 @@ function spiderCard(s) {
                     <p>${s.cites ? "Tak" : "Nie"}</p>
                 </div>
                 <div>
-                    <p class="text-[10px] font-black text-slate-400 uppercase">Rozmnożenia</p>
+                    <p class="text-[10px] font-black text-slate-400 uppercase">Wpisy</p>
                     <p>${s.breedingCount ?? 0}</p>
                 </div>
             </div>
