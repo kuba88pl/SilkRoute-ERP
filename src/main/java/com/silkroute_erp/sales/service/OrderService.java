@@ -44,24 +44,24 @@ public class OrderService {
         newOrder.setCustomer(customer);
         newOrder.setDate(LocalDate.now());
 
-        // 🔥 Ustawiamy status z frontendu
+        // Ustawiamy status z frontendu
         if (orderDTO.getStatus() != null) {
             newOrder.setStatus(OrderStatus.valueOf(orderDTO.getStatus().toUpperCase()));
         } else {
             newOrder.setStatus(OrderStatus.NEW);
         }
 
-        // 🔥 Ustawiamy kuriera z frontendu
+        // Ustawiamy kuriera z frontendu
         if (orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isEmpty()) {
             newOrder.setCourierCompany(CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase()));
         } else {
             newOrder.setCourierCompany(null);
         }
 
-        // 🔥 Ustawiamy numer przesyłki z frontendu
+        // Ustawiamy numer przesyłki z frontendu
         newOrder.setShipmentNumber(orderDTO.getShipmentNumber());
 
-        // 🔥 Pająki
+        // Pająki
         List<OrderedSpider> orderedSpiders = orderDTO.getOrderedSpiders().stream()
                 .map(itemDTO -> {
                     Spider spider = spiderRepository.findById(itemDTO.getSpiderId())
@@ -73,7 +73,7 @@ public class OrderService {
                     return orderedSpider;
                 }).collect(Collectors.toList());
 
-        // 🔥 Aktualizacja stocków
+        // Aktualizacja stocków
         orderedSpiders.forEach(orderedSpider -> {
             Spider spider = orderedSpider.getSpider();
             int orderedQuantity = orderedSpider.getQuantity();
@@ -88,7 +88,7 @@ public class OrderService {
 
         newOrder.setOrderedSpiders(orderedSpiders);
 
-        // 🔥 Cena z frontendu lub automatyczna
+        // Cena z frontendu lub automatyczna
         if (orderDTO.getPrice() != null) {
             newOrder.setPrice(orderDTO.getPrice());
         } else {
@@ -208,6 +208,28 @@ public class OrderService {
         }
 
         return orderRepository.save(existingOrder);
+    }
+
+     /* ============================================================
+       ANULUJ ZAMÓWIENIE
+    ============================================================ */
+
+    @Transactional
+    public void cancelOrder(UUID id) {
+        Order order = orderRepository.findById(id)
+                .orElseThrow(() -> new OrderNotFoundException("Order not found"));
+
+        if (order.getStatus() == OrderStatus.CANCELLED) return;
+
+        // zwróć pająki do magazynu
+        for (OrderedSpider os : order.getOrderedSpiders()) {
+            Spider sp = os.getSpider();
+            sp.setQuantity(sp.getQuantity() + os.getQuantity());
+            spiderRepository.save(sp);
+        }
+
+        order.setStatus(OrderStatus.CANCELLED);
+        orderRepository.save(order);
     }
 
 
