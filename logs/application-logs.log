@@ -2819,3 +2819,399 @@ java.lang.IllegalArgumentException: No enum constant com.silkroute_erp.sales.ent
 2026-01-22 23:44:13 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-01-22 23:44:13 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@59bda751, com.silkroute_erp.sales.dto.SpiderDTO@23f5ad6f, com (truncated)...]
 2026-01-22 23:44:13 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:49:37 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@13467b88, com.silkroute_erp.sales.dto.CustomerDTO@63407e83, (truncated)...]
+2026-01-22 23:49:37 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@757c2c7c, com.silkroute_erp.sales.dto.SpiderDTO@fa6b791, com. (truncated)...]
+2026-01-22 23:49:39 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2cd8ac19-1d7d-4d50-9eb1-403c4ad2900c]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [122be846-b89b-4647-81b6-2e7c3a86d9bc]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5c9d1939-8eb3-4a64-bdc9-7968760a6c9b]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [53127541-4e3a-47db-9a90-ea60c58f9321]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [14cb85d2-3aff-42c9-887d-61144f3c2b06]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1a0a2e82-6e9a-4099-964e-958db0784cca]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [21721e0c-2e90-43f0-81cf-85a820004515]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1da1b206-ae2f-45ae-9c7e-f47944c7376e]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [39c63ebf-0f7d-4cfe-8f11-51e07520b2a4]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2dc07bdc-c1e7-4091-8bc5-557228a7fa34]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [976fc79a-d192-414c-9bb2-02471d666aab]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [22837df5-1593-4bbf-a3f1-fe919f97a1a3]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [34ea7d21-a289-4b81-a90a-1ef0a6f4b14d]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2fed2141-feea-454b-b470-250faeb34f7c]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [41159752-2cd3-4472-a4e9-3eda69be5a43]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c37a49a1-8575-4273-8bdf-ba723c2bd11c]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [435a95a0-8b21-42ed-a8d6-ce849d5389e1]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4a264fe3-2322-4d64-ba09-80f4305031dd]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d6051eb5-f220-47aa-8805-3512a654b2f6]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4bfeee31-d344-45c6-b918-d7c08f176e36]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a97b63cc-fdb0-4d00-bf6c-96d854c0cf50]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4c380b42-4eb4-4981-a1b7-e91ef555b108]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [50360276-a293-4d24-99b0-3760790f0180]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5a2b565f-1a32-4c9b-af29-4a80530e8d90]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d4b1798-2678-4e8b-8789-5f021586ab6e]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [62f60bb6-671a-42bc-b6da-44637797aa83]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [36766c5c-1bae-4345-ab15-1081b549486c]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [66dc53dc-5c89-4fd1-93d5-5e74b5ef7299]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [727d297f-0910-4127-8bc7-f6405be6690d]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7417f976-b1c8-41e6-99a8-8da1a29dd615]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7875ad63-1c9e-475d-b805-400d74bb5795]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7d2ae417-3991-4994-82ee-1c240b4cc618]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7eafb665-cc9c-4a59-8aa1-6e4c18ee7508]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [903aedf5-d457-444a-89bf-9630e0c72e7b]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [9bc08e01-62ae-4239-a51e-b2a1fa656cd9]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [45221491-fe98-4356-9bba-c72c20fb2ec4]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a819a4f5-b126-45b4-ac98-49c5cac03bee]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6644126d-a2b8-4c91-93ca-e7201bdfd0c2]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [18307b03-23d7-48f0-828b-1d85e38604aa]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c4594f80-75c0-494f-b3ac-1fb011a55aca]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c96981f0-ebf6-4cf1-bcef-1310c103db1e]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d128f01c-2604-4482-8f7a-7aadfc739127]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e09c04ed-edcd-4d82-85e1-27d45e38788f]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e506fb59-007b-4d20-b8d4-10d9fcd57be5]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ea023cfd-c2a0-482e-ad0a-91fff2857f02]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:52:25 [http-nio-8080-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [f2cff687-3b40-4235-8919-b1d1e8440b34]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@19cf316, com.silkroute_erp.sales.dto.OrderDTO@520177d1, com.si (truncated)...]
+2026-01-22 23:52:25 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@308e8ebd, com.silkroute_erp.sales.dto.SpiderDTO@2916e860, com (truncated)...]
+2026-01-22 23:54:30 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-22 23:54:46 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@172a8775, com.silkroute_erp.sales.dto.CustomerDTO@28bb30d6, (truncated)...]
+2026-01-22 23:54:46 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@31462fd3, com.silkroute_erp.sales.dto.SpiderDTO@38731cd7, com (truncated)...]
+2026-01-22 23:54:48 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2cd8ac19-1d7d-4d50-9eb1-403c4ad2900c]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [122be846-b89b-4647-81b6-2e7c3a86d9bc]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5c9d1939-8eb3-4a64-bdc9-7968760a6c9b]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [53127541-4e3a-47db-9a90-ea60c58f9321]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [14cb85d2-3aff-42c9-887d-61144f3c2b06]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1a0a2e82-6e9a-4099-964e-958db0784cca]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [21721e0c-2e90-43f0-81cf-85a820004515]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1da1b206-ae2f-45ae-9c7e-f47944c7376e]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [39c63ebf-0f7d-4cfe-8f11-51e07520b2a4]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2dc07bdc-c1e7-4091-8bc5-557228a7fa34]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [976fc79a-d192-414c-9bb2-02471d666aab]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [22837df5-1593-4bbf-a3f1-fe919f97a1a3]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [34ea7d21-a289-4b81-a90a-1ef0a6f4b14d]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2fed2141-feea-454b-b470-250faeb34f7c]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [41159752-2cd3-4472-a4e9-3eda69be5a43]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c37a49a1-8575-4273-8bdf-ba723c2bd11c]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [435a95a0-8b21-42ed-a8d6-ce849d5389e1]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4a264fe3-2322-4d64-ba09-80f4305031dd]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d6051eb5-f220-47aa-8805-3512a654b2f6]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4bfeee31-d344-45c6-b918-d7c08f176e36]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a97b63cc-fdb0-4d00-bf6c-96d854c0cf50]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4c380b42-4eb4-4981-a1b7-e91ef555b108]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [50360276-a293-4d24-99b0-3760790f0180]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5a2b565f-1a32-4c9b-af29-4a80530e8d90]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d4b1798-2678-4e8b-8789-5f021586ab6e]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [62f60bb6-671a-42bc-b6da-44637797aa83]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [36766c5c-1bae-4345-ab15-1081b549486c]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [66dc53dc-5c89-4fd1-93d5-5e74b5ef7299]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [727d297f-0910-4127-8bc7-f6405be6690d]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7417f976-b1c8-41e6-99a8-8da1a29dd615]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7875ad63-1c9e-475d-b805-400d74bb5795]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7d2ae417-3991-4994-82ee-1c240b4cc618]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7eafb665-cc9c-4a59-8aa1-6e4c18ee7508]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [903aedf5-d457-444a-89bf-9630e0c72e7b]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [9bc08e01-62ae-4239-a51e-b2a1fa656cd9]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [45221491-fe98-4356-9bba-c72c20fb2ec4]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a819a4f5-b126-45b4-ac98-49c5cac03bee]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6644126d-a2b8-4c91-93ca-e7201bdfd0c2]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [18307b03-23d7-48f0-828b-1d85e38604aa]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c4594f80-75c0-494f-b3ac-1fb011a55aca]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c96981f0-ebf6-4cf1-bcef-1310c103db1e]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d128f01c-2604-4482-8f7a-7aadfc739127]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e09c04ed-edcd-4d82-85e1-27d45e38788f]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e506fb59-007b-4d20-b8d4-10d9fcd57be5]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ea023cfd-c2a0-482e-ad0a-91fff2857f02]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:55:11 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [f2cff687-3b40-4235-8919-b1d1e8440b34]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@6e9e3440, com.silkroute_erp.sales.dto.OrderDTO@13e69a01, com.s (truncated)...]
+2026-01-22 23:55:11 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@1110fb2d, com.silkroute_erp.sales.dto.CustomerDTO@47334bfa, (truncated)...]
+2026-01-22 23:55:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@75da9cd1, com.silkroute_erp.sales.dto.SpiderDTO@54f6a179, com (truncated)...]
+2026-01-22 23:55:36 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@10a84df1, com.silkroute_erp.sales.dto.SpiderDTO@649128ed, com (truncated)...]
+2026-01-22 23:55:42 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2cd8ac19-1d7d-4d50-9eb1-403c4ad2900c]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [122be846-b89b-4647-81b6-2e7c3a86d9bc]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5c9d1939-8eb3-4a64-bdc9-7968760a6c9b]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [53127541-4e3a-47db-9a90-ea60c58f9321]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [14cb85d2-3aff-42c9-887d-61144f3c2b06]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1a0a2e82-6e9a-4099-964e-958db0784cca]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [21721e0c-2e90-43f0-81cf-85a820004515]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1da1b206-ae2f-45ae-9c7e-f47944c7376e]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [39c63ebf-0f7d-4cfe-8f11-51e07520b2a4]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2dc07bdc-c1e7-4091-8bc5-557228a7fa34]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [976fc79a-d192-414c-9bb2-02471d666aab]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [22837df5-1593-4bbf-a3f1-fe919f97a1a3]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [34ea7d21-a289-4b81-a90a-1ef0a6f4b14d]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2fed2141-feea-454b-b470-250faeb34f7c]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [41159752-2cd3-4472-a4e9-3eda69be5a43]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c37a49a1-8575-4273-8bdf-ba723c2bd11c]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [435a95a0-8b21-42ed-a8d6-ce849d5389e1]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4a264fe3-2322-4d64-ba09-80f4305031dd]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d6051eb5-f220-47aa-8805-3512a654b2f6]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4bfeee31-d344-45c6-b918-d7c08f176e36]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a97b63cc-fdb0-4d00-bf6c-96d854c0cf50]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [4c380b42-4eb4-4981-a1b7-e91ef555b108]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [50360276-a293-4d24-99b0-3760790f0180]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5a2b565f-1a32-4c9b-af29-4a80530e8d90]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d4b1798-2678-4e8b-8789-5f021586ab6e]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [62f60bb6-671a-42bc-b6da-44637797aa83]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [36766c5c-1bae-4345-ab15-1081b549486c]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [66dc53dc-5c89-4fd1-93d5-5e74b5ef7299]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [727d297f-0910-4127-8bc7-f6405be6690d]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7417f976-b1c8-41e6-99a8-8da1a29dd615]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7875ad63-1c9e-475d-b805-400d74bb5795]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7d2ae417-3991-4994-82ee-1c240b4cc618]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [7eafb665-cc9c-4a59-8aa1-6e4c18ee7508]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [903aedf5-d457-444a-89bf-9630e0c72e7b]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [9bc08e01-62ae-4239-a51e-b2a1fa656cd9]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [45221491-fe98-4356-9bba-c72c20fb2ec4]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a819a4f5-b126-45b4-ac98-49c5cac03bee]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6644126d-a2b8-4c91-93ca-e7201bdfd0c2]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [18307b03-23d7-48f0-828b-1d85e38604aa]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c4594f80-75c0-494f-b3ac-1fb011a55aca]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [c96981f0-ebf6-4cf1-bcef-1310c103db1e]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d128f01c-2604-4482-8f7a-7aadfc739127]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e09c04ed-edcd-4d82-85e1-27d45e38788f]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [e506fb59-007b-4d20-b8d4-10d9fcd57be5]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ea023cfd-c2a0-482e-ad0a-91fff2857f02]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-01-22 23:56:28 [http-nio-8080-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [f2cff687-3b40-4235-8919-b1d1e8440b34]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@3af6a4d4, com.silkroute_erp.sales.dto.OrderDTO@79444d96, com.s (truncated)...]
+2026-01-22 23:56:28 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK

@@ -53,37 +53,61 @@ export async function loadSpidersSection() {
 
 
 // ============================================================
-// POBIERANIE PAJĄKÓW
+// POBIERANIE PAJĄKÓW + SORTOWANIE
 // ============================================================
 
 async function loadSpiders() {
     const data = await getSpiders();
-    setSpiders(data.content || data);
+    const list = data.content || data;
+
+    list.sort((a, b) =>
+        (a.typeName || "").localeCompare(b.typeName || "", "pl", { sensitivity: "base" }) ||
+        (a.speciesName || "").localeCompare(b.speciesName || "", "pl", { sensitivity: "base" })
+    );
+
+    setSpiders(list);
 }
 
 
 // ============================================================
-// FILTRY
+// FILTRY — LISTY ROZWIJALNE
 // ============================================================
 
 function renderSpidersFilters() {
     const container = document.getElementById("spiders-filters");
     if (!container) return;
 
-    container.innerHTML = `
-        <div class="glass-card rounded-[2rem] p-4 mb-6 flex gap-4 items-center">
-            <label class="text-sm font-semibold text-slate-600">Szukaj:</label>
+    const spiders = state.spiders;
 
-            <input id="spiders-filter-search" type="text"
-                class="bg-slate-50 border border-slate-200 p-2 rounded-xl w-64"
-                placeholder="Gatunek, rodzaj...">
+    const unique = (arr) => [...new Set(arr.filter(Boolean))];
+
+    const types = unique(spiders.map((s) => s.typeName));
+    const species = unique(spiders.map((s) => s.speciesName));
+    const genders = unique(spiders.map((s) => s.gender));
+    const sizes = unique(spiders.map((s) => s.size));
+
+    const makeSelect = (id, label, values) => `
+        <div class="flex flex-col">
+            <label class="text-sm font-semibold text-slate-600 mb-1">${label}</label>
+            <select id="${id}" class="bg-slate-50 border border-slate-200 p-2 rounded-xl">
+                <option value="">Wszystkie</option>
+                ${values.map((v) => `<option value="${v}">${v}</option>`).join("")}
+            </select>
         </div>
     `;
 
-    document.getElementById("spiders-filter-search").oninput = (e) => {
-        state.filters.spiders.search = e.target.value.toLowerCase();
-        renderSpidersTable();
-    };
+    container.innerHTML = `
+        <div class="glass-card rounded-[2rem] p-4 mb-6 grid grid-cols-4 gap-6">
+            ${makeSelect("filter-type", "Rodzaj", types)}
+            ${makeSelect("filter-species", "Gatunek", species)}
+            ${makeSelect("filter-gender", "Płeć", genders)}
+            ${makeSelect("filter-size", "Rozmiar", sizes)}
+        </div>
+    `;
+
+    ["filter-type", "filter-species", "filter-gender", "filter-size"].forEach((id) => {
+        document.getElementById(id).onchange = () => renderSpidersTable();
+    });
 }
 
 
@@ -95,16 +119,19 @@ function renderSpidersTable() {
     const container = document.getElementById("spiders-table");
     if (!container) return;
 
-    const search = state.filters.spiders.search;
-    let spiders = state.spiders;
+    const fType = document.getElementById("filter-type")?.value || "";
+    const fSpecies = document.getElementById("filter-species")?.value || "";
+    const fGender = document.getElementById("filter-gender")?.value || "";
+    const fSize = document.getElementById("filter-size")?.value || "";
 
-    if (search) {
-        spiders = spiders.filter(
-            (s) =>
-                s.typeName.toLowerCase().includes(search) ||
-                s.speciesName.toLowerCase().includes(search)
+    const spiders = state.spiders.filter((s) => {
+        return (
+            (fType === "" || s.typeName === fType) &&
+            (fSpecies === "" || s.speciesName === fSpecies) &&
+            (fGender === "" || s.gender === fGender) &&
+            (fSize === "" || s.size === fSize)
         );
-    }
+    });
 
     if (spiders.length === 0) {
         container.innerHTML = `
@@ -124,8 +151,8 @@ function renderSpidersTable() {
                         <th class="py-3 w-40">Gatunek</th>
                         <th class="py-3 w-24">Płeć</th>
                         <th class="py-3 w-24">Rozmiar</th>
-                        <th class="py-3 w-24">Cena</th>
                         <th class="py-3 w-24">Ilość</th>
+                        <th class="py-3 w-24">Cena</th>
                         <th class="py-3 w-32 text-center">Akcje</th>
                     </tr>
                 </thead>
@@ -139,8 +166,8 @@ function renderSpidersTable() {
                             <td class="py-3">${sp.speciesName}</td>
                             <td class="py-3">${sp.gender}</td>
                             <td class="py-3">${sp.size}</td>
-                            <td class="py-3">${sp.price.toFixed(2)} PLN</td>
                             <td class="py-3">${sp.quantity}</td>
+                            <td class="py-3">${sp.price.toFixed(2)} PLN</td>
 
                             <td class="py-3 text-center">
                                 <div class="flex justify-center gap-2">
@@ -294,7 +321,7 @@ export function attachSpiderFormEvents(existingSpider = null) {
         const id = document.getElementById("spider-id").value;
         const typeName = document.getElementById("spider-type").value.trim();
         const speciesName = document.getElementById("spider-species").value.trim();
-        const gender = document.getElementById("spider-gender").value;
+        const gender = document.getElementById("spider-ggender").value;
         const size = document.getElementById("spider-size").value.trim();
         const price = parseFloat(document.getElementById("spider-price").value);
         const quantity = parseInt(document.getElementById("spider-quantity").value);
