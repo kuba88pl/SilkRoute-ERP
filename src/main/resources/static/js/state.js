@@ -13,12 +13,19 @@ export const state = {
     orderedSpiders: [],
 
     filters: {
+        spiders: {
+            search: ""
+        },
         orders: {
             status: "all"
         }
     },
 
     pagination: {
+        spiders: {
+            page: 0,
+            size: 10
+        },
         orders: {
             page: 0,
             size: 10

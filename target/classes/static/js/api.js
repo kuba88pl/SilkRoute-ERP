@@ -109,3 +109,9 @@ export function cancelOrder(id) {
         method: "POST"
     });
 }
+
+export async function getSpider(id) {
+    const res = await fetch(`/api/spiders/${id}`);
+    if (!res.ok) throw new Error("Failed to load spider");
+    return res.json();
+}
