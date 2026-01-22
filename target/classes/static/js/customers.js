@@ -53,12 +53,20 @@ export async function loadCustomersSection() {
 
 
 // ============================================================
-// POBIERANIE KLIENTÓW
+// POBIERANIE KLIENTÓW + SORTOWANIE
 // ============================================================
 
 async function loadCustomers() {
     const data = await getCustomers();
-    setCustomers(data.content || data);
+    const list = data.content || data;
+
+    // Sortowanie alfabetyczne po nazwisku → imieniu
+    list.sort((a, b) =>
+        (a.lastName || "").localeCompare(b.lastName || "", "pl", { sensitivity: "base" }) ||
+        (a.firstName || "").localeCompare(b.firstName || "", "pl", { sensitivity: "base" })
+    );
+
+    setCustomers(list);
 }
 
 
@@ -101,9 +109,9 @@ function renderCustomersTable() {
     if (search) {
         customers = customers.filter(
             (c) =>
-                c.firstName.toLowerCase().includes(search) ||
-                c.lastName.toLowerCase().includes(search) ||
-                c.email.toLowerCase().includes(search)
+                (c.firstName || "").toLowerCase().includes(search) ||
+                (c.lastName || "").toLowerCase().includes(search) ||
+                (c.email || "").toLowerCase().includes(search)
         );
     }
 
@@ -121,11 +129,12 @@ function renderCustomersTable() {
             <table class="w-full text-left table-fixed whitespace-nowrap">
                 <thead>
                     <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-3 w-40">Imię</th>
                         <th class="py-3 w-40">Nazwisko</th>
+                        <th class="py-3 w-40">Imię</th>
                         <th class="py-3 w-64">Email</th>
                         <th class="py-3 w-32">Telefon</th>
                         <th class="py-3 w-64">Adres</th>
+                        <th class="py-3 w-40">Paczkomat</th>
                         <th class="py-3 w-32 text-center">Akcje</th>
                     </tr>
                 </thead>
@@ -135,11 +144,12 @@ function renderCustomersTable() {
         .map(
             (c) => `
                         <tr class="hover:bg-slate-100">
-                            <td class="py-3">${c.firstName}</td>
-                            <td class="py-3">${c.lastName}</td>
-                            <td class="py-3">${c.email}</td>
-                            <td class="py-3">${c.telephone}</td>
-                            <td class="py-3">${c.address}</td>
+                            <td class="py-3">${c.lastName || ""}</td>
+                            <td class="py-3">${c.firstName || ""}</td>
+                            <td class="py-3">${c.email || ""}</td>
+                            <td class="py-3">${c.telephone || ""}</td>
+                            <td class="py-3">${c.address || ""}</td>
+                            <td class="py-3">${c.parcelLocker || "brak"}</td>
 
                             <td class="py-3 text-center">
                                 <div class="flex justify-center gap-2">
@@ -231,24 +241,31 @@ export function renderCustomerForm(customer = null) {
                 </div>
 
                 <div class="col-span-2">
-                    <label class="block text-sm font-semibold text-slate-600 mb-1">Email</label>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Email (opcjonalnie)</label>
                     <input id="customer-email" type="email"
                         class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
-                        value="${customer?.email || ""}" required>
+                        value="${customer?.email || ""}">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold text-slate-600 mb-1">Telefon</label>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Telefon (opcjonalnie)</label>
                     <input id="customer-telephone" type="text"
                         class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
-                        value="${customer?.telephone || ""}" required>
+                        value="${customer?.telephone || ""}">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold text-slate-600 mb-1">Adres</label>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Paczkomat (opcjonalnie)</label>
+                    <input id="customer-parcelLocker" type="text"
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.parcelLocker || ""}">
+                </div>
+
+                <div class="col-span-2">
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Adres (opcjonalnie)</label>
                     <input id="customer-address" type="text"
                         class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
-                        value="${customer?.address || ""}" required>
+                        value="${customer?.address || ""}">
                 </div>
 
                 <div class="col-span-2 flex justify-end gap-4 pt-4">
@@ -285,10 +302,12 @@ export function attachCustomerFormEvents(existingCustomer = null) {
         const lastName = document.getElementById("customer-lastName").value.trim();
         const email = document.getElementById("customer-email").value.trim();
         const telephone = document.getElementById("customer-telephone").value.trim();
+        const parcelLocker = document.getElementById("customer-parcelLocker").value.trim();
         const address = document.getElementById("customer-address").value.trim();
 
-        if (!firstName || !lastName || !email || !telephone || !address) {
-            alert("Uzupełnij wszystkie pola.");
+        // Jedyna walidacja: imię + nazwisko
+        if (!firstName || !lastName) {
+            alert("Imię i nazwisko są wymagane.");
             return;
         }
 
@@ -298,7 +317,8 @@ export function attachCustomerFormEvents(existingCustomer = null) {
             lastName,
             email,
             telephone,
-            address
+            address,
+            parcelLocker
         };
 
         try {
