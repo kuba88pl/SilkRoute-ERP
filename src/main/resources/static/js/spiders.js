@@ -281,7 +281,7 @@ export function renderSpiderForm(spider = null) {
                         class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
                         <option value="SAMIEC" ${spider?.gender === "SAMIEC" ? "selected" : ""}>Samiec</option>
                         <option value="SAMICA" ${spider?.gender === "SAMICA" ? "selected" : ""}>Samica</option>
-                        <option value="NIEZNANA" ${spider?.gender === "NIEZNANA" ? "selected" : ""}>Nieznana</option>
+                        <option value="NS" ${spider?.gender === "NS" ? "selected" : ""}>Nieznana</option>
                     </select>
                 </div>
 
