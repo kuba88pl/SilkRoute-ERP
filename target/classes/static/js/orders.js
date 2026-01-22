@@ -70,11 +70,14 @@ export async function loadOrdersSection() {
                 <table class="w-full text-left table-fixed whitespace-nowrap border-collapse min-w-[700px]">
                     <thead>
                         <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
+
+                            <!-- KOLEJNOŚĆ O KTÓRĄ PROSIŁEŚ -->
                             <th class="py-3 w-32">Data</th>
-                            <th class="py-3 w-32">Cena</th>
-                            <th class="py-3 w-32">Status</th>
                             <th class="py-3 w-48">Klient</th>
+                            <th class="py-3 w-32">Status</th>
+                            <th class="py-3 w-32">Cena</th>
                             <th class="py-3 w-48 text-center">Akcje</th>
+
                         </tr>
                     </thead>
                     <tbody id="orders-table" class="divide-y divide-slate-100"></tbody>
@@ -168,9 +171,9 @@ function renderOrderRows() {
 
         tr.innerHTML = `
             <td class="py-4">${o.date}</td>
-            <td class="py-4">${o.price.toFixed(2)} PLN</td>
-            <td class="py-4">${mapOrderStatus(o.status)}</td>
             <td class="py-4">${o.customer.firstName} ${o.customer.lastName}</td>
+            <td class="py-4">${mapOrderStatus(o.status)}</td>
+            <td class="py-4">${o.price.toFixed(2)} PLN</td>
 
             <td class="py-4">
                 <div class="flex justify-center gap-2">
@@ -415,7 +418,6 @@ function renderOrderForm(order = null) {
         </div>
     `;
 }
-
 /* ============================================================
    KLIENCI W FORMULARZU
 ============================================================ */
@@ -460,6 +462,7 @@ function renderOrderCustomers() {
         };
     });
 }
+
 function renderOrderCustomerDetails() {
     const container = document.getElementById("order-customer-details");
     if (!container) return;
@@ -602,6 +605,10 @@ function renderFilteredSpiders() {
     attachSpiderSelectionEvents();
 }
 
+/* ============================================================
+   WYBÓR PAJĄKÓW — POPRAWIONA FUNKCJA
+============================================================ */
+
 function attachSpiderSelectionEvents() {
     document.querySelectorAll("[data-add-spider]").forEach((btn) => {
         btn.onclick = () => {
@@ -637,7 +644,6 @@ function attachSpiderSelectionEvents() {
         };
     });
 }
-
 /* ============================================================
    KOSZYK
 ============================================================ */
@@ -772,6 +778,7 @@ function updateFinalPriceField() {
         input.value = calculateOrderTotal().toFixed(2);
     }
 }
+
 /* ============================================================
    FORMULARZ — LOGIKA
 ============================================================ */
@@ -820,7 +827,6 @@ function attachOrderFormEvents() {
         const shipmentNumber = document.getElementById("order-shipment-number").value;
         const status = document.getElementById("order-status").value;
 
-        // Walidacja SHIPPED
         if (status === "SHIPPED") {
             if (!courierCompany) {
                 alert("Wybierz kuriera");
@@ -924,7 +930,7 @@ async function cancelOrderAction(id) {
 }
 
 /* ============================================================
-   EVENTY GŁÓWNE
+   EVENTY GŁÓWNE — MUSI BYĆ NA SAMYM KOŃCU
 ============================================================ */
 
 function attachOrderEvents() {
@@ -962,4 +968,3 @@ function attachOrderEvents() {
 
     attachOrderFilterEvents();
 }
-
