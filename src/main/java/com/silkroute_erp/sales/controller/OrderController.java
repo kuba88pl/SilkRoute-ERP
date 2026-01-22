@@ -72,6 +72,16 @@ public class OrderController {
         }
     }
 
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<Void> cancelOrder(@PathVariable UUID id) {
+        try {
+            orderService.cancelOrder(id);
+            return ResponseEntity.noContent().build();
+        } catch (OrderNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOrder(@PathVariable UUID id) {
         try {
