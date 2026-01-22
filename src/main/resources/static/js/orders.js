@@ -1,5 +1,9 @@
 // js/orders.js
 
+/* ============================================================
+   IMPORTY
+============================================================ */
+
 import {
     state,
     setOrders,
@@ -24,6 +28,22 @@ import {
     openOrderModal,
     openOrderDetailsModal
 } from "./modals.js";
+
+/* ============================================================
+   MAPOWANIE STATUSÓW
+============================================================ */
+
+function mapOrderStatus(status) {
+    switch (status) {
+        case "NEW": return "Nowe";
+        case "PENDING": return "Oczekujące";
+        case "IN_PROGRESS": return "W trakcie";
+        case "SHIPPED": return "Wysłane";
+        case "COMPLETED": return "Zakończone";
+        case "CANCELLED": return "Anulowane";
+        default: return status;
+    }
+}
 
 /* ============================================================
    SEKCJA ZAMÓWIEŃ
@@ -160,7 +180,7 @@ function renderOrderRows() {
         tr.innerHTML = `
             <td class="py-4">${o.date}</td>
             <td class="py-4">${o.price.toFixed(2)} PLN</td>
-            <td class="py-4">${o.status}</td>
+            <td class="py-4">${mapOrderStatus(o.status)}</td>
             <td class="py-4">${o.customer.firstName} ${o.customer.lastName}</td>
 
             <td class="py-4">
@@ -235,7 +255,7 @@ async function showOrderDetails(id) {
             <h3 class="text-3xl font-black mb-8 text-slate-900 tracking-tight">Szczegóły zamówienia</h3>
 
             <p><strong>Data:</strong> ${order.date}</p>
-            <p><strong>Status:</strong> ${order.status}</p>
+            <p><strong>Status:</strong> ${mapOrderStatus(order.status)}</p>
             <p><strong>Cena:</strong> ${order.price.toFixed(2)} PLN</p>
 
             <hr class="my-6">
@@ -435,7 +455,7 @@ function renderOrderForm(order = null) {
                             Anuluj
                         </button>
 
-                        <button type="submit"
+                                                <button type="submit"
                                 class="px-6 py-3 rounded-2xl font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-xl active:scale-95">
                             Zapisz zamówienie
                         </button>
@@ -448,7 +468,6 @@ function renderOrderForm(order = null) {
         </div>
     `;
 }
-
 /* ============================================================
    KLIENCI W FORMULARZU
 ============================================================ */
@@ -536,7 +555,6 @@ function renderOrderCustomerDetails() {
         </div>
     `;
 }
-
 /* ============================================================
    PAJĄKI W FORMULARZU
 ============================================================ */
@@ -671,7 +689,6 @@ function attachSpiderSelectionEvents() {
         };
     });
 }
-
 /* ============================================================
    KOSZYK
 ============================================================ */
@@ -808,7 +825,6 @@ function updateFinalPriceField() {
         input.value = calculateOrderTotal().toFixed(2);
     }
 }
-
 /* ============================================================
    FORMULARZ — LOGIKA
 ============================================================ */
@@ -857,6 +873,7 @@ function attachOrderFormEvents() {
         const shipmentNumber = document.getElementById("order-shipment-number").value;
         const status = document.getElementById("order-status").value;
 
+        // 🔥 POPRAWKA — backend używa SHIPPED
         if (status === "SHIPPED") {
             if (!courierCompany) {
                 alert("Wybierz kuriera");
@@ -897,7 +914,6 @@ function attachOrderFormEvents() {
         }
     };
 }
-
 /* ============================================================
    EDYCJA ZAMÓWIENIA
 ============================================================ */
@@ -943,7 +959,6 @@ async function editOrder(id) {
         alert("Nie udało się wczytać zamówienia");
     }
 }
-
 /* ============================================================
    ANULOWANIE ZAMÓWIENIA
 ============================================================ */
@@ -958,7 +973,6 @@ async function cancelOrderAction(id) {
         alert("Nie udało się anulować zamówienia");
     }
 }
-
 /* ============================================================
    EVENTY GŁÓWNE
 ============================================================ */
@@ -999,6 +1013,3 @@ function attachOrderEvents() {
     attachOrderFilterEvents();
 }
 
-/* ============================================================
-   KONIEC PLIKU
-============================================================ */
