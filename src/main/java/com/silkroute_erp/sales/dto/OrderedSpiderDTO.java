@@ -3,12 +3,12 @@ package com.silkroute_erp.sales.dto;
 import java.util.UUID;
 
 public class OrderedSpiderDTO {
+
     private UUID spiderId;
     private int quantity;
     private SpiderDTO spider;
 
-    public OrderedSpiderDTO() {
-    }
+    public OrderedSpiderDTO() {}
 
     public OrderedSpiderDTO(UUID spiderId, int quantity, SpiderDTO spider) {
         this.spiderId = spiderId;
@@ -16,27 +16,12 @@ public class OrderedSpiderDTO {
         this.spider = spider;
     }
 
-    public UUID getSpiderId() {
-        return spiderId;
-    }
+    public UUID getSpiderId() { return spiderId; }
+    public void setSpiderId(UUID spiderId) { this.spiderId = spiderId; }
 
-    public void setSpiderId(UUID spiderId) {
-        this.spiderId = spiderId;
-    }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public SpiderDTO getSpider() {
-        return spider;
-    }
-
-    public void setSpider(SpiderDTO spider) {
-        this.spider = spider;
-    }
+    public SpiderDTO getSpider() { return spider; }
+    public void setSpider(SpiderDTO spider) { this.spider = spider; }
 }

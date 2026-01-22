@@ -1,7 +1,6 @@
 package com.silkroute_erp.sales.dto;
 
 import com.silkroute_erp.sales.entity.Spider;
-import org.springframework.data.domain.Page;
 
 public class SpiderMapper {
 
@@ -29,9 +28,5 @@ public class SpiderMapper {
         dto.setCites(spider.isCites());
         dto.setGender(spider.getGender());
         return dto;
-    }
-
-    public static Page<SpiderDTO> toDTOPage(Page<Spider> spiderPage) {
-        return spiderPage.map(SpiderMapper::toDTO);
     }
 }

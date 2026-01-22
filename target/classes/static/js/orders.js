@@ -1,5 +1,3 @@
-// js/orders.js
-
 /* ============================================================
    IMPORTY
 ============================================================ */
@@ -10,7 +8,6 @@ import {
     setSelectedCustomer,
     setOrderedSpiders,
     updateOrderFilters,
-    updateOrderPagination,
     resetOrderState
 } from "./state.js";
 
@@ -83,14 +80,11 @@ export async function loadOrdersSection() {
                     <tbody id="orders-table" class="divide-y divide-slate-100"></tbody>
                 </table>
             </div>
-
-            <div id="orders-pagination" class="flex justify-center mt-6"></div>
         </div>
     `;
 
     await loadOrders();
     renderOrderRows();
-    renderOrderPagination();
     attachOrderEvents();
 }
 
@@ -146,7 +140,6 @@ function attachOrderFilterEvents() {
     document.querySelectorAll("[data-status]").forEach((btn) => {
         btn.onclick = () => {
             updateOrderFilters({ status: btn.dataset.status });
-            updateOrderPagination({ page: 0 });
             loadOrdersSection();
         };
     });
@@ -169,12 +162,8 @@ function renderOrderRows() {
     table.innerHTML = "";
 
     const orders = getFilteredOrders();
-    const { page, size } = state.pagination.orders;
 
-    const start = page * size;
-    const end = start + size;
-
-    orders.slice(start, end).forEach((o) => {
+    orders.forEach((o) => {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
@@ -198,48 +187,6 @@ function renderOrderRows() {
 
         table.appendChild(tr);
     });
-}
-
-/* ============================================================
-   PAGINACJA
-============================================================ */
-
-function renderOrderPagination() {
-    const container = document.getElementById("orders-pagination");
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    const orders = getFilteredOrders();
-    const { page, size } = state.pagination.orders;
-
-    const totalPages = Math.ceil(orders.length / size);
-    if (totalPages <= 1) return;
-
-    const createBtn = (p, label, disabled = false, active = false) => {
-        const btn = document.createElement("button");
-        btn.textContent = label;
-        btn.className =
-            "px-4 py-2 mx-1 rounded-xl font-bold " +
-            (active ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200") +
-            (disabled ? " opacity-40 cursor-not-allowed" : "");
-
-        if (!disabled)
-            btn.onclick = () => {
-                updateOrderPagination({ page: p });
-                loadOrdersSection();
-            };
-
-        return btn;
-    };
-
-    container.appendChild(createBtn(page - 1, "«", page === 0));
-
-    for (let i = 0; i < totalPages; i++) {
-        container.appendChild(createBtn(i, i + 1, false, i === page));
-    }
-
-    container.appendChild(createBtn(page + 1, "»", page === totalPages - 1));
 }
 
 /* ============================================================
@@ -455,7 +402,7 @@ function renderOrderForm(order = null) {
                             Anuluj
                         </button>
 
-                                                <button type="submit"
+                        <button type="submit"
                                 class="px-6 py-3 rounded-2xl font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-xl active:scale-95">
                             Zapisz zamówienie
                         </button>
@@ -468,6 +415,7 @@ function renderOrderForm(order = null) {
         </div>
     `;
 }
+
 /* ============================================================
    KLIENCI W FORMULARZU
 ============================================================ */
@@ -512,7 +460,6 @@ function renderOrderCustomers() {
         };
     });
 }
-
 function renderOrderCustomerDetails() {
     const container = document.getElementById("order-customer-details");
     if (!container) return;
@@ -555,6 +502,7 @@ function renderOrderCustomerDetails() {
         </div>
     `;
 }
+
 /* ============================================================
    PAJĄKI W FORMULARZU
 ============================================================ */
@@ -689,6 +637,7 @@ function attachSpiderSelectionEvents() {
         };
     });
 }
+
 /* ============================================================
    KOSZYK
 ============================================================ */
@@ -771,9 +720,7 @@ function renderOrderCart() {
 
         <div class="flex justify-end mt-6">
             <h4 class="text-xl font-black">
-                Suma: <span class="text-emerald-600">${calculateOrderTotal().toFixed(
-        2
-    )}</span> PLN
+                Suma: <span class="text-emerald-600">${calculateOrderTotal().toFixed(2)}</span> PLN
             </h4>
         </div>
     `;
@@ -873,7 +820,7 @@ function attachOrderFormEvents() {
         const shipmentNumber = document.getElementById("order-shipment-number").value;
         const status = document.getElementById("order-status").value;
 
-        // 🔥 POPRAWKA — backend używa SHIPPED
+        // Walidacja SHIPPED
         if (status === "SHIPPED") {
             if (!courierCompany) {
                 alert("Wybierz kuriera");
@@ -914,6 +861,7 @@ function attachOrderFormEvents() {
         }
     };
 }
+
 /* ============================================================
    EDYCJA ZAMÓWIENIA
 ============================================================ */
@@ -959,6 +907,7 @@ async function editOrder(id) {
         alert("Nie udało się wczytać zamówienia");
     }
 }
+
 /* ============================================================
    ANULOWANIE ZAMÓWIENIA
 ============================================================ */
@@ -973,6 +922,7 @@ async function cancelOrderAction(id) {
         alert("Nie udało się anulować zamówienia");
     }
 }
+
 /* ============================================================
    EVENTY GŁÓWNE
 ============================================================ */

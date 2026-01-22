@@ -9,6 +9,9 @@ import java.util.UUID;
 
 @Repository
 public interface SpiderRepository extends JpaRepository<Spider, UUID> {
-        List<Spider> findBySpeciesName(String speciesName);
-    }
 
+    List<Spider> findBySpeciesName(String speciesName);
+
+    // Used by SpiderService.getAllSpidersNoPagination()
+    List<Spider> findAllByOrderBySpeciesNameAsc();
+}

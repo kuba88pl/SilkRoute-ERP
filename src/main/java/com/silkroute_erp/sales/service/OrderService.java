@@ -1,15 +1,14 @@
 package com.silkroute_erp.sales.service;
 
 import com.silkroute_erp.sales.dto.OrderDTO;
+import com.silkroute_erp.sales.dto.OrderedSpiderDTO;
+import com.silkroute_erp.sales.dto.OrderedSpiderMapper;
 import com.silkroute_erp.sales.entity.*;
 import com.silkroute_erp.sales.exception.CustomerNotFoundException;
 import com.silkroute_erp.sales.exception.OrderNotFoundException;
 import com.silkroute_erp.sales.exception.SpiderNotFoundException;
 import com.silkroute_erp.sales.repository.OrderRepository;
 import com.silkroute_erp.sales.repository.SpiderRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,198 +21,173 @@ import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
+
     private final OrderRepository orderRepository;
     private final SpiderRepository spiderRepository;
     private final CustomerService customerService;
 
-    public OrderService(OrderRepository orderRepository, SpiderRepository spiderRepository, CustomerService customerService) {
+    public OrderService(OrderRepository orderRepository,
+                        SpiderRepository spiderRepository,
+                        CustomerService customerService) {
         this.orderRepository = orderRepository;
         this.spiderRepository = spiderRepository;
         this.customerService = customerService;
     }
 
+    /* ============================================================
+       CREATE
+    ============================================================ */
     @Transactional
-    public Order createOrder(OrderDTO orderDTO) {
+    public Order createOrder(OrderDTO dto) {
 
-        Customer customer = customerService.getCustomerById(orderDTO.getCustomerId());
+        Customer customer = customerService.getCustomerById(dto.getCustomerId());
         if (customer == null) {
-            throw new CustomerNotFoundException("Customer with id " + orderDTO.getCustomerId() + " not found.");
+            throw new CustomerNotFoundException("Customer not found");
         }
 
-        Order newOrder = new Order();
-        newOrder.setCustomer(customer);
-        newOrder.setDate(LocalDate.now());
+        Order order = new Order();
+        order.setCustomer(customer);
+        order.setDate(LocalDate.now());
+        order.setStatus(dto.getStatus() != null
+                ? OrderStatus.valueOf(dto.getStatus().toUpperCase())
+                : OrderStatus.NEW);
 
-        // Ustawiamy status z frontendu
-        if (orderDTO.getStatus() != null) {
-            newOrder.setStatus(OrderStatus.valueOf(orderDTO.getStatus().toUpperCase()));
-        } else {
-            newOrder.setStatus(OrderStatus.NEW);
+        if (dto.getCourierCompany() != null && !dto.getCourierCompany().isBlank()) {
+            order.setCourierCompany(CourierCompany.valueOf(dto.getCourierCompany().toUpperCase()));
         }
 
-        // Ustawiamy kuriera z frontendu
-        if (orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isEmpty()) {
-            newOrder.setCourierCompany(CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase()));
-        } else {
-            newOrder.setCourierCompany(null);
-        }
+        order.setShipmentNumber(dto.getShipmentNumber());
 
-        // Ustawiamy numer przesyłki z frontendu
-        newOrder.setShipmentNumber(orderDTO.getShipmentNumber());
-
-        // Pająki
-        List<OrderedSpider> orderedSpiders = orderDTO.getOrderedSpiders().stream()
+        // Ordered spiders
+        List<OrderedSpider> items = dto.getOrderedSpiders().stream()
                 .map(itemDTO -> {
                     Spider spider = spiderRepository.findById(itemDTO.getSpiderId())
-                            .orElseThrow(() -> new SpiderNotFoundException("Spider with id " + itemDTO.getSpiderId() + " not found."));
-                    OrderedSpider orderedSpider = new OrderedSpider();
-                    orderedSpider.setSpider(spider);
-                    orderedSpider.setQuantity(itemDTO.getQuantity());
-                    orderedSpider.setOrder(newOrder);
-                    return orderedSpider;
-                }).collect(Collectors.toList());
+                            .orElseThrow(() -> new SpiderNotFoundException("Spider not found"));
 
-        // Aktualizacja stocków
-        orderedSpiders.forEach(orderedSpider -> {
-            Spider spider = orderedSpider.getSpider();
-            int orderedQuantity = orderedSpider.getQuantity();
-            int currentQuantity = spider.getQuantity();
+                    if (spider.getQuantity() < itemDTO.getQuantity()) {
+                        throw new RuntimeException("Not enough stock for spider: " + spider.getSpeciesName());
+                    }
 
-            if (currentQuantity < orderedQuantity) {
-                throw new RuntimeException("Not enough stock for spider: " + spider.getSpeciesName());
-            }
-            spider.setQuantity(currentQuantity - orderedQuantity);
-            spiderRepository.save(spider);
-        });
+                    spider.setQuantity(spider.getQuantity() - itemDTO.getQuantity());
+                    spiderRepository.save(spider);
 
-        newOrder.setOrderedSpiders(orderedSpiders);
+                    OrderedSpider os = new OrderedSpider();
+                    os.setSpider(spider);
+                    os.setQuantity(itemDTO.getQuantity());
+                    os.setOrder(order);
+                    return os;
+                })
+                .collect(Collectors.toList());
 
-        // Cena z frontendu lub automatyczna
-        if (orderDTO.getPrice() != null) {
-            newOrder.setPrice(orderDTO.getPrice());
+        order.setOrderedSpiders(items);
+
+        // Price
+        if (dto.getPrice() != null) {
+            order.setPrice(dto.getPrice());
         } else {
-            double totalPrice = orderedSpiders.stream()
+            double total = items.stream()
                     .mapToDouble(os -> os.getSpider().getPrice() * os.getQuantity())
                     .sum();
-            newOrder.setPrice(totalPrice);
+            order.setPrice(total);
         }
 
-        return orderRepository.save(newOrder);
+        return orderRepository.save(order);
     }
 
-
-    @Transactional
-    public Order updateOrder(UUID id, OrderDTO orderDTO) {
-
-        Order existingOrder = orderRepository.findById(id)
-                .orElseThrow(() -> new OrderNotFoundException("Order with id " + id + " not found."));
-
     /* ============================================================
-       STATUS
+       UPDATE
     ============================================================ */
-        if (orderDTO.getStatus() != null) {
-            OrderStatus newStatus = OrderStatus.valueOf(orderDTO.getStatus().toUpperCase());
+    @Transactional
+    public Order updateOrder(UUID id, OrderDTO dto) {
 
-            // Jeśli zmiana na CANCELLED → zwrot stocków
-            if (existingOrder.getStatus() != OrderStatus.CANCELLED &&
+        Order order = orderRepository.findById(id)
+                .orElseThrow(() -> new OrderNotFoundException("Order not found"));
+
+        // Status
+        if (dto.getStatus() != null) {
+            OrderStatus newStatus = OrderStatus.valueOf(dto.getStatus().toUpperCase());
+
+            if (order.getStatus() != OrderStatus.CANCELLED &&
                     newStatus == OrderStatus.CANCELLED) {
 
-                existingOrder.getOrderedSpiders().forEach(orderedSpider -> {
-                    Spider spider = spiderRepository.findById(orderedSpider.getSpider().getId())
-                            .orElseThrow(() -> new SpiderNotFoundException(
-                                    "Spider with id " + orderedSpider.getSpider().getId() + " not found."
-                            ));
-
-                    spider.setQuantity(spider.getQuantity() + orderedSpider.getQuantity());
+                for (OrderedSpider os : order.getOrderedSpiders()) {
+                    Spider spider = os.getSpider();
+                    spider.setQuantity(spider.getQuantity() + os.getQuantity());
                     spiderRepository.save(spider);
-                });
+                }
             }
 
-            existingOrder.setStatus(newStatus);
+            order.setStatus(newStatus);
         }
 
-    /* ============================================================
-       KLIENT
-    ============================================================ */
-        if (orderDTO.getCustomerId() != null &&
-                !orderDTO.getCustomerId().equals(existingOrder.getCustomer().getId())) {
+        // Customer
+        if (dto.getCustomerId() != null &&
+                !dto.getCustomerId().equals(order.getCustomer().getId())) {
 
-            Customer customer = customerService.getCustomerById(orderDTO.getCustomerId());
-            if (customer == null) {
-                throw new CustomerNotFoundException("Customer with id " + orderDTO.getCustomerId() + " not found.");
-            }
-
-            existingOrder.setCustomer(customer);
+            Customer customer = customerService.getCustomerById(dto.getCustomerId());
+            order.setCustomer(customer);
         }
 
-    /* ============================================================
-       KURIER
-    ============================================================ */
-        if (orderDTO.getCourierCompany() != null && !orderDTO.getCourierCompany().isBlank()) {
-            try {
-                existingOrder.setCourierCompany(
-                        CourierCompany.valueOf(orderDTO.getCourierCompany().toUpperCase())
-                );
-            } catch (IllegalArgumentException e) {
-                throw new RuntimeException("Invalid courierCompany: " + orderDTO.getCourierCompany());
-            }
+        // Courier
+        if (dto.getCourierCompany() != null && !dto.getCourierCompany().isBlank()) {
+            order.setCourierCompany(CourierCompany.valueOf(dto.getCourierCompany().toUpperCase()));
         } else {
-            existingOrder.setCourierCompany(null);
+            order.setCourierCompany(null);
         }
 
-    /* ============================================================
-       NUMER PRZESYŁKI
-    ============================================================ */
-        if (orderDTO.getShipmentNumber() != null) {
-            existingOrder.setShipmentNumber(orderDTO.getShipmentNumber());
-        }
+        order.setShipmentNumber(dto.getShipmentNumber());
 
-    /* ============================================================
-       PAJĄKI
-    ============================================================ */
-        if (orderDTO.getOrderedSpiders() != null) {
+        // Ordered spiders
+        if (dto.getOrderedSpiders() != null) {
 
-            // Usuwamy stare pozycje
-            existingOrder.getOrderedSpiders().clear();
+            // return stock from old items
+            for (OrderedSpider os : order.getOrderedSpiders()) {
+                Spider spider = os.getSpider();
+                spider.setQuantity(spider.getQuantity() + os.getQuantity());
+                spiderRepository.save(spider);
+            }
 
-            List<OrderedSpider> updatedSpiders = orderDTO.getOrderedSpiders().stream()
+            order.getOrderedSpiders().clear();
+
+            List<OrderedSpider> updated = dto.getOrderedSpiders().stream()
                     .map(itemDTO -> {
                         Spider spider = spiderRepository.findById(itemDTO.getSpiderId())
-                                .orElseThrow(() -> new SpiderNotFoundException(
-                                        "Spider with id " + itemDTO.getSpiderId() + " not found."
-                                ));
+                                .orElseThrow(() -> new SpiderNotFoundException("Spider not found"));
 
-                        OrderedSpider orderedSpider = new OrderedSpider();
-                        orderedSpider.setSpider(spider);
-                        orderedSpider.setQuantity(itemDTO.getQuantity());
-                        orderedSpider.setOrder(existingOrder);
+                        if (spider.getQuantity() < itemDTO.getQuantity()) {
+                            throw new RuntimeException("Not enough stock for spider: " + spider.getSpeciesName());
+                        }
 
-                        return orderedSpider;
+                        spider.setQuantity(spider.getQuantity() - itemDTO.getQuantity());
+                        spiderRepository.save(spider);
+
+                        OrderedSpider os = new OrderedSpider();
+                        os.setSpider(spider);
+                        os.setQuantity(itemDTO.getQuantity());
+                        os.setOrder(order);
+                        return os;
                     })
                     .collect(Collectors.toList());
 
-            existingOrder.getOrderedSpiders().addAll(updatedSpiders);
+            order.getOrderedSpiders().addAll(updated);
         }
 
-    /* ============================================================
-       CENA
-    ============================================================ */
-        if (orderDTO.getPrice() != null) {
-            existingOrder.setPrice(orderDTO.getPrice());
+        // Price
+        if (dto.getPrice() != null) {
+            order.setPrice(dto.getPrice());
         } else {
-            double totalPrice = existingOrder.getOrderedSpiders().stream()
+            double total = order.getOrderedSpiders().stream()
                     .mapToDouble(os -> os.getSpider().getPrice() * os.getQuantity())
                     .sum();
-            existingOrder.setPrice(totalPrice);
+            order.setPrice(total);
         }
 
-        return orderRepository.save(existingOrder);
+        return orderRepository.save(order);
     }
 
-     /* ============================================================
-       ANULUJ ZAMÓWIENIE
+    /* ============================================================
+       CANCEL
     ============================================================ */
-
     @Transactional
     public void cancelOrder(UUID id) {
         Order order = orderRepository.findById(id)
@@ -221,32 +195,36 @@ public class OrderService {
 
         if (order.getStatus() == OrderStatus.CANCELLED) return;
 
-        // zwróć pająki do magazynu
         for (OrderedSpider os : order.getOrderedSpiders()) {
-            Spider sp = os.getSpider();
-            sp.setQuantity(sp.getQuantity() + os.getQuantity());
-            spiderRepository.save(sp);
+            Spider spider = os.getSpider();
+            spider.setQuantity(spider.getQuantity() + os.getQuantity());
+            spiderRepository.save(spider);
         }
 
         order.setStatus(OrderStatus.CANCELLED);
         orderRepository.save(order);
     }
 
-
+    /* ============================================================
+       DELETE
+    ============================================================ */
     public void deleteOrder(UUID id) {
         if (!orderRepository.existsById(id)) {
-            throw new OrderNotFoundException("Order with id " + id + " not found.");
+            throw new OrderNotFoundException("Order not found");
         }
         orderRepository.deleteById(id);
     }
 
-    @Transactional(readOnly = true)
-    public Page<Order> getAllOrders(int page, int size, Sort sort) {
-        Pageable pageable = PageRequest.of(page, size, sort);
-        return orderRepository.findAll(pageable);
+    /* ============================================================
+       FULL LIST
+    ============================================================ */
+    public List<Order> getAllOrdersNoPagination() {
+        return orderRepository.findAll(Sort.by(Sort.Direction.DESC, "date"));
     }
 
-    @Transactional(readOnly = true)
+    /* ============================================================
+       FIND BY ID
+    ============================================================ */
     public Optional<Order> findById(UUID id) {
         return orderRepository.findById(id);
     }

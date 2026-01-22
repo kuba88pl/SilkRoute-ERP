@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/entity" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/repository" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/service" />
+      <excludeFolder url="file://$MODULE_DIR$/src/test/java/com/WMS_spiders_wholesale_system" />
     </content>
   </component>
 </module>

@@ -1,5 +1,3 @@
-// js/state.js
-
 /* ============================================================
    GLOBALNY STAN APLIKACJI (ES MODULE)
 ============================================================ */
@@ -13,22 +11,14 @@ export const state = {
     orderedSpiders: [],
 
     filters: {
+        customers: {
+            search: ""
+        },
         spiders: {
             search: ""
         },
         orders: {
             status: "all"
-        }
-    },
-
-    pagination: {
-        spiders: {
-            page: 0,
-            size: 10
-        },
-        orders: {
-            page: 0,
-            size: 10
         }
     },
 
@@ -62,19 +52,12 @@ export function setOrderedSpiders(list) {
 }
 
 /* ============================================================
-   FILTRY I PAGINACJA
+   FILTRY
 ============================================================ */
 
 export function updateOrderFilters(patch) {
     state.filters.orders = {
         ...state.filters.orders,
-        ...patch
-    };
-}
-
-export function updateOrderPagination(patch) {
-    state.pagination.orders = {
-        ...state.pagination.orders,
         ...patch
     };
 }

@@ -1,13 +1,9 @@
 package com.silkroute_erp.sales.dto;
 
 import com.silkroute_erp.sales.entity.Customer;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class CustomerMapper {
+
     public static CustomerDTO toDTO(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
         dto.setId(customer.getId());
@@ -30,12 +26,5 @@ public class CustomerMapper {
         entity.setAddress(dto.getAddress());
         entity.setParcelLocker(dto.getParcelLocker());
         return entity;
-    }
-
-    public static Page<CustomerDTO> toDTOPage(Page<Customer> customersPage) {
-        List<CustomerDTO> dtoList = customersPage.getContent().stream()
-                .map(CustomerMapper::toDTO)
-                .collect(Collectors.toList());
-        return new PageImpl<>(dtoList, customersPage.getPageable(), customersPage.getTotalElements());
     }
 }

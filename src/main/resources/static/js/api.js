@@ -1,5 +1,3 @@
-// js/api.js
-
 /* ============================================================
    PODSTAWOWA FUNKCJA REQUEST
 ============================================================ */
@@ -30,6 +28,10 @@ export function getCustomers() {
     return request("/customers");
 }
 
+export function getCustomer(id) {
+    return request(`/customers/${id}`);
+}
+
 export function createCustomer(payload) {
     return request("/customers", {
         method: "POST",
@@ -56,6 +58,10 @@ export function deleteCustomer(id) {
 
 export function getSpiders() {
     return request("/spiders");
+}
+
+export function getSpider(id) {
+    return request(`/spiders/${id}`);
 }
 
 export function createSpider(payload) {
@@ -108,10 +114,4 @@ export function cancelOrder(id) {
     return request(`/orders/${id}/cancel`, {
         method: "POST"
     });
-}
-
-export async function getSpider(id) {
-    const res = await fetch(`/api/spiders/${id}`);
-    if (!res.ok) throw new Error("Failed to load spider");
-    return res.json();
 }

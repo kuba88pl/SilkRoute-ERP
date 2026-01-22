@@ -1,41 +1,40 @@
 package com.silkroute_erp.sales.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
-
 import java.util.UUID;
 
 @Entity
 @Table(name = "spiders")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Spider {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", columnDefinition = "VARCHAR(36)")
     private UUID id;
+
     @Column(name = "type_name")
     private String typeName;
+
     @Column(name = "species_name")
     private String speciesName;
+
     @Column(name = "quantity")
     private int quantity;
+
     @Column(name = "size")
     private String size;
+
     @Column(name = "price")
     private double price;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     private SpiderGender gender;
+
     @Column(name = "is_cites")
     private boolean isCites;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id", columnDefinition = "VARCHAR(36)")
-    @JsonBackReference(value = "order-spider")
-    private Order order;
 
-    public Spider() {
-    }
+    public Spider() {}
 
     public Spider(String typeName, String speciesName, int quantity, String size, double price, SpiderGender gender, boolean isCites) {
         this.typeName = typeName;
@@ -47,12 +46,12 @@ public class Spider {
         this.isCites = isCites;
     }
 
-    public Order getOrder() {
-        return order;
+    public UUID getId() {
+        return id;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getTypeName() {
@@ -101,14 +100,6 @@ public class Spider {
 
     public void setGender(SpiderGender gender) {
         this.gender = gender;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public boolean isCites() {

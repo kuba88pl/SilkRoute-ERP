@@ -1,6 +1,28 @@
-import { getCustomers, createCustomer, updateCustomer, deleteCustomer } from "./api.js";
-import { state, setCustomers } from "./state.js";
-import { openCustomerModal } from "./modals.js";
+// ============================================================
+// IMPORTY
+// ============================================================
+
+import {
+    getCustomers,
+    getCustomer,
+    createCustomer,
+    updateCustomer,
+    deleteCustomer
+} from "./api.js";
+
+import {
+    state,
+    setCustomers
+} from "./state.js";
+
+import {
+    openCustomerModal
+} from "./modals.js";
+
+
+// ============================================================
+// GŁÓWNA SEKCJA — LISTA KLIENTÓW
+// ============================================================
 
 export async function loadCustomersSection() {
     const section = document.getElementById("customers-section");
@@ -10,151 +32,150 @@ export async function loadCustomersSection() {
         <div class="flex items-center justify-between mb-8">
             <div>
                 <h2 class="text-3xl font-black tracking-tight text-slate-900">Klienci</h2>
-                <p class="text-slate-500 mt-1">Zarządzaj bazą klientów.</p>
+                <p class="text-slate-500 mt-1">Zarządzaj listą klientów.</p>
             </div>
 
             <button id="addCustomerBtn"
                 class="px-6 py-3 rounded-2xl font-bold bg-emerald-600 text-white hover:bg-emerald-700 shadow-xl active:scale-95">
-                Nowy klient
+                Dodaj klienta
             </button>
         </div>
 
-        <!-- FILTRY -->
-        <div class="glass-card rounded-[2rem] p-6 mb-6">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-
-                <input id="filter-name" type="text" placeholder="Filtr: imię / nazwisko"
-                    class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
-
-                <input id="filter-email" type="text" placeholder="Filtr: email"
-                    class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
-
-                <input id="filter-phone" type="text" placeholder="Filtr: telefon"
-                    class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
-
-                <input id="filter-address" type="text" placeholder="Filtr: adres"
-                    class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
-
-                <input id="filter-parcel" type="text" placeholder="Filtr: paczkomat"
-                    class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
-
-            </div>
-        </div>
-
-        <!-- TABELA BEZ SCROLLA -->
-        <div class="glass-card rounded-[3rem] p-6">
-
-            <table class="w-full max-w-none text-left table-fixed whitespace-nowrap border-collapse">
-                <thead>
-                    <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
-                        <th class="py-3 w-56">Imię i nazwisko</th>
-                        <th class="py-3 w-72">Email</th>
-                        <th class="py-3 w-48">Telefon</th>
-                        <th class="py-3 w-[420px]">Adres</th>
-                        <th class="py-3 w-48">Paczkomat</th>
-                        <th class="py-3 w-40 text-center">Akcje</th>
-                    </tr>
-                </thead>
-                <tbody id="customers-table" class="divide-y divide-slate-100"></tbody>
-            </table>
-
-        </div>
+        <div id="customers-filters"></div>
+        <div id="customers-table"></div>
     `;
 
     await loadCustomers();
+    renderCustomersFilters();
     renderCustomersTable();
     attachCustomerEvents();
-    attachFilters();
 }
+
+
+// ============================================================
+// POBIERANIE KLIENTÓW
+// ============================================================
 
 async function loadCustomers() {
     const data = await getCustomers();
     setCustomers(data.content || data);
 }
 
-function getFilteredCustomers() {
-    const name = document.getElementById("filter-name").value.toLowerCase();
-    const email = document.getElementById("filter-email").value.toLowerCase();
-    const phone = document.getElementById("filter-phone").value.toLowerCase();
-    const address = document.getElementById("filter-address").value.toLowerCase();
-    const parcel = document.getElementById("filter-parcel").value.toLowerCase();
 
-    return state.customers.filter((c) => {
-        return (
-            (`${c.firstName} ${c.lastName}`.toLowerCase().includes(name)) &&
-            ((c.email || "").toLowerCase().includes(email)) &&
-            ((c.telephone || "").toLowerCase().includes(phone)) &&
-            ((c.address || "").toLowerCase().includes(address)) &&
-            ((c.parcelLocker || "").toLowerCase().includes(parcel))
-        );
-    });
+// ============================================================
+// FILTRY
+// ============================================================
+
+function renderCustomersFilters() {
+    const container = document.getElementById("customers-filters");
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="glass-card rounded-[2rem] p-4 mb-6 flex gap-4 items-center">
+            <label class="text-sm font-semibold text-slate-600">Szukaj:</label>
+
+            <input id="customers-filter-search" type="text"
+                class="bg-slate-50 border border-slate-200 p-2 rounded-xl w-64"
+                placeholder="Imię, nazwisko, email...">
+        </div>
+    `;
+
+    document.getElementById("customers-filter-search").oninput = (e) => {
+        state.filters.customers.search = e.target.value.toLowerCase();
+        renderCustomersTable();
+    };
 }
+
+
+// ============================================================
+// TABELA
+// ============================================================
 
 function renderCustomersTable() {
-    const tbody = document.getElementById("customers-table");
-    if (!tbody) return;
+    const container = document.getElementById("customers-table");
+    if (!container) return;
 
-    const customers = getFilteredCustomers();
+    const search = state.filters.customers.search;
+    let customers = state.customers;
 
-    tbody.innerHTML = customers
-        .map(
-            (c) => `
-        <tr>
-            <td class="py-3">${c.firstName} ${c.lastName}</td>
-            <td class="py-3">${c.email || "brak"}</td>
-            <td class="py-3">${c.telephone || "brak"}</td>
-            <td class="py-3">${c.address || "brak"}</td>
-            <td class="py-3">${c.parcelLocker || "brak"}</td>
-            <td class="py-3">
-                <div class="flex justify-center gap-2">
-                    <button data-edit-customer="${c.id}"
-                        class="px-3 py-1 rounded-xl bg-yellow-100 text-yellow-700 font-bold hover:bg-yellow-200">
-                        Edytuj
-                    </button>
-                    <button data-delete-customer="${c.id}"
-                        class="px-3 py-1 rounded-xl bg-red-100 text-red-700 font-bold hover:bg-red-200">
-                        Usuń
-                    </button>
-                </div>
-            </td>
-        </tr>
-    `
-        )
-        .join("");
-}
-
-function attachFilters() {
-    const inputs = [
-        "filter-name",
-        "filter-email",
-        "filter-phone",
-        "filter-address",
-        "filter-parcel"
-    ];
-
-    inputs.forEach((id) => {
-        document.getElementById(id).addEventListener("input", () => {
-            renderCustomersTable();
-            attachCustomerEvents();
-        });
-    });
-}
-
-function attachCustomerEvents() {
-    const btn = document.getElementById("addCustomerBtn");
-    if (btn) {
-        btn.onclick = () => {
-            openCustomerModal(renderCustomerForm());
-            attachCustomerFormEvents();
-        };
+    if (search) {
+        customers = customers.filter(
+            (c) =>
+                c.firstName.toLowerCase().includes(search) ||
+                c.lastName.toLowerCase().includes(search) ||
+                c.email.toLowerCase().includes(search)
+        );
     }
 
-    document.querySelectorAll("[data-edit-customer]").forEach((btn) => {
-        btn.onclick = () => {
-            const id = btn.dataset.editCustomer;
-            const customer = state.customers.find((c) => String(c.id) === String(id));
-            if (!customer) return;
+    if (customers.length === 0) {
+        container.innerHTML = `
+            <div class="glass-card rounded-[2rem] p-6 text-slate-500 text-sm">
+                Brak klientów do wyświetlenia.
+            </div>
+        `;
+        return;
+    }
 
+    container.innerHTML = `
+        <div class="glass-card rounded-[2rem] p-6 overflow-x-auto">
+            <table class="w-full text-left table-fixed whitespace-nowrap">
+                <thead>
+                    <tr class="text-xs font-black text-slate-500 uppercase tracking-wider border-b border-slate-200">
+                        <th class="py-3 w-40">Imię</th>
+                        <th class="py-3 w-40">Nazwisko</th>
+                        <th class="py-3 w-64">Email</th>
+                        <th class="py-3 w-32">Telefon</th>
+                        <th class="py-3 w-64">Adres</th>
+                        <th class="py-3 w-32 text-center">Akcje</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${customers
+        .map(
+            (c) => `
+                        <tr class="hover:bg-slate-100">
+                            <td class="py-3">${c.firstName}</td>
+                            <td class="py-3">${c.lastName}</td>
+                            <td class="py-3">${c.email}</td>
+                            <td class="py-3">${c.telephone}</td>
+                            <td class="py-3">${c.address}</td>
+
+                            <td class="py-3 text-center">
+                                <div class="flex justify-center gap-2">
+                                    <button data-edit-customer="${c.id}"
+                                        class="px-3 py-1 rounded-xl bg-yellow-100 text-yellow-700 font-bold hover:bg-yellow-200">
+                                        Edytuj
+                                    </button>
+
+                                    <button data-delete-customer="${c.id}"
+                                        class="px-3 py-1 rounded-xl bg-red-100 text-red-700 font-bold hover:bg-red-200">
+                                        Usuń
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    `
+        )
+        .join("")}
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    attachCustomerRowEvents();
+}
+
+
+// ============================================================
+// EVENTY
+// ============================================================
+
+function attachCustomerRowEvents() {
+    document.querySelectorAll("[data-edit-customer]").forEach((btn) => {
+        btn.onclick = async () => {
+            const id = btn.dataset.editCustomer;
+            const customer = await getCustomer(id);
             openCustomerModal(renderCustomerForm(customer));
             attachCustomerFormEvents(customer);
         };
@@ -163,96 +184,81 @@ function attachCustomerEvents() {
     document.querySelectorAll("[data-delete-customer]").forEach((btn) => {
         btn.onclick = async () => {
             const id = btn.dataset.deleteCustomer;
-            const customer = state.customers.find((c) => String(c.id) === String(id));
-            if (!customer) return;
 
-            if (!confirm(`Usunąć klienta: ${customer.firstName} ${customer.lastName}?`)) return;
+            if (!confirm("Czy na pewno chcesz usunąć tego klienta?")) return;
 
-            await deleteCustomer(id);
-            await loadCustomers();
-            renderCustomersTable();
-            attachCustomerEvents();
+            try {
+                await deleteCustomer(id);
+                await loadCustomers();
+                renderCustomersTable();
+            } catch (e) {
+                console.error("Błąd usuwania klienta:", e);
+                alert("Nie udało się usunąć klienta");
+            }
         };
     });
 }
 
-function renderCustomerForm(customer = null) {
+
+// ============================================================
+// FORMULARZ
+// ============================================================
+
+export function renderCustomerForm(customer = null) {
     return `
-        <div class="bg-white p-10 rounded-[3rem] max-w-xl w-full shadow-2xl border border-slate-100 fade-in max-h-[90vh] overflow-y-auto">
+        <div class="bg-white p-10 rounded-[3rem] max-w-3xl w-full shadow-2xl border border-slate-100">
 
             <h3 class="text-2xl font-black mb-6 text-slate-900 tracking-tight">
-                ${customer ? "Edytuj klienta" : "Nowy klient"}
+                ${customer ? "Edytuj klienta" : "Dodaj klienta"}
             </h3>
 
-            <form id="customer-form" class="space-y-6">
+            <form id="customer-form" class="grid grid-cols-2 gap-6">
 
                 <input type="hidden" id="customer-id" value="${customer?.id || ""}">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                    <div>
-                        <label for="customer-firstName" class="block text-sm font-semibold text-slate-600 mb-1">
-                            Imię
-                        </label>
-                        <input id="customer-firstName" type="text" required
-                               value="${customer?.firstName || ""}"
-                               class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
-                    </div>
-
-                    <div>
-                        <label for="customer-lastName" class="block text-sm font-semibold text-slate-600 mb-1">
-                            Nazwisko
-                        </label>
-                        <input id="customer-lastName" type="text" required
-                               value="${customer?.lastName || ""}"
-                               class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
-                    </div>
-
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Imię</label>
+                    <input id="customer-firstName" type="text"
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.firstName || ""}" required>
                 </div>
 
                 <div>
-                    <label for="customer-email" class="block text-sm font-semibold text-slate-600 mb-1">
-                        Email
-                    </label>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Nazwisko</label>
+                    <input id="customer-lastName" type="text"
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.lastName || ""}" required>
+                </div>
+
+                <div class="col-span-2">
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Email</label>
                     <input id="customer-email" type="email"
-                           value="${customer?.email || ""}"
-                           class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.email || ""}" required>
                 </div>
 
                 <div>
-                    <label for="customer-telephone" class="block text-sm font-semibold text-slate-600 mb-1">
-                        Telefon
-                    </label>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Telefon</label>
                     <input id="customer-telephone" type="text"
-                           value="${customer?.telephone || ""}"
-                           class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.telephone || ""}" required>
                 </div>
 
                 <div>
-                    <label for="customer-address" class="block text-sm font-semibold text-slate-600 mb-1">
-                        Adres
-                    </label>
-                    <textarea id="customer-address"
-                              class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">${customer?.address || ""}</textarea>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Adres</label>
+                    <input id="customer-address" type="text"
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl"
+                        value="${customer?.address || ""}" required>
                 </div>
 
-                <div>
-                    <label for="customer-parcelLocker" class="block text-sm font-semibold text-slate-600 mb-1">
-                        Paczkomat
-                    </label>
-                    <input id="customer-parcelLocker" type="text"
-                           value="${customer?.parcelLocker || ""}"
-                           class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl">
-                </div>
-
-                <div class="flex justify-end gap-4 pt-4">
+                <div class="col-span-2 flex justify-end gap-4 pt-4">
                     <button type="button" data-close-modal="customerModal"
-                            class="px-6 py-3 rounded-2xl bg-slate-100 text-slate-500">
+                        class="px-6 py-3 rounded-2xl bg-slate-100 text-slate-500">
                         Anuluj
                     </button>
 
                     <button type="submit"
-                            class="px-6 py-3 rounded-2xl bg-emerald-600 text-white font-bold">
+                        class="px-6 py-3 rounded-2xl bg-emerald-600 text-white font-bold">
                         Zapisz
                     </button>
                 </div>
@@ -262,33 +268,73 @@ function renderCustomerForm(customer = null) {
     `;
 }
 
-function attachCustomerFormEvents(existingCustomer = null) {
+
+// ============================================================
+// LOGIKA FORMULARZA
+// ============================================================
+
+export function attachCustomerFormEvents(existingCustomer = null) {
     const form = document.getElementById("customer-form");
     if (!form) return;
 
     form.onsubmit = async (e) => {
         e.preventDefault();
 
-        const id = document.getElementById("customer-id").value || null;
+        const id = document.getElementById("customer-id").value;
+        const firstName = document.getElementById("customer-firstName").value.trim();
+        const lastName = document.getElementById("customer-lastName").value.trim();
+        const email = document.getElementById("customer-email").value.trim();
+        const telephone = document.getElementById("customer-telephone").value.trim();
+        const address = document.getElementById("customer-address").value.trim();
 
-        const payload = {
-            firstName: document.getElementById("customer-firstName").value.trim(),
-            lastName: document.getElementById("customer-lastName").value.trim(),
-            email: document.getElementById("customer-email").value.trim() || null,
-            telephone: document.getElementById("customer-telephone").value.trim() || null,
-            address: document.getElementById("customer-address").value.trim() || null,
-            parcelLocker: document.getElementById("customer-parcelLocker").value.trim() || null
-        };
-
-        if (id) {
-            await updateCustomer(id, payload);
-        } else {
-            await createCustomer(payload);
+        if (!firstName || !lastName || !email || !telephone || !address) {
+            alert("Uzupełnij wszystkie pola.");
+            return;
         }
 
-        document.querySelector("[data-close-modal='customerModal']").click();
-        await loadCustomers();
-        renderCustomersTable();
-        attachCustomerEvents();
+        const payload = {
+            id: id || null,
+            firstName,
+            lastName,
+            email,
+            telephone,
+            address
+        };
+
+        try {
+            if (id) {
+                await updateCustomer(id, payload);
+            } else {
+                await createCustomer(payload);
+            }
+
+            document.querySelector("[data-close-modal='customerModal']").click();
+            await loadCustomers();
+            renderCustomersTable();
+
+        } catch (e) {
+            console.error("Błąd zapisu klienta:", e);
+            alert("Nie udało się zapisać klienta");
+        }
     };
 }
+
+
+// ============================================================
+// GŁÓWNE EVENTY
+// ============================================================
+
+function attachCustomerEvents() {
+    const addBtn = document.getElementById("addCustomerBtn");
+    if (addBtn) {
+        addBtn.onclick = () => {
+            openCustomerModal(renderCustomerForm());
+            attachCustomerFormEvents();
+        };
+    }
+}
+
+document.addEventListener("click", (e) => {
+    const closeBtn = e.target.closest("[data-close-modal='customerModal']");
+    if (!closeBtn) return;
+});

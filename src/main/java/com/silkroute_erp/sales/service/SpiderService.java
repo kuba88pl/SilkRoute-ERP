@@ -4,9 +4,6 @@ import com.silkroute_erp.sales.entity.Spider;
 import com.silkroute_erp.sales.exception.InvalidSpiderDataException;
 import com.silkroute_erp.sales.exception.SpiderNotFoundException;
 import com.silkroute_erp.sales.repository.SpiderRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,39 +18,55 @@ public class SpiderService {
         this.spiderRepository = spiderRepository;
     }
 
-    public Spider addSpider(Spider spider) throws InvalidSpiderDataException {
-        if (spider == null || spider.getSpeciesName() == null || spider.getSpeciesName().trim().isEmpty()) {
+    /* ============================================================
+       CREATE
+    ============================================================ */
+    public Spider addSpider(Spider spider) {
+        if (spider == null ||
+                spider.getSpeciesName() == null ||
+                spider.getSpeciesName().trim().isEmpty()) {
             throw new InvalidSpiderDataException("Spider species name cannot be null or empty.");
         }
-        if (spider.getId() != null && spiderRepository.existsById(spider.getId())) {
-            throw new InvalidSpiderDataException("Spider with this ID already exists.");
-        }
+
         return spiderRepository.save(spider);
     }
 
-    public Spider updateSpider(Spider spider) throws SpiderNotFoundException, InvalidSpiderDataException {
+    /* ============================================================
+       UPDATE
+    ============================================================ */
+    public Spider updateSpider(Spider spider) {
         if (spider == null || spider.getId() == null) {
             throw new InvalidSpiderDataException("Spider and its ID cannot be null for an update.");
         }
+
         if (!spiderRepository.existsById(spider.getId())) {
             throw new SpiderNotFoundException("Spider with ID " + spider.getId() + " not found.");
         }
+
         return spiderRepository.save(spider);
     }
 
-    public void deleteSpider(UUID id) throws SpiderNotFoundException {
+    /* ============================================================
+       DELETE
+    ============================================================ */
+    public void deleteSpider(UUID id) {
         if (!spiderRepository.existsById(id)) {
             throw new SpiderNotFoundException("Spider with ID " + id + " not found.");
         }
         spiderRepository.deleteById(id);
     }
 
-    public Spider getSpiderById(UUID id) throws SpiderNotFoundException {
+    /* ============================================================
+       FINDERS
+    ============================================================ */
+    public Spider getSpiderById(UUID id) {
         return spiderRepository.findById(id)
-                .orElseThrow(() -> new SpiderNotFoundException("Spider with ID " + id + " not found."));
+                .orElseThrow(() ->
+                        new SpiderNotFoundException("Spider with ID " + id + " not found.")
+                );
     }
 
-    public List<Spider> getSpiderBySpeciesName(String speciesName) throws SpiderNotFoundException {
+    public List<Spider> getSpiderBySpeciesName(String speciesName) {
         List<Spider> spiders = spiderRepository.findBySpeciesName(speciesName);
         if (spiders.isEmpty()) {
             throw new SpiderNotFoundException("No spiders found with species name: " + speciesName);
@@ -61,7 +74,10 @@ public class SpiderService {
         return spiders;
     }
 
-    public Page<Spider> getAllSpiders(int page, int size, Sort sort) {
-        return spiderRepository.findAll(PageRequest.of(page, size, sort));
+    /* ============================================================
+       FULL LIST
+    ============================================================ */
+    public List<Spider> getAllSpidersNoPagination() {
+        return spiderRepository.findAllByOrderBySpeciesNameAsc();
     }
 }
