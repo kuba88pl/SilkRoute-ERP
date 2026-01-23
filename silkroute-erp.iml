@@ -2,10 +2,6 @@
 <module version="4">
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$" dumb="true">
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/controller" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/entity" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/repository" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/com/silkroute_erp/breeding/service" />
       <excludeFolder url="file://$MODULE_DIR$/src/test/java/com/WMS_spiders_wholesale_system" />
     </content>
   </component>
