@@ -1,5 +1,7 @@
 # SilkRoute ERP 🕷️📦
 
+Application for testing: http://152.70.29.133:8081/index.html
+
 **SilkRoute ERP** is a professional Enterprise Resource Planning system designed for the niche industry of exotic arachnid breeding and wholesale distribution. The system manages the entire lifecycle of specimens—from large-scale inventory logistics to granular biological data tracking.
 
 ## 🚀 Key Modules
@@ -24,6 +26,8 @@
 
 ---
 
+Application for testing: http://152.70.29.133:8081/index.html
+
 ## 💾 Database Configuration
 
 To connect the application to your local MySQL instance, update your `src/main/resources/application.properties` as follows:
@@ -40,3 +44,4 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 spring.jpa.properties.hibernate.format_sql=true
+
