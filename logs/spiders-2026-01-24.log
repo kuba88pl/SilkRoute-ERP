@@ -1,0 +1,714 @@
+2026-01-24 22:45:03 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 2576 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 22:45:03 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 22:45:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 22:45:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 22:45:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 22:45:03 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 6 JPA repository interfaces.
+2026-01-24 22:45:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 22:45:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 22:45:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 22:45:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 22:45:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 22:45:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 860 ms
+2026-01-24 22:45:04 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 22:45:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 22:45:04 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@311cd87d
+2026-01-24 22:45:04 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-24 22:45:05 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-24 22:45:05 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-24 22:45:05 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-24 22:45:06 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-24 22:45:06 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-24 22:45:06 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 32 mappings in 'requestMappingHandlerMapping'
+2026-01-24 22:45:06 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-01-24 22:45:06 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-24 22:45:06 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-24 22:45:06 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-24 22:45:06 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-01-24 22:45:06 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-24 22:45:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-24 22:45:06 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 3.407 seconds (process running for 3.834)
+2026-01-24 22:45:25 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-24 22:45:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@53b97f70
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@e3ca6c3
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-01-24 22:45:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/index.html", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:25 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Jan 24 22:45:25 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-24 22:45:25 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-24 22:45:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/logo.png", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:25 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Jan 24 22:45:25 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-24 22:45:25 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.5', given [image/avif, image/webp, image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5] and supported [application/json, application/*+json]
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Jan 24 22:45:25 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-24 22:45:25 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-24 22:45:26 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 22:45:26 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:26 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@609489c9, com.silkroute_erp.sales.dto.CustomerDTO@629988f6, (truncated)...]
+2026-01-24 22:45:27 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@6f00da3b, com.silkroute_erp.sales.dto.SpiderDTO@2d1d413c, com (truncated)...]
+2026-01-24 22:45:32 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders/0886089c-3bbb-465f-9faf-3ce77356396e", parameters={}
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getSpiderById(UUID)
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:36 [http-nio-8080-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@3e452f3e]
+2026-01-24 22:45:36 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/spiders/0886089c-3bbb-465f-9faf-3ce77356396e", parameters={}
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#updateSpider(UUID, SpiderDTO)
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@19781c9d]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select count(*) from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - update spiders set gender=?,is_cites=?,price=?,quantity=?,size=?,species_name=?,type_name=? where id=?
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:ENUM) <- [NS]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [false]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:DOUBLE) <- [40.0]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:INTEGER) <- [25]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [L2]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [versicolor]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [Caribena]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@122640a9]
+2026-01-24 22:45:39 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@6d51e144, com.silkroute_erp.sales.dto.SpiderDTO@1ebf3e, com.s (truncated)...]
+2026-01-24 22:45:39 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders/0886089c-3bbb-465f-9faf-3ce77356396e", parameters={}
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getSpiderById(UUID)
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:41 [http-nio-8080-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@205ef4d1]
+2026-01-24 22:45:41 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - PUT "/api/spiders/0886089c-3bbb-465f-9faf-3ce77356396e", parameters={}
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#updateSpider(UUID, SpiderDTO)
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [com.silkroute_erp.sales.dto.SpiderDTO@73acf553]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select count(*) from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - update spiders set gender=?,is_cites=?,price=?,quantity=?,size=?,species_name=?,type_name=? where id=?
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:ENUM) <- [NS]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [false]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:DOUBLE) <- [40.0]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:INTEGER) <- [26]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [L2]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [versicolor]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:VARCHAR) <- [Caribena]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (8:VARCHAR) <- [0886089c-3bbb-465f-9faf-3ce77356396e]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.SpiderDTO@4f43e795]
+2026-01-24 22:45:43 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@10bf2a3b, com.silkroute_erp.sales.dto.SpiderDTO@676223f1, com (truncated)...]
+2026-01-24 22:45:43 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 22:45:54 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 111 class path changes (0 additions, 111 deletions, 0 modifications)
+2026-01-24 22:45:54 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-24 22:45:54 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-24 22:45:54 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-24 22:45:54 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-24 22:45:54 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-24 22:45:54 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-24 22:45:54 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-24 23:08:53 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 5480 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 23:08:53 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 23:08:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 23:08:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 23:08:54 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 23:08:54 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 6 JPA repository interfaces.
+2026-01-24 23:08:54 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 23:08:54 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:08:54 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 23:08:54 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 23:08:54 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 23:08:54 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 718 ms
+2026-01-24 23:08:54 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 23:08:54 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:08:55 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:08:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:08:57 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:08:57 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:08:57 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:08:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-24 23:08:57 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-24 23:08:57 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.SilkRouteERPApplication.main(SilkRouteERPApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 18 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:65)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	... 22 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 43 common frames omitted
+2026-01-24 23:09:04 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 5606 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 23:09:04 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 120 ms. Found 6 JPA repository interfaces.
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 23:09:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:09:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 23:09:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 23:09:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 23:09:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 715 ms
+2026-01-24 23:09:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 23:09:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:09:06 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:09:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:09:07 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:09:07 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:09:07 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:09:07 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-24 23:09:07 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-24 23:09:07 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.SilkRouteERPApplication.main(SilkRouteERPApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 18 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:65)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	... 22 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 43 common frames omitted
+2026-01-24 23:09:58 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 5792 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 23:09:58 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 23:09:58 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 23:09:58 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 23:09:59 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 23:09:59 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 6 JPA repository interfaces.
+2026-01-24 23:09:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 23:09:59 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:09:59 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 23:09:59 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 23:09:59 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 23:09:59 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 711 ms
+2026-01-24 23:09:59 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 23:09:59 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:10:01 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:10:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:10:02 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:10:02 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:10:02 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:10:02 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-24 23:10:02 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-24 23:10:02 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.SilkRouteERPApplication.main(SilkRouteERPApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 18 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:65)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	... 22 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 43 common frames omitted
+2026-01-24 23:12:20 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 6097 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 23:12:20 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 23:12:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 23:12:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 23:12:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 23:12:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 6 JPA repository interfaces.
+2026-01-24 23:12:21 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 23:12:21 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:12:21 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 23:12:21 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 23:12:21 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 23:12:21 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 713 ms
+2026-01-24 23:12:21 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 23:12:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:12:23 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:12:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:12:24 [restartedMain] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+2026-01-24 23:12:24 [restartedMain] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:12:24 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+2026-01-24 23:12:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-01-24 23:12:24 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-24 23:12:24 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.SilkRouteERPApplication.main(SilkRouteERPApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	... 18 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: Unable to open JDBC Connection for DDL execution [Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'] [n/a]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:65)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1430)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	... 22 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Access denied for user 'host103405_admin'@'%' to database 'silkroute_test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 43 common frames omitted
+2026-01-24 23:20:05 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 6808 (/home/kuba/repo/Java/target/classes started by kuba in /home/kuba/repo/Java)
+2026-01-24 23:20:05 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-24 23:20:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-24 23:20:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-24 23:20:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-24 23:20:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 6 JPA repository interfaces.
+2026-01-24 23:20:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-24 23:20:06 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:20:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-24 23:20:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-01-24 23:20:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-24 23:20:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 708 ms
+2026-01-24 23:20:06 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-24 23:20:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-24 23:20:06 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6250ee26
+2026-01-24 23:20:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table breeding_entries (id VARCHAR(36) not null, behavior_notes TEXT, cocoon_status enum ('DRIED_OUT','EATEN','HEALTHY','INFERTILE','ROTTEN'), created_at date, dead_count integer, live_l1_count integer, notes TEXT, pairing_date_1 date, pairing_date_2 date, pairing_date_3 date, pairing_date_4 date, pairing_humidity float(53), pairing_notes TEXT, pairing_temperature float(53), recommended_pull_date date, sac_date date, total_eggs_or_nymphs integer, updated_at date, breeding_spider_id VARCHAR(36) not null, primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table breeding_spider (id VARCHAR(36) not null, birth_date date, breeding_count integer, breeding_status varchar(255), cites_document_number varchar(255), is_cites bit, last_molt_date date, notes TEXT, origin varchar(255), size varchar(255), species_name varchar(255), type_name varchar(255), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table customers (id VARCHAR(36) not null, address varchar(255), email varchar(255), first_name varchar(255), last_name varchar(255), parcel_locker varchar(255), telephone varchar(255), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table egg_sack (id VARCHAR(36) not null, created_at date, date_of_eggsack date, date_of_eggsack_pull date, eggsack_description TEXT, number_of_bad_eggs integer, number_of_dead_nymphs integer, number_of_dead_spiders integer, number_of_eggs integer, number_of_nymphs integer, number_of_spiders integer, status enum ('DEVELOPING','FAILED','LAID','PULLED','SUCCESSFUL'), suggested_date_of_eggsack_pull date, updated_at date, entry_id VARCHAR(36), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table ordered_spiders (id varchar(36) not null, quantity integer not null, order_id varchar(36), spider_id VARCHAR(36), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table orders (id varchar(36) not null, courier_company enum ('DPD','GLS','INPOST','POCZTEX','UPS'), date date, price float(53), self_collection bit, shipment_number varchar(255), status enum ('CANCELLED','COMPLETED','IN_PROGRESS','NEW','PENDING','SHIPPED'), customer_id VARCHAR(36), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - create table spiders (id VARCHAR(36) not null, gender enum ('NS','SAMICA','SAMIEC'), is_cites bit, price float(53), quantity integer, size varchar(255), species_name varchar(255), type_name varchar(255), primary key (id)) engine=InnoDB
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table egg_sack drop index UK7b9ddjw917w2knxwq7qv7h7yg
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table egg_sack add constraint UK7b9ddjw917w2knxwq7qv7h7yg unique (entry_id)
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table breeding_entries add constraint FKg9rirrt7b4rte3rbl3gqsb0bu foreign key (breeding_spider_id) references breeding_spider (id)
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table egg_sack add constraint FKogqt9oxacjbiutvnk0ndy4e08 foreign key (entry_id) references breeding_entries (id)
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table ordered_spiders add constraint FKp4ao98a8do8v9nw9us8o702bu foreign key (order_id) references orders (id)
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table ordered_spiders add constraint FKfx8uqrhlaisreh61xqd2f08vi foreign key (spider_id) references spiders (id)
+2026-01-24 23:20:07 [restartedMain] DEBUG org.hibernate.SQL - alter table orders add constraint FKpxtb8awmi0dk6smoh2vp1litg foreign key (customer_id) references customers (id)
+2026-01-24 23:20:07 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-24 23:20:07 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-24 23:20:08 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-24 23:20:08 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-01-24 23:20:08 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 32 mappings in 'requestMappingHandlerMapping'
+2026-01-24 23:20:08 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-01-24 23:20:08 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-01-24 23:20:08 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-01-24 23:20:08 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-01-24 23:20:08 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-01-24 23:20:08 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-24 23:20:08 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-24 23:20:08 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 2.968 seconds (process running for 3.274)
+2026-01-24 23:20:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-24 23:20:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6d6e5e50
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2b079cc8
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-01-24 23:20:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver - Selected 'text/html' given [text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8]
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.view.InternalResourceView - View [InternalResourceView], model {}
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.view.InternalResourceView - Forwarding to [index.html]
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - "FORWARD" dispatch for GET "/index.html", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "FORWARD" dispatch, status 200
+2026-01-24 23:20:16 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/style.css", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource css/style.css.]
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Jan 24 23:20:16 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-24 23:20:16 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-24 23:20:16 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/img/logo.png", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:16 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json;q=0.5', given [image/avif, image/webp, image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5] and supported [application/json, application/*+json]
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [{timestamp=Sat Jan 24 23:20:16 CET 2026, status=404, error=Not Found, trace=org.springframework.web. (truncated)...]
+2026-01-24 23:20:16 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2026-01-24 23:20:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-01-24 23:20:17 [http-nio-8080-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-24 23:20:17 [http-nio-8080-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-24 23:20:18 [http-nio-8080-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-24 23:20:19 [http-nio-8080-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[]]
+2026-01-24 23:20:20 [http-nio-8080-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-01-24 23:20:28 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-24 23:20:28 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-24 23:20:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-24 23:20:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-24 23:20:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
