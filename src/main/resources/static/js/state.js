@@ -70,3 +70,20 @@ export function resetOrderState() {
     state.selectedCustomer = null;
     state.orderedSpiders = [];
 }
+
+/* ============================================================
+   PRZECHOWYWANIE TOKENA
+============================================================ */
+export const authState = {
+    token: localStorage.getItem("jwt") || null,
+
+    setToken(token) {
+        this.token = token;
+        localStorage.setItem("jwt", token);
+    },
+
+    clear() {
+        this.token = null;
+        localStorage.removeItem("jwt");
+    }
+};

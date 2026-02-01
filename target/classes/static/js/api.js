@@ -1,13 +1,28 @@
 /* ============================================================
-   PODSTAWOWA FUNKCJA REQUEST
+   IMPORT STANU AUTORYZACJI
+============================================================ */
+import { authState } from "./state.js";
+
+/* ============================================================
+   PODSTAWOWA FUNKCJA REQUEST — TERAZ Z JWT
 ============================================================ */
 
 const BASE_URL = "/api";
 
 async function request(path, options = {}) {
+    const headers = {
+        "Content-Type": "application/json",
+        ...(options.headers || {})
+    };
+
+    // AUTOMATYCZNE DODANIE JWT
+    if (authState.token) {
+        headers["Authorization"] = "Bearer " + authState.token;
+    }
+
     const res = await fetch(BASE_URL + path, {
-        headers: { "Content-Type": "application/json" },
-        ...options
+        ...options,
+        headers
     });
 
     if (!res.ok) {
@@ -114,4 +129,24 @@ export function cancelOrder(id) {
     return request(`/orders/${id}/cancel`, {
         method: "POST"
     });
+}
+
+/* ============================================================
+   AUTH — LOGOWANIE
+============================================================ */
+
+export async function login(username, password) {
+    const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
+
+    if (!response.ok) {
+        throw new Error("Błędny login lub hasło");
+    }
+
+    const data = await response.json();
+    authState.setToken(data.token);
+    return data.token;
 }

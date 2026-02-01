@@ -1,129 +1,122 @@
 // /static/js/breeding/breedingApi.js
 
+import { authState } from "../state.js";
+
+/* ============================================================
+   HELPER – REQUEST Z JWT
+============================================================ */
+async function authRequest(url, options = {}) {
+    const headers = {
+        "Content-Type": "application/json",
+        ...(options.headers || {})
+    };
+
+    if (authState.token) {
+        headers["Authorization"] = "Bearer " + authState.token;
+    }
+
+    const res = await fetch(url, {
+        ...options,
+        headers
+    });
+
+    if (!res.ok) {
+        console.error("Breeding API error:", res.status, res.statusText);
+        throw new Error(`Failed request: ${res.status}`);
+    }
+
+    if (res.status === 204) return null;
+    return res.json();
+}
+
 /* ============================================================
    SPIDERS
 ============================================================ */
 
-export async function fetchSpiders() {
-    const res = await fetch("/api/breeding/spiders");
-    if (!res.ok) throw new Error("Failed to fetch spiders");
-    return res.json();
+export function fetchSpiders() {
+    return authRequest("/api/breeding/spiders");
 }
 
-export async function fetchSpider(id) {
-    const res = await fetch(`/api/breeding/spiders/${id}`);
-    if (!res.ok) throw new Error("Failed to fetch spider");
-    return res.json();
+export function fetchSpider(id) {
+    return authRequest(`/api/breeding/spiders/${id}`);
 }
 
-export async function createSpider(payload) {
-    const res = await fetch("/api/breeding/spiders", {
+export function createSpider(payload) {
+    return authRequest("/api/breeding/spiders", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to create spider");
-    return res.json();
 }
 
-export async function updateSpider(id, payload) {
-    const res = await fetch(`/api/breeding/spiders/${id}`, {
+export function updateSpider(id, payload) {
+    return authRequest(`/api/breeding/spiders/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to update spider");
-    return res.json();
 }
 
-export async function deleteSpider(id) {
-    const res = await fetch(`/api/breeding/spiders/${id}`, {
+export function deleteSpider(id) {
+    return authRequest(`/api/breeding/spiders/${id}`, {
         method: "DELETE"
     });
-    if (!res.ok) throw new Error("Failed to delete spider");
 }
 
 /* ============================================================
    BREEDING ENTRIES
 ============================================================ */
 
-export async function fetchEntriesForSpider(spiderId) {
-    const res = await fetch(`/api/breeding/entries/spider/${spiderId}`);
-    if (!res.ok) throw new Error("Failed to fetch entries");
-    return res.json();
+export function fetchEntriesForSpider(spiderId) {
+    return authRequest(`/api/breeding/entries/spider/${spiderId}`);
 }
 
-export async function createEntry(spiderId, payload) {
-    const res = await fetch(`/api/breeding/entries/spider/${spiderId}`, {
+export function createEntry(spiderId, payload) {
+    return authRequest(`/api/breeding/entries/spider/${spiderId}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to create entry");
-    return res.json();
 }
 
-export async function updateEntry(id, payload) {
-    const res = await fetch(`/api/breeding/entries/${id}`, {
+export function updateEntry(id, payload) {
+    return authRequest(`/api/breeding/entries/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to update entry");
-    return res.json();
 }
 
-export async function deleteEntry(entryId) {
-    const res = await fetch(`/api/breeding/entries/${entryId}`, {
+export function deleteEntry(entryId) {
+    return authRequest(`/api/breeding/entries/${entryId}`, {
         method: "DELETE"
     });
-
-    if (!res.ok) {
-        throw new Error("Failed to delete entry");
-    }
 }
 
 /* ============================================================
    EGG SACKS
 ============================================================ */
 
-export async function createEggSack(entryId, payload) {
-    const res = await fetch(`/api/breeding/entries/${entryId}/eggsack`, {
+export function createEggSack(entryId, payload) {
+    return authRequest(`/api/breeding/entries/${entryId}/eggsack`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to create egg sack");
-    return res.json();
 }
 
-export async function fetchEggSack(id) {
-    const res = await fetch(`/api/breeding/eggsack/${id}`);
-    if (!res.ok) throw new Error("Failed to fetch egg sack");
-    return res.json();
+export function fetchEggSack(id) {
+    return authRequest(`/api/breeding/eggsack/${id}`);
 }
 
-export async function fetchEggSackByEntry(entryId) {
-    const res = await fetch(`/api/breeding/entries/${entryId}/eggsack`);
-    if (!res.ok) throw new Error("Failed to fetch egg sack for entry");
-    return res.json();
+export function fetchEggSackByEntry(entryId) {
+    return authRequest(`/api/breeding/entries/${entryId}/eggsack`);
 }
 
-export async function updateEggSack(id, payload) {
-    const res = await fetch(`/api/breeding/eggsack/${id}`, {
+export function updateEggSack(id, payload) {
+    return authRequest(`/api/breeding/eggsack/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error("Failed to update egg sack");
-    return res.json();
 }
 
-export async function deleteEggSack(entryId) {
-    const res = await fetch(`/api/breeding/entries/egg-sack/${entryId}`, {
+export function deleteEggSack(entryId) {
+    return authRequest(`/api/breeding/entries/egg-sack/${entryId}`, {
         method: "DELETE"
     });
-    if (!res.ok) throw new Error("Failed to delete egg sack");
 }
-
-

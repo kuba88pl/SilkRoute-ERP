@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Global SilkRoute Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="min-h-screen flex items-center justify-center px-6 py-12">
@@ -24,11 +24,21 @@
     </div>
 
     <!-- Nagłówek -->
-    <h1 class="text-4xl font-black tracking-tight mb-2 text-slate-900"> SilkRoute <span class="text-emerald-600"><i>ERP</i></span> </h1>
+    <h1 class="text-4xl font-black tracking-tight mb-2 text-slate-900"> SilkRoute <span
+            class="text-emerald-600"><i>ERP</i></span></h1>
 
     <p class="text-slate-500 mb-12">
         Arachnid Breeding & Wholesale Management System
     </p>
+
+    <!-- Logowanie -->
+    <div id="login-panel">
+        <h2>Logowanie</h2>
+        <input id="username" type="text" placeholder="Login">
+        <input id="password" type="password" placeholder="Hasło">
+        <button id="login-btn">Zaloguj</button>
+        <p id="login-error" style="color:red;"></p>
+    </div>
 
     <!-- Moduły -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -54,5 +64,16 @@
 
 </div>
 
+<script> if (localStorage.getItem("jwt")) {
+    document.getElementById("login-panel").style.display = "none";
+} </script>
+<script type="module" src="/js/api.js"></script>
+<script type="module" src="/js/state.js"></script>
+<script type="module" src="/js/main.js"></script>
+
+
 </body>
+
+
+
 </html>
