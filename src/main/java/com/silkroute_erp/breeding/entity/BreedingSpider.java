@@ -52,46 +52,112 @@ public class BreedingSpider {
     @OneToMany(mappedBy = "breedingSpider", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BreedingEntry> breedingEntryList;
 
-    public BreedingSpider() {}
+    public BreedingSpider() {
+    }
 
     /* ===== GETTERY / SETTERY ===== */
 
-    public UUID getId() { return id; }
-    public void setId(UUID id) { this.id = id; }
+    public UUID getId() {
+        return id;
+    }
 
-    public String getTypeName() { return typeName; }
-    public void setTypeName(String typeName) { this.typeName = typeName; }
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-    public String getSpeciesName() { return speciesName; }
-    public void setSpeciesName(String speciesName) { this.speciesName = speciesName; }
+    public String getTypeName() {
+        return typeName;
+    }
 
-    public LocalDate getLastMoltDate() { return lastMoltDate; }
-    public void setLastMoltDate(LocalDate lastMoltDate) { this.lastMoltDate = lastMoltDate; }
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
 
-    public LocalDate getBirthDate() { return birthDate; }
-    public void setBirthDate(LocalDate birthDate) { this.birthDate = birthDate; }
+    public String getSpeciesName() {
+        return speciesName;
+    }
 
-    public String getOrigin() { return origin; }
-    public void setOrigin(String origin) { this.origin = origin; }
+    public void setSpeciesName(String speciesName) {
+        this.speciesName = speciesName;
+    }
 
-    public String getBreedingStatus() { return breedingStatus; }
-    public void setBreedingStatus(String breedingStatus) { this.breedingStatus = breedingStatus; }
+    public LocalDate getLastMoltDate() {
+        return lastMoltDate;
+    }
 
-    public String getNotes() { return notes; }
-    public void setNotes(String notes) { this.notes = notes; }
+    public void setLastMoltDate(LocalDate lastMoltDate) {
+        this.lastMoltDate = lastMoltDate;
+    }
 
-    public Integer getBreedingCount() { return breedingCount; }
-    public void setBreedingCount(Integer breedingCount) { this.breedingCount = breedingCount; }
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
 
-    public String getSize() { return size; }
-    public void setSize(String size) { this.size = size; }
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 
-    public boolean isCites() { return isCites; }
-    public void setCites(boolean cites) { isCites = cites; }
+    public String getOrigin() {
+        return origin;
+    }
 
-    public String getCitesDocumentNumber() { return citesDocumentNumber; }
-    public void setCitesDocumentNumber(String citesDocumentNumber) { this.citesDocumentNumber = citesDocumentNumber; }
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 
-    public List<BreedingEntry> getBreedingEntryList() { return breedingEntryList; }
-    public void setBreedingEntryList(List<BreedingEntry> breedingEntryList) { this.breedingEntryList = breedingEntryList; }
+    public String getBreedingStatus() {
+        return breedingStatus;
+    }
+
+    public void setBreedingStatus(String breedingStatus) {
+        this.breedingStatus = breedingStatus;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public Integer getBreedingCount() {
+        return breedingCount;
+    }
+
+    public void setBreedingCount(Integer breedingCount) {
+        this.breedingCount = breedingCount;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public boolean isCites() {
+        return isCites;
+    }
+
+    public void setCites(boolean cites) {
+        isCites = cites;
+    }
+
+    public String getCitesDocumentNumber() {
+        return citesDocumentNumber;
+    }
+
+    public void setCitesDocumentNumber(String citesDocumentNumber) {
+        this.citesDocumentNumber = citesDocumentNumber;
+    }
+
+    public List<BreedingEntry> getBreedingEntryList() {
+        return breedingEntryList;
+    }
+
+    public void setBreedingEntryList(List<BreedingEntry> breedingEntryList) {
+        this.breedingEntryList = breedingEntryList;
+    }
 }

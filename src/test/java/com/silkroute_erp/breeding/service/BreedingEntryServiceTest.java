@@ -4,11 +4,13 @@ import com.silkroute_erp.breeding.entity.BreedingEntry;
 import com.silkroute_erp.breeding.entity.BreedingSpider;
 import com.silkroute_erp.breeding.repository.BreedingEntryRepository;
 import com.silkroute_erp.breeding.repository.BreedingSpiderRepository;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+@AutoConfigureMockMvc(addFilters = false)
 
 @Service
 public class BreedingEntryServiceTest {

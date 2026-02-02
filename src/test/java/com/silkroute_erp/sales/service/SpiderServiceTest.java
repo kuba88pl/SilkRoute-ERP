@@ -6,11 +6,13 @@ import com.silkroute_erp.sales.exception.SpiderNotFoundException;
 import com.silkroute_erp.sales.repository.SpiderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+@AutoConfigureMockMvc(addFilters = false)
 
 class SpiderServiceTest {
 

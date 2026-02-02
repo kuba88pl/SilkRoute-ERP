@@ -10,12 +10,14 @@ import com.silkroute_erp.breeding.repository.BreedingEntryRepository;
 import com.silkroute_erp.breeding.repository.EggSackRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+@AutoConfigureMockMvc(addFilters = false)
 
 class EggSackServiceTest {
 
