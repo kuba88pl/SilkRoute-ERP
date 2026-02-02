@@ -6,6 +6,7 @@ import com.silkroute_erp.breeding.repository.BreedingSpiderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,6 +30,17 @@ public class BreedingSpiderService {
 
     public BreedingSpider create(BreedingSpider spider) {
         spider.setBreedingCount(0);
+        List<String> citesTypeNames = Arrays.asList(
+                "brachypelma",
+                "poecilotheria",
+                "tliltocatl"
+        );
+        String type = spider.getTypeName();
+        if (type != null && citesTypeNames.contains(type.trim().toLowerCase())) {
+            spider.setCites(true);
+        } else {
+            spider.setCites(false);
+        }
         return spiderRepo.save(spider);
     }
 
@@ -52,6 +64,9 @@ public class BreedingSpiderService {
     public void delete(UUID id) {
         spiderRepo.deleteById(id);
     }
+
+
 }
+
 
 
