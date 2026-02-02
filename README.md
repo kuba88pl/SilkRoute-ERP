@@ -1,6 +1,8 @@
 # SilkRoute ERP 🕷️📦
 
 Application for testing: http://152.70.29.133:8081/index.html
+Login: admin
+Password: admin123
 
 **SilkRoute ERP** is a professional Enterprise Resource Planning system designed for the niche industry of exotic arachnid breeding and wholesale distribution. The system manages the entire lifecycle of specimens—from large-scale inventory logistics to granular biological data tracking.
 
@@ -27,6 +29,8 @@ Application for testing: http://152.70.29.133:8081/index.html
 ---
 
 Application for testing: http://152.70.29.133:8081/index.html
+Login: admin
+Password: admin123
 
 ## 💾 Database Configuration
 
