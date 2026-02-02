@@ -61,11 +61,22 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                         <h2 class="text-3xl font-[800] mb-2">
                             ${spider.typeName} ${spider.speciesName}
                         </h2>
-                        <p class="text-slate-500 mb-1">${spider.origin ?? "pochodzenie nieznane"}</p>
+
+                        <p class="text-slate-500 mb-1">
+                            ${spider.origin ?? "pochodzenie nieznane"}
+                        </p>
+
                         <p class="text-slate-500 text-sm">
                             Rozmiar: <b>${spider.size ?? "-"}</b> • 
                             CITES: <b>${spider.cites ? "TAK" : "NIE"}</b>
                         </p>
+
+                        <!-- 🔥 NOTATKI O SAMICY -->
+                        ${spider.notes ? `
+                            <p class="text-slate-600 text-sm mt-3 whitespace-pre-line">
+                                ${escapeHtml(spider.notes)}
+                            </p>
+                        ` : ""}
                     </div>
 
                     <div class="flex gap-3">
@@ -239,4 +250,16 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
     }
 
     render();
+}
+
+/* ============================================================================
+   HELPERS
+============================================================================ */
+
+function escapeHtml(str) {
+    if (!str) return "";
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
 }
