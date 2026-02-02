@@ -48,14 +48,22 @@ function renderTimelineItem(entry) {
     const dateLabel = date ? new Date(date).toLocaleDateString("pl-PL") : "brak daty";
 
     const hasEggSack = !!entry.eggSack;
-
     const eggSackBadge = hasEggSack ? renderEggSackBadge(entry.eggSack) : "";
 
-    // pairingNotes = wydarzenie
-    const eventText = entry.pairingNotes || "";
+    // 🔥 Wydarzenie:
+    const eventText = hasEggSack
+        ? "Kokon"
+        : (entry.pairingNotes || "");
 
-    // behaviorNotes = uwagi użytkownika
-    const notes = entry.behaviorNotes || "";
+    // 🔥 Uwagi:
+    let notes = "";
+
+    if (hasEggSack) {
+        // 🔥 poprawka: zawsze pobieramy opis kokonu
+        notes = entry.eggSack?.eggSackDescription || "";
+    } else {
+        notes = entry.behaviorNotes || "";
+    }
 
     const cardColor = hasEggSack
         ? getCardColorClass(entry.eggSack.status)
@@ -63,7 +71,6 @@ function renderTimelineItem(entry) {
 
     return `
         <div class="mb-8 ml-4 relative group cursor-pointer" data-open-entry="${entry.id}">
-            
             <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow"></div>
 
             <div class="glass-card p-4 rounded-2xl border border-slate-200 hover:border-emerald-500 transition ${cardColor}">
@@ -74,19 +81,19 @@ function renderTimelineItem(entry) {
                             ${dateLabel}
                         </p>
 
-                        <!-- 🔥 Tytuł -->
+                        <!-- Tytuł -->
                         <p class="text-base font-semibold text-slate-900 mt-1">
                             ${getEntryTitle(entry)}
                         </p>
 
-                        <!-- 🔥 Wydarzenie -->
+                        <!-- Wydarzenie -->
                         ${eventText ? `
                             <p class="text-sm text-slate-700 mt-2 whitespace-pre-line">
                                 <b>Wydarzenie:</b> ${escapeHtml(eventText)}
                             </p>
                         ` : ""}
 
-                        <!-- 🔥 Uwagi -->
+                        <!-- Uwagi -->
                         ${notes ? `
                             <p class="text-sm text-slate-600 mt-2 whitespace-pre-line">
                                 <b>Uwagi:</b> ${escapeHtml(notes)}
