@@ -130,9 +130,6 @@ export function updateEggSack(id, payload) {
     });
 }
 
-/**
- * DELETE /api/breeding/eggsack/{id}
- */
 export function deleteEggSack(id) {
     return authRequest(`/api/breeding/eggsack/${id}`, {
         method: "DELETE"

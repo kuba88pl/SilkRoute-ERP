@@ -19,6 +19,17 @@ public class BreedingSpiderService {
     @Autowired
     private BreedingEntryRepository entryRepo;
 
+    private static final List<String> CITES_TYPES = Arrays.asList(
+            "brachypelma",
+            "poecilotheria",
+            "tliltocatl"
+    );
+
+    private boolean isCitesSpecies(String typeName) {
+        if (typeName == null) return false;
+        return CITES_TYPES.contains(typeName.trim().toLowerCase());
+    }
+
     public List<BreedingSpider> getAll() {
         return spiderRepo.findAll();
     }
@@ -30,17 +41,10 @@ public class BreedingSpiderService {
 
     public BreedingSpider create(BreedingSpider spider) {
         spider.setBreedingCount(0);
-        List<String> citesTypeNames = Arrays.asList(
-                "brachypelma",
-                "poecilotheria",
-                "tliltocatl"
-        );
-        String type = spider.getTypeName();
-        if (type != null && citesTypeNames.contains(type.trim().toLowerCase())) {
-            spider.setCites(true);
-        } else {
-            spider.setCites(false);
-        }
+
+        // 🔥 automatyczne ustawianie CITES
+        spider.setCites(isCitesSpecies(spider.getTypeName()));
+
         return spiderRepo.save(spider);
     }
 
@@ -55,8 +59,10 @@ public class BreedingSpiderService {
         existing.setBreedingStatus(updated.getBreedingStatus());
         existing.setNotes(updated.getNotes());
         existing.setSize(updated.getSize());
-        existing.setCites(updated.isCites());
         existing.setCitesDocumentNumber(updated.getCitesDocumentNumber());
+
+        // 🔥 automatyczne ustawianie CITES również przy update
+        existing.setCites(isCitesSpecies(updated.getTypeName()));
 
         return spiderRepo.save(existing);
     }
@@ -64,9 +70,4 @@ public class BreedingSpiderService {
     public void delete(UUID id) {
         spiderRepo.deleteById(id);
     }
-
-
 }
-
-
-

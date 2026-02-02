@@ -13,6 +13,8 @@ import { openEggSackCreateModal, openEggSackPullModal } from "./breedingEggSackF
 import { openPairingEditModal } from "./breedingPairingEditModal.js";
 import { renderTimeline } from "./breedingTimeline.js";
 import { openEntryModal } from "./breedingEntryModal.js";
+// 🔥 przygotowanie pod edycję samicy
+import { openSpiderEditModal } from "./breedingSpiderEditModal.js";
 
 export async function renderBreedingDetails(root, spiderId, onBack) {
     const spider = await fetchSpider(spiderId);
@@ -69,6 +71,7 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                         <p class="text-slate-500 text-sm">
                             Rozmiar: <b>${spider.size ?? "-"}</b> • 
                             CITES: <b>${spider.cites ? "TAK" : "NIE"}</b>
+                            ${spider.citesDocumentNumber ? `• Nr: <b>${spider.citesDocumentNumber}</b>` : ""}
                         </p>
 
                         <!-- 🔥 NOTATKI O SAMICY -->
@@ -80,6 +83,10 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                     </div>
 
                     <div class="flex gap-3">
+                        <button id="editSpiderBtn" class="btn-secondary">
+                            <i class="bi bi-pencil-square"></i> Edytuj samicę
+                        </button>
+
                         <button id="addPairingBtn" class="btn-primary">
                             <i class="bi bi-plus-lg"></i> Dodaj wpis
                         </button>
@@ -118,6 +125,14 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
 
     function attachEvents(filtered) {
         document.getElementById("backToList").onclick = onBack;
+
+        // 🔥 EDYCJA SAMICY
+        document.getElementById("editSpiderBtn").onclick = () => {
+            openSpiderEditModal(spider, () => {
+                renderBreedingDetails(root, spiderId, onBack);
+                window.refreshBreedingDashboard?.();
+            });
+        };
 
         // NOWE DOPUSZCZENIE
         document.getElementById("addPairingBtn").onclick = () => {

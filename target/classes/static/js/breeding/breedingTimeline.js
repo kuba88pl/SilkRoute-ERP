@@ -32,15 +32,9 @@ export function renderTimeline(entries, mode = "vertical") {
 function renderFilters() {
     return `
         <div class="flex flex-wrap gap-3 mb-4">
-            <button id="filter-all" class="btn-secondary text-xs no-propagation">
-                Wszystko
-            </button>
-            <button id="filter-pairings" class="btn-secondary text-xs no-propagation">
-                Tylko dopuszczenia
-            </button>
-            <button id="filter-egg" class="btn-secondary text-xs no-propagation">
-                Tylko kokony
-            </button>
+            <button id="filter-all" class="btn-secondary text-xs no-propagation">Wszystko</button>
+            <button id="filter-pairings" class="btn-secondary text-xs no-propagation">Tylko dopuszczenia</button>
+            <button id="filter-egg" class="btn-secondary text-xs no-propagation">Tylko kokony</button>
         </div>
     `;
 }
@@ -55,57 +49,61 @@ function renderTimelineItem(entry) {
 
     const hasEggSack = !!entry.eggSack;
 
-    const eggSackBadge = hasEggSack
-        ? renderEggSackBadge(entry.eggSack)
-        : "";
+    const eggSackBadge = hasEggSack ? renderEggSackBadge(entry.eggSack) : "";
 
-    const notes = entry.pairingNotes || entry.notes || "";
+    // pairingNotes = wydarzenie
+    const eventText = entry.pairingNotes || "";
 
-    // 🔥 kolor kafelka zależny od statusu kokonu
+    // behaviorNotes = uwagi użytkownika
+    const notes = entry.behaviorNotes || "";
+
     const cardColor = hasEggSack
         ? getCardColorClass(entry.eggSack.status)
         : "bg-white";
 
     return `
         <div class="mb-8 ml-4 relative group cursor-pointer" data-open-entry="${entry.id}">
-            <!-- Kropka na linii -->
+            
             <div class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow"></div>
 
             <div class="glass-card p-4 rounded-2xl border border-slate-200 hover:border-emerald-500 transition ${cardColor}">
                 <div class="flex justify-between items-start gap-4">
+
                     <div>
                         <p class="text-xs text-slate-400 font-black uppercase tracking-widest">
                             ${dateLabel}
                         </p>
 
-                        <!-- 🔥 dynamiczny tytuł -->
+                        <!-- 🔥 Tytuł -->
                         <p class="text-base font-semibold text-slate-900 mt-1">
                             ${getEntryTitle(entry)}
                         </p>
 
+                        <!-- 🔥 Wydarzenie -->
+                        ${eventText ? `
+                            <p class="text-sm text-slate-700 mt-2 whitespace-pre-line">
+                                <b>Wydarzenie:</b> ${escapeHtml(eventText)}
+                            </p>
+                        ` : ""}
+
+                        <!-- 🔥 Uwagi -->
                         ${notes ? `
-                            <p class="text-sm text-slate-600 mt-2 line-clamp-3">
-                                ${escapeHtml(notes)}
+                            <p class="text-sm text-slate-600 mt-2 whitespace-pre-line">
+                                <b>Uwagi:</b> ${escapeHtml(notes)}
                             </p>
-                        ` : `
-                            <p class="text-sm text-slate-400 mt-2 italic">
-                                Brak dodatkowych notatek.
-                            </p>
-                        `}
+                        ` : ""}
                     </div>
 
                     <div class="flex flex-col items-end gap-2 no-propagation">
                         ${eggSackBadge}
 
                         <div class="flex gap-2 mt-2">
-                            <button class="btn-secondary text-xs px-3 py-1"
-                                    data-edit-pairing="${entry.id}">
+                            <button class="btn-secondary text-xs px-3 py-1" data-edit-pairing="${entry.id}">
                                 Edytuj wpis
                             </button>
 
                             ${hasEggSack ? `
-                                <button class="btn-secondary text-xs px-3 py-1"
-                                        data-edit-egg-sack="${entry.id}">
+                                <button class="btn-secondary text-xs px-3 py-1" data-edit-egg-sack="${entry.id}">
                                     Edytuj kokon
                                 </button>
                             ` : ""}
@@ -116,6 +114,7 @@ function renderTimelineItem(entry) {
                             </button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -123,37 +122,28 @@ function renderTimelineItem(entry) {
 }
 
 /* ============================================================================
-   🔥 DYNAMICZNY TYTUŁ WPISU
+   DYNAMICZNY TYTUŁ
 ============================================================================ */
 
 function getEntryTitle(entry) {
     const egg = entry.eggSack;
 
     if (egg) {
-        // 🔥 tylko LAID = KOKON ZŁOŻONY
-        if (egg.status === "LAID") {
-            return "KOKON ZŁOŻONY";
-        }
-
-        // 🔥 wszystkie pozostałe statusy = KOKON ODEBRANY
+        if (egg.status === "LAID") return "KOKON ZŁOŻONY";
         return "KOKON ODEBRANY";
     }
 
-    // Jeśli wpis powstał przez "Dodaj kokon" (jeszcze bez statusu)
-    if (entry.pairingNotes === "Kokon") {
-        return "KOKON ZŁOŻONY";
-    }
+    if (entry.pairingNotes === "Kokon") return "KOKON ZŁOŻONY";
 
     return "Wpis hodowlany";
 }
 
 /* ============================================================================
-   BADGE KOKONU – STATUS + LICZBY
+   BADGE KOKONU
 ============================================================================ */
 
 function renderEggSackBadge(eggSack) {
     const status = eggSack.status || "UNKNOWN";
-
     const { label, colorClass } = mapStatusToStyle(status);
 
     const spiders = eggSack.numberOfSpiders ?? 0;
@@ -164,7 +154,6 @@ function renderEggSackBadge(eggSack) {
             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${colorClass}">
                 ${label}
             </span>
-
             <p class="text-[11px] text-slate-500">
                 L1: <b>${spiders}</b> • Nimfy: <b>${nymphs}</b>
             </p>
@@ -173,62 +162,34 @@ function renderEggSackBadge(eggSack) {
 }
 
 /* ============================================================================
-   MAPOWANIE STATUSU NA KOLOR KAFELKA
+   KOLORY
 ============================================================================ */
 
 function getCardColorClass(status) {
     switch (status) {
-        case "SUCCESSFUL":
-            return "bg-emerald-50";
-        case "FAILED":
-            return "bg-red-50";
-        case "LAID":
-            return "bg-yellow-50";
-        case "DEVELOPING":
-            return "bg-amber-50";
-        case "PULLED":
-            return "bg-blue-50";
-        default:
-            return "bg-white";
+        case "SUCCESSFUL": return "bg-emerald-50";
+        case "FAILED": return "bg-red-50";
+        case "LAID": return "bg-yellow-50";
+        case "DEVELOPING": return "bg-amber-50";
+        case "PULLED": return "bg-blue-50";
+        default: return "bg-white";
     }
 }
-
-/* ============================================================================
-   MAPOWANIE STATUSU NA BADGE
-============================================================================ */
 
 function mapStatusToStyle(status) {
     switch (status) {
         case "SUCCESSFUL":
-            return {
-                label: "Udany kokon",
-                colorClass: "bg-emerald-100 text-emerald-800 border border-emerald-300"
-            };
+            return { label: "Udany kokon", colorClass: "bg-emerald-100 text-emerald-800 border border-emerald-300" };
         case "FAILED":
-            return {
-                label: "Nieudany kokon",
-                colorClass: "bg-red-100 text-red-800 border border-red-300"
-            };
+            return { label: "Nieudany kokon", colorClass: "bg-red-100 text-red-800 border border-red-300" };
         case "PULLED":
-            return {
-                label: "Odebrany kokon",
-                colorClass: "bg-blue-100 text-blue-800 border border-blue-300"
-            };
+            return { label: "Odebrany kokon", colorClass: "bg-blue-100 text-blue-800 border border-blue-300" };
         case "DEVELOPING":
-            return {
-                label: "Kokon w rozwoju",
-                colorClass: "bg-amber-100 text-amber-800 border border-amber-300"
-            };
+            return { label: "Kokon w rozwoju", colorClass: "bg-amber-100 text-amber-800 border border-amber-300" };
         case "LAID":
-            return {
-                label: "Złożony kokon",
-                colorClass: "bg-yellow-100 text-yellow-800 border border-yellow-300"
-            };
+            return { label: "Złożony kokon", colorClass: "bg-yellow-100 text-yellow-800 border border-yellow-300" };
         default:
-            return {
-                label: status,
-                colorClass: "bg-slate-100 text-slate-700 border border-slate-300"
-            };
+            return { label: status, colorClass: "bg-slate-100 text-slate-700 border border-slate-300" };
     }
 }
 
