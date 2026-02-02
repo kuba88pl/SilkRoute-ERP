@@ -8,7 +8,6 @@ import { fetchSpiders, fetchEntriesForSpider, fetchEggSackByEntry } from "./bree
 export async function renderBreedingDashboard(root) {
     const spiders = await fetchSpiders();
 
-    // Pobieramy wszystkie wpisy rozmnożeń + ich kokony
     const allEntries = [];
 
     for (const s of spiders) {
@@ -55,19 +54,20 @@ function computeStats(spiders, entries) {
     const totalSpiders = spiders.length;
     const totalPairings = entries.length;
 
-    // Kokon = istnieje eggSack
     const totalEggSacks = entries.filter(e => e.eggSack).length;
 
-    // Udane rozmnożenia – przyjmijmy SUCCESSFUL jako udany kokon
-    const totalResults = entries.filter(e => e.eggSack && e.eggSack.status === "SUCCESSFUL").length;
+    const totalResults = entries.filter(
+        e => e.eggSack && e.eggSack.status === "SUCCESSFUL"
+    ).length;
 
-    // L1 – przyjmujemy numberOfSpiders jako L1 (wyklute pająki)
     const totalL1 = entries.reduce((sum, e) => {
         if (!e.eggSack) return sum;
         return sum + (e.eggSack.numberOfSpiders ?? 0);
     }, 0);
 
-    // Grupowanie po samicy
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     const bySpider = {};
     for (const e of entries) {
         const id = e.spider.id;
@@ -75,13 +75,36 @@ function computeStats(spiders, entries) {
             bySpider[id] = {
                 spider: e.spider,
                 l1: 0,
-                sacs: 0
+                sacs: 0,
+                latestEggSackStatus: null,
+                hasLaid: false,
+                hasPullSoon: false
             };
         }
 
         if (e.eggSack) {
             bySpider[id].sacs++;
             bySpider[id].l1 += (e.eggSack.numberOfSpiders ?? 0);
+            bySpider[id].latestEggSackStatus = e.eggSack.status;
+
+            if (e.eggSack.status === "LAID") {
+                bySpider[id].hasLaid = true;
+            }
+
+            const suggested = e.eggSack.suggestedDateOfEggSackPull;
+            const pulled = e.eggSack.dateOfEggSackPull;
+
+            if (suggested && !pulled) {
+                const pullDate = new Date(suggested);
+                pullDate.setHours(0, 0, 0, 0);
+
+                const diffMs = pullDate.getTime() - today.getTime();
+                const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+                if (diffDays >= 0 && diffDays <= 3) {
+                    bySpider[id].hasPullSoon = true;
+                }
+            }
         }
     }
 
@@ -133,19 +156,33 @@ function renderTopFemales(list) {
 
     return `
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            ${list.map(f => `
-                <div class="glass-card p-6 rounded-2xl border border-slate-200">
-                    <p class="text-xl font-bold text-slate-900">
-                        ${f.spider.typeName} ${f.spider.speciesName}
-                    </p>
-                    <p class="text-slate-500 mt-1">${f.spider.origin ?? "pochodzenie nieznane"}</p>
+            ${list.map(f => {
 
-                    <div class="mt-4">
-                        <p class="text-sm">Kokony: <b>${f.sacs}</b></p>
-                        <p class="text-sm">L1: <b>${f.l1}</b></p>
+        let blinkClass = "";
+
+        // 🔴 priorytet: 3 dni przed odbiorem kokonu
+        if (f.hasPullSoon) {
+            blinkClass = "blink-red";
+        }
+        // 🟡 świeżo złożony kokon
+        else if (f.hasLaid) {
+            blinkClass = "blink-yellow";
+        }
+
+        return `
+                    <div class="glass-card p-6 rounded-2xl border border-slate-200 ${blinkClass}">
+                        <p class="text-xl font-bold text-slate-900">
+                            ${f.spider.typeName} ${f.spider.speciesName}
+                        </p>
+                        <p class="text-slate-500 mt-1">${f.spider.origin ?? "pochodzenie nieznane"}</p>
+
+                        <div class="mt-4">
+                            <p class="text-sm">Kokony: <b>${f.sacs}</b></p>
+                            <p class="text-sm">L1: <b>${f.l1}</b></p>
+                        </div>
                     </div>
-                </div>
-            `).join("")}
+                `;
+    }).join("")}
         </div>
     `;
 }

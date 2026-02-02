@@ -2,9 +2,9 @@
 
 import { createEggSack, updateEggSack } from "./breedingApi.js";
 
-/* ============================================================
-   MODAL: DODANIE KOKONU (ZŁOŻENIE)
-============================================================ */
+/* ============================================================================
+   MODAL: DODANIE KOKONU
+============================================================================ */
 
 export function openEggSackCreateModal(entryId, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
@@ -36,13 +36,15 @@ export function openEggSackCreateModal(entryId, onSaved) {
         await createEggSack(entryId, payload);
 
         modal.classList.add("hidden");
+
         if (onSaved) onSaved();
+        window.refreshBreedingDashboard?.();
     };
 }
 
-/* ============================================================
-   MODAL: ODBIÓR KOKONU (WYNIK)
-============================================================ */
+/* ============================================================================
+   MODAL: ODBIÓR KOKONU
+============================================================================ */
 
 export function openEggSackPullModal(eggSack, onSaved) {
     const modal = document.getElementById("breeding-full-modal");
@@ -61,13 +63,15 @@ export function openEggSackPullModal(eggSack, onSaved) {
         await updateEggSack(eggSack.id, payload);
 
         modal.classList.add("hidden");
+
         if (onSaved) onSaved();
+        window.refreshBreedingDashboard?.();
     };
 }
 
-/* ============================================================
+/* ============================================================================
    TEMPLATE — CREATE
-============================================================ */
+============================================================================ */
 
 function createTemplate() {
     return `
@@ -104,9 +108,9 @@ function createTemplate() {
     `;
 }
 
-/* ============================================================
+/* ============================================================================
    TEMPLATE — PULL
-============================================================ */
+============================================================================ */
 
 function pullTemplate(eggSack) {
     const today = new Date().toISOString().split("T")[0];
@@ -171,9 +175,9 @@ function pullTemplate(eggSack) {
     `;
 }
 
-/* ============================================================
+/* ============================================================================
    STATUSY
-============================================================ */
+============================================================================ */
 
 function statusOptions(current) {
     const statuses = ["LAID", "DEVELOPING", "PULLED", "FAILED", "SUCCESSFUL"];
@@ -182,9 +186,9 @@ function statusOptions(current) {
         .join("");
 }
 
-/* ============================================================
+/* ============================================================================
    PAYLOADS
-============================================================ */
+============================================================================ */
 
 function collectCreatePayload() {
     return {
@@ -220,9 +224,9 @@ function collectPullPayload() {
     };
 }
 
-/* ============================================================
+/* ============================================================================
    HELPERS
-============================================================ */
+============================================================================ */
 
 function valueOrNull(sel) {
     const el = document.querySelector(sel);

@@ -83,9 +83,14 @@
     const listRoot = document.getElementById("breeding-list-root");
     const dashboardRoot = document.getElementById("breeding-dashboard-root");
 
-    // renderujemy oba moduły jednocześnie
+    // 🔥 GLOBALNE odświeżanie dashboardu
+    window.refreshBreedingDashboard = () => {
+        renderBreedingDashboard(dashboardRoot);
+    };
+
+    // Pierwsze renderowanie
     renderBreedingList(listRoot);
-    renderBreedingDashboard(dashboardRoot);
+    window.refreshBreedingDashboard();
 </script>
 
 <script type="module" src="js/main.js"></script>

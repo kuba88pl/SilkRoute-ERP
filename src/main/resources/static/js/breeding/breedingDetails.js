@@ -21,16 +21,11 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
     let sortMode = "desc";
     let filterMode = "all";
 
-    // Dociągamy kokony
+    // Pobieramy kokony
     entries = await Promise.all(
         entries.map(async e => {
-            try {
-                const eggSack = await fetchEggSackByEntry(e.id);
-                e.eggSack = eggSack || null;
-            } catch {
-                e.eggSack = null;
-            }
-            return e;
+            const eggSack = await fetchEggSackByEntry(e.id);
+            return { ...e, eggSack: eggSack || null };
         })
     );
 
@@ -115,7 +110,10 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
 
         // NOWE DOPUSZCZENIE
         document.getElementById("addPairingBtn").onclick = () => {
-            renderPairingForm(root, spiderId, () => renderBreedingDetails(root, spiderId, onBack));
+            renderPairingForm(root, spiderId, () => {
+                renderBreedingDetails(root, spiderId, onBack);
+                window.refreshBreedingDashboard?.();
+            });
         };
 
         // NOWY KOKON
@@ -126,9 +124,12 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                 notes: null
             });
 
-            openEggSackCreateModal(newEntry.id, () =>
-                renderBreedingDetails(root, spiderId, onBack)
-            );
+            window.refreshBreedingDashboard?.();
+
+            openEggSackCreateModal(newEntry.id, () => {
+                renderBreedingDetails(root, spiderId, onBack);
+                window.refreshBreedingDashboard?.();
+            });
         };
 
         // ODBIÓR KOKONU
@@ -146,9 +147,10 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                 return;
             }
 
-            openEggSackPullModal(openEggEntries[0].eggSack, () =>
-                renderBreedingDetails(root, spiderId, onBack)
-            );
+            openEggSackPullModal(openEggEntries[0].eggSack, () => {
+                renderBreedingDetails(root, spiderId, onBack);
+                window.refreshBreedingDashboard?.();
+            });
         };
 
         // SORTOWANIE
@@ -188,9 +190,10 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
             el.onclick = () => {
                 const entryId = el.dataset.openEntry;
                 const entry = filtered.find(e => e.id === entryId);
-                openEntryModal(entry, () =>
-                    renderBreedingDetails(root, spiderId, onBack)
-                );
+                openEntryModal(entry, () => {
+                    renderBreedingDetails(root, spiderId, onBack);
+                    window.refreshBreedingDashboard?.();
+                });
             };
         });
 
@@ -199,9 +202,10 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
             btn.onclick = () => {
                 const entryId = btn.dataset.editPairing;
                 const entry = filtered.find(e => e.id === entryId);
-                openPairingEditModal(entry, () =>
-                    renderBreedingDetails(root, spiderId, onBack)
-                );
+                openPairingEditModal(entry, () => {
+                    renderBreedingDetails(root, spiderId, onBack);
+                    window.refreshBreedingDashboard?.();
+                });
             };
         });
 
@@ -211,14 +215,15 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
                 const entryId = btn.dataset.editEggSack;
                 const entry = filtered.find(e => e.id === entryId);
                 if (entry?.eggSack) {
-                    openEggSackPullModal(entry.eggSack, () =>
-                        renderBreedingDetails(root, spiderId, onBack)
-                    );
+                    openEggSackPullModal(entry.eggSack, () => {
+                        renderBreedingDetails(root, spiderId, onBack);
+                        window.refreshBreedingDashboard?.();
+                    });
                 }
             };
         });
 
-        // USUWANIE WPISU HODOWLANEGO
+        // USUWANIE WPISU
         document.querySelectorAll("[data-delete-entry]").forEach(btn => {
             btn.onclick = async () => {
                 const entryId = btn.dataset.deleteEntry;
@@ -227,6 +232,7 @@ export async function renderBreedingDetails(root, spiderId, onBack) {
 
                 await deleteEntry(entryId);
 
+                window.refreshBreedingDashboard?.();
                 renderBreedingDetails(root, spiderId, onBack);
             };
         });

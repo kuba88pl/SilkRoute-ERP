@@ -3,7 +3,7 @@
 import { authState } from "../state.js";
 
 /* ============================================================
-   HELPER – REQUEST Z JWT
+   HELPER – REQUEST Z JWT (bezpieczne JSON)
 ============================================================ */
 async function authRequest(url, options = {}) {
     const headers = {
@@ -25,8 +25,23 @@ async function authRequest(url, options = {}) {
         throw new Error(`Failed request: ${res.status}`);
     }
 
-    if (res.status === 204) return null;
-    return res.json();
+    // 204 – brak treści
+    if (res.status === 204) {
+        return null;
+    }
+
+    // 🔥 bezpieczna obsługa pustego body przy 200
+    const text = await res.text();
+    if (!text) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(text);
+    } catch (e) {
+        console.error("Breeding API JSON parse error:", e, "for url:", url, "raw body:", text);
+        throw e;
+    }
 }
 
 /* ============================================================
@@ -116,9 +131,7 @@ export function updateEggSack(id, payload) {
 }
 
 /**
- * Poprawione — Twój oryginalny endpoint był błędny.
- * Backend NIE MA /entries/egg-sack/{id}
- * Backend MA /eggsack/{id}
+ * DELETE /api/breeding/eggsack/{id}
  */
 export function deleteEggSack(id) {
     return authRequest(`/api/breeding/eggsack/${id}`, {
