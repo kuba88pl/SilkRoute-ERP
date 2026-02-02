@@ -142,9 +142,9 @@ function renderGlobalStats(s) {
         <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-6">
 
             ${stat("Samice", s.totalSpiders)}
-            ${stat("Dopuszczenia", s.totalPairings)}
+            ${stat("Wpisy", s.totalPairings)}
             ${stat("Kokony", s.totalEggSacks)}
-            ${stat("Udane rozmnożenia", s.totalResults)}
+            ${stat("Rozmnożenia", s.totalResults)}
             ${stat("Łącznie L1", s.totalL1)}
 
         </div>

@@ -61,7 +61,7 @@ function renderTimelineItem(entry) {
 
     const notes = entry.pairingNotes || entry.notes || "";
 
-    // 🔥 NOWOŚĆ — kolor kafelka zależny od statusu
+    // 🔥 kolor kafelka zależny od statusu kokonu
     const cardColor = hasEggSack
         ? getCardColorClass(entry.eggSack.status)
         : "bg-white";
@@ -77,8 +77,10 @@ function renderTimelineItem(entry) {
                         <p class="text-xs text-slate-400 font-black uppercase tracking-widest">
                             ${dateLabel}
                         </p>
+
+                        <!-- 🔥 dynamiczny tytuł -->
                         <p class="text-base font-semibold text-slate-900 mt-1">
-                            Wpis hodowlany
+                            ${getEntryTitle(entry)}
                         </p>
 
                         ${notes ? `
@@ -118,6 +120,31 @@ function renderTimelineItem(entry) {
             </div>
         </div>
     `;
+}
+
+/* ============================================================================
+   🔥 DYNAMICZNY TYTUŁ WPISU
+============================================================================ */
+
+function getEntryTitle(entry) {
+    const egg = entry.eggSack;
+
+    if (egg) {
+        // 🔥 tylko LAID = KOKON ZŁOŻONY
+        if (egg.status === "LAID") {
+            return "KOKON ZŁOŻONY";
+        }
+
+        // 🔥 wszystkie pozostałe statusy = KOKON ODEBRANY
+        return "KOKON ODEBRANY";
+    }
+
+    // Jeśli wpis powstał przez "Dodaj kokon" (jeszcze bez statusu)
+    if (entry.pairingNotes === "Kokon") {
+        return "KOKON ZŁOŻONY";
+    }
+
+    return "Wpis hodowlany";
 }
 
 /* ============================================================================
