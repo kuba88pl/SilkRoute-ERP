@@ -16,10 +16,8 @@
 
 <body class="p-6 md:p-12">
 
-<!-- PAGE WRAPPER -->
 <div class="w-full max-w-none mx-auto">
 
-    <!-- PAGE TITLE -->
     <div>
         <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
             SilkRoute <span class="text-emerald-600 italic">Breeding</span>
@@ -31,16 +29,12 @@
 
     <hr class="my-8 border-slate-300">
 
-    <!-- DWIE KOLUMNY: LISTA + DASHBOARD -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-        <!-- LEWA KOLUMNA: LISTA SAMIC -->
         <div id="breeding-list-root" class="lg:col-span-2"></div>
 
-        <!-- PRAWA KOLUMNA: MENU + DASHBOARD -->
         <div class="flex flex-col gap-6">
 
-            <!-- MENU NAD DASHBOARD (WERSJA PREMIUM) -->
             <div class="glass-card p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
 
                 <h2 class="text-xl font-[800] text-slate-900 flex items-center gap-3">
@@ -59,7 +53,6 @@
 
             </div>
 
-            <!-- DASHBOARD -->
             <div id="breeding-dashboard-root"></div>
 
         </div>
@@ -68,17 +61,16 @@
 
 </div>
 
-<!-- FULLSCREEN MODAL -->
 <div id="breeding-full-modal"
      class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
     <div id="breeding-full-modal-content"
          class="bg-white p-10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"></div>
 </div>
 
-<!-- JS -->
 <script type="module">
     import { renderBreedingList } from "/js/breeding/breedingList.js";
     import { renderBreedingDashboard } from "/js/breeding/breedingDashboard.js";
+    import { renderBreedingDetails } from "/js/breeding/breedingDetails.js";
 
     const listRoot = document.getElementById("breeding-list-root");
     const dashboardRoot = document.getElementById("breeding-dashboard-root");
@@ -86,6 +78,14 @@
     // 🔥 GLOBALNE odświeżanie dashboardu
     window.refreshBreedingDashboard = () => {
         renderBreedingDashboard(dashboardRoot);
+    };
+
+    // 🔥 GLOBALNE otwieranie szczegółów samicy
+    window.openBreedingDetails = (id) => {
+        renderBreedingDetails(listRoot, id, () => {
+            renderBreedingList(listRoot);
+            window.refreshBreedingDashboard();
+        });
     };
 
     // Pierwsze renderowanie

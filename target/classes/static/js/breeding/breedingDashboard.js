@@ -44,6 +44,19 @@ export async function renderBreedingDashboard(root) {
 
         ${renderTopFemales(stats.topFemales)}
     `;
+
+    /* ============================================================================
+       🔥 Delegacja zdarzeń — działa zawsze, nawet po rerenderach
+    ============================================================================ */
+    root.addEventListener("click", (ev) => {
+        const el = ev.target.closest("[data-open-spider]");
+        if (!el) return;
+
+        const id = el.dataset.openSpider;
+        if (id) {
+            window.openBreedingDetails?.(id);
+        }
+    });
 }
 
 /* ============================================================================
@@ -87,10 +100,12 @@ function computeStats(spiders, entries) {
             bySpider[id].l1 += (e.eggSack.numberOfSpiders ?? 0);
             bySpider[id].latestEggSackStatus = e.eggSack.status;
 
+            // 🟡 świeżo złożony kokon
             if (e.eggSack.status === "LAID") {
                 bySpider[id].hasLaid = true;
             }
 
+            // 🔴 3 dni przed odbiorem
             const suggested = e.eggSack.suggestedDateOfEggSackPull;
             const pulled = e.eggSack.dateOfEggSackPull;
 
@@ -160,7 +175,7 @@ function renderTopFemales(list) {
 
         let blinkClass = "";
 
-        // 🔴 priorytet: 3 dni przed odbiorem kokonu
+        // 🔴 priorytet: 3 dni przed odbiorem
         if (f.hasPullSoon) {
             blinkClass = "blink-red";
         }
@@ -170,7 +185,10 @@ function renderTopFemales(list) {
         }
 
         return `
-                    <div class="glass-card p-6 rounded-2xl border border-slate-200 ${blinkClass}">
+                    <div 
+                        class="glass-card p-6 rounded-2xl border border-slate-200 cursor-pointer hover:border-emerald-500 transition ${blinkClass}"
+                        data-open-spider="${f.spider.id}"
+                    >
                         <p class="text-xl font-bold text-slate-900">
                             ${f.spider.typeName} ${f.spider.speciesName}
                         </p>
