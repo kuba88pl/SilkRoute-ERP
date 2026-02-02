@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.coolspiders</groupId>
     <artifactId>silkroute-erp</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.2</version>
     <name>SilkRoute ERP</name>
     <description>Enterprise Resource Planning system for arachnid breeding and wholesale management.
         Includes modules for inventory tracking, breeding history logging, and environmental

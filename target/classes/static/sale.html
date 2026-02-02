@@ -8,12 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* 🔥 niższy hover dla tabsów */
+        .nav-btn {
+            transition: all .2s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 
 <body class="p-6 md:p-12">
 
 <div class="w-full max-w-none mx-auto">
 
+    <!-- HEADER -->
     <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
         <div>
             <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
@@ -31,23 +42,52 @@
         </button>
     </header>
 
-    <nav class="glass-card rounded-[2rem] p-4 mb-12 flex gap-4 justify-center">
-        <button onclick="showSection('customers-section')" id="nav-customers"
-                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-            Klienci
-        </button>
+    <!-- TABS + BREEDING LINK (2 kolumny) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
 
-        <button onclick="showSection('spiders-section')" id="nav-spiders"
-                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-            Pająki
-        </button>
+        <!-- LEWA KOLUMNA: TABS -->
+        <nav class="glass-card rounded-[2rem] p-4 flex gap-4 justify-center
+                    bg-emerald-50 border border-emerald-100 shadow-sm lg:col-span-2">
 
-        <button onclick="showSection('orders-section')" id="nav-orders"
-                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-            Zamówienia
-        </button>
-    </nav>
+            <button onclick="showSection('customers-section')" id="nav-customers"
+                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+                Klienci
+            </button>
 
+            <button onclick="showSection('spiders-section')" id="nav-spiders"
+                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+                Pająki
+            </button>
+
+            <button onclick="showSection('orders-section')" id="nav-orders"
+                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+                Zamówienia
+            </button>
+
+        </nav>
+
+        <!-- PRAWA KOLUMNA: KAFEL „PRZEJDŹ DO ROZMNOŻEŃ” (pełna wysokość) -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+
+            <h2 class="text-lg font-[800] text-slate-900 flex items-center gap-3">
+                <i class="bi bi-heart text-emerald-600 text-xl"></i>
+                Przejdź do modułu rozmnożeń
+            </h2>
+
+            <p class="text-slate-500 text-sm leading-relaxed">
+                Zarządzaj cyklami rozmnożeń, samicami, kokonami i statystykami hodowlanymi.
+            </p>
+
+            <a href="breeding.html"
+               class="mt-2 inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl transition active:scale-95 shadow-sm w-fit">
+                Otwórz moduł rozmnożeń
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- SEKCJE -->
     <section id="customers-section" class="mb-16"></section>
     <section id="spiders-section" class="mb-16 hidden"></section>
     <section id="orders-section" class="mb-16 hidden"></section>
@@ -83,7 +123,6 @@
     </div>
 </div>
 
-<!-- 🔥 ŁADUJEMY TYLKO JEDEN MODUŁ GŁÓWNY -->
 <script type="module" src="js/main.js"></script>
 
 </body>
