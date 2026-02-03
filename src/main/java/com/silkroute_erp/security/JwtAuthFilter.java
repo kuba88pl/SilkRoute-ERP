@@ -13,12 +13,29 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.List;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
+
+    // PUBLIC ENDPOINTS – muszą być zgodne z SecurityConfig
+    private static final List<String> PUBLIC_PATHS = List.of(
+            "/api/auth",
+            "/api/auth/",
+            "/api/auth/",
+            "/api/weather",
+            "/api/weather/",
+            "/",
+            "/index.html",
+            "/favicon.ico",
+            "/css",
+            "/js",
+            "/images",
+            "/static"
+    );
 
     public JwtAuthFilter(JwtService jwtService, UserDetailsService userDetailsService) {
         this.jwtService = jwtService;
@@ -31,15 +48,33 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
+        String path = request.getServletPath();
+
+        for (String publicPath : PUBLIC_PATHS) {
+            if (path.equals(publicPath) || path.startsWith(publicPath + "/")) {
+                filterChain.doFilter(request, response);
+                return;
+            }
+        }
+
         String authHeader = request.getHeader("Authorization");
 
+        // brak tokena → przepuszczamy dalej
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
             return;
         }
 
         String token = authHeader.substring(7);
-        String username = jwtService.extractUsername(token);
+
+        String username;
+        try {
+            username = jwtService.extractUsername(token);
+        } catch (Exception e) {
+            // zły token → przepuszczamy, nie blokujemy
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails user = userDetailsService.loadUserByUsername(username);

@@ -60,3 +60,11 @@
 /home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/security/UserConfig.java
 /home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/security/dto/LoginRequest.java
 /home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/security/dto/TokenResponse.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/client/WeatherClient.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/controller/WeatherController.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/exception/NoCityFoundException.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/model/GeoResult.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/model/TemperatureLevel.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/model/WeatherDay.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/model/WeatherForecast.java
+/home/kuba/repo/SilkRoute-ERP/src/main/java/com/silkroute_erp/weather/service/WeatherService.java

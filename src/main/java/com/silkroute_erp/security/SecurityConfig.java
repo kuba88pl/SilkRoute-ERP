@@ -28,8 +28,14 @@ public class SecurityConfig {
                 .cors(cors -> {})
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+
+                        // PUBLIC API
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/weather").permitAll()
+                        .requestMatchers("/api/weather/**").permitAll()
+
+                        // STATIC FRONTEND
                         .requestMatchers(
-                                "/api/auth/**",
                                 "/",
                                 "/index.html",
                                 "/favicon.ico",
@@ -39,14 +45,13 @@ public class SecurityConfig {
                                 "/images/**",
                                 "/**/*.js",
                                 "/**/*.css",
-                                "/**/*.html"
+                                "/**/*.html",
+                                "/img/**"
                         ).permitAll()
 
-                        .requestMatchers("/api/**").authenticated()
-
-                        .anyRequest().permitAll()
+                        // EVERYTHING ELSE REQUIRES JWT
+                        .anyRequest().authenticated()
                 )
-
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
