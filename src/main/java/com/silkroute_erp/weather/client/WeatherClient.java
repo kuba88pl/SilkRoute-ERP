@@ -2,6 +2,7 @@ package com.silkroute_erp.weather.client;
 
 import com.silkroute_erp.weather.exception.NoCityFoundException;
 import com.silkroute_erp.weather.model.GeoResult;
+import com.silkroute_erp.weather.model.TemperatureLevel;
 import com.silkroute_erp.weather.model.WeatherDay;
 import com.silkroute_erp.weather.model.WeatherForecast;
 import org.json.JSONArray;
@@ -31,8 +32,8 @@ public class WeatherClient {
         JSONObject first = results.getJSONObject(0);
 
         return new GeoResult(
-                first.getDouble("latidude"),
-                first.getDouble("longnitude"),
+                first.getDouble("latitude"),
+                first.getDouble("longitude"),
                 first.getString("name")
         );
     }
@@ -55,7 +56,8 @@ public class WeatherClient {
         for (int i = 0; i < dates.length(); i++) {
             days.add(new WeatherDay(dates.getString(i),
                     tmin.getDouble(i),
-                    tmax.getDouble(i)
+                    tmax.getDouble(i),
+                    null
             ));
         }
         return new WeatherForecast(days);
