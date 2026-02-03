@@ -1,40 +1,56 @@
-# SilkRoute ERP 🕷️📦
+# SilkRoute ERP
 
-Application for testing: http://152.70.29.133:8081/index.html
-Login: admin
-Password: admin123
+**SilkRoute ERP** is a professional Enterprise Resource Planning system designed for the niche industry of exotic arachnid breeding and wholesale distribution.  
+The platform manages the entire lifecycle of specimens—from large‑scale inventory logistics to granular biological data tracking.
 
-**SilkRoute ERP** is a professional Enterprise Resource Planning system designed for the niche industry of exotic arachnid breeding and wholesale distribution. The system manages the entire lifecycle of specimens—from large-scale inventory logistics to granular biological data tracking.
+---
+
+## 🔐 Demo Access
+
+**Application for testing:**  
+http://152.70.29.133:8081/index.html  
+
+**Login:** `admin`  
+**Password:** `admin123`
+
+---
 
 ## 🚀 Key Modules
 
 ### 1. Sales & Inventory Module
-* **Wholesale Management**: Specialized for handling large quantities of specimens (e.g., L1, L2 slings).
-* **Inventory Valuation**: Real-time stock tracking and pricing management.
-* **Order Processing**: Automated workflow for wholesale transactions.
+
+- **Wholesale Management:** Optimized for handling large quantities of specimens (e.g., L1, L2 slings).  
+- **Inventory Valuation:** Real‑time stock tracking and pricing management.  
+- **Order Processing:** Automated workflow for wholesale transactions.  
+- **Weather‑Aware Shipping (Open‑Meteo Integration):**  
+  Integrated 14‑day weather forecasting via the Open‑Meteo API.  
+  This enables safe planning of live‑animal shipments by detecting optimal temperature and humidity windows for transporting exotic spiders.
 
 ### 2. Breeding Intelligence Module
-* **Breeding Reports**: Comprehensive logs for individual specimens (e.g., "Renia", "H. dictator").
-* **Event Analysis**: Historical tracking of matings, molts, and feeding patterns.
-* **Environmental Optimization**: Monitoring of thermal gradients (29°C - 31°C) and humidity to maximize cocoon success rates.
 
-## 🛠️ Tech Stack
-
-* **Language**: **Java 24** (Utilizing the latest JVM features)
-* **Framework**: **Spring Boot 3.x**
-* **Data Access**: Spring Data JPA / Hibernate
-* **Database**: **MySQL 8.x**
-* **Architecture**: Modular Monolith (Clean separation of Sales and Breeding domains)
+- **Breeding Reports:** Detailed logs for individual specimens (e.g., *Renia*, *H. dictator*).  
+- **Event Analysis:** Historical tracking of matings, molts, feedings, and environmental changes.  
+- **Environmental Optimization:** Monitoring of thermal gradients (29°C–31°C) and humidity to maximize cocoon success rates.
 
 ---
 
-Application for testing: http://152.70.29.133:8081/index.html
-Login: admin
-Password: admin123
+## 🛠️ Tech Stack
+
+- **Language:** Java 24  
+- **Framework:** Spring Boot 3.x  
+- **Data Access:** Spring Data JPA / Hibernate  
+- **Database:** MySQL 8.x  
+- **Architecture:** Modular Monolith  
+  - Clean separation of Sales and Breeding domains  
+  - Modern, maintainable structure aligned with enterprise standards
+
+---
 
 ## 💾 Database Configuration
 
-To connect the application to your local MySQL instance, update your `src/main/resources/application.properties` as follows:
+To connect the application to your local MySQL instance, update:
+
+`src/main/resources/application.properties`
 
 ```properties
 # MySQL Connection Settings
@@ -48,4 +64,3 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 spring.jpa.properties.hibernate.format_sql=true
-
