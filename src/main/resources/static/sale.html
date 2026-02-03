@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
-        /* 🔥 niższy hover dla tabsów */
         .nav-btn {
             transition: all .2s ease;
         }
@@ -42,32 +41,26 @@
         </button>
     </header>
 
-    <!-- TABS + BREEDING LINK (2 kolumny) -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+    <!-- 🔥 GÓRNY WIERSZ: POGODA (14 dni) + ROZMNOŻENIA -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
 
-        <!-- LEWA KOLUMNA: TABS -->
-        <nav class="glass-card rounded-[2rem] p-4 flex gap-4 justify-center
-                    bg-emerald-50 border border-emerald-100 shadow-sm lg:col-span-2">
+        <!-- POGODA (14 dni → 2 rzędy × 7 dni) -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 shadow-sm lg:col-span-9">
 
-            <button onclick="showSection('customers-section')" id="nav-customers"
-                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-                Klienci
-            </button>
+            <h2 class="text-xl font-[800] text-slate-900 mb-4 flex items-center gap-3">
+                <i class="bi bi-cloud-sun text-emerald-600 text-2xl"></i>
+                Warunki atmosferyczne a wysyłka
+            </h2>
 
-            <button onclick="showSection('spiders-section')" id="nav-spiders"
-                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-                Pająki
-            </button>
+            <div id="weather-grid"
+                 class="grid grid-cols-7 gap-3">
+                <!-- JS wypełni 14 mini‑kafelków -->
+            </div>
 
-            <button onclick="showSection('orders-section')" id="nav-orders"
-                    class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
-                Zamówienia
-            </button>
+        </div>
 
-        </nav>
-
-        <!-- PRAWA KOLUMNA: KAFEL „PRZEJDŹ DO ROZMNOŻEŃ” (pełna wysokość) -->
-        <div class="glass-card p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+        <!-- ROZMNOŻENIA -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3 lg:col-span-3">
 
             <h2 class="text-lg font-[800] text-slate-900 flex items-center gap-3">
                 <i class="bi bi-heart text-emerald-600 text-xl"></i>
@@ -86,6 +79,27 @@
         </div>
 
     </div>
+
+    <!-- 🔥 DOLNY WIERSZ: TABS (pełna szerokość) -->
+    <nav class="glass-card rounded-[2rem] p-4 flex flex-row gap-6 justify-center
+                bg-emerald-50 border border-emerald-100 shadow-sm mb-12">
+
+        <button onclick="showSection('customers-section')" id="nav-customers"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Klienci
+        </button>
+
+        <button onclick="showSection('spiders-section')" id="nav-spiders"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Pająki
+        </button>
+
+        <button onclick="showSection('orders-section')" id="nav-orders"
+                class="nav-btn px-6 py-3 rounded-xl font-bold text-slate-700">
+            Zamówienia
+        </button>
+
+    </nav>
 
     <!-- SEKCJE -->
     <section id="customers-section" class="mb-16"></section>
@@ -123,6 +137,8 @@
     </div>
 </div>
 
+<!-- JS -->
+<script src="js/weather.js"></script>
 <script type="module" src="js/main.js"></script>
 
 </body>
