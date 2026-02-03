@@ -45,7 +45,8 @@ public class SecurityConfig {
                                 "/images/**",
                                 "/**/*.js",
                                 "/**/*.css",
-                                "/**/*.html"
+                                "/**/*.html",
+                                "/img/**"
                         ).permitAll()
 
                         // EVERYTHING ELSE REQUIRES JWT

@@ -9,35 +9,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Global SilkRoute Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-6 py-12">
+<body class="min-h-screen flex items-center justify-center px-6 py-12 bg-slate-50">
 
-<div class="glass-card rounded-[3rem] p-12 max-w-3xl w-full text-center fade-in">
+<div class="glass-card rounded-[3rem] p-12 max-w-3xl w-full text-center fade-in shadow-xl">
 
     <!-- Logo -->
-    <div class="flex justify-center mb-8">
-        <img src="img/logo.png"
+    <div class="flex justify-center mb-10">
+        <img src="/img/logo.png"
              alt="SilkRoute ERP Logo"
-             class="h-40 md:h-48 w-auto drop-shadow-sm">
+             class="h-40 md:h-48 w-auto drop-shadow-sm select-none">
     </div>
 
     <!-- Nagłówek -->
-    <h1 class="text-4xl font-black tracking-tight mb-2 text-slate-900"> SilkRoute <span
-            class="text-emerald-600"><i>ERP</i></span></h1>
+    <h1 class="text-4xl font-black tracking-tight mb-2 text-slate-900">
+        SilkRoute <span class="text-emerald-600"><i>ERP</i></span>
+    </h1>
 
     <p class="text-slate-500 mb-12">
         Arachnid Breeding & Wholesale Management System
     </p>
 
     <!-- Logowanie -->
-    <div id="login-panel">
-        <h2>Logowanie</h2>
-        <input id="username" type="text" placeholder="Login">
-        <input id="password" type="password" placeholder="Hasło">
-        <button id="login-btn">Zaloguj</button>
-        <p id="login-error" style="color:red;"></p>
+    <div id="login-panel" class="mb-12">
+        <h2 class="text-xl font-bold text-slate-800 mb-4">Logowanie</h2>
+
+        <div class="flex flex-col gap-4 max-w-sm mx-auto">
+
+            <input id="username"
+                   type="text"
+                   placeholder="Login"
+                   class="px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+
+            <input id="password"
+                   type="password"
+                   placeholder="Hasło"
+                   class="px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+
+            <button id="login-btn"
+                    class="px-6 py-3 rounded-xl font-bold bg-emerald-600 text-white
+                           hover:bg-emerald-700 transition shadow-md active:scale-95">
+                Zaloguj
+            </button>
+
+            <p id="login-error" class="text-red-600 text-sm"></p>
+        </div>
     </div>
 
     <!-- Moduły -->
@@ -45,35 +63,35 @@
 
         <a href="sale.html"
            class="block px-6 py-4 rounded-2xl font-bold bg-emerald-600 text-white
-                      hover:bg-emerald-700 transition shadow-md active:scale-95">
+                  hover:bg-emerald-700 transition shadow-md active:scale-95 text-center">
             Moduł sprzedaży
         </a>
 
         <a href="breeding.html"
            class="block px-6 py-4 rounded-2xl font-bold bg-indigo-600 text-white
-                      hover:bg-indigo-700 transition shadow-md active:scale-95">
+                  hover:bg-indigo-700 transition shadow-md active:scale-95 text-center">
             Moduł hodowli
         </a>
 
     </div>
 
     <!-- Stopka -->
-    <p class="text-xs text-slate-400 mt-12">
+    <p class="text-xs text-slate-400 mt-12 select-none">
         © 2026 SilkRoute ERP
     </p>
 
 </div>
 
-<script> if (localStorage.getItem("jwt")) {
-    document.getElementById("login-panel").style.display = "none";
-} </script>
+<script>
+    // Ukrywanie panelu logowania, jeśli użytkownik ma token
+    if (localStorage.getItem("jwt")) {
+        document.getElementById("login-panel").style.display = "none";
+    }
+</script>
+
 <script type="module" src="/js/api.js"></script>
 <script type="module" src="/js/state.js"></script>
 <script type="module" src="/js/main.js"></script>
 
-
 </body>
-
-
-
 </html>
