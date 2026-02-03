@@ -1902,3 +1902,524 @@ Unconditional classes:
 2026-02-03 13:01:02 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-02-03 13:01:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
 2026-02-03 13:01:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-02-03 14:55:39 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:55:39 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:55:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-03 14:55:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-03 14:55:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:55:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:55:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:55:40 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:55:40 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:55:40 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:55:40 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:55:40 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 945 ms
+2026-02-03 14:55:40 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:55:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-03 14:55:41 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@779cd8dd
+2026-02-03 14:55:41 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-03 14:55:41 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:55:42 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:55:42 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-03 14:55:42 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:55:42 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:55:42 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:55:42 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:55:42 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:55:42 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:55:42 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:55:43 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:55:43 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:55:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:55:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:55:43 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 3.966 seconds (process running for 4.318)
+2026-02-03 14:56:18 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-03 14:56:18 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@b894905
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@52e036ed
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-02-03 14:56:18 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@5be85561, com.silkroute_erp.sales.dto.CustomerDTO@4928d510, (truncated)...]
+2026-02-03 14:56:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:19 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-02-03 14:56:19 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-02-03 14:56:19 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-02-03 14:56:20 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:20 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@63ce4e3c, com.silkroute_erp.sales.dto.SpiderDTO@20c72bb5, com (truncated)...]
+2026-02-03 14:56:20 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [520b44bf-8efc-4313-9b59-42ddcf570ff4]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [834b3404-ea9d-4215-bd02-5e57447edecd]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d57febe-6264-4f6b-aa84-264190d3945d]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b0922a57-b357-4091-8b43-029595d97273]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6de1beee-3957-44ad-b3fc-a300854f654d]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0fdde10b-ecda-41b2-af4d-659c6c8b0b0b]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a528d94e-a3d5-4d65-a223-009de0c4efe7]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [844d65f2-c7a6-4f6d-920e-f987b89d5878]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [8350e862-7d09-4539-9d6b-59ef3a07f94b]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1e1351f6-8e8b-43a6-a05f-058bdb7ec822]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ef7f0d85-6037-4b6d-8f2a-e8ac1525327a]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [bd768a3e-2a2f-4fc0-abb0-41c46dcf05b8]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d9127de4-36c5-4a11-ac87-f8d4d2d66182]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 14:56:20 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2b2db501-c1c9-4e0c-903e-064736cd1351]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@59ebb9df, com.silkroute_erp.sales.dto.OrderDTO@55a1b181, com.s (truncated)...]
+2026-02-03 14:56:20 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/breeding.html", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/breedingStyle.css", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 14:56:22 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@2efce5ef, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 14:56:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@67ada526, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 14:56:22 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/acd6af33-3699-49ed-959d-20889e4b4dbc", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@ace6316]]
+2026-02-03 14:56:22 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e/eggsack", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e]
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@1761d4ec]
+2026-02-03 14:56:22 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b", parameters={}
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 14:56:22 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 14:56:22 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 14:56:23 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 14:56:23 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@6510a8fa, com.silkroute_erp.breeding.entity.Breedin (truncated)...]
+2026-02-03 14:56:23 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/25f334a9-3794-4b1b-8db9-e32241ab23b7/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83c31d38-0136-4ab6-8983-e14e4e3bac67/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/64ea70f0-f054-415c-a596-365a56ee1046/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/b99e86b2-c5ae-4935-be49-71cd13f1977d/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/85f389f8-01ac-4302-adb5-07b9544a4d5b/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/19b7b041-219e-4f65-91f8-12c47db388b2/eggsack", parameters={}
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b99e86b2-c5ae-4935-be49-71cd13f1977d]
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [85f389f8-01ac-4302-adb5-07b9544a4d5b]
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [25f334a9-3794-4b1b-8db9-e32241ab23b7]
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83c31d38-0136-4ab6-8983-e14e4e3bac67]
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 14:56:23 [http-nio-8081-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [64ea70f0-f054-415c-a596-365a56ee1046]
+2026-02-03 14:56:23 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [19b7b041-219e-4f65-91f8-12c47db388b2]
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 14:56:23 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@203d4fd]
+2026-02-03 14:56:23 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 14:56:23 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 14:56:23 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@44679337]
+2026-02-03 14:56:23 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@383f5e02]
+2026-02-03 14:56:23 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 14:57:09 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-02-03 14:57:09 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:57:09 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:09 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:57:09 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:09 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:09 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-03 14:57:09 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-03 14:57:09 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:57:09 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:57:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:57:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:57:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:57:10 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:10 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:57:10 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:57:10 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:57:10 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 386 ms
+2026-02-03 14:57:10 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:57:10 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-03 14:57:10 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3eb49559
+2026-02-03 14:57:10 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-03 14:57:10 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:57:11 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:57:11 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:57:11 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:57:11 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:57:11 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:57:11 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:57:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:57:11 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.55 seconds (process running for 92.564)
+2026-02-03 14:57:11 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-03 14:57:48 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-02-03 14:57:48 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:57:48 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:48 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:57:48 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:48 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:48 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-03 14:57:48 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-02-03 14:57:48 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:57:48 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:57:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:57:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:57:49 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:57:49 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:49 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:57:49 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:57:49 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:57:49 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 369 ms
+2026-02-03 14:57:49 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:57:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-02-03 14:57:49 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@140cd2ca
+2026-02-03 14:57:49 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-02-03 14:57:49 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:57:50 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:57:50 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:57:50 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:57:50 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:57:50 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:57:50 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:57:50 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:57:50 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.469 seconds (process running for 131.591)
+2026-02-03 14:57:50 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-03 14:57:51 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-02-03 14:57:51 [Thread-11] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:57:51 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:51 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:57:51 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:51 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:51 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-02-03 14:57:51 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-02-03 14:57:51 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:57:51 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:57:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:52 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:57:52 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:57:52 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 359 ms
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:57:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-02-03 14:57:52 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44446482
+2026-02-03 14:57:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-02-03 14:57:52 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:57:52 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:57:53 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:57:53 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:57:53 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:57:53 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:57:53 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:57:53 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:57:53 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:57:53 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:57:53 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:57:53 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:57:53 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:57:53 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.411 seconds (process running for 134.434)
+2026-02-03 14:57:53 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-03 14:58:21 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (1 addition, 0 deletions, 1 modification)
+2026-02-03 14:58:21 [Thread-15] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:58:21 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:21 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:58:21 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:21 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:58:21 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-02-03 14:58:21 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-02-03 14:58:21 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:58:21 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:58:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:58:22 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:58:22 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:58:22 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:22 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:58:22 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:58:22 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:58:22 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 374 ms
+2026-02-03 14:58:22 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:58:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-02-03 14:58:22 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56cfe184
+2026-02-03 14:58:22 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-02-03 14:58:22 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:58:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:58:23 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:58:23 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:58:23 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:58:23 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:58:23 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:58:23 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:58:23 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.837 seconds (process running for 164.791)
+2026-02-03 14:58:23 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-03 14:58:30 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-03 14:58:30 [Thread-19] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:58:30 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:30 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:58:30 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:30 [Thread-19] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:58:30 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-02-03 14:58:30 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-02-03 14:58:30 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:58:30 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:58:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:58:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:58:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:58:30 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:30 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:58:30 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:58:30 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:58:30 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 344 ms
+2026-02-03 14:58:30 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:58:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-02-03 14:58:30 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a2ece38
+2026-02-03 14:58:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-02-03 14:58:30 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:58:31 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:58:31 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:58:31 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:58:31 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:58:31 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:58:31 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:58:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:58:31 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.409 seconds (process running for 172.646)
+2026-02-03 14:58:31 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-02-03 14:59:01 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-03 14:59:01 [Thread-23] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-03 14:59:01 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:59:01 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-03 14:59:01 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:59:01 [Thread-23] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:59:01 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2026-02-03 14:59:01 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-02-03 14:59:01 [restartedMain] INFO  com.SilkRouteERPApplication - Starting SilkRouteERPApplication using Java 24.0.2 with PID 95989 (/home/kuba/repo/SilkRoute-ERP/target/classes started by kuba in /home/kuba/repo/SilkRoute-ERP)
+2026-02-03 14:59:01 [restartedMain] INFO  com.SilkRouteERPApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-03 14:59:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-03 14:59:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2026-02-03 14:59:01 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-02-03 14:59:01 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:59:01 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-03 14:59:01 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-02-03 14:59:01 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-03 14:59:01 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 346 ms
+2026-02-03 14:59:01 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-03 14:59:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-02-03 14:59:01 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b85085c
+2026-02-03 14:59:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-02-03 14:59:02 [restartedMain] DEBUG org.hibernate.SQL - create table finances (id VARCHAR(36 not null, cash_inflow float(53), cash_outflow float(53), total_outcome float(53), total_income float(53), total_budget float(53), primary key (id)) engine=InnoDB
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-02-03 14:59:02 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-02-03 14:59:02 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 33 mappings in 'requestMappingHandlerMapping'
+2026-02-03 14:59:02 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-02-03 14:59:02 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-02-03 14:59:02 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2026-02-03 14:59:02 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-02-03 14:59:02 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2026-02-03 14:59:02 [restartedMain] INFO  com.SilkRouteERPApplication - Started SilkRouteERPApplication in 1.492 seconds (process running for 204.069)
+2026-02-03 14:59:02 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
