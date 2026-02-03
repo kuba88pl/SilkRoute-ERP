@@ -6,11 +6,13 @@ import com.silkroute_erp.weather.model.WeatherDay;
 import com.silkroute_erp.weather.model.WeatherForecast;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class WeatherClient {
 
     private final RestTemplate rest = new RestTemplate();
