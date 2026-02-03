@@ -12,7 +12,6 @@ async function loadWeather() {
             "TOO_COLD": "Za zimno"
         };
 
-        // Kolory statusów (pon–śr)
         const tileColor = {
             "SAFE": "bg-green-100 border-green-300",
             "RISKY": "bg-yellow-100 border-yellow-300",
@@ -44,9 +43,10 @@ async function loadWeather() {
                 ? textColor[day.level]
                 : "text-gray-600";
 
-            // 🔥 Status:
-            // pon–śr → status wg enum
-            // czw–nd → "Wysyłki wstrzymane"
+            // 🔥 ZAOKRĄGLANIE TEMPERATUR
+            const min = Math.round(day.minTemp);
+            const max = Math.round(day.maxTemp);
+
             const statusHtml = isColorful
                 ? `<p class="text-xs mt-1 ${finalTextColor} font-semibold">${translate[day.level]}</p>`
                 : `<p class="text-xs mt-1 text-gray-600 font-semibold">Wysyłki wstrzymane</p>`;
@@ -55,7 +55,7 @@ async function loadWeather() {
                 <div class="glass-card p-2 rounded-xl shadow-sm text-center border ${finalTileColor}">
                     <p class="font-bold text-slate-900 text-sm capitalize">${weekday}</p>
                     <p class="text-xs text-slate-700">${formattedDate}</p>
-                    <p class="text-xs text-slate-700 mt-1">${day.minTemp}°C – ${day.maxTemp}°C</p>
+                    <p class="text-xs text-slate-700 mt-1">${min}°C – ${max}°C</p>
                     ${statusHtml}
                 </div>
             `;

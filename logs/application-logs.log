@@ -8170,3 +8170,775 @@ org.json.JSONException: JSONObject["time"] not found.
 2026-02-03 20:01:54 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
 2026-02-03 20:01:54 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [WeatherForecast[days=[WeatherDay[date=2026-02-03, minTemp=-9.4, maxTemp=-2.7, level=TOO_COLD], Weath (truncated)...]
 2026-02-03 20:01:54 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@70038c06, com.silkroute_erp.sales.dto.SpiderDTO@6ded3f40, com (truncated)...]
+2026-02-03 20:03:22 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [520b44bf-8efc-4313-9b59-42ddcf570ff4]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [834b3404-ea9d-4215-bd02-5e57447edecd]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d57febe-6264-4f6b-aa84-264190d3945d]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b0922a57-b357-4091-8b43-029595d97273]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6de1beee-3957-44ad-b3fc-a300854f654d]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0fdde10b-ecda-41b2-af4d-659c6c8b0b0b]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a528d94e-a3d5-4d65-a223-009de0c4efe7]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [844d65f2-c7a6-4f6d-920e-f987b89d5878]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [8350e862-7d09-4539-9d6b-59ef3a07f94b]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1e1351f6-8e8b-43a6-a05f-058bdb7ec822]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ef7f0d85-6037-4b6d-8f2a-e8ac1525327a]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [bd768a3e-2a2f-4fc0-abb0-41c46dcf05b8]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d9127de4-36c5-4a11-ac87-f8d4d2d66182]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:23 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2b2db501-c1c9-4e0c-903e-064736cd1351]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@7a2812fc, com.silkroute_erp.sales.dto.OrderDTO@d8c70, com.silk (truncated)...]
+2026-02-03 20:03:23 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@3e94cefe, com.silkroute_erp.sales.dto.CustomerDTO@6c85dd26, (truncated)...]
+2026-02-03 20:03:24 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/spiders", parameters={}
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.SpiderController#getAllSpiders()
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 order by s1_0.species_name
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.SpiderDTO@5001226c, com.silkroute_erp.sales.dto.SpiderDTO@70e8ff6, com. (truncated)...]
+2026-02-03 20:03:25 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/orders", parameters={}
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.OrderController#getAllOrders()
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select o1_0.id,o1_0.courier_company,o1_0.customer_id,o1_0.date,o1_0.price,o1_0.self_collection,o1_0.shipment_number,o1_0.status from orders o1_0 order by o1_0.date desc
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [520b44bf-8efc-4313-9b59-42ddcf570ff4]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [834b3404-ea9d-4215-bd02-5e57447edecd]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [5d57febe-6264-4f6b-aa84-264190d3945d]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b0922a57-b357-4091-8b43-029595d97273]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [6de1beee-3957-44ad-b3fc-a300854f654d]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [0fdde10b-ecda-41b2-af4d-659c6c8b0b0b]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [a528d94e-a3d5-4d65-a223-009de0c4efe7]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [844d65f2-c7a6-4f6d-920e-f987b89d5878]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [8350e862-7d09-4539-9d6b-59ef3a07f94b]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [1e1351f6-8e8b-43a6-a05f-058bdb7ec822]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [ef7f0d85-6037-4b6d-8f2a-e8ac1525327a]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [bd768a3e-2a2f-4fc0-abb0-41c46dcf05b8]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select os1_0.order_id,os1_0.id,os1_0.quantity,os1_0.spider_id from ordered_spiders os1_0 where os1_0.order_id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [d9127de4-36c5-4a11-ac87-f8d4d2d66182]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.gender,s1_0.is_cites,s1_0.price,s1_0.quantity,s1_0.size,s1_0.species_name,s1_0.type_name from spiders s1_0 where s1_0.id=?
+2026-02-03 20:03:25 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [2b2db501-c1c9-4e0c-903e-064736cd1351]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.OrderDTO@17500391, com.silkroute_erp.sales.dto.OrderDTO@1316a42b, com.s (truncated)...]
+2026-02-03 20:03:25 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:25 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:03:25 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:03:25 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:03:26 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:03:26 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@643214f5, com.silkroute_erp.sales.dto.CustomerDTO@28aa6d70, (truncated)...]
+2026-02-03 20:03:26 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:03:33 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 20:03:33 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:03:33 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/breeding.html", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/breedingStyle.css", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:04:02 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@3cbc2faa, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:02 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:02 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:04:02 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 20:04:02 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 20:04:03 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@164f0ffc, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 20:04:03 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:04:03 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:04:03 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/acd6af33-3699-49ed-959d-20889e4b4dbc", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@6090680c]]
+2026-02-03 20:04:03 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e]
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@6b013ad0]
+2026-02-03 20:04:03 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@3da18379, com.silkroute_erp.breeding.entity.Breedin (truncated)...]
+2026-02-03 20:04:03 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/19b7b041-219e-4f65-91f8-12c47db388b2/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/25f334a9-3794-4b1b-8db9-e32241ab23b7/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/64ea70f0-f054-415c-a596-365a56ee1046/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/b99e86b2-c5ae-4935-be49-71cd13f1977d/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/85f389f8-01ac-4302-adb5-07b9544a4d5b/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83c31d38-0136-4ab6-8983-e14e4e3bac67/eggsack", parameters={}
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b99e86b2-c5ae-4935-be49-71cd13f1977d]
+2026-02-03 20:04:03 [http-nio-8081-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [85f389f8-01ac-4302-adb5-07b9544a4d5b]
+2026-02-03 20:04:03 [http-nio-8081-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83c31d38-0136-4ab6-8983-e14e4e3bac67]
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [25f334a9-3794-4b1b-8db9-e32241ab23b7]
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:04:03 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [64ea70f0-f054-415c-a596-365a56ee1046]
+2026-02-03 20:04:03 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [19b7b041-219e-4f65-91f8-12c47db388b2]
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:04:03 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@1b2aa74f]
+2026-02-03 20:04:03 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:04:03 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@d391e61]
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@2d6d0e87]
+2026-02-03 20:04:03 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:03 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/weather.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/weather?city=Bytom", parameters={masked}
+2026-02-03 20:04:18 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.weather.controller.WeatherController#getForcast(String)
+2026-02-03 20:04:18 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - HTTP GET https://geocoding-api.open-meteo.com/v1/search?name=Bytom&count=1&language=pl&format=json
+2026-02-03 20:04:18 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:18 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:04:18 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:04:19 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:04:19 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:19 [http-nio-8081-exec-3] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:04:19 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:04:19 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:04:19 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:19 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@7559a36a, com.silkroute_erp.sales.dto.CustomerDTO@7ce01e7d, (truncated)...]
+2026-02-03 20:04:19 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - HTTP GET https://api.open-meteo.com/v1/forecast?latitude=50.34802&longitude=18.93282&daily=temperature_2m_min,temperature_2m_max&forecast_days=16&timezone=Europe/Warsaw
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [WeatherForecast[days=[WeatherDay[date=2026-02-03, minTemp=-9.4, maxTemp=-2.7, level=TOO_COLD], Weath (truncated)...]
+2026-02-03 20:04:19 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/weather.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/weather?city=Bytom", parameters={masked}
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.weather.controller.WeatherController#getForcast(String)
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET https://geocoding-api.open-meteo.com/v1/search?name=Bytom&count=1&language=pl&format=json
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:04:57 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@455675c6, com.silkroute_erp.sales.dto.CustomerDTO@36a85167, (truncated)...]
+2026-02-03 20:04:57 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET https://api.open-meteo.com/v1/forecast?latitude=50.34802&longitude=18.93282&daily=temperature_2m_min,temperature_2m_max&forecast_days=16&timezone=Europe/Warsaw
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [WeatherForecast[days=[WeatherDay[date=2026-02-03, minTemp=-9.4, maxTemp=-2.7, level=TOO_COLD], Weath (truncated)...]
+2026-02-03 20:04:57 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/breeding.html", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/breedingStyle.css", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:05:45 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@14eaf11b, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:45 [http-nio-8081-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:45 [http-nio-8081-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:05:45 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/spiders", parameters={}
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingSpiderController#getAll()
+2026-02-03 20:05:45 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0
+2026-02-03 20:05:46 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingSpider@77cd5255, com.silkroute_erp.breeding.entity.Breedi (truncated)...]
+2026-02-03 20:05:46 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:05:46 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-4] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:05:46 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/acd6af33-3699-49ed-959d-20889e4b4dbc", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-2] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [acd6af33-3699-49ed-959d-20889e4b4dbc]
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@613d9974]]
+2026-02-03 20:05:46 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-3] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83e9a257-560b-4bc9-a7b5-1a0ff16f8f9e]
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@d871c7d]
+2026-02-03 20:05:46 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/spider/dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.BreedingEntryController#getAllForSpider(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name from breeding_spider bs1_0 where bs1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG org.hibernate.SQL - select bel1_0.breeding_spider_id,bel1_0.id,bel1_0.behavior_notes,bel1_0.cocoon_status,bel1_0.created_at,bel1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,bel1_0.live_l1_count,bel1_0.notes,bel1_0.pairing_date_1,bel1_0.pairing_date_2,bel1_0.pairing_date_3,bel1_0.pairing_date_4,bel1_0.pairing_humidity,bel1_0.pairing_notes,bel1_0.pairing_temperature,bel1_0.recommended_pull_date,bel1_0.sac_date,bel1_0.total_eggs_or_nymphs,bel1_0.updated_at from breeding_entries bel1_0 left join egg_sack es1_0 on bel1_0.id=es1_0.entry_id where bel1_0.breeding_spider_id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-10] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [dd36f7b1-e23a-4b6c-a1aa-5804d043aa1b]
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [[com.silkroute_erp.breeding.entity.BreedingEntry@3b1c9a8d, com.silkroute_erp.breeding.entity.Breedin (truncated)...]
+2026-02-03 20:05:46 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/19b7b041-219e-4f65-91f8-12c47db388b2/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/25f334a9-3794-4b1b-8db9-e32241ab23b7/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/64ea70f0-f054-415c-a596-365a56ee1046/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/83c31d38-0136-4ab6-8983-e14e4e3bac67/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/85f389f8-01ac-4302-adb5-07b9544a4d5b/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/breeding/entries/b99e86b2-c5ae-4935-be49-71cd13f1977d/eggsack", parameters={}
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.breeding.controller.EggSackController#getEggSackByEntry(UUID)
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [64ea70f0-f054-415c-a596-365a56ee1046]
+2026-02-03 20:05:46 [http-nio-8081-exec-9] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b99e86b2-c5ae-4935-be49-71cd13f1977d]
+2026-02-03 20:05:46 [http-nio-8081-exec-8] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [19b7b041-219e-4f65-91f8-12c47db388b2]
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-5] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [85f389f8-01ac-4302-adb5-07b9544a4d5b]
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select be1_0.id,be1_0.behavior_notes,be1_0.breeding_spider_id,bs1_0.id,bs1_0.birth_date,bs1_0.breeding_count,bs1_0.breeding_status,bs1_0.cites_document_number,bs1_0.is_cites,bs1_0.last_molt_date,bs1_0.notes,bs1_0.origin,bs1_0.size,bs1_0.species_name,bs1_0.type_name,be1_0.cocoon_status,be1_0.created_at,be1_0.dead_count,es1_0.id,es1_0.created_at,es1_0.date_of_eggsack,es1_0.date_of_eggsack_pull,es1_0.eggsack_description,es1_0.number_of_bad_eggs,es1_0.number_of_dead_nymphs,es1_0.number_of_dead_spiders,es1_0.number_of_eggs,es1_0.number_of_nymphs,es1_0.number_of_spiders,es1_0.status,es1_0.suggested_date_of_eggsack_pull,es1_0.updated_at,be1_0.live_l1_count,be1_0.notes,be1_0.pairing_date_1,be1_0.pairing_date_2,be1_0.pairing_date_3,be1_0.pairing_date_4,be1_0.pairing_humidity,be1_0.pairing_notes,be1_0.pairing_temperature,be1_0.recommended_pull_date,be1_0.sac_date,be1_0.total_eggs_or_nymphs,be1_0.updated_at from breeding_entries be1_0 join breeding_spider bs1_0 on bs1_0.id=be1_0.breeding_spider_id left join egg_sack es1_0 on be1_0.id=es1_0.entry_id where be1_0.id=?
+2026-02-03 20:05:46 [http-nio-8081-exec-7] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [83c31d38-0136-4ab6-8983-e14e4e3bac67]
+2026-02-03 20:05:46 [http-nio-8081-exec-1] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [25f334a9-3794-4b1b-8db9-e32241ab23b7]
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@16807408]
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@4219d5d3]
+2026-02-03 20:05:46 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.silkroute_erp.breeding.dto.EggSackDTO@154ff2bc]
+2026-02-03 20:05:46 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Nothing to write: null body
+2026-02-03 20:05:46 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:46 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/weather.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/weather?city=Bytom", parameters={masked}
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.weather.controller.WeatherController#getForcast(String)
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - HTTP GET https://geocoding-api.open-meteo.com/v1/search?name=Bytom&count=1&language=pl&format=json
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:05:47 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@1716e3ff, com.silkroute_erp.sales.dto.CustomerDTO@4645d555, (truncated)...]
+2026-02-03 20:05:47 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - HTTP GET https://api.open-meteo.com/v1/forecast?latitude=50.34802&longitude=18.93282&daily=temperature_2m_min,temperature_2m_max&forecast_days=16&timezone=Europe/Warsaw
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [WeatherForecast[days=[WeatherDay[date=2026-02-03, minTemp=-9.4, maxTemp=-2.7, level=TOO_COLD], Weath (truncated)...]
+2026-02-03 20:05:47 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers/b17d128a-011b-45ac-a7ae-f37e892df01d", parameters={}
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getCustomerById(UUID)
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 where c1_0.id=?
+2026-02-03 20:06:10 [http-nio-8081-exec-6] TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [b17d128a-011b-45ac-a7ae-f37e892df01d]
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [com.silkroute_erp.sales.dto.CustomerDTO@5e83d973]
+2026-02-03 20:06:10 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/sale.html", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/css/styles.css", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/weather.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/main.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/weather?city=Bytom", parameters={masked}
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.weather.controller.WeatherController#getForcast(String)
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/modals.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/customers.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET https://geocoding-api.open-meteo.com/v1/search?name=Bytom&count=1&language=pl&format=json
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/spiders.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/orders.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingInit.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/api.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/state.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingList.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDashboard.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingApi.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingDetails.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderForm.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingForm.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEggSackForm.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingPairingEditModal.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingTimeline.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingEntryModal.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - GET "/js/breeding/breedingSpiderEditModal.js", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - GET "/api/customers", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.silkroute_erp.sales.controller.CustomerController#getAllCustomers()
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.address,c1_0.email,c1_0.first_name,c1_0.last_name,c1_0.parcel_locker,c1_0.telephone from customers c1_0 order by c1_0.last_name
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.w.s.r.ResourceHttpRequestHandler - Resource not found
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2026-02-03 20:07:37 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [[com.silkroute_erp.sales.dto.CustomerDTO@1b286cc5, com.silkroute_erp.sales.dto.CustomerDTO@6ee6c8e5, (truncated)...]
+2026-02-03 20:07:37 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - HTTP GET https://api.open-meteo.com/v1/forecast?latitude=50.34802&longitude=18.93282&daily=temperature_2m_min,temperature_2m_max&forecast_days=16&timezone=Europe/Warsaw
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Response 200 OK
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [WeatherForecast[days=[WeatherDay[date=2026-02-03, minTemp=-9.4, maxTemp=-2.7, level=TOO_COLD], Weath (truncated)...]
+2026-02-03 20:07:37 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Completed 200 OK
