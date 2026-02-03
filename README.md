@@ -8,7 +8,7 @@ The platform manages the entire lifecycle of specimens—from large‑scale inve
 ## 🔐 Demo Access
 
 **Application for testing:**  
-http://152.70.29.133:8081/index.html  
+http://152.70.29.133:8081/ 
 
 **Login:** `admin`  
 **Password:** `admin123`
@@ -38,11 +38,13 @@ http://152.70.29.133:8081/index.html
 
 - **Language:** Java 24  
 - **Framework:** Spring Boot 3.x  
+- **Security:** Spring Security (JWT‑ready architecture)  
 - **Data Access:** Spring Data JPA / Hibernate  
 - **Database:** MySQL 8.x  
 - **Architecture:** Modular Monolith  
   - Clean separation of Sales and Breeding domains  
-  - Modern, maintainable structure aligned with enterprise standards
+  - Modern, maintainable structure aligned with enterprise standards  
+- **Deployment:** Fully hosted on **Oracle Cloud Infrastructure (OCI)**
 
 ---
 
