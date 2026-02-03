@@ -14,7 +14,8 @@
     <name>SilkRoute ERP</name>
     <description>Enterprise Resource Planning system for arachnid breeding and wholesale management.
         Includes modules for inventory tracking, breeding history logging, and environmental
-        parameter optimization for large-scale exotic animal trade.</description>
+        parameter optimization for large-scale exotic animal trade.
+    </description>
     <url/>
     <licenses>
         <license/>
@@ -105,6 +106,11 @@
             <artifactId>jjwt-jackson</artifactId>
             <version>0.12.5</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
         </dependency>
 
     </dependencies>
