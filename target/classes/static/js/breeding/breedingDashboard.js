@@ -39,7 +39,7 @@ export async function renderBreedingDashboard(root) {
         </div>
 
         <h3 class="text-2xl font-[800] text-slate-900 tracking-tight mt-12 mb-6">
-            Najbardziej produktywne samice
+            Samice z aktywnymi kokonami
         </h3>
 
         ${renderTopFemales(stats.topFemales)}
@@ -123,7 +123,9 @@ function computeStats(spiders, entries) {
         }
     }
 
+    // 🔥 NOWOŚĆ: filtrujemy tylko samice z kokonem LAID
     const topFemales = Object.values(bySpider)
+        .filter(f => f.hasLaid === true)   // <── tu jest cała magia
         .sort((a, b) => b.l1 - a.l1)
         .slice(0, 5);
 
