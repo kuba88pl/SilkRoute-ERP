@@ -38,12 +38,25 @@ export async function renderBreedingDashboard(root) {
             ${renderGlobalStats(stats)}
         </div>
 
+        <!-- SAMICE Z AKTYWNYMI KOKONAMI -->
         <h3 class="text-2xl font-[800] text-slate-900 tracking-tight mt-12 mb-6">
             Samice z aktywnymi kokonami
         </h3>
 
         ${renderTopFemales(stats.topFemales)}
+
+        <!-- WYKRES -->
+        <h3 class="text-2xl font-[800] text-slate-900 tracking-tight mt-12 mb-4">
+            Kokony w ciągu ostatnich 12 miesięcy
+        </h3>
+
+        <div class="glass-card p-6 rounded-2xl border border-slate-200 mb-12">
+            <canvas id="eggSackChart" height="120"></canvas>
+        </div>
     `;
+
+    // 🔥 Rysujemy wykres po wyrenderowaniu HTML
+    renderEggSackChart(stats.monthlyEggSacks);
 
     root.addEventListener("click", (ev) => {
         const el = ev.target.closest("[data-open-spider]");
@@ -118,6 +131,19 @@ function computeStats(spiders, entries) {
         }
     }
 
+    // 🔥 Liczenie kokonów LAID per miesiąc — używamy dateOfEggSack
+    const monthly = Array(12).fill(0);
+
+    entries.forEach(e => {
+        if (e.eggSack && e.eggSack.status === "LAID") {
+            const date = new Date(e.eggSack.dateOfEggSack);
+            if (!isNaN(date)) {
+                const month = date.getMonth(); // 0–11
+                monthly[month]++;
+            }
+        }
+    });
+
     // 🔥 filtrujemy tylko samice z kokonem LAID
     const topFemales = Object.values(bySpider)
         .filter(f => f.hasLaid === true)
@@ -130,7 +156,8 @@ function computeStats(spiders, entries) {
         totalEggSacks,
         totalResults,
         totalL1,
-        topFemales
+        topFemales,
+        monthlyEggSacks: monthly
     };
 }
 
@@ -158,6 +185,60 @@ function stat(label, value) {
 }
 
 /* ============================================================================
+   WYKRES — KOKONY PER MIESIĄC (CZERWONY + ZOOM/PAN)
+============================================================================ */
+
+function renderEggSackChart(monthlyData) {
+    const ctx = document.getElementById("eggSackChart");
+
+    const labels = [
+        "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec",
+        "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
+    ];
+
+    new Chart(ctx, {
+        type: "line",
+        data: {
+            labels,
+            datasets: [{
+                label: "Kokony (LAID)",
+                data: monthlyData,
+                borderColor: "rgba(239, 68, 68, 0.9)",      // 🔥 czerwony
+                backgroundColor: "rgba(239, 68, 68, 0.25)", // 🔥 czerwone tło
+                borderWidth: 3,
+                tension: 0.35,
+                pointRadius: 5,
+                pointBackgroundColor: "rgba(239, 68, 68, 1)",
+                pointHoverRadius: 7
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                zoom: {
+                    zoom: {
+                        wheel: { enabled: true },
+                        pinch: { enabled: true },
+                        mode: "x"
+                    },
+                    pan: {
+                        enabled: true,
+                        mode: "x"
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+}
+
+/* ============================================================================
    TOP SAMICE
 ============================================================================ */
 
@@ -173,12 +254,11 @@ function renderTopFemales(list) {
         let blinkClass = "";
         let extraNote = "";
 
-        const isMonocentropus =
+        const isMonocententropus =
             f.spider.typeName?.toLowerCase().includes("monocentropus") ||
             f.spider.speciesName?.toLowerCase().includes("monocentropus");
 
-        // 🔵 wyjątek dla Monocentropus — kokon inkubowany przez samicę
-        if (isMonocentropus && f.hasLaid) {
+        if (isMonocententropus && f.hasLaid) {
             blinkClass = "blink-blue-bg";
             extraNote = `<p class="text-xs text-blue-700 mt-2 font-semibold">
                             Kokon inkubowany przez samicę
