@@ -18,16 +18,24 @@
 
 <div class="w-full max-w-none mx-auto">
 
-    <div>
-        <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
-            SilkRoute <span class="text-emerald-600 italic">Breeding</span>
-        </h1>
-        <p class="text-slate-500 font-medium mt-2">
-            Profesjonalny system obsługi rozmnożeń
-        </p>
-    </div>
+    <!-- HEADER + 🔥 PRZYCISK ODŚWIEŻANIA -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-slate-200 pb-10">
+        <div>
+            <h1 class="text-5xl font-[800] text-slate-900 tracking-tighter">
+                SilkRoute <span class="text-emerald-600 italic">Breeding</span>
+            </h1>
+            <p class="text-slate-500 font-medium mt-2">
+                Profesjonalny system obsługi rozmnożeń
+            </p>
+        </div>
 
-    <hr class="my-8 border-slate-300">
+        <!-- 🔥 IDENTYCZNY PRZYCISK JAK W SALE.HTML -->
+        <button onclick="location.reload()"
+                class="bg-white border border-slate-200 hover:bg-slate-50 px-8 py-3 rounded-2xl font-bold text-slate-700 transition flex items-center gap-3 shadow-sm active:scale-95">
+            <i class="bi bi-arrow-clockwise text-emerald-600 text-xl"></i>
+            ODŚWIEŻ SYSTEM
+        </button>
+    </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
@@ -61,6 +69,7 @@
 
 </div>
 
+<!-- MODAL -->
 <div id="breeding-full-modal"
      class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
     <div id="breeding-full-modal-content"
@@ -75,10 +84,12 @@
     const listRoot = document.getElementById("breeding-list-root");
     const dashboardRoot = document.getElementById("breeding-dashboard-root");
 
+    // 🔥 GLOBALNE odświeżanie dashboardu
     window.refreshBreedingDashboard = () => {
         renderBreedingDashboard(dashboardRoot);
     };
 
+    // 🔥 GLOBALNE otwieranie szczegółów samicy
     window.openBreedingDetails = (id) => {
         renderBreedingDetails(listRoot, id, () => {
             renderBreedingList(listRoot);
@@ -86,11 +97,12 @@
         });
     };
 
+    // Pierwsze renderowanie
     renderBreedingList(listRoot);
     window.refreshBreedingDashboard();
 </script>
 
-<!-- 🔥 Poprawione skrypty Chart.js -->
+<!-- Chart.js + Zoom -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
