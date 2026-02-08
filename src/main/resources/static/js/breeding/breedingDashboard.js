@@ -45,9 +45,6 @@ export async function renderBreedingDashboard(root) {
         ${renderTopFemales(stats.topFemales)}
     `;
 
-    /* ============================================================================
-       🔥 Delegacja zdarzeń — działa zawsze, nawet po rerenderach
-    ============================================================================ */
     root.addEventListener("click", (ev) => {
         const el = ev.target.closest("[data-open-spider]");
         if (!el) return;
@@ -100,12 +97,10 @@ function computeStats(spiders, entries) {
             bySpider[id].l1 += (e.eggSack.numberOfSpiders ?? 0);
             bySpider[id].latestEggSackStatus = e.eggSack.status;
 
-            // 🟡 świeżo złożony kokon
             if (e.eggSack.status === "LAID") {
                 bySpider[id].hasLaid = true;
             }
 
-            // 🔴 3 dni przed odbiorem
             const suggested = e.eggSack.suggestedDateOfEggSackPull;
             const pulled = e.eggSack.dateOfEggSackPull;
 
@@ -123,9 +118,9 @@ function computeStats(spiders, entries) {
         }
     }
 
-    // 🔥 NOWOŚĆ: filtrujemy tylko samice z kokonem LAID
+    // 🔥 filtrujemy tylko samice z kokonem LAID
     const topFemales = Object.values(bySpider)
-        .filter(f => f.hasLaid === true)   // <── tu jest cała magia
+        .filter(f => f.hasLaid === true)
         .sort((a, b) => b.l1 - a.l1)
         .slice(0, 5);
 
@@ -176,14 +171,24 @@ function renderTopFemales(list) {
             ${list.map(f => {
 
         let blinkClass = "";
+        let extraNote = "";
 
-        // 🔴 priorytet: 3 dni przed odbiorem
-        if (f.hasPullSoon) {
-            blinkClass = "blink-red";
+        const isMonocentropus =
+            f.spider.typeName?.toLowerCase().includes("monocentropus") ||
+            f.spider.speciesName?.toLowerCase().includes("monocentropus");
+
+        // 🔵 wyjątek dla Monocentropus — kokon inkubowany przez samicę
+        if (isMonocentropus && f.hasLaid) {
+            blinkClass = "blink-blue-bg";
+            extraNote = `<p class="text-xs text-blue-700 mt-2 font-semibold">
+                            Kokon inkubowany przez samicę
+                         </p>`;
         }
-        // 🟡 świeżo złożony kokon
+        else if (f.hasPullSoon) {
+            blinkClass = "blink-red-bg";
+        }
         else if (f.hasLaid) {
-            blinkClass = "blink-yellow";
+            blinkClass = "blink-yellow-bg";
         }
 
         return `
@@ -199,6 +204,7 @@ function renderTopFemales(list) {
                         <div class="mt-4">
                             <p class="text-sm">Kokony: <b>${f.sacs}</b></p>
                             <p class="text-sm">L1: <b>${f.l1}</b></p>
+                            ${extraNote}
                         </div>
                     </div>
                 `;
